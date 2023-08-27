@@ -330,7 +330,7 @@ questions:
                             description: "This port exposes the container port on the service"
                             schema:
                               type: int
-                              default: 33942
+                              default: 2468
                               required: true
         - variable: xmlrpc
           label: "XMLRPC Service"
@@ -1519,13 +1519,13 @@ questions:
                 schema:
                   type: int
                   show_if: [["runAsUser", "=", 0]]
-                  default: 568
+                  default: 33
               - variable: UMASK
                 label: UMASK
                 description: When supported by the container, this sets the UMASK for the App. Not supported by all Apps
                 schema:
                   type: string
-                  default: "0022"
+                  default: "0000"
               - variable: advanced
                 label: Show Advanced Settings
                 description: Advanced settings are not covered by TrueCharts Support
@@ -1538,12 +1538,12 @@ questions:
                       label: "Privileged mode"
                       schema:
                         type: boolean
-                        default: false
+                        default: true
                     - variable: readOnlyRootFilesystem
                       label: "ReadOnly Root Filesystem"
                       schema:
                         type: boolean
-                        default: true
+                        default: false
         - variable: pod
           label: Pod
           schema:
