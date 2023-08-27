@@ -1,8 +1,8 @@
 image:
-  repository: tccr.io/truecharts/rutorrent-crazymax
+  repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
   pullPolicy: IfNotPresent
-  tag: vlatest@sha256:352d49bfd4857dd52f50397563ce86464051861870217bec2e02bd328f80f038
-
+  tag: 4.2.5-0.9.8-0.13.8@sha256:51308c6f4f812e55966a71ca3383f8ebfb67d566c10b1a6aadaed9140b5a7e30
+  
 securityContext:
   container:
     PUID: 33
@@ -23,7 +23,7 @@ service:
       rtorrent:
         enabled: true
         protocol: tcp
-        port: 33942
+        port: 2468
   xmlrpc:
     enabled: true
     ports:
@@ -79,3 +79,4 @@ persistence:
 portal:
   open:
     enabled: true
+
