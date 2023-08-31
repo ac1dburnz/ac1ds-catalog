@@ -26,6 +26,38 @@
                     "url": "https://truecharts.org"
                 }
             ],
+       "dashy": {
+            "app_readme": "<p>Dashy helps you organize your self-hosted services by making them accessible from a single place</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/dashy\">https://truecharts.org/charts/stable/dashy</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+            "categories": [
+                "dashboard"
+            ],
+            "description": "Dashy helps you organize your self-hosted services by making them accessible from a single place",
+            "healthy": true,
+            "healthy_error": null,
+            "home": "https://truecharts.org/charts/stable/dashy",
+            "location": "/home/runner/work/catalog/catalog/stable/dashy",
+            "latest_version": "3.0.15",
+            "latest_app_version": "2.1.1",
+            "latest_human_version": "2.1.1_3.0.15",
+            "last_update": "2023-08-30 20:19:40",
+            "name": "dashy",
+            "recommended": false,
+            "title": "Dashy",
+            "maintainers": [
+                {
+                    "email": "info@truecharts.org",
+                    "name": "TrueCharts",
+                    "url": "https://truecharts.org"
+                }
+            ],
+            "tags": [],
+            "screenshots": [],
+            "sources": [
+                "https://github.com/truecharts/charts/tree/master/charts/stable/dashy",
+                "https://github.com/Lissy93/dashy"
+            ],
+            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/dashy.png"
+        },    
             "tags": [],
             "screenshots": [],
             "sources": [
