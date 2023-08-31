@@ -98,6 +98,71 @@
                 "https://github.com/Sonarr/Sonarr"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/sonarr.png"
+       "radarr": {
+            "app_readme": "<p>A fork of Sonarr to work with movies \u00e0 la Couchpotato</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/radarr\">https://truecharts.org/charts/stable/radarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+            "categories": [
+                "media"
+            ],
+            "description": "A fork of Sonarr to work with movies \u00e0 la Couchpotato",
+            "healthy": true,
+            "healthy_error": null,
+            "home": "https://truecharts.org/charts/stable/radarr",
+            "location": "/home/runner/work/catalog/catalog/stable/radarr",
+            "latest_version": "17.0.3",
+            "latest_app_version": "4.7.5.7809",
+            "latest_human_version": "4.7.5.7809_17.0.3",
+            "last_update": "2023-08-30 20:19:40",
+            "name": "radarr",
+            "recommended": false,
+            "title": "Radarr",
+            "maintainers": [
+                {
+                    "email": "info@truecharts.org",
+                    "name": "TrueCharts",
+                    "url": "https://truecharts.org"
+                }
+            ],
+            "tags": [],
+            "screenshots": [],
+            "sources": [
+                "https://github.com/truecharts/charts/tree/master/charts/stable/radarr",
+                "https://github.com/Radarr/Radarr"
+            ],
+            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/radarr.png"
+        },
+       "prowlarr": {
+            "app_readme": "<p>Indexer manager/proxy built on the popular arr net base stack to integrate with your various PVR apps.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/prowlarr\">https://truecharts.org/charts/stable/prowlarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+            "categories": [
+                "media"
+            ],
+            "description": "Indexer manager/proxy built on the popular arr net base stack to integrate with your various PVR apps.",
+            "healthy": true,
+            "healthy_error": null,
+            "home": "https://truecharts.org/charts/stable/prowlarr",
+            "location": "/home/runner/work/catalog/catalog/stable/prowlarr",
+            "latest_version": "12.0.4",
+            "latest_app_version": "1.8.3.3880",
+            "latest_human_version": "1.8.3.3880_12.0.4",
+            "last_update": "2023-08-30 20:19:40",
+            "name": "prowlarr",
+            "recommended": false,
+            "title": "Prowlarr",
+            "maintainers": [
+                {
+                    "email": "info@truecharts.org",
+                    "name": "TrueCharts",
+                    "url": "https://truecharts.org"
+                }
+            ],
+            "tags": [],
+            "screenshots": [],
+            "sources": [
+                "https://github.com/truecharts/charts/tree/master/charts/stable/prowlarr",
+                "https://github.com/Prowlarr/Prowlarr",
+                "https://github.com/k8s-at-home/container-images"
+            ],
+            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/prowlarr.png"
+        }    
 
         }
     }
