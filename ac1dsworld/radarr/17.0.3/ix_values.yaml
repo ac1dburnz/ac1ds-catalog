@@ -1,5 +1,5 @@
 image:
-  repository: tccr.io/truecharts/radarr
+  repository: linuxserver/radarr
   pullPolicy: IfNotPresent
   tag: v4.7.5.7809@sha256:d0c466a2becb34e2c5e3b9c20bc5c757ed2246734f7a48fd037727e5b30a5fc6
 exportarrImage:
