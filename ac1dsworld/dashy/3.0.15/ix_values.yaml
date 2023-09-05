@@ -1,6 +1,6 @@
 image:
-  repository: tccr.io/truecharts/dashy
-  tag: v2.1.1@sha256:3313b127d8ead4276c109e6e210ddc6a2702cb09781308c32b882a51247d071f
+  repository: ac1dburn/dashy
+  tag: 2.1.1@sha256:c6e085039ad5d28c5e02f1ab7faa78614f53dfa49c514e92e6de1d486fcf1ab6
   pullPolicy: IfNotPresent
 
 securityContext:
