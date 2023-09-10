@@ -1,6 +1,6 @@
 image:
   repository: linuxserver/prowlarr
-  tag: v1.8.3.3880@sha256:7c85fc02e169abbf916688f6f24722b1a9b728df64ee6a702908b1cc2b14edb3
+  tag: develop
   pullPolicy: IfNotPresent
 exportarrImage:
   repository: tccr.io/truecharts/exportarr
