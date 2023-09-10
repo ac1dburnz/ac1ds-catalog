@@ -162,7 +162,40 @@
                 "https://github.com/k8s-at-home/container-images"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/prowlarr.png"
-        }    
+        },
+    
+        "sabnzbd": {
+            "app_readme": "<p>Free and easy binary newsreader</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sabnzbd\">https://truecharts.org/charts/stable/sabnzbd</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+            "categories": [
+                "media"
+            ],
+            "description": "Free and easy binary newsreader",
+            "healthy": true,
+            "healthy_error": null,
+            "home": "https://truecharts.org/charts/stable/sabnzbd",
+            "location": "/home/runner/work/catalog/catalog/stable/sabnzbd",
+            "latest_version": "15.0.1",
+            "latest_app_version": "4.0.3",
+            "latest_human_version": "4.0.3_15.0.1",
+            "last_update": "2023-09-10 05:38:33",
+            "name": "sabnzbd",
+            "recommended": false,
+            "title": "Sabnzbd",
+            "maintainers": [
+                {
+                    "email": "info@truecharts.org",
+                    "name": "TrueCharts",
+                    "url": "https://truecharts.org"
+                }
+            ],
+            "tags": [],
+            "screenshots": [],
+            "sources": [
+                "https://github.com/truecharts/charts/tree/master/charts/stable/sabnzbd",
+                "https://sabnzbd.org/"
+            ],
+            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/sabnzbd.png"
+        }  
 
         }
     }
