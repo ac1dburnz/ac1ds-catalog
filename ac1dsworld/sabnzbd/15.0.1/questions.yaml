@@ -297,6 +297,8 @@ questions:
                             schema:
                               type: int
                               default: 10097
+                              min: 9000
+                              max: 65535
                               required: true
   - variable: serviceexpert
     group: Networking and Services
