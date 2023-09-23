@@ -35,6 +35,37 @@
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/rtorrent-rutorrent.png"
         },
+                "ptp-uploader": {
+            "app_readme": "<p>Advanced tool to create your own TrueCharts-based App</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/custom-app\">https://truecharts.org/charts/stable/custom-app</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+            "categories": [
+                "custom"
+            ],
+            "description": "Advanced tool to create your own TrueCharts-based App",
+            "healthy": true,
+            "healthy_error": null,
+            "home": "https://truecharts.org/charts/stable/custom-app",
+            "location": "/home/runner/work/catalog/catalog/stable/custom-app",
+            "latest_version": "9.0.0",
+            "latest_app_version": "0.20.4145",
+            "latest_human_version": "0.20.4145_9.0.0",
+            "last_update": "2023-09-17 21:36:32",
+            "name": "custom-app",
+            "recommended": false,
+            "title": "Custom-app",
+            "maintainers": [
+                {
+                    "email": "info@truecharts.org",
+                    "name": "TrueCharts",
+                    "url": "https://truecharts.org"
+                }
+            ],
+            "tags": [],
+            "screenshots": [],
+            "sources": [
+                "https://github.com/truecharts/charts/tree/master/charts/stable/custom-app"
+            ],
+            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/custom-app.png"
+        },
        "dashy": {
             "app_readme": "<p>Dashy helps you organize your self-hosted services by making them accessible from a single place</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/dashy\">https://truecharts.org/charts/stable/dashy</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
