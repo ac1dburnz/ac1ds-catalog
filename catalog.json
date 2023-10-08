@@ -12,9 +12,9 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/incubator/rtorrent-rutorrent",
             "location": "/home/runner/work/catalog/catalog/incubator/rtorrent-rutorrent",
-            "latest_version": "0.0.5",
+            "latest_version": "0.0.4",
             "latest_app_version": "latest",
-            "latest_human_version": "latest_0.0.5",
+            "latest_human_version": "latest_0.0.4",
             "last_update": "2023-10-08 03:43:53",
             "name": "rtorrent-rutorrent",
             "recommended": false,
@@ -35,7 +35,7 @@
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/rtorrent-rutorrent.png"
         },
-                "ptp-uploader": {
+       "ptp-uploader": {
             "app_readme": "<p>Advanced tool to create your own TrueCharts-based App</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/custom-app\">https://truecharts.org/charts/stable/custom-app</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
                 "custom"
@@ -207,9 +207,9 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/incubator/rtorrent-rutorrent",
             "location": "/home/runner/work/catalog/catalog/incubator/rtorrent-rutorrent",
-            "latest_version": "0.0.5",
+            "latest_version": "0.0.4",
             "latest_app_version": "latest",
-            "latest_human_version": "latest_0.0.5",
+            "latest_human_version": "latest_0.0.4",
             "last_update": "2023-10-08 03:43:53",
             "name": "rtorrent-rutorrent",
             "recommended": false,
