@@ -12,10 +12,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/incubator/rtorrent-rutorrent",
             "location": "/home/runner/work/catalog/catalog/incubator/rtorrent-rutorrent",
-            "latest_version": "0.0.4",
+            "latest_version": "0.0.5",
             "latest_app_version": "latest",
-            "latest_human_version": "latest_0.0.4",
-            "last_update": "2023-09-17 21:36:32",
+            "latest_human_version": "latest_0.0.5",
+            "last_update": "2023-10-08 03:43:53",
             "name": "rtorrent-rutorrent",
             "recommended": false,
             "title": "Rtorrent-rutorrent",
@@ -65,53 +65,21 @@
                 "https://github.com/truecharts/charts/tree/master/charts/stable/custom-app"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/custom-app.png"
-        },
-       "dashy": {
-            "app_readme": "<p>Dashy helps you organize your self-hosted services by making them accessible from a single place</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/dashy\">https://truecharts.org/charts/stable/dashy</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-            "categories": [
-                "dashboard"
-            ],
-            "description": "Dashy helps you organize your self-hosted services by making them accessible from a single place",
-            "healthy": true,
-            "healthy_error": null,
-            "home": "https://truecharts.org/charts/stable/dashy",
-            "location": "/home/runner/work/catalog/catalog/stable/dashy",
-            "latest_version": "3.0.15",
-            "latest_app_version": "2.1.1",
-            "latest_human_version": "2.1.1_3.0.15",
-            "last_update": "2023-08-30 20:19:40",
-            "name": "dashy",
-            "recommended": false,
-            "title": "Dashy",
-            "maintainers": [
-                {
-                    "email": "info@truecharts.org",
-                    "name": "TrueCharts",
-                    "url": "https://truecharts.org"
-                }
-            ],
-            "tags": [],
-            "screenshots": [],
-            "sources": [
-                "https://github.com/truecharts/charts/tree/master/charts/stable/dashy",
-                "https://github.com/Lissy93/dashy"
-            ],
-            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/dashy.png"
-        },    
+        },  
        "sonarr": {
             "app_readme": "<p>Smart PVR for newsgroup and bittorrent users</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sonarr\">https://truecharts.org/charts/stable/sonarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
                 "media"
             ],
-            "description": "Smart PVR for newsgroup and bittorrent users using v4.0 beta ",
+            "description": "Smart PVR for newsgroup and bittorrent users",
             "healthy": true,
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/sonarr",
             "location": "/home/runner/work/catalog/catalog/stable/sonarr",
-            "latest_version": "16.0.0",
+            "latest_version": "16.0.3",
             "latest_app_version": "3.0.10.156",
-            "latest_human_version": "3.0.10.156_16.0.0",
-            "last_update": "2023-08-23 01:58:28",
+            "latest_human_version": "3.0.10.156_16.0.3",
+            "last_update": "2023-10-08 03:43:53",
             "name": "sonarr",
             "recommended": false,
             "title": "Sonarr",
@@ -129,7 +97,7 @@
                 "https://github.com/Sonarr/Sonarr"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/sonarr.png"
-       },
+        },
        "radarr": {
             "app_readme": "<p>A fork of Sonarr to work with movies \u00e0 la Couchpotato</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/radarr\">https://truecharts.org/charts/stable/radarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
@@ -140,10 +108,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/radarr",
             "location": "/home/runner/work/catalog/catalog/stable/radarr",
-            "latest_version": "17.0.3",
+            "latest_version": "17.0.7",
             "latest_app_version": "4.7.5.7809",
-            "latest_human_version": "4.7.5.7809_17.0.3",
-            "last_update": "2023-08-30 20:19:40",
+            "latest_human_version": "4.7.5.7809_17.0.7",
+            "last_update": "2023-10-08 03:43:53",
             "name": "radarr",
             "recommended": false,
             "title": "Radarr",
@@ -172,10 +140,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/prowlarr",
             "location": "/home/runner/work/catalog/catalog/stable/prowlarr",
-            "latest_version": "12.0.6",
-            "latest_app_version": "1.8.5.3896",
-            "latest_human_version": "1.8.5.3896_12.0.6",
-            "last_update": "2023-09-10 05:38:33",
+            "latest_version": "12.0.12",
+            "latest_app_version": "1.9.1.3981",
+            "latest_human_version": "1.9.1.3981_12.0.12",
+            "last_update": "2023-10-08 03:43:53",
             "name": "prowlarr",
             "recommended": false,
             "title": "Prowlarr",
@@ -205,10 +173,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/sabnzbd",
             "location": "/home/runner/work/catalog/catalog/stable/sabnzbd",
-            "latest_version": "15.0.1",
-            "latest_app_version": "4.0.3",
-            "latest_human_version": "4.0.3_15.0.1",
-            "last_update": "2023-09-10 05:38:33",
+            "latest_version": "15.0.5",
+            "latest_app_version": "4.1.0",
+            "latest_human_version": "4.1.0_15.0.5",
+            "last_update": "2023-10-08 03:43:53",
             "name": "sabnzbd",
             "recommended": false,
             "title": "Sabnzbd",
@@ -226,8 +194,6 @@
                 "https://sabnzbd.org/"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/sabnzbd.png"
-        }  
-
         },
         "stable": {
        "rtorrent-rutorrent": {
@@ -240,10 +206,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/incubator/rtorrent-rutorrent",
             "location": "/home/runner/work/catalog/catalog/incubator/rtorrent-rutorrent",
-            "latest_version": "0.0.4",
+            "latest_version": "0.0.5",
             "latest_app_version": "latest",
-            "latest_human_version": "latest_0.0.4",
-            "last_update": "2023-09-17 21:36:32",
+            "latest_human_version": "latest_0.0.5",
+            "last_update": "2023-10-08 03:43:53",
             "name": "rtorrent-rutorrent",
             "recommended": false,
             "title": "Rtorrent-rutorrent",
@@ -263,23 +229,23 @@
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/rtorrent-rutorrent.png"
         },
-       "dashy": {
-            "app_readme": "<p>Dashy helps you organize your self-hosted services by making them accessible from a single place</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/dashy\">https://truecharts.org/charts/stable/dashy</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+                "ptp-uploader": {
+            "app_readme": "<p>Advanced tool to create your own TrueCharts-based App</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/custom-app\">https://truecharts.org/charts/stable/custom-app</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
-                "dashboard"
+                "custom"
             ],
-            "description": "Dashy helps you organize your self-hosted services by making them accessible from a single place",
+            "description": "Advanced tool to create your own TrueCharts-based App",
             "healthy": true,
             "healthy_error": null,
-            "home": "https://truecharts.org/charts/stable/dashy",
-            "location": "/home/runner/work/catalog/catalog/stable/dashy",
-            "latest_version": "3.0.15",
-            "latest_app_version": "2.1.1",
-            "latest_human_version": "2.1.1_3.0.15",
-            "last_update": "2023-08-30 20:19:40",
-            "name": "dashy",
+            "home": "https://truecharts.org/charts/stable/custom-app",
+            "location": "/home/runner/work/catalog/catalog/stable/custom-app",
+            "latest_version": "9.0.0",
+            "latest_app_version": "0.20.4145",
+            "latest_human_version": "0.20.4145_9.0.0",
+            "last_update": "2023-09-17 21:36:32",
+            "name": "custom-app",
             "recommended": false,
-            "title": "Dashy",
+            "title": "Custom-app",
             "maintainers": [
                 {
                     "email": "info@truecharts.org",
@@ -290,25 +256,24 @@
             "tags": [],
             "screenshots": [],
             "sources": [
-                "https://github.com/truecharts/charts/tree/master/charts/stable/dashy",
-                "https://github.com/Lissy93/dashy"
+                "https://github.com/truecharts/charts/tree/master/charts/stable/custom-app"
             ],
-            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/dashy.png"
-        },    
+            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/custom-app.png"
+        },  
        "sonarr": {
             "app_readme": "<p>Smart PVR for newsgroup and bittorrent users</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sonarr\">https://truecharts.org/charts/stable/sonarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
                 "media"
             ],
-            "description": "Smart PVR for newsgroup and bittorrent users using v4.0 beta ",
+            "description": "Smart PVR for newsgroup and bittorrent users",
             "healthy": true,
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/sonarr",
             "location": "/home/runner/work/catalog/catalog/stable/sonarr",
-            "latest_version": "16.0.0",
+            "latest_version": "16.0.3",
             "latest_app_version": "3.0.10.156",
-            "latest_human_version": "3.0.10.156_16.0.0",
-            "last_update": "2023-08-23 01:58:28",
+            "latest_human_version": "3.0.10.156_16.0.3",
+            "last_update": "2023-10-08 03:43:53",
             "name": "sonarr",
             "recommended": false,
             "title": "Sonarr",
@@ -326,7 +291,7 @@
                 "https://github.com/Sonarr/Sonarr"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/sonarr.png"
-       },
+        },
        "radarr": {
             "app_readme": "<p>A fork of Sonarr to work with movies \u00e0 la Couchpotato</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/radarr\">https://truecharts.org/charts/stable/radarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
@@ -337,10 +302,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/radarr",
             "location": "/home/runner/work/catalog/catalog/stable/radarr",
-            "latest_version": "17.0.3",
+            "latest_version": "17.0.7",
             "latest_app_version": "4.7.5.7809",
-            "latest_human_version": "4.7.5.7809_17.0.3",
-            "last_update": "2023-08-30 20:19:40",
+            "latest_human_version": "4.7.5.7809_17.0.7",
+            "last_update": "2023-10-08 03:43:53",
             "name": "radarr",
             "recommended": false,
             "title": "Radarr",
@@ -369,10 +334,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/prowlarr",
             "location": "/home/runner/work/catalog/catalog/stable/prowlarr",
-            "latest_version": "12.0.6",
-            "latest_app_version": "1.8.5.3896",
-            "latest_human_version": "1.8.5.3896_12.0.6",
-            "last_update": "2023-09-10 05:38:33",
+            "latest_version": "12.0.12",
+            "latest_app_version": "1.9.1.3981",
+            "latest_human_version": "1.9.1.3981_12.0.12",
+            "last_update": "2023-10-08 03:43:53",
             "name": "prowlarr",
             "recommended": false,
             "title": "Prowlarr",
@@ -402,10 +367,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/sabnzbd",
             "location": "/home/runner/work/catalog/catalog/stable/sabnzbd",
-            "latest_version": "15.0.1",
-            "latest_app_version": "4.0.3",
-            "latest_human_version": "4.0.3_15.0.1",
-            "last_update": "2023-09-10 05:38:33",
+            "latest_version": "15.0.5",
+            "latest_app_version": "4.1.0",
+            "latest_human_version": "4.1.0_15.0.5",
+            "last_update": "2023-10-08 03:43:53",
             "name": "sabnzbd",
             "recommended": false,
             "title": "Sabnzbd",
