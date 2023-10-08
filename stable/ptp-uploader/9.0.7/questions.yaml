@@ -38,6 +38,37 @@ portals:
     ports:
       - "$kubernetes-resource_configmap_tcportal-open_port"
 questions:
+  - variable: image
+    group: "Container Image"
+    label: "Container"
+    schema:
+      additional_attrs: true
+      type: dict
+      attrs:
+        - variable: repository
+          label: "Container Repository"
+          schema:
+            type: string
+            default: "kannibalox/ptpuploader"
+            required: true
+        - variable: tag
+          label: "Container Tag"
+          schema:
+            type: string
+            default: "latest"
+            required: true
+        - variable: pullPolicy
+          label: "Container Pullpolicy"
+          schema:
+            type: string
+            default: "IfNotPresent"
+            enum:
+              - value: "IfNotPresent"
+                description: "IfNotPresent"
+              - value: "Always"
+                description: "Always"
+              - value: "Never"
+                description: "Never"
   - variable: global
     group: General Settings
     label: "Global Settings"
@@ -102,19 +133,7 @@ questions:
                               attrs:
 
 
-                                - variable: env
-                                  group: "App Configuration"
-                                  label: "Image Environment"
-                                  schema:
-                                    additional_attrs: true
-                                    type: dict
-                                    attrs:
-                                      - variable: SABNZBD__HOST_WHITELIST_ENTRIES
-                                        label: "HostName Whitelist"
-                                        description: "If you use a reverse proxy, you might need to enter your hostname's here (comma seperated)"
-                                        schema:
-                                          type: string
-                                          default: ""
+
                                 - variable: envList
                                   label: Extra Environment Variables
                                   description: "Please be aware that some variables are set in the background, adding duplicates here might cause issues or prevent the app from starting..."
@@ -272,6 +291,65 @@ questions:
                                                     schema:
                                                       type: string
                                                       default: "/"
+  - variable: portal
+    group: "General Settings"
+    label: "Portal Configuration"
+    schema:
+      type: dict
+      additional_attrs: true
+      attrs:
+        - variable: open
+          label: "Open"
+          schema:
+            type: dict
+            additional_attrs: true
+            attrs:
+              - variable: enabled
+                label: "Enable WebUI Portal"
+                description: "Enable WebUI Portal"
+                schema:
+                  type: boolean
+                  default: true
+              - variable: overrides
+                label: "Override Portal Configuration"
+                description: "Override Portal Configuration"
+                schema:
+                  type: boolean
+                  default: false
+                  show_if: [["enabled", "=", true]]
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: override
+                      label: "Override Portal Configuration"
+                      description: "Override Portal Configuration"
+                      schema:
+                        type: dict
+                        additional_attrs: true
+                        attrs:
+                          - variable: protocol
+                            label: "Protocol"
+                            description: "Portal Protocol Override"
+                            schema:
+                              type: string
+                              enum:
+                                - value: ""
+                                  description: ""
+                                - value: "http"
+                                  description: "HTTP"
+                                - value: "https"
+                                  description: "HTTPS"
+                          - variable: host
+                            label: "Host"
+                            description: "Portal Host Override"
+                            schema:
+                              type: string
+                              default: ""
+                          - variable: port
+                            label: "Port"
+                            description: "Portal Port Override"
+                            schema:
+                              type: string
+                              default: ""
   - variable: TZ
     label: Timezone
     group: "General Settings"
@@ -398,14 +476,86 @@ questions:
                         additional_attrs: true
                         type: dict
                         attrs:
+                          - variable: enabled
+                            label: "Enable the port"
+                            schema:
+                              type: boolean
+                              hidden: true
+                              default: true
+                          - variable: protocol
+                            label: "Port Type"
+                            schema:
+                              type: string
+                              default: "http"
+                              enum:
+                                - value: http
+                                  description: "http"
+                                - value: "https"
+                                  description: "https"
+                                - value: tcp
+                                  description: "tcp"
+                                - value: "udp"
+                                  description: "udp"
+                          - variable: targetPort
+                            label: "Target Port"
+                            description: "This port exposes the container port on the service"
+                            schema:
+                              type: int
+                              required: true
                           - variable: port
                             label: "Port"
                             description: "This port exposes the container port on the service"
                             schema:
                               type: int
-                              default: 10097
-                              min: 0
-                              max: 65535
+                              required: true
+              - variable: portsList
+                label: "Additional Service Ports"
+                schema:
+                  type: list
+                  default: []
+                  items:
+                    - variable: portsListEntry
+                      label: "Custom ports"
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: enabled
+                            label: "Enable the port"
+                            schema:
+                              type: boolean
+                              default: true
+                              hidden: true
+                          - variable: name
+                            label: "Port Name"
+                            schema:
+                              type: string
+                              default: ""
+                          - variable: protocol
+                            label: "Port Type"
+                            schema:
+                              type: string
+                              default: "tcp"
+                              enum:
+                                - value: http
+                                  description: "http"
+                                - value: "https"
+                                  description: "https"
+                                - value: tcp
+                                  description: "tcp"
+                                - value: "udp"
+                                  description: "udp"
+                          - variable: targetPort
+                            label: "Target Port"
+                            description: "This port exposes the container port on the service"
+                            schema:
+                              type: int
+                              required: true
+                          - variable: port
+                            label: "Port"
+                            description: "This port exposes the container port on the service"
+                            schema:
+                              type: int
                               required: true
   - variable: serviceexpert
     group: Networking and Services
@@ -627,115 +777,6 @@ questions:
                                   schema:
                                     type: int
                                     required: true
-  - variable: persistence
-    label: Integrated Persistent Storage
-    description: Integrated Persistent Storage
-    group: Storage and Persistence
-    schema:
-      additional_attrs: true
-      type: dict
-      attrs:
-        - variable: config
-          label: "App Config Storage"
-          description: "Stores the Application Configuration."
-          schema:
-            additional_attrs: true
-            type: dict
-            attrs:
-              - variable: type
-                label: Type of Storage
-                description: Sets the persistence type, Anything other than PVC could break rollback!
-                schema:
-                  type: string
-                  default: pvc
-                  enum:
-                    - value: pvc
-                      description: PVC
-                    - value: hostPath
-                      description: Host Path
-                    - value: emptyDir
-                      description: emptyDir
-                    - value: nfs
-                      description: NFS Share
-              - variable: server
-                label: NFS Server
-                schema:
-                  show_if: [["type", "=", "nfs"]]
-                  type: string
-                  default: ""
-              - variable: path
-                label: Path on NFS Server
-                schema:
-                  show_if: [["type", "=", "nfs"]]
-                  type: string
-                  default: ""
-              - variable: autoPermissions
-                label: Automatic Permissions Configuration
-                description: Automatically set permissions
-                schema:
-                  show_if: [["type", "!=", "pvc"]]
-                  type: dict
-                  additional_attrs: true
-                  attrs:
-                    - variable: enabled
-                      label: enabled
-                      schema:
-                        type: boolean
-                        default: false
-                        show_subquestions_if: true
-                        subquestions:
-                          - variable: chown
-                            label: Run CHOWN
-                            description: |
-                              It will run CHOWN on the path with the given fsGroup
-                            schema:
-                              type: boolean
-                              default: false
-                          - variable: chmod
-                            label: Run CHMOD
-                            description: |
-                              It will run CHMOD on the path with the given value</br>
-                              Format should be 3 digits, e.g. 770
-                            schema:
-                              type: string
-                              valid_chars: '[0-9]{3}'
-                              default: ""
-                          - variable: recursive
-                            label: Recursive
-                            description: |
-                              It will run CHOWN and CHMOD recursively
-                            schema:
-                              type: boolean
-                              default: false
-              - variable: readOnly
-                label: Read Only
-                schema:
-                  type: boolean
-                  default: false
-              - variable: hostPath
-                label: Host Path
-                description: Path inside the container the storage is mounted
-                schema:
-                  show_if: [["type", "=", "hostPath"]]
-                  type: hostpath
-              - variable: medium
-                label: EmptyDir Medium
-                schema:
-                  show_if: [["type", "=", "emptyDir"]]
-                  type: string
-                  default: ""
-                  enum:
-                    - value: ""
-                      description: Default
-                    - value: Memory
-                      description: Memory
-              - variable: size
-                label: Size quotum of Storage (Do NOT REDUCE after installation)
-                description: This value can ONLY be INCREASED after the installation
-                schema:
-                  show_if: [["type", "=", "pvc"]]
-                  type: string
-                  default: 256Gi
   - variable: persistenceList
     label: Additional App Storage
     group: Storage and Persistence
@@ -1181,7 +1222,7 @@ questions:
                   default: 568
               - variable: runAsGroup
                 label: "runAsGroup"
-                description: "The groupID this App of the user running the application"
+                description: "The groupID of the user running the application"
                 schema:
                   type: int
                   default: 568

@@ -1,0 +1,21 @@
+image:
+  repository: kannibalox/ptpuploader
+  pullPolicy: IfNotPresent
+  tag: latest
+
+portal:
+  open:
+    enabled: false
+
+workload:
+  main:
+    podSpec:
+      containers:
+        main:
+          probes:
+            liveness:
+              type: tcp
+            readiness:
+              type: tcp
+            startup:
+              type: tcp

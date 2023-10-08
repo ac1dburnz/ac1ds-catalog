@@ -101,20 +101,29 @@ questions:
                               type: dict
                               attrs:
 
-
                                 - variable: env
-                                  group: "App Configuration"
-                                  label: "Image Environment"
+                                  group: App Configuration
+                                  label: Image Environment
                                   schema:
                                     additional_attrs: true
                                     type: dict
                                     attrs:
-                                      - variable: SABNZBD__HOST_WHITELIST_ENTRIES
-                                        label: "HostName Whitelist"
-                                        description: "If you use a reverse proxy, you might need to enter your hostname's here (comma seperated)"
+                                      - variable: SONARR__AUTHENTICATION_METHOD
+                                        label: Auth Method
+                                        description: Sets the auth method.
                                         schema:
                                           type: string
                                           default: ""
+                                          enum:
+                                            - value: ""
+                                              description: In-App Setting
+                                            - value: None
+                                              description: None
+                                            - value: Basic
+                                              description: Basic
+                                            - value: Forms
+                                              description: Forms
+
                                 - variable: envList
                                   label: Extra Environment Variables
                                   description: "Please be aware that some variables are set in the background, adding duplicates here might cause issues or prevent the app from starting..."
@@ -164,114 +173,7 @@ questions:
                                               label: Param
                                               schema:
                                                 type: string
-                                - variable: probes
-                                  label: "Healthcheck Probes"
-                                  schema:
-                                    additional_attrs: true
-                                    type: dict
-                                    attrs:
-                                      - variable: liveness
-                                        label: "Liveness"
-                                        description: "Liveness Probe"
-                                        schema:
-                                          additional_attrs: true
-                                          type: dict
-                                          attrs:
-                                            - variable: enabled
-                                              label: "Enable Probe"
-                                              description: "Enables the probe"
-                                              schema:
-                                                type: boolean
-                                                default: true
-                                                show_subquestions_if: true
-                                                subquestions:
-                                                  - variable: type
-                                                    label: "Probe Type"
-                                                    description: "Probe Type"
-                                                    schema:
-                                                      type: string
-                                                      default: "tcp"
-                                                      enum:
-                                                        - value: "tcp"
-                                                          description: "tcp"
-                                                        - value: "http"
-                                                          description: "http"
-                                                        - value: "https"
-                                                          description: "https"
-                                                  - variable: path
-                                                    label: "Probe Path"
-                                                    description: "Probe Path"
-                                                    schema:
-                                                      type: string
-                                                      default: "/"
-                                      - variable: readiness
-                                        label: "Readiness"
-                                        description: "Readiness Probe"
-                                        schema:
-                                          additional_attrs: true
-                                          type: dict
-                                          attrs:
-                                            - variable: enabled
-                                              label: "Enable Probe"
-                                              description: "Enables the probe"
-                                              schema:
-                                                type: boolean
-                                                default: true
-                                                show_subquestions_if: true
-                                                subquestions:
-                                                  - variable: type
-                                                    label: "Probe Type"
-                                                    description: "Probe Type"
-                                                    schema:
-                                                      type: string
-                                                      default: "tcp"
-                                                      enum:
-                                                        - value: "tcp"
-                                                          description: "tcp"
-                                                        - value: "http"
-                                                          description: "http"
-                                                        - value: "https"
-                                                          description: "https"
-                                                  - variable: path
-                                                    label: "Probe Path"
-                                                    description: "Probe Path"
-                                                    schema:
-                                                      type: string
-                                                      default: "/"
-                                      - variable: startup
-                                        label: "Startup"
-                                        description: "Startup Probe"
-                                        schema:
-                                          additional_attrs: true
-                                          type: dict
-                                          attrs:
-                                            - variable: enabled
-                                              label: "Enable Probe"
-                                              description: "Enables the probe"
-                                              schema:
-                                                type: boolean
-                                                default: true
-                                                show_subquestions_if: true
-                                                subquestions:
-                                                  - variable: type
-                                                    label: "Probe Type"
-                                                    description: "Probe Type"
-                                                    schema:
-                                                      type: string
-                                                      default: "tcp"
-                                                      enum:
-                                                        - value: "tcp"
-                                                          description: "tcp"
-                                                        - value: "http"
-                                                          description: "http"
-                                                        - value: "https"
-                                                          description: "https"
-                                                  - variable: path
-                                                    label: "Probe Path"
-                                                    description: "Probe Path"
-                                                    schema:
-                                                      type: string
-                                                      default: "/"
+
   - variable: TZ
     label: Timezone
     group: "General Settings"
@@ -393,19 +295,17 @@ questions:
                   type: dict
                   attrs:
                     - variable: main
-                      label: "Main Service Port Configuration"
+                      label: Main Service Port Configuration
                       schema:
                         additional_attrs: true
                         type: dict
                         attrs:
                           - variable: port
-                            label: "Port"
-                            description: "This port exposes the container port on the service"
+                            label: Port
+                            description: This port exposes the container port on the service
                             schema:
                               type: int
-                              default: 10097
-                              min: 0
-                              max: 65535
+                              default: 8989
                               required: true
   - variable: serviceexpert
     group: Networking and Services
@@ -636,8 +536,8 @@ questions:
       type: dict
       attrs:
         - variable: config
-          label: "App Config Storage"
-          description: "Stores the Application Configuration."
+          label: App Config Storage
+          description: Stores the Application Configuration.
           schema:
             additional_attrs: true
             type: dict
@@ -864,7 +764,7 @@ questions:
       type: dict
       attrs:
         - variable: main
-          label: "Main Ingress"
+          label: Main Ingress
           schema:
             additional_attrs: true
             type: dict
@@ -1370,6 +1270,41 @@ questions:
                   type: string
                   default: workaround
                   hidden: true
+  - variable: metrics
+    group: Metrics
+    label: Prometheus Metrics
+    schema:
+      additional_attrs: true
+      type: dict
+      attrs:
+        - variable: main
+          label: Main Metrics
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: enabled
+                label: Enabled
+                description: Enable Prometheus Metrics
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: prometheusRule
+                      label: PrometheusRule
+                      description: Enable and configure Prometheus Rules for the App.
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: enabled
+                            label: Enabled
+                            description: Enable Prometheus Metrics
+                            schema:
+                              type: boolean
+                              default: false
+                          # TODO: Rule List section
 #  - variable: horizontalPodAutoscaler
 #    group: Advanced
 #    label: (Advanced) Horizontal Pod Autoscaler
