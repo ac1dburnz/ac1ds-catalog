@@ -2,7 +2,7 @@ image:
   repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
   pullPolicy: IfNotPresent
   tag: 4.2.6-0.9.8-0.13.8@sha256:37dd4bbcc54683fa32479266cad94aa589c51c057830f859288ac0b70ec970fd
-  
+
 securityContext:
   container:
     PUID: 33
