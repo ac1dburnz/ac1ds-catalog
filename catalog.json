@@ -194,7 +194,8 @@
                 "https://sabnzbd.org/"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/sabnzbd.png"
-        },
+        }
+    },
         "stable": {
        "rtorrent-rutorrent": {
             "app_readme": "<p>rTorrent and ruTorrent chart.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/incubator/rtorrent-rutorrent\">https://truecharts.org/charts/incubator/rtorrent-rutorrent</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
