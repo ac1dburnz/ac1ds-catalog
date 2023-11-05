@@ -1,12 +1,14 @@
 **Important:**
 *for the complete changelog, please refer to the website*
 
-## [prowlarr-12.0.20](https://github.com/truecharts/charts/compare/prowlarr-12.0.17...prowlarr-12.0.18) (2023-10-29)
+## [prowlarr-12.0.20](https://github.com/truecharts/charts/compare/prowlarr-12.0.19...prowlarr-12.0.20) (2023-11-03)
 
 ### Chore
 
-- Fix typo in categories and make them singular ([#13693](https://github.com/truecharts/charts/issues/13693))
-  - update container image tccr.io/truecharts/prowlarr to v1.10.1.4059 ([#14082](https://github.com/truecharts/charts/issues/14082))
+- update helm general non-major ([#14287](https://github.com/truecharts/charts/issues/14287))
+  
+  
+
 
 ## [prowlarr-12.0.19](https://github.com/truecharts/charts/compare/prowlarr-12.0.18...prowlarr-12.0.19) (2023-10-29)
 
@@ -82,22 +84,4 @@
 
 
 ## [prowlarr-12.0.11](https://github.com/truecharts/charts/compare/prowlarr-12.0.10...prowlarr-12.0.11) (2023-10-07)
-
-### Chore
-
-- update container image tccr.io/truecharts/prowlarr to v1.9.1.3981 ([#13370](https://github.com/truecharts/charts/issues/13370))
-  
-  
-
-
-## [prowlarr-12.0.10](https://github.com/truecharts/charts/compare/prowlarr-12.0.9...prowlarr-12.0.10) (2023-10-04)
-
-### Chore
-
-- update container image tccr.io/truecharts/exportarr to v1.5.5 ([#13227](https://github.com/truecharts/charts/issues/13227))
-  
-  
-
-
-## [prowlarr-12.0.9](https://github.com/truecharts/charts/compare/prowlarr-12.0.8...prowlarr-12.0.9) (2023-09-24)
 
