@@ -1,5 +1,5 @@
 image:
-  repository: tccr.io/truecharts/rutorrent-crazymax
+  repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
   pullPolicy: IfNotPresent
   tag: 4.2.8-0.9.8-0.13.8@sha256:7b0eb020c16146e8226aa1ad7deea5caba79f3aa236015f825b28ca0168fcf21
 
