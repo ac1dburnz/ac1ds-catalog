@@ -66,7 +66,7 @@
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/custom-app.png"
         },         
-       "sonarr": {
+        "sonarr": {
             "app_readme": "<p>Smart PVR for newsgroup and bittorrent users</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sonarr\">https://truecharts.org/charts/stable/sonarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
                 "media"
@@ -76,10 +76,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/sonarr",
             "location": "/home/runner/work/catalog/catalog/stable/sonarr",
-            "latest_version": "16.0.7",
+            "latest_version": "16.0.9",
             "latest_app_version": "3.0.10.156",
-            "latest_human_version": "3.0.10.156_16.0.7",
-            "last_update": "2023-11-05 15:33:18",
+            "latest_human_version": "3.0.10.156_16.0.9",
+            "last_update": "2023-11-12 20:49:32",
             "name": "sonarr",
             "recommended": false,
             "title": "Sonarr",
@@ -97,8 +97,8 @@
                 "https://github.com/Sonarr/Sonarr"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/sonarr.png"
-        },        
-       "radarr": {
+        },
+        "radarr": {
             "app_readme": "<p>A fork of Sonarr to work with movies \u00e0 la Couchpotato</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/radarr\">https://truecharts.org/charts/stable/radarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
                 "media"
@@ -108,10 +108,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/radarr",
             "location": "/home/runner/work/catalog/catalog/stable/radarr",
-            "latest_version": "17.0.12",
-            "latest_app_version": "5.0.3.8127",
-            "latest_human_version": "5.0.3.8127_17.0.12",
-            "last_update": "2023-11-05 15:33:18",
+            "latest_version": "17.0.15",
+            "latest_app_version": "5.1.3.8246",
+            "latest_human_version": "5.1.3.8246_17.0.15",
+            "last_update": "2023-11-12 20:49:32",
             "name": "radarr",
             "recommended": false,
             "title": "Radarr",
@@ -129,8 +129,8 @@
                 "https://github.com/Radarr/Radarr"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/radarr.png"
-        },        
-       "prowlarr": {
+        },
+        "prowlarr": {
             "app_readme": "<p>Indexer manager/proxy built on the popular arr net base stack to integrate with your various PVR apps.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/prowlarr\">https://truecharts.org/charts/stable/prowlarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
                 "media"
@@ -140,10 +140,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/prowlarr",
             "location": "/home/runner/work/catalog/catalog/stable/prowlarr",
-            "latest_version": "12.0.21",
-            "latest_app_version": "1.10.1.405",
-            "latest_human_version": "1.10.1.405_12.0.21",
-            "last_update": "2023-11-05 15:33:18",
+            "latest_version": "12.0.24",
+            "latest_app_version": "1.10.2.406",
+            "latest_human_version": "1.10.2.406_12.0.24",
+            "last_update": "2023-11-12 20:49:32",
             "name": "prowlarr",
             "recommended": false,
             "title": "Prowlarr",
@@ -162,8 +162,8 @@
                 "https://github.com/k8s-at-home/container-images"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/prowlarr.png"
-        },        
-       "sabnzbd": {
+        },       
+        "sabnzbd": {
             "app_readme": "<p>Free and easy binary newsreader</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sabnzbd\">https://truecharts.org/charts/stable/sabnzbd</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
                 "media"
@@ -173,10 +173,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/sabnzbd",
             "location": "/home/runner/work/catalog/catalog/stable/sabnzbd",
-            "latest_version": "15.0.11",
+            "latest_version": "15.0.13",
             "latest_app_version": "4.1.0",
-            "latest_human_version": "4.1.0_15.0.11",
-            "last_update": "2023-11-05 15:33:18",
+            "latest_human_version": "4.1.0_15.0.13",
+            "last_update": "2023-11-12 20:49:32",
             "name": "sabnzbd",
             "recommended": false,
             "title": "Sabnzbd",
@@ -194,9 +194,7 @@
                 "https://sabnzbd.org/"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/sabnzbd.png"
-        }
-    },
-    
+        }, 
     "stable": {
             
       "rtorrent-rutorrent": {
