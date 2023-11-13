@@ -1,0 +1,25 @@
+image:
+  repository: linuxserver/sabnzbd
+  pullPolicy: IfNotPresent
+  tag: latest
+service:
+  main:
+    ports:
+      main:
+        port: 10097
+        targetPort: 8080
+persistence:
+  config:
+    enabled: true
+    mountPath: "/config"
+portal:
+  open:
+    enabled: true
+
+workload:
+  main:
+    podSpec:
+      containers:
+        main:
+          env:
+            SABNZBD__HOST_WHITELIST_ENTRIES: ""
