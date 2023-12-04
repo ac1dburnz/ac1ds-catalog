@@ -48,7 +48,7 @@
             "location": "/home/runner/work/catalog/catalog/stable/sonarr",
             "latest_version": "16.0.13",
             "latest_app_version": "3.0.10.156",
-            "latest_human_version": "3.0.10.156_16.0.12",
+            "latest_human_version": "3.0.10.156_16.0.13",
             "last_update": "2023-11-18 21:20:02",
             "name": "sonarr",
             "recommended": false,
