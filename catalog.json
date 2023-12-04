@@ -45,9 +45,9 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/sonarr",
             "location": "/home/runner/work/catalog/catalog/stable/sonarr",
-            "latest_version": "16.0.12",
+            "latest_version": "16.0.13",
             "latest_app_version": "3.0.10.156",
-            "latest_human_version": "3.0.10.156_16.0.12",
+            "latest_human_version": "3.0.10.156_16.0.13",
             "last_update": "2023-11-18 21:20:02",
             "name": "sonarr",
             "recommended": false,
@@ -109,26 +109,27 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/prowlarr",
             "location": "/home/runner/work/catalog/catalog/stable/prowlarr",
-            "latest_version": "12.0.27",
-            "latest_app_version": "1.10.2.406",
-            "latest_human_version": "1.10.2.406_12.0.27",
-            "last_update": "2023-11-18 21:20:02",
+            "latest_version": "12.0.30",
+            "latest_app_version": "1.10.5.4116",
+            "latest_human_version": "1.10.5.4116_12.0.30",
+            "last_update": "2023-12-03 22:45:18",
             "name": "prowlarr",
             "recommended": false,
             "title": "Prowlarr",
             "maintainers": [
                 {
-                    "email": "info@truecharts.org",
                     "name": "TrueCharts",
+                    "email": "info@truecharts.org",
                     "url": "https://truecharts.org"
                 }
             ],
             "tags": [],
             "screenshots": [],
             "sources": [
-                "https://github.com/truecharts/charts/tree/master/charts/stable/prowlarr",
+                "https://ghcr.io/onedr0p/prowlarr-develop",
+                "https://github.com/k8s-at-home/container-images",
                 "https://github.com/Prowlarr/Prowlarr",
-                "https://github.com/k8s-at-home/container-images"
+                "https://github.com/truecharts/charts/tree/master/charts/stable/prowlarr"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/prowlarr.png"
         },       
