@@ -103,18 +103,27 @@ questions:
 
 
                                 - variable: env
-                                  group: "App Configuration"
-                                  label: "Image Environment"
+                                  group: App Configuration
+                                  label: Image Environment
                                   schema:
                                     additional_attrs: true
                                     type: dict
                                     attrs:
-                                      - variable: SABNZBD__HOST_WHITELIST_ENTRIES
-                                        label: "HostName Whitelist"
-                                        description: "If you use a reverse proxy, you might need to enter your hostname's here (comma seperated)"
+                                      - variable: RADARR__AUTHENTICATION_METHOD
+                                        label: Auth Method
+                                        description: Sets the auth method.
                                         schema:
                                           type: string
                                           default: ""
+                                          enum:
+                                            - value: ""
+                                              description: In-App Setting
+                                            - value: External
+                                              description: External/None
+                                            - value: Basic
+                                              description: Basic
+                                            - value: Forms
+                                              description: Forms
                                 - variable: envList
                                   label: Extra Environment Variables
                                   description: "Please be aware that some variables are set in the background, adding duplicates here might cause issues or prevent the app from starting..."
@@ -286,17 +295,17 @@ questions:
                   type: dict
                   attrs:
                     - variable: main
-                      label: "Main Service Port Configuration"
+                      label: Main Service Port Configuration
                       schema:
                         additional_attrs: true
                         type: dict
                         attrs:
                           - variable: port
-                            label: "Port"
-                            description: "This port exposes the container port on the service"
+                            label: Port
+                            description: This port exposes the container port on the service
                             schema:
                               type: int
-                              default: 10097
+                              default: 7878
                               required: true
   - variable: serviceexpert
     group: Networking and Services
@@ -527,8 +536,8 @@ questions:
       type: dict
       attrs:
         - variable: config
-          label: "App Config Storage"
-          description: "Stores the Application Configuration."
+          label: App Config Storage
+          description: Stores the Application Configuration.
           schema:
             additional_attrs: true
             type: dict
@@ -941,7 +950,7 @@ questions:
       type: dict
       attrs:
         - variable: main
-          label: "Main Ingress"
+          label: Main Ingress
           schema:
             additional_attrs: true
             type: dict
@@ -1473,6 +1482,41 @@ questions:
                   type: string
                   default: workaround
                   hidden: true
+  - variable: metrics
+    group: Metrics
+    label: Prometheus Metrics
+    schema:
+      additional_attrs: true
+      type: dict
+      attrs:
+        - variable: main
+          label: Main Metrics
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: enabled
+                label: Enabled
+                description: Enable Prometheus Metrics
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: prometheusRule
+                      label: PrometheusRule
+                      description: Enable and configure Prometheus Rules for the App.
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: enabled
+                            label: Enabled
+                            description: Enable Prometheus Metrics
+                            schema:
+                              type: boolean
+                              default: false
+                          # TODO: Rule List section
 #  - variable: horizontalPodAutoscaler
 #    group: Advanced
 #    label: (Advanced) Horizontal Pod Autoscaler

@@ -100,21 +100,6 @@ questions:
                               additional_attrs: true
                               type: dict
                               attrs:
-
-
-                                - variable: env
-                                  group: "App Configuration"
-                                  label: "Image Environment"
-                                  schema:
-                                    additional_attrs: true
-                                    type: dict
-                                    attrs:
-                                      - variable: SABNZBD__HOST_WHITELIST_ENTRIES
-                                        label: "HostName Whitelist"
-                                        description: "If you use a reverse proxy, you might need to enter your hostname's here (comma seperated)"
-                                        schema:
-                                          type: string
-                                          default: ""
                                 - variable: envList
                                   label: Extra Environment Variables
                                   description: "Please be aware that some variables are set in the background, adding duplicates here might cause issues or prevent the app from starting..."
@@ -164,7 +149,6 @@ questions:
                                               label: Param
                                               schema:
                                                 type: string
-
   - variable: TZ
     label: Timezone
     group: "General Settings"
@@ -296,7 +280,257 @@ questions:
                             description: "This port exposes the container port on the service"
                             schema:
                               type: int
-                              default: 10097
+                              default: 8080
+                              required: true
+        - variable: rtorrent
+          label: "Torrent Service"
+          description: "Torrent service"
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: enabled
+                label: Enable the Service
+                schema:
+                  type: boolean
+                  default: true
+                  hidden: true
+              - variable: type
+                label: Service Type
+                description: "ClusterIP's are only internally available and Loadbalancer exposes the service using the system loadbalancer"
+                schema:
+                  type: string
+                  default: LoadBalancer
+                  enum:
+                    - value: LoadBalancer
+                      description: LoadBalancer (Expose Ports)
+                    - value: ClusterIP
+                      description: ClusterIP (Do Not Expose Ports)
+              - variable: loadBalancerIP
+                label: LoadBalancer IP
+                description: "MetalLB Only: Selects the Loadbalancer IP to expose on. Required when using PortalButton with MetalLB"
+                schema:
+                  show_if: [["type", "=", "LoadBalancer"]]
+                  type: string
+                  default: ""
+              - variable: ports
+                label: "Service's Port(s) Configuration"
+                schema:
+                  additional_attrs: true
+                  type: dict
+                  attrs:
+                    - variable: rtorrent
+                      label: "rTorrent Service Port Configuration"
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: port
+                            label: "Port"
+                            description: "This port exposes the container port on the service"
+                            schema:
+                              type: int
+                              default: 33942
+                              required: true
+        - variable: xmlrpc
+          label: "XMLRPC Service"
+          description: "XMLRPC service"
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: enabled
+                label: Enable the Service
+                schema:
+                  type: boolean
+                  default: true
+                  hidden: true
+              - variable: type
+                label: Service Type
+                description: "ClusterIP's are only internally available and Loadbalancer exposes the service using the system loadbalancer"
+                schema:
+                  type: string
+                  default: LoadBalancer
+                  enum:
+                    - value: LoadBalancer
+                      description: LoadBalancer (Expose Ports)
+                    - value: ClusterIP
+                      description: ClusterIP (Do Not Expose Ports)
+              - variable: loadBalancerIP
+                label: LoadBalancer IP
+                description: "MetalLB Only: Selects the Loadbalancer IP to expose on. Required when using PortalButton with MetalLB"
+                schema:
+                  show_if: [["type", "=", "LoadBalancer"]]
+                  type: string
+                  default: ""
+              - variable: ports
+                label: "Service's Port(s) Configuration"
+                schema:
+                  additional_attrs: true
+                  type: dict
+                  attrs:
+                    - variable: xmlrpc
+                      label: XMLRPC Service Port Configuration"
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: port
+                            label: "Port"
+                            description: "This port exposes the container port on the service"
+                            schema:
+                              type: int
+                              default: 8000
+                              required: true
+        - variable: dht
+          label: "DHT Service"
+          description: "DHT service"
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: enabled
+                label: Enable the Service
+                schema:
+                  type: boolean
+                  default: true
+                  hidden: true
+              - variable: type
+                label: Service Type
+                description: "ClusterIP's are only internally available and Loadbalancer exposes the service using the system loadbalancer"
+                schema:
+                  type: string
+                  default: LoadBalancer
+                  enum:
+                    - value: LoadBalancer
+                      description: LoadBalancer (Expose Ports)
+                    - value: ClusterIP
+                      description: ClusterIP (Do Not Expose Ports)
+              - variable: loadBalancerIP
+                label: LoadBalancer IP
+                description: "MetalLB Only: Selects the Loadbalancer IP to expose on. Required when using PortalButton with MetalLB"
+                schema:
+                  show_if: [["type", "=", "LoadBalancer"]]
+                  type: string
+                  default: ""
+              - variable: ports
+                label: "Service's Port(s) Configuration"
+                schema:
+                  additional_attrs: true
+                  type: dict
+                  attrs:
+                    - variable: dht
+                      label: DHT Service Port Configuration"
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: port
+                            label: "Port"
+                            description: "This port exposes the container port on the service"
+                            schema:
+                              type: int
+                              default: 6881
+                              required: true
+        - variable: webdav
+          label: "WEBDAV Service"
+          description: "WEBDAV service"
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: enabled
+                label: Enable the Service
+                schema:
+                  type: boolean
+                  default: true
+                  hidden: true
+              - variable: type
+                label: Service Type
+                description: "ClusterIP's are only internally available and Loadbalancer exposes the service using the system loadbalancer"
+                schema:
+                  type: string
+                  default: LoadBalancer
+                  enum:
+                    - value: LoadBalancer
+                      description: LoadBalancer (Expose Ports)
+                    - value: ClusterIP
+                      description: ClusterIP (Do Not Expose Ports)
+              - variable: loadBalancerIP
+                label: LoadBalancer IP
+                description: "MetalLB Only: Selects the Loadbalancer IP to expose on. Required when using PortalButton with MetalLB"
+                schema:
+                  show_if: [["type", "=", "LoadBalancer"]]
+                  type: string
+                  default: ""
+              - variable: ports
+                label: "Service's Port(s) Configuration"
+                schema:
+                  additional_attrs: true
+                  type: dict
+                  attrs:
+                    - variable: webdav
+                      label: "WEBDAV Service Port Configuration"
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: port
+                            label: "Port"
+                            description: "This port exposes the container port on the service"
+                            schema:
+                              type: int
+                              default: 9000
+                              required: true
+        - variable: rtinc
+          label: "RTINC Service"
+          description: "RTINC service"
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: enabled
+                label: Enable the Service
+                schema:
+                  type: boolean
+                  default: true
+                  hidden: true
+              - variable: type
+                label: Service Type
+                description: "ClusterIP's are only internally available and Loadbalancer exposes the service using the system loadbalancer"
+                schema:
+                  type: string
+                  default: LoadBalancer
+                  enum:
+                    - value: LoadBalancer
+                      description: LoadBalancer (Expose Ports)
+                    - value: ClusterIP
+                      description: ClusterIP (Do Not Expose Ports)
+              - variable: loadBalancerIP
+                label: LoadBalancer IP
+                description: "MetalLB Only: Selects the Loadbalancer IP to expose on. Required when using PortalButton with MetalLB"
+                schema:
+                  show_if: [["type", "=", "LoadBalancer"]]
+                  type: string
+                  default: ""
+              - variable: ports
+                label: "Service's Port(s) Configuration"
+                schema:
+                  additional_attrs: true
+                  type: dict
+                  attrs:
+                    - variable: rtinc
+                      label: "RTINC Service Port Configuration"
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: port
+                            label: "Port"
+                            description: "This port exposes the container port on the service"
+                            schema:
+                              type: int
+                              default: 50000
                               required: true
   - variable: serviceexpert
     group: Networking and Services
@@ -526,9 +760,397 @@ questions:
       additional_attrs: true
       type: dict
       attrs:
-        - variable: config
-          label: "App Config Storage"
-          description: "Stores the Application Configuration."
+        - variable: data
+          label: "App Data Storage"
+          description: "Stores the Application Data."
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: type
+                label: Type of Storage
+                description: Sets the persistence type, Anything other than PVC could break rollback!
+                schema:
+                  type: string
+                  default: pvc
+                  enum:
+                    - value: pvc
+                      description: PVC
+                    - value: hostPath
+                      description: Host Path
+                    - value: emptyDir
+                      description: emptyDir
+                    - value: nfs
+                      description: NFS Share
+              - variable: server
+                label: NFS Server
+                schema:
+                  show_if: [["type", "=", "nfs"]]
+                  type: string
+                  default: ""
+              - variable: path
+                label: Path on NFS Server
+                schema:
+                  show_if: [["type", "=", "nfs"]]
+                  type: string
+                  default: ""
+              - variable: autoPermissions
+                label: Automatic Permissions Configuration
+                description: Automatically set permissions
+                schema:
+                  show_if: [["type", "!=", "pvc"]]
+                  type: dict
+                  additional_attrs: true
+                  attrs:
+                    - variable: enabled
+                      label: enabled
+                      schema:
+                        type: boolean
+                        default: false
+                        show_subquestions_if: true
+                        subquestions:
+                          - variable: chown
+                            label: Run CHOWN
+                            description: |
+                              It will run CHOWN on the path with the given fsGroup
+                            schema:
+                              type: boolean
+                              default: false
+                          - variable: chmod
+                            label: Run CHMOD
+                            description: |
+                              It will run CHMOD on the path with the given value</br>
+                              Format should be 3 digits, e.g. 770
+                            schema:
+                              type: string
+                              valid_chars: '[0-9]{3}'
+                              default: ""
+                          - variable: recursive
+                            label: Recursive
+                            description: |
+                              It will run CHOWN and CHMOD recursively
+                            schema:
+                              type: boolean
+                              default: false
+              - variable: readOnly
+                label: Read Only
+                schema:
+                  type: boolean
+                  default: false
+              - variable: hostPath
+                label: Host Path
+                description: Path inside the container the storage is mounted
+                schema:
+                  show_if: [["type", "=", "hostPath"]]
+                  type: hostpath
+              - variable: medium
+                label: EmptyDir Medium
+                schema:
+                  show_if: [["type", "=", "emptyDir"]]
+                  type: string
+                  default: ""
+                  enum:
+                    - value: ""
+                      description: Default
+                    - value: Memory
+                      description: Memory
+              - variable: size
+                label: Size quotum of Storage (Do NOT REDUCE after installation)
+                description: This value can ONLY be INCREASED after the installation
+                schema:
+                  show_if: [["type", "=", "pvc"]]
+                  type: string
+                  default: 256Gi
+              - variable: storageClass
+                label: 'storageClass (Advanced)'
+                description: 'sets the storageClass to something other than iX default. Only for advanced usecases!'
+                schema:
+                  show_if: [["type", "=", "pvc"]]
+                  type: string
+                  default: ""
+              - variable: static
+                label: 'Static Fixed PVC Bindings (Experimental)'
+                description: Link a PVC to a specific storage location
+                schema:
+                  show_if: [["type", "=", "pvc"]]
+                  type: dict
+                  additional_attrs: true
+                  attrs:
+                    - variable: mode
+                      label: mode
+                      description: |
+                        disabled: use normal dynamic PVCs
+                        smb: connect to an SMB share
+                        nfs: connect to an NFS share
+                      schema:
+                        type: string
+                        default: "disabled"
+                        enum:
+                          - value: "disabled"
+                            description: disabled
+                          - value: smb
+                            description: smb
+                          - value: nfs
+                            description: nfs
+                    - variable: server
+                      label: Server
+                      description: server to connect to
+                      schema:
+                        type: string
+                        show_if: [["mode", "!=", "disabled"]]
+                        default: "myserver"
+                    - variable: share
+                      label: Share
+                      description: share to connect to
+                      schema:
+                        type: string
+                        show_if: [["mode", "!=", "disabled"]]
+                        default: "/myshare"
+                    - variable: user
+                      label: User
+                      description: connecting user
+                      schema:
+                        type: string
+                        show_if: [["mode", "=", "smb"]]
+                        default: "myuser"
+                    - variable: domain
+                      label: Domain
+                      description: user domain
+                      schema:
+                        type: string
+                        show_if: [["mode", "=", "smb"]]
+                        default: ""
+                    - variable: password
+                      label: Password
+                      description: connecting password
+                      schema:
+                        type: string
+                        show_if: [["mode", "=", "smb"]]
+                        default: ""
+              - variable: volumeSnapshots
+                label: 'Volume Snapshots (Experimental)'
+                description: Add an entry to the list to force creation of a volumeSnapshot of this PVC
+                schema:
+                  show_if: [["type", "=", "pvc"]]
+                  type: list
+                  default: []
+                  items:
+                    - variable: volumeSnapshotEntry
+                      label: Custom volumeSnapshot
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: name
+                            label: Name
+                            description: 'WARNING: renaming this, means deletion of the snapshot with the old name!'
+                            schema:
+                              type: string
+                              default: "mysnapshot"
+                              required: true
+                          - variable: volumeSnapshotClassName
+                            label: 'volumeSnapshot Class Name (Advanced)'
+                            description: For use with PVCs using a non-default storageClass
+                            schema:
+                              type: string
+                              default: ""
+        - variable: downloads
+          label: "App Downloads Storage"
+          description: "Stores the Application Downloads."
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: type
+                label: Type of Storage
+                description: Sets the persistence type, Anything other than PVC could break rollback!
+                schema:
+                  type: string
+                  default: pvc
+                  enum:
+                    - value: pvc
+                      description: PVC
+                    - value: hostPath
+                      description: Host Path
+                    - value: emptyDir
+                      description: emptyDir
+                    - value: nfs
+                      description: NFS Share
+              - variable: server
+                label: NFS Server
+                schema:
+                  show_if: [["type", "=", "nfs"]]
+                  type: string
+                  default: ""
+              - variable: path
+                label: Path on NFS Server
+                schema:
+                  show_if: [["type", "=", "nfs"]]
+                  type: string
+                  default: ""
+              - variable: autoPermissions
+                label: Automatic Permissions Configuration
+                description: Automatically set permissions
+                schema:
+                  show_if: [["type", "!=", "pvc"]]
+                  type: dict
+                  additional_attrs: true
+                  attrs:
+                    - variable: enabled
+                      label: enabled
+                      schema:
+                        type: boolean
+                        default: false
+                        show_subquestions_if: true
+                        subquestions:
+                          - variable: chown
+                            label: Run CHOWN
+                            description: |
+                              It will run CHOWN on the path with the given fsGroup
+                            schema:
+                              type: boolean
+                              default: false
+                          - variable: chmod
+                            label: Run CHMOD
+                            description: |
+                              It will run CHMOD on the path with the given value</br>
+                              Format should be 3 digits, e.g. 770
+                            schema:
+                              type: string
+                              valid_chars: '[0-9]{3}'
+                              default: ""
+                          - variable: recursive
+                            label: Recursive
+                            description: |
+                              It will run CHOWN and CHMOD recursively
+                            schema:
+                              type: boolean
+                              default: false
+              - variable: readOnly
+                label: Read Only
+                schema:
+                  type: boolean
+                  default: false
+              - variable: hostPath
+                label: Host Path
+                description: Path inside the container the storage is mounted
+                schema:
+                  show_if: [["type", "=", "hostPath"]]
+                  type: hostpath
+              - variable: medium
+                label: EmptyDir Medium
+                schema:
+                  show_if: [["type", "=", "emptyDir"]]
+                  type: string
+                  default: ""
+                  enum:
+                    - value: ""
+                      description: Default
+                    - value: Memory
+                      description: Memory
+              - variable: size
+                label: Size quotum of Storage (Do NOT REDUCE after installation)
+                description: This value can ONLY be INCREASED after the installation
+                schema:
+                  show_if: [["type", "=", "pvc"]]
+                  type: string
+                  default: 256Gi
+              - variable: storageClass
+                label: 'storageClass (Advanced)'
+                description: 'sets the storageClass to something other than iX default. Only for advanced usecases!'
+                schema:
+                  show_if: [["type", "=", "pvc"]]
+                  type: string
+                  default: ""
+              - variable: static
+                label: 'Static Fixed PVC Bindings (Experimental)'
+                description: Link a PVC to a specific storage location
+                schema:
+                  show_if: [["type", "=", "pvc"]]
+                  type: dict
+                  additional_attrs: true
+                  attrs:
+                    - variable: mode
+                      label: mode
+                      description: |
+                        disabled: use normal dynamic PVCs
+                        smb: connect to an SMB share
+                        nfs: connect to an NFS share
+                      schema:
+                        type: string
+                        default: "disabled"
+                        enum:
+                          - value: "disabled"
+                            description: disabled
+                          - value: smb
+                            description: smb
+                          - value: nfs
+                            description: nfs
+                    - variable: server
+                      label: Server
+                      description: server to connect to
+                      schema:
+                        type: string
+                        show_if: [["mode", "!=", "disabled"]]
+                        default: "myserver"
+                    - variable: share
+                      label: Share
+                      description: share to connect to
+                      schema:
+                        type: string
+                        show_if: [["mode", "!=", "disabled"]]
+                        default: "/myshare"
+                    - variable: user
+                      label: User
+                      description: connecting user
+                      schema:
+                        type: string
+                        show_if: [["mode", "=", "smb"]]
+                        default: "myuser"
+                    - variable: domain
+                      label: Domain
+                      description: user domain
+                      schema:
+                        type: string
+                        show_if: [["mode", "=", "smb"]]
+                        default: ""
+                    - variable: password
+                      label: Password
+                      description: connecting password
+                      schema:
+                        type: string
+                        show_if: [["mode", "=", "smb"]]
+                        default: ""
+              - variable: volumeSnapshots
+                label: 'Volume Snapshots (Experimental)'
+                description: Add an entry to the list to force creation of a volumeSnapshot of this PVC
+                schema:
+                  show_if: [["type", "=", "pvc"]]
+                  type: list
+                  default: []
+                  items:
+                    - variable: volumeSnapshotEntry
+                      label: Custom volumeSnapshot
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: name
+                            label: Name
+                            description: 'WARNING: renaming this, means deletion of the snapshot with the old name!'
+                            schema:
+                              type: string
+                              default: "mysnapshot"
+                              required: true
+                          - variable: volumeSnapshotClassName
+                            label: 'volumeSnapshot Class Name (Advanced)'
+                            description: For use with PVCs using a non-default storageClass
+                            schema:
+                              type: string
+                              default: ""
+        - variable: passwd
+          label: "App Passwd Storage"
+          description: "Stores the Application Passwd."
           schema:
             additional_attrs: true
             type: dict
@@ -1281,13 +1903,13 @@ questions:
                 description: "The UserID of the user running the application"
                 schema:
                   type: int
-                  default: 568
+                  default: 0
               - variable: runAsGroup
                 label: "runAsGroup"
-                description: "The groupID this App of the user running the application"
+                description: "The groupID of the user running the application"
                 schema:
                   type: int
-                  default: 568
+                  default: 0
               # Settings from questions.yaml get appended here on a per-app basis
               - variable: PUID
                 label: Process User ID - PUID
@@ -1966,6 +2588,157 @@ questions:
                                         schema:
                                           type: int
                                           default: 36107
+                    - variable: ingress
+                      label:  "Ingress"
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: enabled
+                            label: Enable Ingress
+                            schema:
+                              type: boolean
+                              default: false
+                              show_subquestions_if: true
+                              subquestions:
+                                - variable: hosts
+                                  label: Hosts
+                                  schema:
+                                    type: list
+                                    default: []
+                                    items:
+                                      - variable: hostEntry
+                                        label: Host
+                                        schema:
+                                          additional_attrs: true
+                                          type: dict
+                                          attrs:
+                                            - variable: host
+                                              label: HostName
+                                              schema:
+                                                type: string
+                                                default: ""
+                                                required: true
+                                            - variable: paths
+                                              label: Paths
+                                              schema:
+                                                type: list
+                                                default: [{path: "/", pathType: "Prefix"}]
+                                                items:
+                                                  - variable: pathEntry
+                                                    label: Host
+                                                    schema:
+                                                      additional_attrs: true
+                                                      type: dict
+                                                      attrs:
+                                                        - variable: path
+                                                          label: Path
+                                                          schema:
+                                                            type: string
+                                                            required: true
+                                                            default: "/"
+                                                        - variable: pathType
+                                                          label: Path Type
+                                                          schema:
+                                                            type: string
+                                                            required: true
+                                                            default: Prefix
+                                - variable: certificateIssuer
+                                  label: Cert-Manager clusterIssuer
+                                  description: 'add the name of your cert-manager clusterIssuer here for automatic tls certificates. Cannot be used combined with tls option below'
+                                  schema:
+                                    type: string
+                                    default: ""
+                                - variable: middlewares
+                                  label: Traefik Middlewares
+                                  description: Add previously created Traefik Middlewares to this Ingress
+                                  schema:
+                                    type: list
+                                    default: []
+                                    items:
+                                      - variable: name
+                                        label: Name
+                                        schema:
+                                          type: string
+                                          default: ""
+                                          required: true
+                                - variable: advanced
+                                  label: Show Advanced Settings
+                                  description: Advanced settings are not covered by TrueCharts Support
+                                  schema:
+                                    type: boolean
+                                    default: false
+                                - variable: entrypoint
+                                  label: (Advanced) Traefik Entrypoint
+                                  description: Entrypoint used by Traefik when using Traefik as Ingress Provider
+                                  schema:
+                                    type: string
+                                    default: websecure
+                                    show_if: [["advanced", "=", true]]
+                                    required: true
+                                - variable: allowCors
+                                  label: "Allow Cross Origin Requests"
+                                  schema:
+                                    type: boolean
+                                    show_if: [["advanced", "=", true]]
+                                    default: false
+                                - variable: ingressClassName
+                                  label: (Advanced/Optional) IngressClass Name
+                                  schema:
+                                    type: string
+                                    show_if: [["advanced", "=", true]]
+                                    default: ""
+                                - variable: tls
+                                  label: TLS-Settings
+                                  schema:
+                                    type: list
+                                    show_if: [["advanced", "=", true]]
+                                    default: []
+                                    items:
+                                      - variable: tlsEntry
+                                        label: Host
+                                        schema:
+                                          additional_attrs: true
+                                          type: dict
+                                          attrs:
+                                            - variable: hosts
+                                              label: Certificate Hosts
+                                              schema:
+                                                type: list
+                                                default: []
+                                                items:
+                                                  - variable: host
+                                                    label: Host
+                                                    schema:
+                                                      type: string
+                                                      default: ""
+                                                      required: true
+                                            - variable: certificateIssuer
+                                              label: Use Cert-Manager clusterIssuer
+                                              description: 'add the name of your cert-manager clusterIssuer here for automatic tls certificates.'
+                                              schema:
+                                                type: string
+                                                default: ""
+                                            - variable: clusterCertificate
+                                              label:  'Cluster Certificate (Advanced)'
+                                              description: 'Add the name of your cluster-wide certificate, that you set up in the ClusterIssuer chart.'
+                                              schema:
+                                                type: string
+                                                show_if: [["certificateIssuer", "=", ""]]
+                                                default: ""
+                                            - variable: secretName
+                                              label: 'Use Custom Certificate Secret (Advanced)'
+                                              schema:
+                                                show_if: [["certificateIssuer", "=", ""]]
+                                                type: string
+                                                default: ""
+                                            - variable: scaleCert
+                                              label: 'Use TrueNAS SCALE Certificate (Deprecated)'
+                                              schema:
+                                                show_if: [["certificateIssuer", "=", ""]]
+                                                type: int
+                                                $ref:
+                                                  - "definitions/certificate"
                     - variable: envList
                       label: Codeserver Environment Variables
                       schema:
