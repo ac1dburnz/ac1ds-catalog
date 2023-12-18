@@ -139,7 +139,7 @@
                     ]
                 }
             },
-            "questions": [
+           "questions": [
                 {
                     "variable": "global",
                     "group": "General Settings",
@@ -323,6 +323,181 @@
                                                                                                         "label": "Param",
                                                                                                         "schema": {
                                                                                                             "type": "string"
+                                                                                                        }
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "variable": "probes",
+                                                                                "label": "Healthcheck Probes",
+                                                                                "schema": {
+                                                                                    "additional_attrs": true,
+                                                                                    "type": "dict",
+                                                                                    "attrs": [
+                                                                                        {
+                                                                                            "variable": "liveness",
+                                                                                            "label": "Liveness",
+                                                                                            "description": "Liveness Probe",
+                                                                                            "schema": {
+                                                                                                "additional_attrs": true,
+                                                                                                "type": "dict",
+                                                                                                "attrs": [
+                                                                                                    {
+                                                                                                        "variable": "enabled",
+                                                                                                        "label": "Enable Probe",
+                                                                                                        "description": "Enables the probe",
+                                                                                                        "schema": {
+                                                                                                            "type": "boolean",
+                                                                                                            "default": true,
+                                                                                                            "show_subquestions_if": true,
+                                                                                                            "subquestions": [
+                                                                                                                {
+                                                                                                                    "variable": "type",
+                                                                                                                    "label": "Probe Type",
+                                                                                                                    "description": "Probe Type",
+                                                                                                                    "schema": {
+                                                                                                                        "type": "string",
+                                                                                                                        "default": "tcp",
+                                                                                                                        "enum": [
+                                                                                                                            {
+                                                                                                                                "value": "tcp",
+                                                                                                                                "description": "tcp"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "value": "http",
+                                                                                                                                "description": "http"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "value": "https",
+                                                                                                                                "description": "https"
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "variable": "path",
+                                                                                                                    "label": "Probe Path",
+                                                                                                                    "description": "Probe Path",
+                                                                                                                    "schema": {
+                                                                                                                        "type": "string",
+                                                                                                                        "default": "/"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "variable": "readiness",
+                                                                                            "label": "Readiness",
+                                                                                            "description": "Readiness Probe",
+                                                                                            "schema": {
+                                                                                                "additional_attrs": true,
+                                                                                                "type": "dict",
+                                                                                                "attrs": [
+                                                                                                    {
+                                                                                                        "variable": "enabled",
+                                                                                                        "label": "Enable Probe",
+                                                                                                        "description": "Enables the probe",
+                                                                                                        "schema": {
+                                                                                                            "type": "boolean",
+                                                                                                            "default": true,
+                                                                                                            "show_subquestions_if": true,
+                                                                                                            "subquestions": [
+                                                                                                                {
+                                                                                                                    "variable": "type",
+                                                                                                                    "label": "Probe Type",
+                                                                                                                    "description": "Probe Type",
+                                                                                                                    "schema": {
+                                                                                                                        "type": "string",
+                                                                                                                        "default": "tcp",
+                                                                                                                        "enum": [
+                                                                                                                            {
+                                                                                                                                "value": "tcp",
+                                                                                                                                "description": "tcp"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "value": "http",
+                                                                                                                                "description": "http"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "value": "https",
+                                                                                                                                "description": "https"
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "variable": "path",
+                                                                                                                    "label": "Probe Path",
+                                                                                                                    "description": "Probe Path",
+                                                                                                                    "schema": {
+                                                                                                                        "type": "string",
+                                                                                                                        "default": "/"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    }
+                                                                                                ]
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "variable": "startup",
+                                                                                            "label": "Startup",
+                                                                                            "description": "Startup Probe",
+                                                                                            "schema": {
+                                                                                                "additional_attrs": true,
+                                                                                                "type": "dict",
+                                                                                                "attrs": [
+                                                                                                    {
+                                                                                                        "variable": "enabled",
+                                                                                                        "label": "Enable Probe",
+                                                                                                        "description": "Enables the probe",
+                                                                                                        "schema": {
+                                                                                                            "type": "boolean",
+                                                                                                            "default": true,
+                                                                                                            "show_subquestions_if": true,
+                                                                                                            "subquestions": [
+                                                                                                                {
+                                                                                                                    "variable": "type",
+                                                                                                                    "label": "Probe Type",
+                                                                                                                    "description": "Probe Type",
+                                                                                                                    "schema": {
+                                                                                                                        "type": "string",
+                                                                                                                        "default": "tcp",
+                                                                                                                        "enum": [
+                                                                                                                            {
+                                                                                                                                "value": "tcp",
+                                                                                                                                "description": "tcp"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "value": "http",
+                                                                                                                                "description": "http"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "value": "https",
+                                                                                                                                "description": "https"
+                                                                                                                            }
+                                                                                                                        ]
+                                                                                                                    }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "variable": "path",
+                                                                                                                    "label": "Probe Path",
+                                                                                                                    "description": "Probe Path",
+                                                                                                                    "schema": {
+                                                                                                                        "type": "string",
+                                                                                                                        "default": "/"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            ]
                                                                                                         }
                                                                                                     }
                                                                                                 ]
@@ -520,7 +695,7 @@
                                                                                         }
                                                                                     ]
                                                                                 }
-                                                                            },
+                                                                            }
                 {
                     "variable": "TZ",
                     "label": "Timezone",
@@ -651,63 +826,6 @@
                                                         }
                                                     }
                                                 ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "variable": "imagePullSecretList",
-                    "group": "General Settings",
-                    "label": "Image Pull Secrets",
-                    "schema": {
-                        "type": "list",
-                        "default": [],
-                        "items": [
-                            {
-                                "variable": "pullsecretentry",
-                                "label": "Pull Secret",
-                                "schema": {
-                                    "type": "dict",
-                                    "additional_attrs": true,
-                                    "attrs": [
-                                        {
-                                            "variable": "registry",
-                                            "label": "Registry",
-                                            "schema": {
-                                                "type": "string",
-                                                "required": true,
-                                                "default": "https://index.docker.io/v1/"
-                                            }
-                                        },
-                                        {
-                                            "variable": "username",
-                                            "label": "Username",
-                                            "schema": {
-                                                "type": "string",
-                                                "required": true,
-                                                "default": ""
-                                            }
-                                        },
-                                        {
-                                            "variable": "password",
-                                            "label": "Password",
-                                            "schema": {
-                                                "type": "string",
-                                                "required": true,
-                                                "default": ""
-                                            }
-                                        },
-                                        {
-                                            "variable": "email",
-                                            "label": "Email",
-                                            "schema": {
-                                                "type": "string",
-                                                "required": true,
-                                                "default": ""
                                             }
                                         }
                                     ]
@@ -1228,10 +1346,6 @@
                                                     {
                                                         "value": "nfs",
                                                         "description": "NFS Share"
-                                                    },
-                                                    {
-                                                        "value": "iscsi",
-                                                        "description": "iSCSI Share"
                                                     }
                                                 ]
                                             }
@@ -1264,133 +1378,6 @@
                                                 ],
                                                 "type": "string",
                                                 "default": ""
-                                            }
-                                        },
-                                        {
-                                            "variable": "iscsi",
-                                            "label": "iSCSI Options",
-                                            "schema": {
-                                                "show_if": [
-                                                    [
-                                                        "type",
-                                                        "=",
-                                                        "iscsi"
-                                                    ]
-                                                ],
-                                                "type": "dict",
-                                                "additional_attrs": true,
-                                                "attrs": [
-                                                    {
-                                                        "variable": "targetPortal",
-                                                        "label": "targetPortal",
-                                                        "schema": {
-                                                            "type": "string",
-                                                            "required": true,
-                                                            "default": ""
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "iqn",
-                                                        "label": "iqn",
-                                                        "schema": {
-                                                            "type": "string",
-                                                            "required": true,
-                                                            "default": ""
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "lun",
-                                                        "label": "lun",
-                                                        "schema": {
-                                                            "type": "int",
-                                                            "default": 0
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "authSession",
-                                                        "label": "authSession",
-                                                        "schema": {
-                                                            "type": "dict",
-                                                            "additional_attrs": true,
-                                                            "attrs": [
-                                                                {
-                                                                    "variable": "username",
-                                                                    "label": "username",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "password",
-                                                                    "label": "password",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "usernameInitiator",
-                                                                    "label": "usernameInitiator",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "passwordInitiator",
-                                                                    "label": "passwordInitiator",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                }
-                                                            ]
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "authDiscovery",
-                                                        "label": "authDiscovery",
-                                                        "schema": {
-                                                            "type": "dict",
-                                                            "additional_attrs": true,
-                                                            "attrs": [
-                                                                {
-                                                                    "variable": "username",
-                                                                    "label": "username",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "password",
-                                                                    "label": "password",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "usernameInitiator",
-                                                                    "label": "usernameInitiator",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "passwordInitiator",
-                                                                    "label": "passwordInitiator",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                }
-                                                            ]
-                                                        }
-                                                    }
-                                                ]
                                             }
                                         },
                                         {
@@ -1783,133 +1770,6 @@
                                                 ],
                                                 "type": "string",
                                                 "default": ""
-                                            }
-                                        },
-                                        {
-                                            "variable": "iscsi",
-                                            "label": "iSCSI Options",
-                                            "schema": {
-                                                "show_if": [
-                                                    [
-                                                        "type",
-                                                        "=",
-                                                        "iscsi"
-                                                    ]
-                                                ],
-                                                "type": "dict",
-                                                "additional_attrs": true,
-                                                "attrs": [
-                                                    {
-                                                        "variable": "targetPortal",
-                                                        "label": "targetPortal",
-                                                        "schema": {
-                                                            "type": "string",
-                                                            "required": true,
-                                                            "default": ""
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "iqn",
-                                                        "label": "iqn",
-                                                        "schema": {
-                                                            "type": "string",
-                                                            "required": true,
-                                                            "default": ""
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "lun",
-                                                        "label": "lun",
-                                                        "schema": {
-                                                            "type": "int",
-                                                            "default": 0
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "authSession",
-                                                        "label": "authSession",
-                                                        "schema": {
-                                                            "type": "dict",
-                                                            "additional_attrs": true,
-                                                            "attrs": [
-                                                                {
-                                                                    "variable": "username",
-                                                                    "label": "username",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "password",
-                                                                    "label": "password",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "usernameInitiator",
-                                                                    "label": "usernameInitiator",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "passwordInitiator",
-                                                                    "label": "passwordInitiator",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                }
-                                                            ]
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "authDiscovery",
-                                                        "label": "authDiscovery",
-                                                        "schema": {
-                                                            "type": "dict",
-                                                            "additional_attrs": true,
-                                                            "attrs": [
-                                                                {
-                                                                    "variable": "username",
-                                                                    "label": "username",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "password",
-                                                                    "label": "password",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "usernameInitiator",
-                                                                    "label": "usernameInitiator",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "passwordInitiator",
-                                                                    "label": "passwordInitiator",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": ""
-                                                                    }
-                                                                }
-                                                            ]
-                                                        }
-                                                    }
-                                                ]
                                             }
                                         },
                                         {
@@ -2358,84 +2218,6 @@
                                                         }
                                                     },
                                                     {
-                                                        "variable": "integration",
-                                                        "label": "Integrations",
-                                                        "description": "Connect ingress with other charts",
-                                                        "schema": {
-                                                            "additional_attrs": true,
-                                                            "type": "dict",
-                                                            "attrs": [
-                                                                {
-                                                                    "variable": "homepage",
-                                                                    "label": "Homepage",
-                                                                    "description": "Connect ingress with Homepage",
-                                                                    "schema": {
-                                                                        "additional_attrs": true,
-                                                                        "type": "dict",
-                                                                        "attrs": [
-                                                                            {
-                                                                                "variable": "enabled",
-                                                                                "label": "enabled",
-                                                                                "schema": {
-                                                                                    "type": "boolean",
-                                                                                    "default": false
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "name",
-                                                                                "label": "Name",
-                                                                                "description": "defaults to chartname",
-                                                                                "schema": {
-                                                                                    "type": "string",
-                                                                                    "default": "",
-                                                                                    "show_if": [
-                                                                                        [
-                                                                                            "enabled",
-                                                                                            "=",
-                                                                                            true
-                                                                                        ]
-                                                                                    ]
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "description",
-                                                                                "label": "Description",
-                                                                                "description": "defaults to chart description",
-                                                                                "schema": {
-                                                                                    "type": "string",
-                                                                                    "default": "",
-                                                                                    "show_if": [
-                                                                                        [
-                                                                                            "enabled",
-                                                                                            "=",
-                                                                                            true
-                                                                                        ]
-                                                                                    ]
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "group",
-                                                                                "label": "Group",
-                                                                                "schema": {
-                                                                                    "type": "string",
-                                                                                    "required": true,
-                                                                                    "default": "default",
-                                                                                    "show_if": [
-                                                                                        [
-                                                                                            "enabled",
-                                                                                            "=",
-                                                                                            true
-                                                                                        ]
-                                                                                    ]
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            ]
-                                                        }
-                                                    },
-                                                    {
                                                         "variable": "advanced",
                                                         "label": "Show Advanced Settings",
                                                         "description": "Advanced settings are not covered by TrueCharts Support",
@@ -2870,84 +2652,6 @@
                                                                             ]
                                                                         ],
                                                                         "default": ""
-                                                                    }
-                                                                }
-                                                            ]
-                                                        }
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "variable": "integration",
-                                            "label": "Integrations",
-                                            "description": "Connect ingress with other charts",
-                                            "schema": {
-                                                "additional_attrs": true,
-                                                "type": "dict",
-                                                "attrs": [
-                                                    {
-                                                        "variable": "homepage",
-                                                        "label": "Homepage",
-                                                        "description": "Connect ingress with Homepage",
-                                                        "schema": {
-                                                            "additional_attrs": true,
-                                                            "type": "dict",
-                                                            "attrs": [
-                                                                {
-                                                                    "variable": "enabled",
-                                                                    "label": "enabled",
-                                                                    "schema": {
-                                                                        "type": "boolean",
-                                                                        "default": false
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "name",
-                                                                    "label": "Name",
-                                                                    "description": "defaults to chartname",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": "",
-                                                                        "show_if": [
-                                                                            [
-                                                                                "enabled",
-                                                                                "=",
-                                                                                true
-                                                                            ]
-                                                                        ]
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "description",
-                                                                    "label": "Description",
-                                                                    "description": "defaults to chart description",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "default": "",
-                                                                        "show_if": [
-                                                                            [
-                                                                                "enabled",
-                                                                                "=",
-                                                                                true
-                                                                            ]
-                                                                        ]
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "variable": "group",
-                                                                    "label": "Group",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "required": true,
-                                                                        "default": "default",
-                                                                        "show_if": [
-                                                                            [
-                                                                                "enabled",
-                                                                                "=",
-                                                                                true
-                                                                            ]
-                                                                        ]
                                                                     }
                                                                 }
                                                             ]
