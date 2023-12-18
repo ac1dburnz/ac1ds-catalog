@@ -346,7 +346,7 @@
                         ]
                     }
                 },
-                                                                                             {
+                {
                                                                                 "variable": "probes",
                                                                                 "label": "Healthcheck Probes",
                                                                                 "schema": {
@@ -520,7 +520,7 @@
                                                                                         }
                                                                                     ]
                                                                                 }
-                                                                            }
+                                                                            },
                 {
                     "variable": "TZ",
                     "label": "Timezone",
