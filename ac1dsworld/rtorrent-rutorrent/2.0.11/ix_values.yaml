@@ -1,7 +1,7 @@
 image:
-  repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
+  repository: ghcr.io/crazy-max/rtorrent-rutorrent
   pullPolicy: IfNotPresent
-  tag: 4.2.9-0.9.8_3-0.13.8_2@sha256:3e9d9150bfed213eb9adc1e4128902608b4d9ef3edb45673b9cdd7c7e9dd9679
+  tag: 4.2.9-0.9.8-0.13.8@sha256:4e0df24d4f168d705c9864dad04e99c1c55c9e987e7bf0b6b0c84efb686ef858
 
 securityContext:
   container:

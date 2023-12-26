@@ -1,7 +1,7 @@
 image:
-  repository: linuxserver/sabnzbd
+  repository: ghcr.io/onedr0p/sabnzbd
   pullPolicy: IfNotPresent
-  tag: latest
+  tag: 4.1.0@sha256:1c1650511f96108e81d677abe8a2e491507caa023fdc5c2bfc99df087634c9f3
 service:
   main:
     ports:
