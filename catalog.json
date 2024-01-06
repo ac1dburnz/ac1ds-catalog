@@ -338,6 +338,39 @@
                 "https://ghcr.io/crazy-max/rtorrent-rutorrent"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/rtorrent-rutorrent.png"
+        },
+        "thelounge": {
+            "app_readme": "<p>The Lounge, modern web IRC client designed for self-hosting</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/thelounge\">https://truecharts.org/charts/stable/thelounge</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+            "categories": [
+                "utilities"
+            ],
+            "description": "The Lounge, modern web IRC client designed for self-hosting",
+            "healthy": true,
+            "healthy_error": null,
+            "home": "https://truecharts.org/charts/stable/thelounge",
+            "location": "/home/runner/work/catalog/catalog/stable/thelounge",
+            "latest_version": "12.1.5",
+            "latest_app_version": "4.4.1",
+            "latest_human_version": "4.4.1_12.1.5",
+            "last_update": "2024-01-04 09:20:31",
+            "name": "thelounge",
+            "recommended": false,
+            "title": "Thelounge",
+            "maintainers": [
+                {
+                    "name": "TrueCharts",
+                    "email": "info@truecharts.org",
+                    "url": "https://truecharts.org"
+                }
+            ],
+            "tags": [],
+            "screenshots": [],
+            "sources": [
+                "https://github.com/thelounge/thelounge",
+                "https://github.com/truecharts/charts/tree/master/charts/stable/thelounge",
+                "https://hub.docker.com/r/thelounge/thelounge"
+            ],
+            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/thelounge.png"
         }
         }
 }
