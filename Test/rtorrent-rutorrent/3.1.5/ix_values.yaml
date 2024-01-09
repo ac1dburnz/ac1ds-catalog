@@ -1,8 +1,9 @@
 image:
-  repository: ghcr.io/ac1dburnz/rtorrent-rutorrent
+  repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
   pullPolicy: IfNotPresent
-  tag: 4.2.9-0.9.8_5-0.13.8_4@sha256:4a0149b665b54a87b98b6a4f85f5dc07ff0c58d601b5026b3976a829ddc53f29
-  
+  tag: 4.2.9-0.9.8_3-0.13.8_2@sha256:3e9d9150bfed213eb9adc1e4128902608b4d9ef3edb45673b9cdd7c7e9dd9679
+
+
 securityContext:
   container:
     PUID: 33
@@ -79,12 +80,6 @@ workload:
             XMLRPC_PORT: "{{ .Values.service.xmlrpc.ports.xmlrpc.port }}"
             WEBDAV_PORT: "{{ .Values.service.webdav.ports.webdav.port }}"
             RT_INC_PORT: "{{ .Values.service.rtinc.ports.rtinc.port }}"
-            BASIC_AUTH: "True"
-            BASIC_AUTH_PASSWORD: x
-            BASIC_AUTH_USERNAME: x
-            DEBUG: "False"
-            EXCLUDE_IPS: ""
-            SKIP_ARCHIVED_LOGS: "False"
 
 persistence:
   data:
