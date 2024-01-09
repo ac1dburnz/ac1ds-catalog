@@ -60,12 +60,10 @@ workload:
         main:
           probes:
             liveness:
-              port: 8081
               exec:
                 command:
                   - /usr/local/bin/healthcheck
             readiness:
-              port: 8081
               exec:
                 command:
                   - /usr/local/bin/healthcheck
