@@ -65,8 +65,9 @@ workload:
               path: /health
               port: 8081
             startup:
-              path: /health
-              port: 8081
+              exec:
+                command:
+                  - /usr/local/bin/healthcheck
           env:
             RUTORRENT_PORT: "{{ .Values.service.main.ports.main.port }}"
             PORT_RTORRENT: "{{ .Values.service.rtorrent.ports.rtorrent.port }}"
