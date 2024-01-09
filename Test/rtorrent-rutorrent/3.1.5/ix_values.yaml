@@ -1,7 +1,7 @@
 image:
   repository: ghcr.io/ac1dburnz/rtorrent-rutorrent
   pullPolicy: IfNotPresent
-  tag: 4.2.9-0.9.8_5-0.13.8_4@sha256:6af4d931b5b797e636756485478d363bf57576cdc02b43b6b82ad9473dc13453 
+  tag: 4.2.9-0.9.8_5-0.13.8_4@sha256:e9677689a3e365bbc86e198a1fa64226378d914872047b7511a1d27577513163
   
 securityContext:
   container:
