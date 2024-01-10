@@ -1,5 +1,5 @@
 image:
-  repository: http://ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
+  repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
   pullPolicy: IfNotPresent
   tag: 4.2.10-0.9.8-0.13.8@sha256:c320253313da2c5e263894b499ef0ca39a5b5d2aaf8c0fba49f5711f20c70efa 
 securityContext:
