@@ -1886,6 +1886,7 @@ questions:
                   type: string
                   default: workaround
                   hidden: true
+  - variable: metrics
     group: Metrics
     label: Prometheus Metrics
     schema:
