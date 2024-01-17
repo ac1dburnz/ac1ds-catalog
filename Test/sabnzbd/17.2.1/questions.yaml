@@ -1886,6 +1886,40 @@ questions:
                   type: string
                   default: workaround
                   hidden: true
+    group: Metrics
+    label: Prometheus Metrics
+    schema:
+      additional_attrs: true
+      type: dict
+      attrs:
+        - variable: main
+          label: Main Metrics
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: enabled
+                label: Enabled
+                description: Enable Prometheus Metrics
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: prometheusRule
+                      label: PrometheusRule
+                      description: Enable and configure Prometheus Rules for the App.
+                      schema:
+                        additional_attrs: true
+                        type: dict
+                        attrs:
+                          - variable: enabled
+                            label: Enabled
+                            description: Enable Prometheus Metrics
+                            schema:
+                              type: boolean
+                              default: false
+                          # TODO: Rule List section
 #  - variable: horizontalPodAutoscaler
 #    group: Advanced
 #    label: (Advanced) Horizontal Pod Autoscaler
