@@ -1,7 +1,7 @@
 image:
-  repository: linuxserver/prowlarr
+  repository: ghcr.io/onedr0p/prowlarr-develop
+  tag: 1.11.4.4173@sha256:dc649d62dcd09882b7111bd73d9bc664a28ddf073108345063f368da041d29b0
   pullPolicy: IfNotPresent
-  tag: develop
 exportarrImage:
   repository: ghcr.io/onedr0p/exportarr
   pullPolicy: IfNotPresent

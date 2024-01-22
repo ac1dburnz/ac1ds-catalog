@@ -1,7 +1,7 @@
 image:
-  repository: linuxserver/sonarr
+  repository: ghcr.io/onedr0p/sonarr
   pullPolicy: IfNotPresent
-  tag: develop
+  tag: 4.0.0.748@sha256:f1b1826ccbea3868ff6b30690417fdc1a0f3329ebad0909d0d11ddd856f9f4dd
 exportarrImage:
   repository: ghcr.io/onedr0p/exportarr
   pullPolicy: IfNotPresent

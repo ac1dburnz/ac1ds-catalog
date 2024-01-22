@@ -7,6 +7,8 @@ title: Changelog
 
 
 
+
+
 ## [thelounge-12.1.6](https://github.com/truecharts/charts/compare/thelounge-12.1.5...thelounge-12.1.6) (2024-01-09)
 
 ### Chore
@@ -95,5 +97,3 @@ title: Changelog
 - update helm general non-major by renovate ([#16384](https://github.com/truecharts/charts/issues/16384))
 
 ## [thelounge-11.0.10](https://github.com/truecharts/charts/compare/thelounge-11.0.9...thelounge-11.0.10) (2023-12-24)
-
-### Chore

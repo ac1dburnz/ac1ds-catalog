@@ -1,7 +1,7 @@
 image:
-  repository: tccr.io/truecharts/prowlarr
-  tag: v1.8.1.3837@sha256:3192428715d0bfa656ce1274d0a77088aa9796b2a2af0562bd656b94f3ff9caa
+  repository: linuxserver/prowlarr
   pullPolicy: IfNotPresent
+  tag: develop
 exportarrImage:
   repository: tccr.io/truecharts/exportarr
   pullPolicy: IfNotPresent
