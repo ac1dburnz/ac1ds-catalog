@@ -1,33 +1,33 @@
 {
-    "17.2.0": {
+    "19.0.26": {
         "healthy": true,
         "supported": true,
         "healthy_error": null,
-        "location": "/home/runner/work/catalog/catalog/stable/sabnzbd/17.2.0",
-        "last_update": "2024-01-03 23:54:39",
+        "location": "/home/runner/work/catalog/catalog/stable/sonarr/19.0.26",
+        "last_update": "2024-01-10 00:35:54",
         "required_features": [
-            "definitions/gpuConfiguration",
-            "definitions/certificate",
             "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/interface"
+            "definitions/gpuConfiguration",
+            "definitions/interface",
+            "definitions/certificate"
         ],
-        "human_version": "4.2.0_17.2.0",
-        "version": "17.2.0",
+        "human_version": "4.0.0.741_19.0.26",
+        "version": "19.0.26",
         "chart_metadata": {
             "kubeVersion": ">=1.24.0-0",
             "apiVersion": "v2",
-            "name": "sabnzbd",
-            "version": "17.2.0",
-            "appVersion": "4.2.0",
-            "description": "Free and easy binary newsreader",
-            "home": "https://truecharts.org/charts/stable/sabnzbd",
-            "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/sabnzbd.png",
+            "name": "sonarr",
+            "version": "19.0.26",
+            "appVersion": "4.0.0.741",
+            "description": "Smart PVR for newsgroup and bittorrent users",
+            "home": "https://truecharts.org/charts/stable/sonarr",
+            "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/sonarr.png",
             "deprecated": false,
             "sources": [
-                "https://sabnzbd.org/",
-                "https://github.com/truecharts/charts/tree/master/charts/stable/sabnzbd",
-                "https://ghcr.io/onedr0p/sabnzbd"
+                "https://ghcr.io/onedr0p/exportarr",
+                "https://github.com/Sonarr/Sonarr",
+                "https://github.com/truecharts/charts/tree/master/charts/stable/sonarr"
             ],
             "maintainers": [
                 {
@@ -37,13 +37,14 @@
                 }
             ],
             "keywords": [
-                "sabnzbd",
+                "sonarr",
+                "torrent",
                 "usenet"
             ],
             "dependencies": [
                 {
                     "name": "common",
-                    "version": "17.2.21",
+                    "version": "17.2.22",
                     "repository": "oci://tccr.io/truecharts",
                     "condition": "",
                     "alias": "",
@@ -239,12 +240,30 @@
                                                                                     "type": "dict",
                                                                                     "attrs": [
                                                                                         {
-                                                                                            "variable": "SABNZBD__HOST_WHITELIST_ENTRIES",
-                                                                                            "label": "HostName Whitelist",
-                                                                                            "description": "If you use a reverse proxy, you might need to enter your hostname's here (comma seperated)",
+                                                                                            "variable": "SONARR__AUTHENTICATION_METHOD",
+                                                                                            "label": "Auth Method",
+                                                                                            "description": "Sets the auth method.",
                                                                                             "schema": {
                                                                                                 "type": "string",
-                                                                                                "default": ""
+                                                                                                "default": "",
+                                                                                                "enum": [
+                                                                                                    {
+                                                                                                        "value": "",
+                                                                                                        "description": "In-App Setting"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "value": "External",
+                                                                                                        "description": "External/None"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "value": "Basic",
+                                                                                                        "description": "Basic"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "value": "Forms",
+                                                                                                        "description": "Forms"
+                                                                                                    }
+                                                                                                ]
                                                                                             }
                                                                                         }
                                                                                     ]
@@ -500,39 +519,58 @@
                                     "additional_attrs": true,
                                     "attrs": [
                                         {
-                                            "variable": "registry",
-                                            "label": "Registry",
+                                            "variable": "enabled",
+                                            "label": "Enabled",
                                             "schema": {
-                                                "type": "string",
-                                                "required": true,
-                                                "default": "https://index.docker.io/v1/"
+                                                "type": "boolean",
+                                                "default": true
                                             }
                                         },
                                         {
-                                            "variable": "username",
-                                            "label": "Username",
+                                            "variable": "data",
+                                            "label": "Data",
                                             "schema": {
-                                                "type": "string",
-                                                "required": true,
-                                                "default": ""
-                                            }
-                                        },
-                                        {
-                                            "variable": "password",
-                                            "label": "Password",
-                                            "schema": {
-                                                "type": "string",
-                                                "required": true,
-                                                "default": ""
-                                            }
-                                        },
-                                        {
-                                            "variable": "email",
-                                            "label": "Email",
-                                            "schema": {
-                                                "type": "string",
-                                                "required": true,
-                                                "default": ""
+                                                "type": "dict",
+                                                "additional_attrs": true,
+                                                "attrs": [
+                                                    {
+                                                        "variable": "registry",
+                                                        "label": "Registry",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true,
+                                                            "default": "https://index.docker.io/v1/"
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "username",
+                                                        "label": "Username",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true,
+                                                            "default": ""
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "password",
+                                                        "label": "Password",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true,
+                                                            "private": true,
+                                                            "default": ""
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "email",
+                                                        "label": "Email",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true,
+                                                            "default": ""
+                                                        }
+                                                    }
+                                                ]
                                             }
                                         }
                                     ]
@@ -621,7 +659,7 @@
                                                                     "description": "This port exposes the container port on the service",
                                                                     "schema": {
                                                                         "type": "int",
-                                                                        "default": 10097,
+                                                                        "default": 8989,
                                                                         "required": true
                                                                     }
                                                                 }
@@ -3405,6 +3443,59 @@
                     }
                 },
                 {
+                    "variable": "metrics",
+                    "group": "Metrics",
+                    "label": "Prometheus Metrics",
+                    "schema": {
+                        "additional_attrs": true,
+                        "type": "dict",
+                        "attrs": [
+                            {
+                                "variable": "main",
+                                "label": "Main Metrics",
+                                "schema": {
+                                    "additional_attrs": true,
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "enabled",
+                                            "label": "Enabled",
+                                            "description": "Enable Prometheus Metrics",
+                                            "schema": {
+                                                "type": "boolean",
+                                                "default": false,
+                                                "show_subquestions_if": true,
+                                                "subquestions": [
+                                                    {
+                                                        "variable": "prometheusRule",
+                                                        "label": "PrometheusRule",
+                                                        "description": "Enable and configure Prometheus Rules for the App.",
+                                                        "schema": {
+                                                            "additional_attrs": true,
+                                                            "type": "dict",
+                                                            "attrs": [
+                                                                {
+                                                                    "variable": "enabled",
+                                                                    "label": "Enabled",
+                                                                    "description": "Enable Prometheus Metrics",
+                                                                    "schema": {
+                                                                        "type": "boolean",
+                                                                        "default": false
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
                     "variable": "networkPolicy",
                     "group": "Advanced",
                     "label": "(Advanced) Network Policy",
@@ -5007,39 +5098,39 @@
                 }
             ]
         },
-        "app_readme": "<p>Free and easy binary newsreader</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sabnzbd\">https://truecharts.org/charts/stable/sabnzbd</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-        "detailed_readme": "<hr />\n<h2>title: README</h2>\n<h2>General Info</h2>\n<p>TrueCharts can be installed as both <em>normal</em> Helm Charts or as Apps on TrueNAS SCALE.\nHowever only installations using the TrueNAS SCALE Apps system are supported.</p>\n<p>For more information about this App, please check the docs on the TrueCharts <a href=\"https://truecharts.org/charts/stable/sabnzbd\">website</a></p>\n<p><strong>This chart is not maintained by the upstream project and any issues with the chart should be raised <a href=\"https://github.com/truecharts/charts/issues/new/choose\">here</a></strong></p>\n<h2>Support</h2>\n<ul>\n<li>Please check our <a href=\"https://truecharts.org/manual/SCALE/guides/scale-intro\">quick-start guides for TrueNAS SCALE</a>.</li>\n<li>See the <a href=\"https://truecharts.org\">Website</a></li>\n<li>Check our <a href=\"https://discord.gg/tVsPTHWTtr\">Discord</a></li>\n<li>Open a <a href=\"https://github.com/truecharts/charts/issues/new/choose\">issue</a></li>\n</ul>\n<hr />\n<h2>Sponsor TrueCharts</h2>\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>\n<p><em>All Rights Reserved - The TrueCharts Project</em></p>",
-        "changelog": "<hr />\n<h2>title: Changelog</h2>\n<p><strong>Important:</strong>\n<em>for the complete changelog, please refer to the website</em></p>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.1.5...sabnzbd-17.2.0\">sabnzbd-17.2.0</a> (2024-01-03)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update container image ghcr.io/onedr0p/sabnzbd to v4.2.0<a href=\"https://github.com/f2418b0\">@f2418b0</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16854\">#16854</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.1.4...sabnzbd-17.1.5\">sabnzbd-17.1.5</a> (2024-01-02)</h2>\n<h3>Chore</h3>\n<ul>\n<li>force bump to ensure up-to-date catalogs</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.1.3...sabnzbd-17.1.4\">sabnzbd-17.1.4</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>increase common version for oci fixes</p>\n</li>\n<li>\n<p>remove non-existent template refs (<a href=\"https://github.com/truecharts/charts/issues/16738\">#16738</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.1.0...sabnzbd-17.1.3\">sabnzbd-17.1.3</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>bump all charts for OCI test push</p>\n</li>\n<li>\n<p>move everything to consume OCI-hosted common-chart dependency</p>\n</li>\n<li>\n<p>update container image common to v17.2.19<a href=\"https://github.com/4ebb688\">@4ebb688</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16733\">#16733</a>)</p>\n</li>\n<li>\n<p>update container image common to v17.2.18<a href=\"https://github.com/085ba3c\">@085ba3c</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16732\">#16732</a>)</p>\n</li>\n<li>\n<p>standardize ./img references (<a href=\"https://github.com/truecharts/charts/issues/16704\">#16704</a>)</p>\n</li>\n<li>\n<p>lints some docs, uses front-matter instead of # h1, and fix list items in changelog (<a href=\"https://github.com/truecharts/charts/issues/16589\">#16589</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.1.0...sabnzbd-17.1.2\">sabnzbd-17.1.2</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>bump all charts for OCI test push</p>\n</li>\n<li>\n<p>move everything to consume OCI-hosted common-chart dependency</p>\n</li>\n<li>\n<p>update container image common to v17.2.18<a href=\"https://github.com/085ba3c\">@085ba3c</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16732\">#16732</a>)</p>\n</li>\n<li>\n<p>standardize ./img references (<a href=\"https://github.com/truecharts/charts/issues/16704\">#16704</a>)</p>\n</li>\n<li>\n<p>lints some docs, uses front-matter instead of # h1, and fix list items in changelog (<a href=\"https://github.com/truecharts/charts/issues/16589\">#16589</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.0.1...sabnzbd-17.1.0\">sabnzbd-17.1.0</a> (2023-12-30)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update helm general minor by renovate (<a href=\"https://github.com/truecharts/charts/issues/16579\">#16579</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.0.0...sabnzbd-17.0.1\">sabnzbd-17.0.1</a> (2023-12-26)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update helm general non-major by renovate (<a href=\"https://github.com/truecharts/charts/issues/16545\">#16545</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-16.0.11...sabnzbd-17.0.0\">sabnzbd-17.0.0</a> (2023-12-25)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update helm chart common to 17.1.0 by renovate (<a href=\"https://github.com/truecharts/charts/issues/16532\">#16532</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-16.0.10...sabnzbd-16.0.11\">sabnzbd-16.0.11</a> (2023-12-24)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update helm general non-major by renovate (<a href=\"https://github.com/truecharts/charts/issues/16384\">#16384</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-16.0.9...sabnzbd-16.0.10\">sabnzbd-16.0.10</a> (2023-12-24)</h2>\n<h3>Chore</h3>"
+        "app_readme": "<p>Smart PVR for newsgroup and bittorrent users</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sonarr\">https://truecharts.org/charts/stable/sonarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+        "detailed_readme": "<hr />\n<h2>title: README</h2>\n<h2>General Info</h2>\n<p>TrueCharts can be installed as both <em>normal</em> Helm Charts or as Apps on TrueNAS SCALE.\nHowever only installations using the TrueNAS SCALE Apps system are supported.</p>\n<p>For more information about this App, please check the docs on the TrueCharts <a href=\"https://truecharts.org/charts/stable/sonarr\">website</a></p>\n<p><strong>This chart is not maintained by the upstream project and any issues with the chart should be raised <a href=\"https://github.com/truecharts/charts/issues/new/choose\">here</a></strong></p>\n<h2>Support</h2>\n<ul>\n<li>Please check our <a href=\"https://truecharts.org/manual/SCALE/guides/scale-intro\">quick-start guides for TrueNAS SCALE</a>.</li>\n<li>See the <a href=\"https://truecharts.org\">Website</a></li>\n<li>Check our <a href=\"https://discord.gg/tVsPTHWTtr\">Discord</a></li>\n<li>Open a <a href=\"https://github.com/truecharts/charts/issues/new/choose\">issue</a></li>\n</ul>\n<hr />\n<h2>Sponsor TrueCharts</h2>\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>\n<p><em>All Rights Reserved - The TrueCharts Project</em></p>",
+        "changelog": "<hr />\n<h2>title: Changelog</h2>\n<p><strong>Important:</strong>\n<em>for the complete changelog, please refer to the website</em></p>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.25...sonarr-19.0.26\">sonarr-19.0.26</a> (2024-01-09)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update container image common to v17.2.22<a href=\"https://github.com/e7c9056\">@e7c9056</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16986\">#16986</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.24...sonarr-19.0.25\">sonarr-19.0.25</a> (2024-01-02)</h2>\n<h3>Chore</h3>\n<ul>\n<li>force bump to ensure up-to-date catalogs</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.23...sonarr-19.0.24\">sonarr-19.0.24</a> (2024-01-02)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update container image ghcr.io/onedr0p/sonarr to v4.0.0.748<a href=\"https://github.com/f1b1826\">@f1b1826</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16724\">#16724</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.22...sonarr-19.0.23\">sonarr-19.0.23</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>increase common version for oci fixes</p>\n</li>\n<li>\n<p>remove non-existent template refs (<a href=\"https://github.com/truecharts/charts/issues/16738\">#16738</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.19...sonarr-19.0.22\">sonarr-19.0.22</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>bump all charts for OCI test push</p>\n</li>\n<li>\n<p>move everything to consume OCI-hosted common-chart dependency</p>\n</li>\n<li>\n<p>update container image common to v17.2.19<a href=\"https://github.com/4ebb688\">@4ebb688</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16733\">#16733</a>)</p>\n</li>\n<li>\n<p>update container image common to v17.2.18<a href=\"https://github.com/085ba3c\">@085ba3c</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16732\">#16732</a>)</p>\n</li>\n<li>\n<p>standardize ./img references (<a href=\"https://github.com/truecharts/charts/issues/16704\">#16704</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.19...sonarr-19.0.21\">sonarr-19.0.21</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>bump all charts for OCI test push</p>\n</li>\n<li>\n<p>move everything to consume OCI-hosted common-chart dependency</p>\n</li>\n<li>\n<p>update container image common to v17.2.18<a href=\"https://github.com/085ba3c\">@085ba3c</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16732\">#16732</a>)</p>\n</li>\n<li>\n<p>standardize ./img references (<a href=\"https://github.com/truecharts/charts/issues/16704\">#16704</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.14...sonarr-19.0.19\">sonarr-19.0.19</a> (2023-12-31)</h2>\n<h3>Chore</h3>\n<ul>\n<li>fix more</li>\n<li>fix more</li>\n<li>fix more</li>\n<li>fix more</li>\n<li>fix more</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.12...sonarr-19.0.14\">sonarr-19.0.14</a> (2023-12-31)</h2>\n<h3>Chore</h3>\n<ul>\n<li>fix more</li>\n<li>fix more</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.12...sonarr-19.0.13\">sonarr-19.0.13</a> (2023-12-31)</h2>\n<h3>Chore</h3>\n<ul>\n<li>fix more</li>\n</ul>"
     },
-    "17.1.5": {
+    "19.0.25": {
         "healthy": true,
         "supported": true,
         "healthy_error": null,
-        "location": "/home/runner/work/catalog/catalog/stable/sabnzbd/17.1.5",
-        "last_update": "2024-01-03 23:54:39",
+        "location": "/home/runner/work/catalog/catalog/stable/sonarr/19.0.25",
+        "last_update": "2024-01-10 00:35:54",
         "required_features": [
-            "definitions/gpuConfiguration",
-            "definitions/certificate",
             "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/interface"
+            "definitions/gpuConfiguration",
+            "definitions/interface",
+            "definitions/certificate"
         ],
-        "human_version": "4.1.0_17.1.5",
-        "version": "17.1.5",
+        "human_version": "4.0.0.741_19.0.25",
+        "version": "19.0.25",
         "chart_metadata": {
             "kubeVersion": ">=1.24.0-0",
             "apiVersion": "v2",
-            "name": "sabnzbd",
-            "version": "17.1.5",
-            "appVersion": "4.1.0",
-            "description": "Free and easy binary newsreader",
-            "home": "https://truecharts.org/charts/stable/sabnzbd",
-            "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/sabnzbd.png",
+            "name": "sonarr",
+            "version": "19.0.25",
+            "appVersion": "4.0.0.741",
+            "description": "Smart PVR for newsgroup and bittorrent users",
+            "home": "https://truecharts.org/charts/stable/sonarr",
+            "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/sonarr.png",
             "deprecated": false,
             "sources": [
-                "https://github.com/truecharts/charts/tree/master/charts/stable/sabnzbd",
-                "https://ghcr.io/onedr0p/sabnzbd",
-                "https://sabnzbd.org/"
+                "https://github.com/Sonarr/Sonarr",
+                "https://github.com/truecharts/charts/tree/master/charts/stable/sonarr",
+                "https://ghcr.io/onedr0p/exportarr"
             ],
             "maintainers": [
                 {
@@ -5049,7 +5140,8 @@
                 }
             ],
             "keywords": [
-                "sabnzbd",
+                "sonarr",
+                "torrent",
                 "usenet"
             ],
             "dependencies": [
@@ -5251,12 +5343,30 @@
                                                                                     "type": "dict",
                                                                                     "attrs": [
                                                                                         {
-                                                                                            "variable": "SABNZBD__HOST_WHITELIST_ENTRIES",
-                                                                                            "label": "HostName Whitelist",
-                                                                                            "description": "If you use a reverse proxy, you might need to enter your hostname's here (comma seperated)",
+                                                                                            "variable": "SONARR__AUTHENTICATION_METHOD",
+                                                                                            "label": "Auth Method",
+                                                                                            "description": "Sets the auth method.",
                                                                                             "schema": {
                                                                                                 "type": "string",
-                                                                                                "default": ""
+                                                                                                "default": "",
+                                                                                                "enum": [
+                                                                                                    {
+                                                                                                        "value": "",
+                                                                                                        "description": "In-App Setting"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "value": "External",
+                                                                                                        "description": "External/None"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "value": "Basic",
+                                                                                                        "description": "Basic"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "value": "Forms",
+                                                                                                        "description": "Forms"
+                                                                                                    }
+                                                                                                ]
                                                                                             }
                                                                                         }
                                                                                     ]
@@ -5633,7 +5743,7 @@
                                                                     "description": "This port exposes the container port on the service",
                                                                     "schema": {
                                                                         "type": "int",
-                                                                        "default": 10097,
+                                                                        "default": 8989,
                                                                         "required": true
                                                                     }
                                                                 }
@@ -8417,6 +8527,59 @@
                     }
                 },
                 {
+                    "variable": "metrics",
+                    "group": "Metrics",
+                    "label": "Prometheus Metrics",
+                    "schema": {
+                        "additional_attrs": true,
+                        "type": "dict",
+                        "attrs": [
+                            {
+                                "variable": "main",
+                                "label": "Main Metrics",
+                                "schema": {
+                                    "additional_attrs": true,
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "enabled",
+                                            "label": "Enabled",
+                                            "description": "Enable Prometheus Metrics",
+                                            "schema": {
+                                                "type": "boolean",
+                                                "default": false,
+                                                "show_subquestions_if": true,
+                                                "subquestions": [
+                                                    {
+                                                        "variable": "prometheusRule",
+                                                        "label": "PrometheusRule",
+                                                        "description": "Enable and configure Prometheus Rules for the App.",
+                                                        "schema": {
+                                                            "additional_attrs": true,
+                                                            "type": "dict",
+                                                            "attrs": [
+                                                                {
+                                                                    "variable": "enabled",
+                                                                    "label": "Enabled",
+                                                                    "description": "Enable Prometheus Metrics",
+                                                                    "schema": {
+                                                                        "type": "boolean",
+                                                                        "default": false
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
                     "variable": "networkPolicy",
                     "group": "Advanced",
                     "label": "(Advanced) Network Policy",
@@ -10019,8 +10182,8 @@
                 }
             ]
         },
-        "app_readme": "<p>Free and easy binary newsreader</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sabnzbd\">https://truecharts.org/charts/stable/sabnzbd</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-        "detailed_readme": "<hr />\n<h2>title: README</h2>\n<h2>General Info</h2>\n<p>TrueCharts can be installed as both <em>normal</em> Helm Charts or as Apps on TrueNAS SCALE.\nHowever only installations using the TrueNAS SCALE Apps system are supported.</p>\n<p>For more information about this App, please check the docs on the TrueCharts <a href=\"https://truecharts.org/charts/stable/sabnzbd\">website</a></p>\n<p><strong>This chart is not maintained by the upstream project and any issues with the chart should be raised <a href=\"https://github.com/truecharts/charts/issues/new/choose\">here</a></strong></p>\n<h2>Support</h2>\n<ul>\n<li>Please check our <a href=\"https://truecharts.org/manual/SCALE/guides/scale-intro\">quick-start guides for TrueNAS SCALE</a>.</li>\n<li>See the <a href=\"https://truecharts.org\">Website</a></li>\n<li>Check our <a href=\"https://discord.gg/tVsPTHWTtr\">Discord</a></li>\n<li>Open a <a href=\"https://github.com/truecharts/charts/issues/new/choose\">issue</a></li>\n</ul>\n<hr />\n<h2>Sponsor TrueCharts</h2>\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>\n<p><em>All Rights Reserved - The TrueCharts Project</em></p>",
-        "changelog": "<hr />\n<h2>title: Changelog</h2>\n<p><strong>Important:</strong>\n<em>for the complete changelog, please refer to the website</em></p>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.1.4...sabnzbd-17.1.5\">sabnzbd-17.1.5</a> (2024-01-02)</h2>\n<h3>Chore</h3>\n<ul>\n<li>force bump to ensure up-to-date catalogs</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.1.3...sabnzbd-17.1.4\">sabnzbd-17.1.4</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>increase common version for oci fixes</p>\n</li>\n<li>\n<p>remove non-existent template refs (<a href=\"https://github.com/truecharts/charts/issues/16738\">#16738</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.1.0...sabnzbd-17.1.3\">sabnzbd-17.1.3</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>bump all charts for OCI test push</p>\n</li>\n<li>\n<p>move everything to consume OCI-hosted common-chart dependency</p>\n</li>\n<li>\n<p>update container image common to v17.2.19<a href=\"https://github.com/4ebb688\">@4ebb688</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16733\">#16733</a>)</p>\n</li>\n<li>\n<p>update container image common to v17.2.18<a href=\"https://github.com/085ba3c\">@085ba3c</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16732\">#16732</a>)</p>\n</li>\n<li>\n<p>standardize ./img references (<a href=\"https://github.com/truecharts/charts/issues/16704\">#16704</a>)</p>\n</li>\n<li>\n<p>lints some docs, uses front-matter instead of # h1, and fix list items in changelog (<a href=\"https://github.com/truecharts/charts/issues/16589\">#16589</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.1.0...sabnzbd-17.1.2\">sabnzbd-17.1.2</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>bump all charts for OCI test push</p>\n</li>\n<li>\n<p>move everything to consume OCI-hosted common-chart dependency</p>\n</li>\n<li>\n<p>update container image common to v17.2.18<a href=\"https://github.com/085ba3c\">@085ba3c</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16732\">#16732</a>)</p>\n</li>\n<li>\n<p>standardize ./img references (<a href=\"https://github.com/truecharts/charts/issues/16704\">#16704</a>)</p>\n</li>\n<li>\n<p>lints some docs, uses front-matter instead of # h1, and fix list items in changelog (<a href=\"https://github.com/truecharts/charts/issues/16589\">#16589</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.0.1...sabnzbd-17.1.0\">sabnzbd-17.1.0</a> (2023-12-30)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update helm general minor by renovate (<a href=\"https://github.com/truecharts/charts/issues/16579\">#16579</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-17.0.0...sabnzbd-17.0.1\">sabnzbd-17.0.1</a> (2023-12-26)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update helm general non-major by renovate (<a href=\"https://github.com/truecharts/charts/issues/16545\">#16545</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-16.0.11...sabnzbd-17.0.0\">sabnzbd-17.0.0</a> (2023-12-25)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update helm chart common to 17.1.0 by renovate (<a href=\"https://github.com/truecharts/charts/issues/16532\">#16532</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-16.0.10...sabnzbd-16.0.11\">sabnzbd-16.0.11</a> (2023-12-24)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update helm general non-major by renovate (<a href=\"https://github.com/truecharts/charts/issues/16384\">#16384</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-16.0.9...sabnzbd-16.0.10\">sabnzbd-16.0.10</a> (2023-12-24)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update helm general non-major by renovate (<a href=\"https://github.com/truecharts/charts/issues/16376\">#16376</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sabnzbd-16.0.8...sabnzbd-16.0.9\">sabnzbd-16.0.9</a> (2023-12-23)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update helm general non-major by renovate (<a href=\"https://github.com/truecharts/charts/issues/16373\">#16373</a>)</li>\n</ul>"
+        "app_readme": "<p>Smart PVR for newsgroup and bittorrent users</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sonarr\">https://truecharts.org/charts/stable/sonarr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+        "detailed_readme": "<hr />\n<h2>title: README</h2>\n<h2>General Info</h2>\n<p>TrueCharts can be installed as both <em>normal</em> Helm Charts or as Apps on TrueNAS SCALE.\nHowever only installations using the TrueNAS SCALE Apps system are supported.</p>\n<p>For more information about this App, please check the docs on the TrueCharts <a href=\"https://truecharts.org/charts/stable/sonarr\">website</a></p>\n<p><strong>This chart is not maintained by the upstream project and any issues with the chart should be raised <a href=\"https://github.com/truecharts/charts/issues/new/choose\">here</a></strong></p>\n<h2>Support</h2>\n<ul>\n<li>Please check our <a href=\"https://truecharts.org/manual/SCALE/guides/scale-intro\">quick-start guides for TrueNAS SCALE</a>.</li>\n<li>See the <a href=\"https://truecharts.org\">Website</a></li>\n<li>Check our <a href=\"https://discord.gg/tVsPTHWTtr\">Discord</a></li>\n<li>Open a <a href=\"https://github.com/truecharts/charts/issues/new/choose\">issue</a></li>\n</ul>\n<hr />\n<h2>Sponsor TrueCharts</h2>\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>\n<p><em>All Rights Reserved - The TrueCharts Project</em></p>",
+        "changelog": "<hr />\n<h2>title: Changelog</h2>\n<p><strong>Important:</strong>\n<em>for the complete changelog, please refer to the website</em></p>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.24...sonarr-19.0.25\">sonarr-19.0.25</a> (2024-01-02)</h2>\n<h3>Chore</h3>\n<ul>\n<li>force bump to ensure up-to-date catalogs</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.23...sonarr-19.0.24\">sonarr-19.0.24</a> (2024-01-02)</h2>\n<h3>Chore</h3>\n<ul>\n<li>update container image ghcr.io/onedr0p/sonarr to v4.0.0.748<a href=\"https://github.com/f1b1826\">@f1b1826</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16724\">#16724</a>)</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.22...sonarr-19.0.23\">sonarr-19.0.23</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>increase common version for oci fixes</p>\n</li>\n<li>\n<p>remove non-existent template refs (<a href=\"https://github.com/truecharts/charts/issues/16738\">#16738</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.19...sonarr-19.0.22\">sonarr-19.0.22</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>bump all charts for OCI test push</p>\n</li>\n<li>\n<p>move everything to consume OCI-hosted common-chart dependency</p>\n</li>\n<li>\n<p>update container image common to v17.2.19<a href=\"https://github.com/4ebb688\">@4ebb688</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16733\">#16733</a>)</p>\n</li>\n<li>\n<p>update container image common to v17.2.18<a href=\"https://github.com/085ba3c\">@085ba3c</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16732\">#16732</a>)</p>\n</li>\n<li>\n<p>standardize ./img references (<a href=\"https://github.com/truecharts/charts/issues/16704\">#16704</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.19...sonarr-19.0.21\">sonarr-19.0.21</a> (2024-01-01)</h2>\n<h3>Chore</h3>\n<ul>\n<li>\n<p>bump all charts for OCI test push</p>\n</li>\n<li>\n<p>move everything to consume OCI-hosted common-chart dependency</p>\n</li>\n<li>\n<p>update container image common to v17.2.18<a href=\"https://github.com/085ba3c\">@085ba3c</a> by renovate (<a href=\"https://github.com/truecharts/charts/issues/16732\">#16732</a>)</p>\n</li>\n<li>\n<p>standardize ./img references (<a href=\"https://github.com/truecharts/charts/issues/16704\">#16704</a>)</p>\n</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.14...sonarr-19.0.19\">sonarr-19.0.19</a> (2023-12-31)</h2>\n<h3>Chore</h3>\n<ul>\n<li>fix more</li>\n<li>fix more</li>\n<li>fix more</li>\n<li>fix more</li>\n<li>fix more</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.12...sonarr-19.0.14\">sonarr-19.0.14</a> (2023-12-31)</h2>\n<h3>Chore</h3>\n<ul>\n<li>fix more</li>\n<li>fix more</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.12...sonarr-19.0.13\">sonarr-19.0.13</a> (2023-12-31)</h2>\n<h3>Chore</h3>\n<ul>\n<li>fix more</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.10...sonarr-19.0.12\">sonarr-19.0.12</a> (2023-12-31)</h2>\n<h3>Chore</h3>\n<ul>\n<li>correct lists</li>\n<li>fix titles</li>\n</ul>\n<h2><a href=\"https://github.com/truecharts/charts/compare/sonarr-19.0.9...sonarr-19.0.10\">sonarr-19.0.10</a> (2023-12-31)</h2>"
     }
 }
