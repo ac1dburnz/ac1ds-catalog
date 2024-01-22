@@ -2,7 +2,7 @@ kubeVersion: ">=1.24.0-0"
 apiVersion: v2
 name: rtorrent-rutorrent
 version: 3.1.6
-appVersion: 4.2.10
+appVersion: 4.2.9
 description: rTorrent and ruTorrent chart.
 home: https://truecharts.org/charts/stable/rtorrent-rutorrent
 icon: https://truecharts.org/img/hotlink-ok/chart-icons/rtorrent-rutorrent.png
