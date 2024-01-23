@@ -406,6 +406,39 @@
                 "https://hub.docker.com/r/thelounge/thelounge"
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/thelounge.png"
+        },
+        "speedtest-exporter": {
+            "app_readme": "<p>Speedtest Exporter made in python using the official speedtest bin</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/speedtest-exporter\">https://truecharts.org/charts/stable/speedtest-exporter</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+            "categories": [
+                "metrics"
+            ],
+            "description": "Speedtest Exporter made in python using the official speedtest bin",
+            "healthy": true,
+            "healthy_error": null,
+            "home": "https://truecharts.org/charts/stable/speedtest-exporter",
+            "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter",
+            "latest_version": "9.1.9",
+            "latest_app_version": "3.5.4",
+            "latest_human_version": "3.5.4_9.1.9",
+            "last_update": "2024-01-22 00:49:03",
+            "name": "speedtest-exporter",
+            "recommended": false,
+            "title": "Speedtest-exporter",
+            "maintainers": [
+                {
+                    "name": "TrueCharts",
+                    "email": "info@truecharts.org",
+                    "url": "https://truecharts.org"
+                }
+            ],
+            "tags": [],
+            "screenshots": [],
+            "sources": [
+                "https://github.com/MiguelNdeCarvalho/speedtest-exporter/",
+                "https://github.com/truecharts/charts/tree/master/charts/stable/speedtest-exporter",
+                "https://ghcr.io/miguelndecarvalho/speedtest-exporter"
+            ],
+            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/speedtest-exporter.png"
         }
         
         },
