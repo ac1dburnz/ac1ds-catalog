@@ -1,7 +1,7 @@
 image:
-  repository: ghcr.io/onedr0p/radarr
+  repository: linuxserver/radarr
   pullPolicy: IfNotPresent
-  tag: 5.2.6.8376@sha256:2de39930de91ae698f9461bb959d93b9d59610f88e0c026e96bc5d9c99aeea89
+  tag: develop
 exportarrImage:
   repository: ghcr.io/onedr0p/exportarr
   pullPolicy: IfNotPresent

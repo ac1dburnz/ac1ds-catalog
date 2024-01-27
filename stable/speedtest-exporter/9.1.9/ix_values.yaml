@@ -6,7 +6,6 @@ service:
   main:
     ports:
       main:
-        enabled: true
         protocol: tcp
         port: 9798
 metrics:
@@ -18,10 +17,14 @@ metrics:
         path: /metrics
         interval: 1h
     prometheusRule:
-      enabled: false
+      enabled: true
 portal:
   open:
-    enabled: false
+    enabled: true
 securityContext:
   container:
+    PUID: 568
+    runAsNonRoot: false
     readOnlyRootFilesystem: false
+    runAsUser: 0
+    runAsGroup: 0
