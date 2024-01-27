@@ -1,7 +1,7 @@
 image:
-  repository: ghcr.io/onedr0p/radarr
+  repository: linuxserver/prowlarr
   pullPolicy: IfNotPresent
-  tag: 5.2.6.8376@sha256:2de39930de91ae698f9461bb959d93b9d59610f88e0c026e96bc5d9c99aeea89
+  tag: develop
 exportarrImage:
   repository: ghcr.io/onedr0p/exportarr
   pullPolicy: IfNotPresent
@@ -13,7 +13,7 @@ service:
   main:
     ports:
       main:
-        port: 7878
+        port: 9696
   metrics:
     enabled: true
     type: ClusterIP
@@ -21,7 +21,7 @@ service:
     ports:
       metrics:
         enabled: true
-        port: 7879
+        port: 9697
         targetSelector: exportarr
 workload:
   main:
@@ -29,20 +29,15 @@ workload:
       containers:
         main:
           probes:
-            readiness:
-              enabled: true
-              type: http
-              path: /ping
             liveness:
-              enabled: true
-              type: http
+              path: /ping
+            readiness:
               path: /ping
             startup:
-              enabled: true
-              type: http
-              path: /ping
+              type: tcp
           env:
-            RADARR__PORT: "{{ .Values.service.main.ports.main.port }}"
+            PROWLARR__PORT: "{{ .Values.service.main.ports.main.port }}"
+            PROWLARR__AUTHENTICATION_METHOD: ""
   exportarr:
     enabled: true
     type: Deployment
@@ -55,7 +50,7 @@ workload:
           enabled: true
           imageSelector: exportarrImage
           args:
-            - radarr
+            - prowlarr
           probes:
             liveness:
               enabled: true
@@ -80,6 +75,10 @@ workload:
             # ENABLE_ADDITIONAL_METRICS: false
             # enable gathering unknown queue items
             # ENABLE_UNKNOWN_QUEUE_ITEMS: false
+            # enable backfill of historical metrics
+            # PROWLARR__BACKFILL: false
+            # Set a date from which to start the backfill
+            # PROWLARR__BACKFILL_SINCE_DATE: 1970-01-01
             CONFIG: "/config/config.xml"
 persistence:
   config:
