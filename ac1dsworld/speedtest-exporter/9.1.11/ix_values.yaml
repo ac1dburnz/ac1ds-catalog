@@ -23,6 +23,7 @@ metrics:
       - port: main
         path: /metrics
         interval: 15m
+        timeout: 40s
     prometheusRule:
       enabled: false
 portal:
