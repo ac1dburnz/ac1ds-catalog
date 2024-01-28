@@ -23,7 +23,7 @@ metrics:
       - port: main
         path: /metrics
         interval: 15m
-        scrape_timeout: 40s
+        scrapeTimeout: 40s
     prometheusRule:
       enabled: false
 portal:
