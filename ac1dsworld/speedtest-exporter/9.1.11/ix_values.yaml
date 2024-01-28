@@ -22,7 +22,7 @@ metrics:
     endpoints:
       - port: main
         path: /metrics
-        interval: 1h
+        interval: 15m
     prometheusRule:
       enabled: false
 portal:
