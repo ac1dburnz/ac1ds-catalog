@@ -22,7 +22,7 @@ metrics:
     endpoints:
       - port: main
         path: /metrics
-        interval: 15m
+        interval: 2m
         scrapeTimeout: 40s
     prometheusRule:
       enabled: false
