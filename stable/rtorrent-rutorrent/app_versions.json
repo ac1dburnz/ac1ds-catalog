@@ -4,13 +4,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.1.10",
-        "last_update": "2024-01-27 11:48:35",
+        "last_update": "2024-01-29 12:33:03",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "definitions/interface"
+            "definitions/interface",
+            "definitions/certificate",
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.2.9_3.1.10",
         "version": "3.1.10",
