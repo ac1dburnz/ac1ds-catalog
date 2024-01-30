@@ -4,13 +4,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.1.10",
-        "last_update": "2024-01-27 11:48:35",
+        "last_update": "2024-01-29 12:33:03",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "definitions/interface"
+            "definitions/interface",
+            "definitions/certificate",
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.4.1_12.1.10",
         "version": "12.1.10",
@@ -5037,13 +5037,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.1.9",
-        "last_update": "2024-01-27 11:48:35",
+        "last_update": "2024-01-29 12:33:03",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "definitions/interface"
+            "definitions/interface",
+            "definitions/certificate",
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.4.1_12.1.9",
         "version": "12.1.9",
@@ -10070,13 +10070,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.1.8",
-        "last_update": "2024-01-27 11:48:35",
+        "last_update": "2024-01-29 12:33:03",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "definitions/interface"
+            "definitions/interface",
+            "definitions/certificate",
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.4.1_12.1.8",
         "version": "12.1.8",
@@ -15103,13 +15103,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.1.7",
-        "last_update": "2024-01-27 11:48:35",
+        "last_update": "2024-01-29 12:33:03",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "definitions/interface"
+            "definitions/interface",
+            "definitions/certificate",
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.4.1_12.1.7",
         "version": "12.1.7",
@@ -20136,13 +20136,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.1.6",
-        "last_update": "2024-01-27 11:48:35",
+        "last_update": "2024-01-29 12:33:03",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "definitions/interface"
+            "definitions/interface",
+            "definitions/certificate",
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.4.1_12.1.6",
         "version": "12.1.6",
@@ -25169,13 +25169,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.1.5",
-        "last_update": "2024-01-27 11:48:35",
+        "last_update": "2024-01-29 12:33:03",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "definitions/interface"
+            "definitions/interface",
+            "definitions/certificate",
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.4.1_12.1.5",
         "version": "12.1.5",
