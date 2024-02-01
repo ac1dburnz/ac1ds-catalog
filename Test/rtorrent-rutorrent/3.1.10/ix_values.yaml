@@ -104,7 +104,7 @@ workload:
           enabled: true
           imageSelector: exportarrImage
           args:
-            - "--rtorrent.scrape-uri=http://tests2-rtorrent-rutorrent-exportarr.ix-tests2.svc.cluster.local:8000/RPC2"
+            - "--rtorrent.scrape-uri=http://tests3-rtorrent-rutorrent-exportarr.ix-tests3.svc.cluster.local:8000/RPC2/"
           probes:
             liveness:
               enabled: false
