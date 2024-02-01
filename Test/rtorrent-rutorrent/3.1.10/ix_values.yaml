@@ -137,6 +137,16 @@ persistence:
         exportarr:
           mountPath: /config
           readOnly: true
+metrics:
+    main:
+      enabled: true
+      type: "servicemonitor"
+      endpoints:
+        - port: metrics
+          path: /metrics
+      targetSelector: metrics
+      prometheusRule:
+        enabled: true
 
 portal:
   open:
