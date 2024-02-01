@@ -1,7 +1,7 @@
 image:
-  repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
+  repository: ghcr.io/crazy-max/rtorrent-rutorrent
   pullPolicy: IfNotPresent
-  tag: 4.2.10-0.9.8_2-0.13.8_2@sha256:6b6114893e8bacadcb55569cb4722099a67f2f1e72f10922e89b7a68675c5567
+  tag: 4.2.9-0.9.8_2-0.13.8_1@sha256:8d089b00282a203886361268d9210106956302c2194e75ae56982a6f0398aef9
 
 exportarrImage:
   repository: ghcr.io/thde/rtorrent_exporter
@@ -104,7 +104,7 @@ workload:
           enabled: true
           imageSelector: exportarrImage
           args:
-            - "--rtorrent.scrape-uri=http://192.168.2.10:8000/RPC2/"
+            - "--rtorrent.scrape-uri=http://127.0.0.1:8000/RPC2/"
           probes:
             liveness:
               enabled: false
@@ -132,7 +132,7 @@ persistence:
           mountPath: "/downloads"
         passwd:
           enabled: true
-          mountPath: "/passwd"       
+          mountPath: "/passwd"
       exportarr:
         exportarr:
           mountPath: /config
@@ -146,9 +146,10 @@ metrics:
           path: /metrics
       targetSelector: metrics
       prometheusRule:
-        enabled: true
+        enabled: false
 
 portal:
   open:
     enabled: true
+
 
