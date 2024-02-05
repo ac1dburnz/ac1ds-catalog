@@ -2,6 +2,12 @@ image:
   repository: linuxserver/sabnzbd
   pullPolicy: IfNotPresent
   tag: latest
+exportarrImage:
+  repository: tccr.io/truecharts/exportarr
+  pullPolicy: IfNotPresent
+  tag: v1.6.0@sha256:ee118701a2ebe8ccb5c25e1003fbed9ef7ce217d4e4b8b6df30cc2a0def818f8
+
+
 service:
   main:
     ports:
@@ -15,20 +21,44 @@ service:
     ports:
       metrics:
         enabled: true
-        port: 8990
+        port: 7879
         targetSelector: exportarr
+
+persistence:
+  config:
+    enabled: true
+    targetSelector:
+      main:
+        main:
+          mountPath: /config
+      exportarr:
+        exportarr:
+          mountPath: /config
+          readOnly: true
+
+portal:
+  open:
+    enabled: true
+
+metrics:
+  main:
+    enabled: true
+    type: "servicemonitor"
+    endpoints:
+      - port: metrics
+        path: /metrics
+    targetSelector: metrics
+
 workload:
   main:
     podSpec:
       containers:
         main:
-          probes:
-            liveness:
-              enabled: false
-            readiness:
-              enabled: false
-            startup:
-              enabled: false
+          env:
+            SABNZBD__HOST_WHITELIST_ENTRIES: ""
+          envFrom:
+            - secretRef:
+                name: sabnzbdsecret
   exportarr:
     enabled: true
     type: Deployment
@@ -61,23 +91,9 @@ workload:
           env:
             INTERFACE: 0.0.0.0
             PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
-            URL: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
-            # additional metrics (slow)
-            # ENABLE_ADDITIONAL_METRICS: false
-            # enable gathering unknown queue items
-            # ENABLE_UNKNOWN_QUEUE_ITEMS: false
+            URL: '{{ printf "http://%v.%v.svc.cluster.local:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Release.Namespace .Values.service.main.ports.main.port }}'
             CONFIG: "/config/config.xml"
-persistence:
-  config:
-    enabled: true
-    mountPath: "/config"
-portal:
-  open:
-    enabled: true
-workload:
-  main:
-    podSpec:
-      containers:
-        main:
-          env:
-            SABNZBD__HOST_WHITELIST_ENTRIES: ""
+            APIKEY:
+              secretKeyRef:
+                name: sabnzbdsecret
+                key: SABNZBD__API_KEY
