@@ -512,7 +512,7 @@
             ],
             "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/rtorrent-rutorrent.png"
         },
-        "sabnzbd": {
+         "sabnzbd": {
             "app_readme": "<p>Free and easy binary newsreader</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sabnzbd\">https://truecharts.org/charts/stable/sabnzbd</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
             "categories": [
                 "media"
@@ -522,10 +522,10 @@
             "healthy_error": null,
             "home": "https://truecharts.org/charts/stable/sabnzbd",
             "location": "/home/runner/work/catalog/catalog/stable/sabnzbd",
-            "latest_version": "17.2.6",
+            "latest_version": "17.2.7",
             "latest_app_version": "4.2.1",
-            "latest_human_version": "4.2.1_17.2.6",
-            "last_update": "2024-01-30 00:37:29",
+            "latest_human_version": "4.2.1_17.2.7",
+            "last_update": "2024-02-04 06:46:20",
             "name": "sabnzbd",
             "recommended": false,
             "title": "Sabnzbd",
