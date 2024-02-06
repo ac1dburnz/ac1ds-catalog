@@ -8518,6 +8518,69 @@
                         ]
                     }
                 },
+                 {
+                    "variable": "metrics",
+                    "group": "Metrics",
+                    "label": "Prometheus Metrics",
+                    "schema": {
+                        "additional_attrs": true,
+                        "type": "dict",
+                        "attrs": [
+                            {
+                                "variable": "main",
+                                "label": "Main Metrics",
+                                "schema": {
+                                    "additional_attrs": true,
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "enabled",
+                                            "label": "Enabled",
+                                            "description": "Enable Prometheus Metrics",
+                                            "schema": {
+                                                "type": "boolean",
+                                                "default": false,
+                                                "show_subquestions_if": true,
+                                                "subquestions": [
+                                                    {
+                                                        "variable": "apiKey",
+                                                        "label": "Bazarr API key",
+                                                        "description": "Can be found in the Bazarr settings",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "default": "",
+                                                            "required": true
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "prometheusRule",
+                                                        "label": "PrometheusRule",
+                                                        "description": "Enable and configure Prometheus Rules for the App.",
+                                                        "schema": {
+                                                            "additional_attrs": true,
+                                                            "type": "dict",
+                                                            "attrs": [
+                                                                {
+                                                                    "variable": "enabled",
+                                                                    "label": "Enabled",
+                                                                    "description": "Enable Prometheus Metrics",
+                                                                    "schema": {
+                                                                        "type": "boolean",
+                                                                        "default": false
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
                 {
                     "variable": "networkPolicy",
                     "group": "Advanced",
