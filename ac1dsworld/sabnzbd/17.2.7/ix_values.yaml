@@ -27,17 +27,6 @@ service:
         port: 8990
         targetSelector: exportarr
 workload:
-  main:
-    podSpec:
-      containers:
-        main:
-          probes:
-            liveness:
-              enabled: false
-            readiness:
-              enabled: false
-            startup:
-              enabled: false
   exportarr:
     enabled: "{{ .Values.metrics.main.enabled }}"
     type: Deployment
@@ -70,7 +59,7 @@ workload:
           env:
             INTERFACE: 0.0.0.0
             PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
-            URL: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
+            URL: '{{ printf "http://%s-port.%s.svc.cluster.local:80" .Release.Name .Release.Namespace }}'
             APIKEY: "{{ .Values.metrics.main.apiKey }}"
             SABNZBD__HOST_WHITELIST_ENTRIES: ""
             SABNZBD__PORT: "{{ .Values.service.main.ports.main.port }}"
@@ -100,3 +89,4 @@ portal:
   open:
     enabled: true
             
+
