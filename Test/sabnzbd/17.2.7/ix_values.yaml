@@ -3,10 +3,14 @@ image:
   pullPolicy: IfNotPresent
   tag: latest
 exportarrImage:
-  repository: tccr.io/truecharts/exportarr
+  repository: ghcr.io/onedr0p/exportarr
   pullPolicy: IfNotPresent
-  tag: v1.6.0@sha256:ee118701a2ebe8ccb5c25e1003fbed9ef7ce217d4e4b8b6df30cc2a0def818f8
-
+  tag: v1.6.0@sha256:b522e128509b766cf66f847190fccd225ff194dc76775fe6a215f2dd3010cac2
+securityContext:
+  container:
+    readOnlyRootFilesystem: false
+    runAsGroup: 0
+    runAsUser: 0
 service:
   main:
     ports:
@@ -20,46 +24,11 @@ service:
     ports:
       metrics:
         enabled: true
-        port: 7879
+        port: 8990
         targetSelector: exportarr
-
-persistence:
-  config:
-    enabled: true
-    targetSelector:
-      main:
-        main:
-          mountPath: /config
-      exportarr:
-        exportarr:
-          mountPath: /config
-          readOnly: true
-
-portal:
-  open:
-    enabled: true
-
-metrics:
-  main:
-    enabled: true
-    type: "servicemonitor"
-    endpoints:
-      - port: metrics
-        path: /metrics
-    targetSelector: metrics
-
 workload:
-  main:
-    podSpec:
-      containers:
-        main:
-          env:
-            SABNZBD__HOST_WHITELIST_ENTRIES: ""
-          envFrom:
-            - secretRef:
-                name: sabnzbdsecret
   exportarr:
-    enabled: true
+    enabled: "{{ .Values.metrics.main.enabled }}"
     type: Deployment
     strategy: RollingUpdate
     replicas: 1
@@ -90,6 +59,33 @@ workload:
           env:
             INTERFACE: 0.0.0.0
             PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
-            URL: '{{ printf "http://%v.%v.svc.cluster.local:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Release.Namespace .Values.service.main.ports.main.port }}'
-            CONFIG: "/config/config.xml"
-            APIKEY: "{{ .Values.exportarr.podSpec.containers.exportarr.env.APIKEY.secretKeyRef.name }}"
+            URL: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
+            APIKEY: "{{ .Values.metrics.main.apiKey }}"
+            SABNZBD__HOST_WHITELIST_ENTRIES: ""
+            SABNZBD__PORT: "{{ .Values.service.main.ports.main.port }}"
+persistence:
+  config:
+    enabled: true
+    targetSelector:
+      main:
+        main:
+          mountPath: /config
+      exportarr:
+        exportarr:
+          mountPath: /config
+          readOnly: true
+metrics:
+  main:
+    enabled: false
+    type: "servicemonitor"
+    endpoints:
+      - port: metrics
+        path: /metrics
+    targetSelector: metrics
+    # Required for exportarr
+    apiKey: ""
+      
+portal:
+  open:
+    enabled: true
+            
