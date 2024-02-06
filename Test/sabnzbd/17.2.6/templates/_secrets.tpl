@@ -2,7 +2,7 @@
 {{- define "sabnzbd.secrets" -}}
 
 {{- $apiKey := "" }}
-{{- if eq .Values.sabnzbd.api_key.enabled true }}
+{{- if and .Values.sabnzbd.api_key (eq .Values.sabnzbd.api_key.enabled true) }}
 {{- $apiKey = required "API Key is required" .Values.sabnzbd.api_key.secret | quote }}
 {{- end -}}
 
