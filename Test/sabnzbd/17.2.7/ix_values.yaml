@@ -34,16 +34,17 @@ workload:
             liveness:
               exec:
                 command:
-                  - curl --fail http://localhost:8080 || exit 1
+                  - curl "$(printf "https://%v:%v/api?mode=auth&apikey=$(grep '^api_key ' /config/sabnzbd.ini | cut -d' ' -f3)&output=json" "$(include "tc.v1.common.lib.chart.names.fullname" $)" "$(echo .Values.service.main.ports.main.port)")"
 
             readiness:
               exec:
                 command:
-                  - curl --fail http://localhost:8080 || exit 1
+                  - curl "$(printf "https://%v:%v/api?mode=auth&apikey=$(grep '^api_key ' /config/sabnzbd.ini | cut -d' ' -f3)&output=json" "$(include "tc.v1.common.lib.chart.names.fullname" $)" "$(echo .Values.service.main.ports.main.port)")"
             startup:
               exec:
                 command:
-                  - curl --fail http://localhost:8080 || exit 1
+                  - curl "$(printf "https://%v:%v/api?mode=auth&apikey=$(grep '^api_key ' /config/sabnzbd.ini | cut -d' ' -f3)&output=json" "$(include "tc.v1.common.lib.chart.names.fullname" $)" "$(echo .Values.service.main.ports.main.port)")"
+
         exportarr:
           primary: true
           enabled: true
