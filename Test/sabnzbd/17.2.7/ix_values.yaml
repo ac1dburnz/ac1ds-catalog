@@ -34,16 +34,16 @@ workload:
             liveness:
               exec:
                 command:
-                  - curl "$(printf "https://%v:%v/api?mode=auth&apikey=$(grep '^api_key ' /config/sabnzbd.ini | cut -d' ' -f3)&output=json" "$(include "tc.v1.common.lib.chart.names.fullname" $)" "$(echo .Values.service.main.ports.main.port)")"
+                  - curl "https://0.0.0.0:8080/api?mode=auth&apikey=$(grep '^api_key ' /app/sabnzbd.ini | cut -d' ' -f3)&output=json"
 
             readiness:
               exec:
                 command:
-                  - curl "$(printf "https://%v:%v/api?mode=auth&apikey=$(grep '^api_key ' /config/sabnzbd.ini | cut -d' ' -f3)&output=json" "$(include "tc.v1.common.lib.chart.names.fullname" $)" "$(echo .Values.service.main.ports.main.port)")"
+                  - curl "https://0.0.0.0:8080/api?mode=auth&apikey=$(grep '^api_key ' /app/sabnzbd.ini | cut -d' ' -f3)&output=json"
             startup:
               exec:
                 command:
-                  - curl "$(printf "https://%v:%v/api?mode=auth&apikey=$(grep '^api_key ' /config/sabnzbd.ini | cut -d' ' -f3)&output=json" "$(include "tc.v1.common.lib.chart.names.fullname" $)" "$(echo .Values.service.main.ports.main.port)")"
+                  - curl "https://0.0.0.0:8080/api?mode=auth&apikey=$(grep '^api_key ' /app/sabnzbd.ini | cut -d' ' -f3)&output=json"
 
         exportarr:
           primary: true
