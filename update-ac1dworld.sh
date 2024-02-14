@@ -87,8 +87,7 @@ cp /Users/ac1dburn/Documents/GitHub/ac1ds-catalog/mainfiles/thelounge-ix_values.
 
 cp /Users/ac1dburn/Documents/GitHub/ac1ds-catalog/catalog.json /Users/ac1dburn/Documents/GitHub/ac1ds-catalog/catalog-temp.json 
 
-rm /Users/ac1dburn/Documents/GitHub/ac1ds-catalog/catalog.json 
-
+python3 /Users/ac1dburn/Documents/GitHub/ac1ds-catalog/catalogupdate.py    
 
 
 
