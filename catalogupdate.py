@@ -19,7 +19,7 @@ def find_app(data, app_name):
 def generate_output_structure(test_apps_data, ac1dsworld_apps_data, new_ac1dsworld_apps_data, output_file_path):
     output_structure = {
         "charts": {},
-        "test": test_apps_data,
+        "Test": test_apps_data,
         "stable": ac1dsworld_apps_data,
         "ac1dsworld": new_ac1dsworld_apps_data,
     }
@@ -70,7 +70,7 @@ for app_name in new_ac1dsworld_app_names_to_read:
         new_ac1dsworld_apps_data[app_name_actual] = app_data
 
 # Output file path
-output_file_path = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog/output.json"
+output_file_path = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog/catalog.json"
 
 # Generate the output structure and write to file
 generate_output_structure(test_apps_data, ac1dsworld_apps_data, new_ac1dsworld_apps_data, output_file_path)
