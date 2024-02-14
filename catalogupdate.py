@@ -38,7 +38,7 @@ with open(catalog_json_path, 'r') as catalog_file:
     catalog_data = json.load(catalog_file)
 
 # App names to read from the "Test" section
-test_app_names_to_read = ["prowlarr", "sonarr", "radarr", "sabnzbd", "rtorrent-rutorrent", "thelounge", "speedtest-exporter"]
+test_app_names_to_read = ["prowlarr", "sonarr", "radarr", "rtorrent-rutorrent", "sabnzbd", "thelounge", "speedtest-exporter"]
 
 # Find the specific app data for each app name in the "Test" section
 test_apps_data = {}
