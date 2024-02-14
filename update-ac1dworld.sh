@@ -3,6 +3,7 @@
 base_dir="/Users/ac1dburn/Documents/GitHub"
 
 sudo rm -r temp
+
 mkdir temp
 
 git clone https://github.com/truecharts/catalog.git temp
@@ -94,4 +95,8 @@ cp "$base_dir/ac1ds-catalog/mainfiles/thelounge-ix_values.yaml" ix_values.yaml
 
 cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.json" 
 
-python3 "$base_dir/ac1ds-catalog/catalogupdate.py"   
+python3 "$base_dir/ac1ds-catalog/catalogupdate.py"  
+
+sudo rm -r "$base_dir/ac1ds-catalog/temp"
+
+python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"

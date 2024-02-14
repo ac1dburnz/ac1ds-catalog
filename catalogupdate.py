@@ -32,7 +32,7 @@ def generate_output_structure(test_apps_data, ac1dsworld_apps_data, new_ac1dswor
 # Paths to the catalog JSON files
 base_dir = "/Users/ac1dburn/Documents/GitHub"
 catalog_json_path = f"{base_dir}/ac1ds-catalog/catalog.json"
-updated_catalog_json_path = f"{base_dir}/catalog/catalog.json"
+updated_catalog_json_path = f"{base_dir}/ac1ds-catalog/temp/catalog.json"
 
 # Read original catalog JSON file
 with open(catalog_json_path, 'r') as catalog_file:

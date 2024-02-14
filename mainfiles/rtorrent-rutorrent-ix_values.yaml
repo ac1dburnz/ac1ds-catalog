@@ -5,8 +5,7 @@ image:
 exportarrImage:
   repository: ghcr.io/thde/rtorrent_exporter
   pullPolicy: IfNotPresent
-  tag: v1.3.0@sha256:11cb891155c203de14ede7b53f3b7c37ba4bfb041ce8472acbcafaab0fc7253d
-
+  tag: v1.3.1@sha256:0a7716d8b434f8ecf9370053c46e099cfde3c98a60555d3128e07e6da7438fcd
 
 securityContext:
   container:
@@ -139,8 +138,9 @@ metrics:
           path: /metrics
       targetSelector: metrics
       prometheusRule:
-        enabled: true
+        enabled: false
 
 portal:
   open:
     enabled: true
+            
