@@ -85,5 +85,11 @@ cd /Users/ac1dburn/Documents/GitHub/ac1ds-catalog/ac1dsworld/thelounge && cd $(l
 rm ix_values.yaml
 cp /Users/ac1dburn/Documents/GitHub/ac1ds-catalog/mainfiles/thelounge-ix_values.yaml ix_values.yaml
 
+cp /Users/ac1dburn/Documents/GitHub/ac1ds-catalog/catalog.json /Users/ac1dburn/Documents/GitHub/ac1ds-catalog/catalog-temp.json 
+
+rm /Users/ac1dburn/Documents/GitHub/ac1ds-catalog/catalog.json 
+
+
+
 
 
