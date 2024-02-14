@@ -30,8 +30,9 @@ def generate_output_structure(test_apps_data, ac1dsworld_apps_data, new_ac1dswor
     print(f"Output written to {output_file_path}.")
 
 # Paths to the catalog JSON files
-catalog_json_path = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog/catalog.json"
-updated_catalog_json_path = "/Users/ac1dburn/Documents/GitHub/catalog/catalog.json"
+base_dir = "/Users/ac1dburn/Documents/GitHub"
+catalog_json_path = f"{base_dir}/ac1ds-catalog/catalog.json"
+updated_catalog_json_path = f"{base_dir}/catalog/catalog.json"
 
 # Read original catalog JSON file
 with open(catalog_json_path, 'r') as catalog_file:
@@ -70,7 +71,8 @@ for app_name in new_ac1dsworld_app_names_to_read:
         new_ac1dsworld_apps_data[app_name_actual] = app_data
 
 # Output file path
-output_file_path = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog/catalog.json"
+output_file_path = f"{base_dir}/ac1ds-catalog/catalog.json"
 
 # Generate the output structure and write to file
 generate_output_structure(test_apps_data, ac1dsworld_apps_data, new_ac1dsworld_apps_data, output_file_path)
+
