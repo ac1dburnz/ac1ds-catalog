@@ -98,3 +98,5 @@ cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.
 python3 "$base_dir/ac1ds-catalog/catalogupdate.py"  
 
 sudo rm -r "$base_dir/ac1ds-catalog/temp"
+
+python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
