@@ -7,7 +7,6 @@ exportarrImage:
   pullPolicy: IfNotPresent
   tag: v1.3.0@sha256:11cb891155c203de14ede7b53f3b7c37ba4bfb041ce8472acbcafaab0fc7253d
 
-
 securityContext:
   container:
     PUID: 33
@@ -139,8 +138,9 @@ metrics:
           path: /metrics
       targetSelector: metrics
       prometheusRule:
-        enabled: true
+        enabled: false
 
 portal:
   open:
     enabled: true
+            

@@ -2,20 +2,22 @@ image:
   repository: linuxserver/sabnzbd
   pullPolicy: IfNotPresent
   tag: latest
-exportarrImage:
+  exportarrImage:
   repository: ghcr.io/onedr0p/exportarr
   pullPolicy: IfNotPresent
   tag: v1.6.0@sha256:b522e128509b766cf66f847190fccd225ff194dc76775fe6a215f2dd3010cac2
+
 securityContext:
   container:
     readOnlyRootFilesystem: false
     runAsGroup: 0
     runAsUser: 0
+
 service:
   main:
     ports:
       main:
-        port: 80
+        port: 10097
         targetPort: 8080
   metrics:
     enabled: true
@@ -38,6 +40,9 @@ workload:
               enabled: false
             startup:
               enabled: false
+          env:
+            SABNZBD__HOST_WHITELIST_ENTRIES: ""
+            SABNZBD__PORT: "{{ .Values.service.main.ports.main.port }}"
   exportarr:
     enabled: "{{ .Values.metrics.main.enabled }}"
     type: Deployment
@@ -72,8 +77,6 @@ workload:
             PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
             URL: '{{ printf "http://%s-port.%s.svc.cluster.local:80" .Release.Name .Release.Namespace }}'
             APIKEY: "{{ .Values.metrics.main.apiKey }}"
-            SABNZBD__HOST_WHITELIST_ENTRIES: ""
-            SABNZBD__PORT: "{{ .Values.service.main.ports.main.port }}"
 persistence:
   config:
     enabled: true
@@ -99,4 +102,5 @@ metrics:
 portal:
   open:
     enabled: true
+            
             
