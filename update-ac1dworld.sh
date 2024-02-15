@@ -5,9 +5,6 @@ base_dir="/Users/ac1dburn/Documents/GitHub"
 # Generate a branch name with the current date and time
 branch_name="branch_$(date +'%Y%m%d%H%M%S')"
 
-# Move to the base directory
-cd "$base_dir"
-
 # Ensure you are on the main branch before creating a new one
 git checkout main
 
@@ -57,13 +54,13 @@ cd "$base_dir/ac1ds-catalog/ac1dsworld/thelounge"
 cp -R * "$base_dir/ac1ds-catalog/stable/thelounge"
 
 # Copy the specified directories from catalog to ac1dsworld
-cp -R "$base_dir/catalog/stable/prowlarr" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/catalog/stable/radarr" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/catalog/stable/rtorrent-rutorrent" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/catalog/stable/sabnzbd" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/catalog/stable/sonarr" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/catalog/stable/speedtest-exporter" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/catalog/stable/thelounge" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/ac1ds-catalog/temp/stable/prowlarr" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/ac1ds-catalog/temp/stable/radarr" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/ac1ds-catalog/temp/stable/rtorrent-rutorrent" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/ac1ds-catalog/temp/stable/sabnzbd" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/ac1ds-catalog/temp/stable/sonarr" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/ac1ds-catalog/temp/stable/speedtest-exporter" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/ac1ds-catalog/temp/stable/thelounge" "$base_dir/ac1ds-catalog/ac1dsworld"
 
 # Remove unwanted files
 cd "$base_dir/ac1ds-catalog/ac1dsworld/prowlarr"
