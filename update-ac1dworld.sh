@@ -2,31 +2,12 @@
 
 base_dir="/Users/ac1dburn/Documents/GitHub"
 
-# Generate a branch name with the current date and time
-branch_name="branch_$(date +'%Y%m%d%H%M%S')"
+sudo rm -r temp
 
-# Move to the base directory
-cd "$base_dir"
-
-# Ensure you are on the main branch before creating a new one
-git checkout main
-
-# Pull the latest changes from the remote repository
-git pull origin main
-
-# Create and switch to a new branch with the generated name
-git checkout -b "$branch_name"
-
-# Remove existing temporary directory if it exists
-if [ -d temp ]; then
-  sudo rm -r temp
-fi
-
-# Create a new temporary directory
 mkdir temp
 
-# Clone the repository into the temporary directory
-git clone https://github.com/truecharts/catalog.git temp 
+git clone https://github.com/truecharts/catalog.git temp
+ 
 # For prowlarr
 cd "$base_dir/ac1ds-catalog/ac1dsworld/prowlarr"
 cp -R * "$base_dir/ac1ds-catalog/stable/prowlarr"
@@ -56,13 +37,13 @@ cd "$base_dir/ac1ds-catalog/ac1dsworld/thelounge"
 cp -R * "$base_dir/ac1ds-catalog/stable/thelounge"
 
 # Copy the specified directories from catalog to ac1dsworld
-cp -R "$base_dir/ac1ds-catalog/temp/stable/prowlarr" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/ac1ds-catalog/temp/stable/radarr" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/ac1ds-catalog/temp/stable/rtorrent-rutorrent" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/ac1ds-catalog/temp/stable/sabnzbd" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/ac1ds-catalog/temp/stable/sonarr" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/ac1ds-catalog/temp/stable/speedtest-exporter" "$base_dir/ac1ds-catalog/ac1dsworld"
-cp -R "$base_dir/ac1ds-catalog/temp/stable/thelounge" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/catalog/stable/prowlarr" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/catalog/stable/radarr" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/catalog/stable/rtorrent-rutorrent" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/catalog/stable/sabnzbd" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/catalog/stable/sonarr" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/catalog/stable/speedtest-exporter" "$base_dir/ac1ds-catalog/ac1dsworld"
+cp -R "$base_dir/catalog/stable/thelounge" "$base_dir/ac1ds-catalog/ac1dsworld"
 
 # Remove unwanted files
 cd "$base_dir/ac1ds-catalog/ac1dsworld/prowlarr"
@@ -119,10 +100,3 @@ python3 "$base_dir/ac1ds-catalog/catalogupdate.py"
 sudo rm -r "$base_dir/ac1ds-catalog/temp"
 
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
-
-# Commit changes with an automatically generated message
-git add .
-git commit -m "Automatically generated changes on $branch_name"
-
-# Push changes to the new branch
-git push origin "$branch_name"
