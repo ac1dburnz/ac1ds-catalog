@@ -2,10 +2,30 @@
 
 base_dir="/Users/ac1dburn/Documents/GitHub"
 
-sudo rm -r temp
+# Generate a branch name with the current date and time
+branch_name="branch_$(date +'%Y%m%d%H%M%S')"
 
+# Move to the base directory
+cd "$base_dir"
+
+# Ensure you are on the main branch before creating a new one
+git checkout main
+
+# Pull the latest changes from the remote repository
+git pull origin main
+
+# Create and switch to a new branch with the generated name
+git checkout -b "$branch_name"
+
+# Remove existing temporary directory if it exists
+if [ -d temp ]; then
+  sudo rm -r temp
+fi
+
+# Create a new temporary directory
 mkdir temp
 
+# Clone the repository into the temporary directory
 git clone https://github.com/truecharts/catalog.git temp
  
 # For prowlarr
