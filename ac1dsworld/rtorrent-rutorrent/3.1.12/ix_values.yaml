@@ -138,8 +138,9 @@ metrics:
           path: /metrics
       targetSelector: metrics
       prometheusRule:
-        enabled: true
+        enabled: false
 
 portal:
   open:
     enabled: true
+            
