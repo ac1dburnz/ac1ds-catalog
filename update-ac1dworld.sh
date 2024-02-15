@@ -2,15 +2,7 @@
 
 base_dir="/Users/ac1dburn/Documents/GitHub"
 
-rm -r "$base_dir/ac1ds-catalog"
-
 sudo rm -r temp
-
-cd "$base_dir"
-
-git clone git@github.com:ac1dburnz/ac1ds-catalog.git
-
-cd "$base_dir/ac1ds-catalog"
 
 mkdir temp
 
