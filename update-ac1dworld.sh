@@ -1,6 +1,6 @@
 #!/bin/bash
 
-base_dir="/Users/ac1dburn/Documents/GitHub"
+base_dir="~/Users/ac1dburn/Documents/GitHub"
 
 sudo rm -r temp
 
