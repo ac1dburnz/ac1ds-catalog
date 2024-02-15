@@ -119,7 +119,8 @@ sudo rm -r "$base_dir/ac1ds-catalog/temp"
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
 
 # Commit changes with an automatically generated message
-git add .
+git add -A
+
 git commit -m "Automatically generated changes on $branch_name"
 
 # Push changes to the new branch
