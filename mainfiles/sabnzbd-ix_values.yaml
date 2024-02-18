@@ -2,7 +2,7 @@ image:
   repository: linuxserver/sabnzbd
   pullPolicy: IfNotPresent
   tag: latest
-  exportarrImage:
+exportarrImage:
   repository: ghcr.io/onedr0p/exportarr
   pullPolicy: IfNotPresent
   tag: vmaster@sha256:3f7b5c6fbfb16b6d760575d45ec8f96d5957e4c7dc02b2ada8fb778d1f540712
