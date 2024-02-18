@@ -5,7 +5,7 @@ image:
 exportarrImage:
   repository: ghcr.io/onedr0p/exportarr
   pullPolicy: IfNotPresent
-  tag: v1.6.0@sha256:b522e128509b766cf66f847190fccd225ff194dc76775fe6a215f2dd3010cac2
+  tag: vmaster@sha256:3f7b5c6fbfb16b6d760575d45ec8f96d5957e4c7dc02b2ada8fb778d1f540712
 securityContext:
   container:
     readOnlyRootFilesystem: false
