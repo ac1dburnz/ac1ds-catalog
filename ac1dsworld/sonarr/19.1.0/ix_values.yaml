@@ -75,10 +75,11 @@ workload:
             PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
             URL: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
             # additional metrics (slow)
-             ENABLE_ADDITIONAL_METRICS: true
+            # ENABLE_ADDITIONAL_METRICS: true
             # enable gathering unknown queue items
             # ENABLE_UNKNOWN_QUEUE_ITEMS: false
             CONFIG: "/config/config.xml"
+            ENABLE_ADDITIONAL_METRICS: true
 persistence:
   config:
     enabled: true
