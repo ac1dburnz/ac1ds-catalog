@@ -125,3 +125,13 @@ git commit -m "Automatically generated changes on $branch_name"
 
 # Push changes to the new branch
 git push origin "$branch_name"
+
+
+# Create a pull request using GitHub API
+repo="ac1dburnz/ac1ds-catalog"  # replace with your GitHub username and repo name
+title="Automatically generated changes on $branch_name"
+body="This pull request is automatically generated."
+
+curl -X POST -H "Authorization: token $github_token" \
+  -d '{"title":"'"$title"'","body":"'"$body"'","head":"'"$branch_name"'","base":"main"}' \
+  "https://api.github.com/repos/$repo/pulls"
