@@ -5,6 +5,10 @@ base_dir="/Users/ac1dburn/Documents/GitHub"
 # Generate a branch name with the current date and time
 branch_name="branch_$(date +'%Y%m%d%H%M%S')"
 
+# Go to directory
+
+cd "$base_dir/ac1ds-catalog"
+
 # Ensure you are on the main branch before creating a new one
 git checkout main
 
