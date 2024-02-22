@@ -18,7 +18,7 @@ qbitportforward:
   QBT_PASSWORD: "adminadmin"
 
 exportarr:
-  enabled: false
+  enabled: true
   QBT_USERNAME: "admin"
   QBT_PASSWORD: "adminadmin"
   QBITTORRENT_HOST: '{{ include "tc.v1.common.lib.chart.names.fullname" }}'
