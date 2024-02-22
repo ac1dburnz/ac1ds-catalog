@@ -76,9 +76,7 @@ workload:
             QBT_PASSWORD: "{{ .Values.qbitportforward.QBT_PASSWORD }}"
             QBT_ADDR: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
             GTN_ADDR: '{{ printf "http://%v-gluetun:8000" (include "tc.v1.common.lib.chart.names.fullname" $) }}' 
-            QBITTORRENT_HOST: '{{ include "tc.v1.common.lib.chart.names.fullname" }}'
-            QBITTORRENT_PORT: '{{ .Values.service.main.ports.main.port }}'
- 
+            
   exportarr:
     enabled: true
     type: Deployment
@@ -104,7 +102,9 @@ workload:
             EXPORTER_PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
             QBT_USERNAME: "{{ .Values.qbitportforward.QBT_USERNAME }}"
             QBT_PASSWORD: "{{ .Values.qbitportforward.QBT_PASSWORD }}"
-            
+            QBITTORRENT_HOST: '{{ include "tc.v1.common.lib.chart.names.fullname" }}'
+            QBITTORRENT_PORT: '{{ .Values.service.main.ports.main.port }}'
+ 
 persistence:
   config:
     enabled: true
