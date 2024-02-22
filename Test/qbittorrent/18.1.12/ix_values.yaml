@@ -16,6 +16,12 @@ qbitportforward:
   enabled: false
   QBT_USERNAME: "admin"
   QBT_PASSWORD: "adminadmin"
+
+exportarr:
+  enabled: false
+  QBT_USERNAME: "admin"
+  QBT_PASSWORD: "adminadmin"
+  
 service:
   main:
     ports:
