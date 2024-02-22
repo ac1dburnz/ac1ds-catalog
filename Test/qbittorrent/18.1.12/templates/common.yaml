@@ -1,9 +1,9 @@
 # Assuming this is in the context where you want to include the common library
-{{- $rootCtx := dict "rootCtx" . "objectData" $objectData -}}
+{{- $rootCtx := dict "rootCtx" . -}}
 {{- include "tc.v1.common.loader.apply" $rootCtx -}}
 
 {{/* Make sure all variables are set properly */}}
-{{- include "tc.v1.common.loader.init" . }}
+{{- include "tc.v1.common.loader.init" $rootCtx }}
 
 {{/* Disable [qbitportforward] if requested */}}
 {{- if not .Values.qbitportforward.enabled -}}
@@ -12,4 +12,4 @@
 {{- end -}}
 
 {{/* Render the templates */}}
-{{- include "tc.v1.common.loader.apply" . }}
+{{- include "tc.v1.common.loader.apply" $rootCtx }}
