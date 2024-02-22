@@ -22,8 +22,7 @@ exportarr:
   QBT_USERNAME: "admin"
   QBT_PASSWORD: "adminadmin"
   QBITTORRENT_HOST: "0.0.0.0"
-  QBITTORRENT_PORT: "8080"
-  
+
 service:
   main:
     ports:
@@ -111,7 +110,7 @@ workload:
             QBT_USERNAME: "{{ .Values.exportarr.QBT_USERNAME }}"
             QBT_PASSWORD: "{{ .Values.exportarr.QBT_PASSWORD }}"
             QBITTORRENT_HOST: "{{ .Values.exportarr.QBITTORRENT_HOST }}"
-            QBITTORRENT_PORT: "{{ .Values.exportarr.QBITTORRENT_PORT }}"
+            QBITTORRENT_PORT: "{{ .Values.service.torrent.ports.torrent.port }}"
  
 persistence:
   config:
