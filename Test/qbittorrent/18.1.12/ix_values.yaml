@@ -21,8 +21,8 @@ exportarr:
   enabled: true
   QBT_USERNAME: "admin"
   QBT_PASSWORD: "adminadmin"
-  #QBITTORRENT_HOST: '{{ include "tc.v1.common.lib.chart.names.fullname" }}'
-  #QBITTORRENT_PORT: '{{ .Values.service.main.ports.main.port }}'
+  QBITTORRENT_HOST: "0.0.0.0"
+  QBITTORRENT_PORT: "8080"
   
 service:
   main:
@@ -110,8 +110,8 @@ workload:
             EXPORTER_PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
             QBT_USERNAME: "{{ .Values.exportarr.QBT_USERNAME }}"
             QBT_PASSWORD: "{{ .Values.exportarr.QBT_PASSWORD }}"
-            QBITTORRENT_HOST: '{{ include "tc.v1.common.lib.chart.names.fullname" }}'
-            QBITTORRENT_PORT: '{{ .Values.service.main.ports.main.port }}'
+            QBITTORRENT_HOST: "{{ .Values.exportarr.QBITTORRENT_HOST }}"
+            QBITTORRENT_PORT: "{{ .Values.exportarr.QBITTORRENT_PORT }}"
  
 persistence:
   config:
