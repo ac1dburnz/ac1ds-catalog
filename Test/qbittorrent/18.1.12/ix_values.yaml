@@ -6,10 +6,12 @@ qbitportforwardImage:
   repository: mjmeli/qbittorrent-port-forward-gluetun-server
   pullPolicy: IfNotPresent
   tag: latest@sha256:67d0d21ed792cf80716d4211e7162b6d375af5c12f3cf096c9032ad705dddaa8
+  
 exportarrImage:
   repository: ghcr.io/esanchezm/prometheus-qbittorrent-exporter
   pullPolicy: IfNotPresent
   tag: v1.5.1@sha256:3aef59197a9f14fc36a9963848d495f9a85e4f096b448a0ed4cb3aca122e793b 
+  
 qbitportforward:
   enabled: false
   QBT_USERNAME: "admin"
