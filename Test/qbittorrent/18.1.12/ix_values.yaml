@@ -109,7 +109,7 @@ workload:
             EXPORTER_PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
             QBT_USERNAME: "{{ .Values.exportarr.QBT_USERNAME }}"
             QBT_PASSWORD: "{{ .Values.exportarr.QBT_PASSWORD }}"
-            QBITTORRENT_HOST: (printf "%s" (include "tc.v1.common.lib.chart.names.fullname" $)) }}
+            QBITTORRENT_HOST: '{{ printf "http://%s.%s.svc.cluster.local" .Release.Name .Release.Namespace }}'
             QBITTORRENT_PORT: "{{ .Values.service.main.ports.main.port }}"
  
 persistence:
