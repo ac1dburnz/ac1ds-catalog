@@ -100,8 +100,8 @@ workload:
           env:
             INTERFACE: 0.0.0.0
             EXPORTER_PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
-            QBITTORRENT_HOST: '{{ printf "http://%v" (include "tc.v1.common.lib.chart.names.fullname" ) }}'
-            QBITTORRENT_PORT: "{{ .Values.service.main.ports.main.port }}"
+            #QBITTORRENT_HOST: '{{ printf "http://%v" (include "tc.v1.common.lib.chart.names.fullname")}}'
+            #QBITTORRENT_PORT: "{{ .Values.service.main.ports.main.port }}"
             QBT_USERNAME: "{{ .Values.qbitportforward.QBT_USERNAME }}"
             QBT_PASSWORD: "{{ .Values.qbitportforward.QBT_PASSWORD }}"
             
