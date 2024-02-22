@@ -8,4 +8,9 @@
 {{- end -}}
 
 {{/* Render the templates */}}
+{{- $fullname := include "tc.v1.common.lib.chart.names.fullname" . -}}
+{{- $port := .Values.service.main.ports.main.port -}}
+
+{{/* Now you can use $fullname and $port where needed */}}
+
 {{ include "tc.v1.common.loader.apply" . }}
