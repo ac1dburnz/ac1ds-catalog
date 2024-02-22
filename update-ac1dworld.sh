@@ -5,6 +5,10 @@ base_dir="/Users/ac1dburn/Documents/GitHub"
 # Generate a branch name with the current date and time
 branch_name="branch_$(date +'%Y%m%d%H%M%S')"
 
+# Go to directory
+
+cd "$base_dir/ac1ds-catalog"
+
 # Ensure you are on the main branch before creating a new one
 git checkout main
 
@@ -125,3 +129,13 @@ git commit -m "Automatically generated changes on $branch_name"
 
 # Push changes to the new branch
 git push origin "$branch_name"
+
+
+# Create a pull request using GitHub API
+repo="ac1dburnz/ac1ds-catalog"  # replace with your GitHub username and repo name
+title="Automatically generated changes on $branch_name"
+body="This pull request is automatically generated."
+
+curl -X POST -H "Authorization: token $github_token" \
+  -d '{"title":"'"$title"'","body":"'"$body"'","head":"'"$branch_name"'","base":"main"}' \
+  "https://api.github.com/repos/$repo/pulls"
