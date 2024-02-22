@@ -67,7 +67,41 @@
         "https://ghcr.io/onedr0p/sabnzbd"
       ],
       "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/sabnzbd.png"
-    }
+    },
+    "qbittorrent": {
+            "app_readme": "<p>qBittorrent is a cross-platform free and open-source BitTorrent client</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/qbittorrent\">https://truecharts.org/charts/stable/qbittorrent</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+            "categories": [
+                "media"
+            ],
+            "description": "qBittorrent is a cross-platform free and open-source BitTorrent client",
+            "healthy": true,
+            "healthy_error": null,
+            "home": "https://truecharts.org/charts/stable/qbittorrent",
+            "location": "/home/runner/work/catalog/catalog/stable/qbittorrent",
+            "latest_version": "18.1.12",
+            "latest_app_version": "4.6.3",
+            "latest_human_version": "4.6.3_18.1.12",
+            "last_update": "2024-02-14 18:32:33",
+            "name": "qbittorrent",
+            "recommended": false,
+            "title": "Qbittorrent",
+            "maintainers": [
+                {
+                    "name": "TrueCharts",
+                    "email": "info@truecharts.org",
+                    "url": "https://truecharts.org"
+                }
+            ],
+            "tags": [],
+            "screenshots": [],
+            "sources": [
+                "https://github.com/qbittorrent/qBittorrent",
+                "https://github.com/truecharts/charts/tree/master/charts/stable/qbittorrent",
+                "https://ghcr.io/onedr0p/qbittorrent",
+                "https://hub.docker.com/r/mjmeli/qbittorrent-port-forward-gluetun-server"
+            ],
+            "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/qbittorrent.png"
+        }
   },
   "stable": {
     "prowlarr": {
