@@ -100,12 +100,20 @@ exportarr:
             QBITTORRENT_PORT: "{{ .Values.service.main.ports.main.port }}"
             QBT_USERNAME: "{{ .Values.qbitportforward.QBT_USERNAME }}"
             QBT_PASSWORD: "{{ .Values.qbitportforward.QBT_PASSWORD }}"
-            ENABLE_ADDITIONAL_METRICS: false
-            ENABLE_UNKNOWN_QUEUE_ITEMS: false
 persistence:
   config:
     enabled: true
     mountPath: "/config"
+metrics:
+  main:
+    enabled: true
+    type: "servicemonitor"
+    endpoints:
+      - port: metrics
+        path: /metrics
+    targetSelector: metrics
+    prometheusRule:
+      enabled: true
 portal:
   open:
     enabled: true
