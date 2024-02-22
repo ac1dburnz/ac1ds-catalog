@@ -1,7 +1,7 @@
 image:
   repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
   pullPolicy: IfNotPresent
-  tag: 4.2.10-0.9.8_3-0.13.8_3@sha256:99f993160ad6b7bb2f9e62bdc5a1de1c85a34b087fba3f904e0678c436626e92
+  tag: 4.2.10-0.9.8_4-0.13.8_4@sha256:ec5bf94b0454b2d1665c7f8fe4d82141bbc566ff3b8fbb05c03d7a1296835a38
 
 exportarrImage:
   repository: ghcr.io/thde/rtorrent_exporter
