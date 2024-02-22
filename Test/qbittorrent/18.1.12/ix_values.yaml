@@ -76,7 +76,7 @@ workload:
             QBT_ADDR: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
             GTN_ADDR: '{{ printf "http://%v-gluetun:8000" (include "tc.v1.common.lib.chart.names.fullname" $) }}' 
  
-exportarr:
+  exportarr:
     enabled: true
     type: Deployment
     strategy: RollingUpdate
