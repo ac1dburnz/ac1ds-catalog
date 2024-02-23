@@ -11,10 +11,10 @@
       "healthy_error": null,
       "home": "https://truecharts.org/charts/stable/rtorrent-rutorrent",
       "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent",
-      "latest_version": "3.1.11",
+      "latest_version": "3.3.0",
       "latest_app_version": "4.2.9",
-      "latest_human_version": "4.2.9_3.1.11",
-      "last_update": "2024-02-04 06:46:20",
+      "latest_human_version": "4.2.9_3.3.0",
+      "last_update": "2024-02-22 00:34:44",
       "name": "rtorrent-rutorrent",
       "recommended": false,
       "title": "Rtorrent-rutorrent",
@@ -31,7 +31,8 @@
         "https://github.com/crazy-max/docker-rtorrent-rutorrent",
         "https://truecharts.org/charts/stable/rtorrent-rutorrent",
         "https://github.com/truecharts/charts/tree/master/charts/stable/rtorrent-rutorrent",
-        "https://ghcr.io/crazy-max/rtorrent-rutorrent"
+        "https://ghcr.io/crazy-max/rtorrent-rutorrent",
+        "https://ghcr.io/thde/rtorrent_exporter"
       ],
       "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/rtorrent-rutorrent.png"
     },

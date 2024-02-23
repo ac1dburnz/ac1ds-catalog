@@ -1,12 +1,12 @@
 image:
   repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
   pullPolicy: IfNotPresent
-  tag: 4.2.10-0.9.8_2-0.13.8_2@sha256:6b6114893e8bacadcb55569cb4722099a67f2f1e72f10922e89b7a68675c5567
+  tag: 4.2.10-0.9.8_5-0.13.8_5@sha256:80474e9e1c6ea0e49d8c36603c42a65d3c803e984fb6300d4f8891cb4db06b00
+
 exportarrImage:
   repository: ghcr.io/thde/rtorrent_exporter
   pullPolicy: IfNotPresent
-  tag: v1.3.0@sha256:11cb891155c203de14ede7b53f3b7c37ba4bfb041ce8472acbcafaab0fc7253d
-
+  tag: v1.3.1@sha256:0a7716d8b434f8ecf9370053c46e099cfde3c98a60555d3128e07e6da7438fcd
 
 securityContext:
   container:
@@ -139,8 +139,9 @@ metrics:
           path: /metrics
       targetSelector: metrics
       prometheusRule:
-        enabled: true
+        enabled: false
 
 portal:
   open:
     enabled: true
+            
