@@ -107,8 +107,8 @@ workload:
               enabled: false
           env:
             EXPORTER_PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
-            QBT_USERNAME: "{{ .Values.exportarr.QBT_USERNAME }}"
-            QBT_PASSWORD: "{{ .Values.exportarr.QBT_PASSWORD }}"
+            #QBT_USERNAME: "{{ .Values.exportarr.QBT_USERNAME }}"
+            #QBT_PASSWORD: "{{ .Values.exportarr.QBT_PASSWORD }}"
             QBITTORRENT_HOST: '{{ printf "%v" (include "tc.v1.common.lib.chart.names.fullname" $) }}' 
             #QBITTORRENT_PORT: "{{ .Values.service.main.ports.main.port }}"
             QBITTORRENT_PORT: "{{ .Values.exportarr.QBITTORRENT_PORT }}"
