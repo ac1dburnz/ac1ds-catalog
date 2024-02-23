@@ -112,6 +112,7 @@ workload:
             QBT_PASSWORD: "{{ .Values.exportarr.QBT_PASSWORD }}"
             QBITTORRENT_HOST: '{{ printf "%v" (include "tc.v1.common.lib.chart.names.fullname" $) }}' 
             #QBITTORRENT_PORT: "{{ .Values.service.main.ports.main.port }}"
+            QBITTORRENT_PORT: "{{ .Values.exportarr.QBITTORRENT_PORT }}"
 
 persistence:
   config:
