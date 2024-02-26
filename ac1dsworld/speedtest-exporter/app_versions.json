@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/10.1.2",
-        "last_update": "2024-02-25 14:25:43",
+        "last_update": "2024-02-26 06:21:49",
         "required_features": [
             "definitions/certificate",
+            "definitions/timezone",
             "normalize/interfaceConfiguration",
-            "definitions/interface",
-            "definitions/timezone"
+            "definitions/interface"
         ],
         "human_version": "3.5.4_10.1.2",
         "version": "10.1.2",
@@ -4524,12 +4524,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/10.1.1",
-        "last_update": "2024-02-25 14:25:43",
+        "last_update": "2024-02-26 06:21:49",
         "required_features": [
             "definitions/certificate",
+            "definitions/timezone",
             "normalize/interfaceConfiguration",
-            "definitions/interface",
-            "definitions/timezone"
+            "definitions/interface"
         ],
         "human_version": "3.5.4_10.1.1",
         "version": "10.1.1",
@@ -9044,12 +9044,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/10.1.0",
-        "last_update": "2024-02-25 14:25:43",
+        "last_update": "2024-02-26 06:21:49",
         "required_features": [
             "definitions/certificate",
+            "definitions/timezone",
             "normalize/interfaceConfiguration",
-            "definitions/interface",
-            "definitions/timezone"
+            "definitions/interface"
         ],
         "human_version": "3.5.4_10.1.0",
         "version": "10.1.0",
@@ -13564,12 +13564,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/10.0.0",
-        "last_update": "2024-02-25 14:25:43",
+        "last_update": "2024-02-26 06:21:49",
         "required_features": [
             "definitions/certificate",
+            "definitions/timezone",
             "normalize/interfaceConfiguration",
-            "definitions/interface",
-            "definitions/timezone"
+            "definitions/interface"
         ],
         "human_version": "3.5.4_10.0.0",
         "version": "10.0.0",
@@ -18084,13 +18084,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/9.3.0",
-        "last_update": "2024-02-25 14:25:43",
+        "last_update": "2024-02-26 06:21:49",
         "required_features": [
-            "definitions/timezone",
+            "definitions/interface",
             "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "definitions/certificate",
-            "definitions/interface"
+            "definitions/certificate"
         ],
         "human_version": "3.5.4_9.3.0",
         "version": "9.3.0",
@@ -22647,13 +22647,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/9.2.0",
-        "last_update": "2024-02-25 14:25:43",
+        "last_update": "2024-02-26 06:21:49",
         "required_features": [
-            "definitions/timezone",
+            "definitions/interface",
             "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "definitions/certificate",
-            "definitions/interface"
+            "definitions/certificate"
         ],
         "human_version": "3.5.4_9.2.0",
         "version": "9.2.0",
