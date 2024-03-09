@@ -4,11 +4,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.4.1",
-        "last_update": "2024-03-07 16:19:40",
+        "last_update": "2024-03-08 09:57:35",
         "required_features": [
-            "definitions/certificate",
             "normalize/interfaceConfiguration",
             "definitions/timezone",
+            "definitions/certificate",
             "definitions/interface"
         ],
         "human_version": "4.4.1_13.4.1",
@@ -20,7 +20,7 @@
                 "truecharts.org/SCALE-support": "true",
                 "truecharts.org/category": "utilities",
                 "truecharts.org/max_helm_version": "3.14",
-                "truecharts.org/min_helm_version": "3.12",
+                "truecharts.org/min_helm_version": "3.11",
                 "truecharts.org/train": "stable"
             },
             "apiVersion": "v2",
@@ -4972,11 +4972,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.4.0",
-        "last_update": "2024-03-07 16:19:40",
+        "last_update": "2024-03-08 09:57:35",
         "required_features": [
-            "definitions/certificate",
             "normalize/interfaceConfiguration",
             "definitions/timezone",
+            "definitions/certificate",
             "definitions/interface"
         ],
         "human_version": "4.4.1_13.4.0",
@@ -9940,11 +9940,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.3.0",
-        "last_update": "2024-03-07 16:19:40",
+        "last_update": "2024-03-08 09:57:35",
         "required_features": [
-            "definitions/certificate",
             "normalize/interfaceConfiguration",
             "definitions/timezone",
+            "definitions/certificate",
             "definitions/interface"
         ],
         "human_version": "4.4.1_13.3.0",
@@ -14908,11 +14908,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.2.3",
-        "last_update": "2024-03-07 16:19:40",
+        "last_update": "2024-03-08 09:57:35",
         "required_features": [
-            "definitions/certificate",
             "normalize/interfaceConfiguration",
             "definitions/timezone",
+            "definitions/certificate",
             "definitions/interface"
         ],
         "human_version": "4.4.1_13.2.3",
@@ -19876,12 +19876,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.3.0",
-        "last_update": "2024-03-07 16:19:40",
+        "last_update": "2024-03-08 09:57:35",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/certificate",
             "definitions/gpuConfiguration",
+            "definitions/certificate",
             "definitions/interface"
         ],
         "human_version": "4.4.1_12.3.0",
@@ -24887,12 +24887,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.2.0",
-        "last_update": "2024-03-07 16:19:40",
+        "last_update": "2024-03-08 09:57:35",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/certificate",
             "definitions/gpuConfiguration",
+            "definitions/certificate",
             "definitions/interface"
         ],
         "human_version": "4.4.1_12.2.0",
