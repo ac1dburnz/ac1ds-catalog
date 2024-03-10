@@ -4,7 +4,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/10.5.1",
-        "last_update": "2024-03-08 09:57:35",
+        "last_update": "2024-03-10 01:33:17",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/timezone",
@@ -4524,7 +4524,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/10.5.0",
-        "last_update": "2024-03-08 09:57:35",
+        "last_update": "2024-03-10 01:33:17",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/timezone",
@@ -9044,7 +9044,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/10.4.0",
-        "last_update": "2024-03-08 09:57:35",
+        "last_update": "2024-03-10 01:33:17",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/timezone",
@@ -13564,7 +13564,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/10.3.4",
-        "last_update": "2024-03-08 09:57:35",
+        "last_update": "2024-03-10 01:33:17",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/timezone",
@@ -18084,13 +18084,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/9.3.0",
-        "last_update": "2024-03-08 09:57:35",
+        "last_update": "2024-03-10 01:33:17",
         "required_features": [
-            "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/gpuConfiguration",
+            "definitions/interface",
             "definitions/certificate",
-            "definitions/interface"
+            "normalize/interfaceConfiguration",
+            "definitions/gpuConfiguration"
         ],
         "human_version": "3.5.4_9.3.0",
         "version": "9.3.0",
@@ -22647,13 +22647,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/speedtest-exporter/9.2.0",
-        "last_update": "2024-03-08 09:57:35",
+        "last_update": "2024-03-10 01:33:17",
         "required_features": [
-            "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/gpuConfiguration",
+            "definitions/interface",
             "definitions/certificate",
-            "definitions/interface"
+            "normalize/interfaceConfiguration",
+            "definitions/gpuConfiguration"
         ],
         "human_version": "3.5.4_9.2.0",
         "version": "9.2.0",
