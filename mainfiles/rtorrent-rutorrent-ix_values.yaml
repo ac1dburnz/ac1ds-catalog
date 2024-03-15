@@ -56,16 +56,16 @@ service:
       rtinc:
         enabled: true
         port: 50000
-  CSMovie:
+  csmovie:
     enabled: true
     ports:
-      CSMovie:
+      csmovie:
         enabled: true
         port: 2469
-  CSMovie:
+  cstv:
     enabled: true
     ports:
-      CSTv:
+      cstv:
         enabled: true
         port: 2470
   metrics:
