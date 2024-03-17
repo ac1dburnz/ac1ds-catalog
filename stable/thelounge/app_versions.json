@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.5.2",
-        "last_update": "2024-03-12 22:19:09",
+        "last_update": "2024-03-14 21:05:20",
         "required_features": [
             "definitions/certificate",
-            "definitions/interface",
             "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/interface"
         ],
         "human_version": "4.4.1_13.5.2",
         "version": "13.5.2",
@@ -4972,12 +4972,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.5.1",
-        "last_update": "2024-03-12 22:19:09",
+        "last_update": "2024-03-14 21:05:20",
         "required_features": [
             "definitions/certificate",
-            "definitions/interface",
             "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/interface"
         ],
         "human_version": "4.4.1_13.5.1",
         "version": "13.5.1",
@@ -9940,12 +9940,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.5.0",
-        "last_update": "2024-03-12 22:19:09",
+        "last_update": "2024-03-14 21:05:20",
         "required_features": [
             "definitions/certificate",
-            "definitions/interface",
             "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/interface"
         ],
         "human_version": "4.4.1_13.5.0",
         "version": "13.5.0",
@@ -14908,12 +14908,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.4.1",
-        "last_update": "2024-03-12 22:19:09",
+        "last_update": "2024-03-14 21:05:20",
         "required_features": [
             "definitions/certificate",
-            "definitions/interface",
             "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/interface"
         ],
         "human_version": "4.4.1_13.4.1",
         "version": "13.4.1",
@@ -19876,11 +19876,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.3.0",
-        "last_update": "2024-03-12 22:19:09",
+        "last_update": "2024-03-14 21:05:20",
         "required_features": [
-            "definitions/gpuConfiguration",
             "definitions/timezone",
             "definitions/certificate",
+            "definitions/gpuConfiguration",
             "normalize/interfaceConfiguration",
             "definitions/interface"
         ],
@@ -24887,11 +24887,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.2.0",
-        "last_update": "2024-03-12 22:19:09",
+        "last_update": "2024-03-14 21:05:20",
         "required_features": [
-            "definitions/gpuConfiguration",
             "definitions/timezone",
             "definitions/certificate",
+            "definitions/gpuConfiguration",
             "normalize/interfaceConfiguration",
             "definitions/interface"
         ],
