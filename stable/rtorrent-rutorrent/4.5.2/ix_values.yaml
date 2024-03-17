@@ -28,7 +28,7 @@ service:
       rtorrent:
         enabled: true
         protocol: tcp
-        port: 33942
+        port: 2468
   xmlrpc:
     enabled: true
     ports:
@@ -56,6 +56,18 @@ service:
       rtinc:
         enabled: true
         port: 50000
+  csmovie:
+    enabled: true
+    ports:
+      csmovie:
+        enabled: true
+        port: 2469
+  cstv:
+    enabled: true
+    ports:
+      cstv:
+        enabled: true
+        port: 2470
   metrics:
     enabled: true
     type: ClusterIP
