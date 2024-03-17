@@ -135,6 +135,9 @@ persistence:
   passwd:
     enabled: true
     mountPath: "/passwd"
+  cross:
+    enabled: true
+    mountPath: "/root/.cross-seed"
           
 metrics:
     main:
