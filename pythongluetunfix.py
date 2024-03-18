@@ -23,7 +23,7 @@ def update_values_yaml(values_yaml_path):
     for i, line in enumerate(lines):
         if 'gluetunImage:' in line:
             lines[i + 1] = '  repository: ghcr.io/ac1dburnz/gluetun\n'
-            lines[i + 2] = '  tag: v3.39.0@sha256:96efd91a674827556209eeb26032445ba4acb0c129ba6c640b4de2cf4a11cbbf\n'
+            lines[i + 2] = '  tag: v3.40.0@sha256:9d8020d6ea11a546f489bc24e91ba727f757b52c05c43caf66c6dd6752e0d4d0\n'
             lines[i + 3] = '  pullPolicy: IfNotPresent\n'
 
     with open(values_yaml_path, 'w') as file:
