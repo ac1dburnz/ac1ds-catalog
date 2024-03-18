@@ -56,18 +56,12 @@ service:
       rtinc:
         enabled: true
         port: 50000
-  csmovie:
+  xseed:
     enabled: true
     ports:
       csmovie:
         enabled: true
         port: 2469
-  cstv:
-    enabled: true
-    ports:
-      cstv:
-        enabled: true
-        port: 2470
   metrics:
     enabled: true
     type: ClusterIP
