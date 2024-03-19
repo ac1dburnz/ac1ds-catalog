@@ -1,7 +1,7 @@
 image:
   repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
   pullPolicy: IfNotPresent
-  tag: 4.2.11-0.9.8-0.13.8@sha256:9260b057eb941dc273b7998be915adc19093d461c7afa14951eb7b0e80c521bb
+  tag: 4.2.11_2-0.9.8-0.13.8@sha256:aa13ee995fb2f6b626167dd3f7949702f528d242f4d6177c29318622812bd990 
 
 exportarrImage:
   repository: ghcr.io/thde/rtorrent_exporter
@@ -56,18 +56,12 @@ service:
       rtinc:
         enabled: true
         port: 50000
-  csmovie:
+  xseed:
     enabled: true
     ports:
       csmovie:
         enabled: true
         port: 2469
-  cstv:
-    enabled: true
-    ports:
-      cstv:
-        enabled: true
-        port: 2470
   metrics:
     enabled: true
     type: ClusterIP
