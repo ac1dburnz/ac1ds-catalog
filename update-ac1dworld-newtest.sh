@@ -27,9 +27,9 @@ mkdir temp
 git clone https://github.com/truecharts/catalog.git temp
 
 # Copy apps from stable to ac1dsworld
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V | tail -n 1)" ]; then
+if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
   for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-    cp -R "$base_dir/ac1ds-catalog/stable/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
+    cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/stable"
   done
 fi
 
