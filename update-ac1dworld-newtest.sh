@@ -77,22 +77,10 @@ git push origin "$branch_name"
 # Create PR
 repo="ac1dburnz/ac1ds-catalog"
 title="Automatically generated changes on $branch_name"
-body="This pull request is automatically generated." 
+body="This pull request is automatically generated."
 
-pr_response=$(curl -X POST -H "Authorization: token $github_token" \
+curl -X POST -H "Authorization: token $github_token" \
   -d '{"title":"'"$title"'","body":"'"$body"'","head":"'"$branch_name"'","base":"main"}' \
-  "https://api.github.com/repos/$repo/pulls")
+  "https://api.github.com/repos/$repo/pulls"
 
-pr_number=$(echo $pr_response | jq '.number')
-
-# Set PR to squash merge 
-curl -X PATCH -H "Authorization: token $github_token" \
-  -d '{"merge_method":"squash"}' \
-  "https://api.github.com/repos/$repo/pulls/$pr_number"
-
-# Merge PR
-curl -X PUT -H "Authorization: token $github_token" \
-  "https://api.github.com/repos/$repo/pulls/$pr_number/merge"
-
-echo "PR merged successfully"
-
+echo "Script completed successfully"
