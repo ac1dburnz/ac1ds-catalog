@@ -48,15 +48,13 @@ done
 
 # Update ix_values.yaml
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-  cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
+  cd "$base_dir/ac1ds-catalog/ac1dsworld/$app" 
   cd "$(ls -1d */ | sort -V | tail -n 1)"
-  
-  # Check if mainfiles file exists
-  if [ -f "$base_dir/ac1ds-catalog/mainfiles/${app}-ix_values.yaml" ]; then
-    rm ix_values.yaml
-    cp "$base_dir/ac1ds-catalog/mainfiles/${app}-ix_values.yaml" ix_values.yaml
-  fi
+  rm ix_values.yaml
+  cp "$base_dir/ac1ds-catalog/mainfiles/${app}-ix_values.yaml" ix_values.yaml
 done
+#!/bin/bash
+
 # Copy catalog.json
 cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.json"
 
