@@ -1,10 +1,12 @@
 
 
-## [prowlarr-16.6.1](https://github.com/truecharts/charts/compare/prowlarr-16.4.0...prowlarr-16.6.1) (2024-03-30)
+## [prowlarr-16.6.2](https://github.com/truecharts/charts/compare/prowlarr-16.4.0...prowlarr-16.6.2) (2024-04-01)
 
 ### Chore
 
 
+
+- update container image ghcr.io/onedr0p/prowlarr-develop to 1.15.0.4361[@833d7ca](https://github.com/833d7ca) by renovate ([#20066](https://github.com/truecharts/charts/issues/20066))
 
 - update container image common to v20.2.10[@6f99c97](https://github.com/6f99c97) by renovate ([#19876](https://github.com/truecharts/charts/issues/19876))
 

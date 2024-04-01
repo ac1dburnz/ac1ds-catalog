@@ -7,7 +7,7 @@ annotations:
   truecharts.org/min_helm_version: "3.11"
   truecharts.org/train: stable
 apiVersion: v2
-appVersion: 1.15.0.4361
+appVersion: 5.3.6.8612
 dependencies:
   - name: common
     version: 20.2.10
@@ -17,24 +17,23 @@ dependencies:
     tags: []
     import-values: []
 deprecated: false
-description: Indexer manager/proxy built on the popular arr net base stack to integrate with your various PVR apps.
-home: https://truecharts.org/charts/stable/prowlarr
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/prowlarr.png
+description: A fork of Sonarr to work with movies à la Couchpotato
+home: https://truecharts.org/charts/stable/radarr
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/radarr.png
 keywords:
-  - prowlarr
+  - radarr
   - torrent
   - usenet
-kubeVersion: ">=1.24.0-0"
+kubeVersion: '>=1.24.0-0'
 maintainers:
   - name: TrueCharts
     email: info@truecharts.org
     url: https://truecharts.org
-name: prowlarr
+name: radarr
 sources:
-  - https://github.com/Prowlarr/Prowlarr
-  - https://github.com/k8s-at-home/container-images
-  - https://github.com/truecharts/charts/tree/master/charts/stable/prowlarr
+  - https://github.com/Radarr/Radarr
+  - https://github.com/truecharts/charts/tree/master/charts/stable/radarr
   - https://ghcr.io/onedr0p/exportarr
-  - https://ghcr.io/onedr0p/prowlarr-develop
+  - https://ghcr.io/onedr0p/radarr
 type: application
-version: 16.6.1
+version: 21.5.6
