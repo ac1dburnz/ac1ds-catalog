@@ -1,8 +1,7 @@
 image:
-  repository: ghcr.io/crazy-max/rtorrent-rutorrent
+  repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
   pullPolicy: IfNotPresent
-  tag: 4.2.9-0.9.8_2-0.13.8_1@sha256:8d089b00282a203886361268d9210106956302c2194e75ae56982a6f0398aef9
-
+  tag: edge
 exportarrImage:
   repository: ghcr.io/thde/rtorrent_exporter
   pullPolicy: IfNotPresent
@@ -28,7 +27,7 @@ service:
       rtorrent:
         enabled: true
         protocol: tcp
-        port: 33942
+        port: 2468
   xmlrpc:
     enabled: true
     ports:
@@ -56,6 +55,12 @@ service:
       rtinc:
         enabled: true
         port: 50000
+  xseed:
+    enabled: true
+    ports:
+      csmovie:
+        enabled: true
+        port: 2469
   metrics:
     enabled: true
     type: ClusterIP
@@ -72,18 +77,12 @@ workload:
       containers:
         main:
           probes:
-            liveness:
-              exec:
-                command:
-                  - /usr/local/bin/healthcheck
             readiness:
-              exec:
-                command:
-                  - /usr/local/bin/healthcheck
+              enabled: false
+            liveness:
+              enabled: false
             startup:
-              exec:
-                command:
-                  - /usr/local/bin/healthcheck
+              enabled: false
           env:
             RUTORRENT_PORT: "{{ .Values.service.main.ports.main.port }}"
             PORT_RTORRENT: "{{ .Values.service.rtorrent.ports.rtorrent.port }}"
@@ -91,6 +90,7 @@ workload:
             XMLRPC_PORT: "{{ .Values.service.xmlrpc.ports.xmlrpc.port }}"
             WEBDAV_PORT: "{{ .Values.service.webdav.ports.webdav.port }}"
             RT_INC_PORT: "{{ .Values.service.rtinc.ports.rtinc.port }}"
+
 
   exportarr:
     enabled: true
@@ -104,7 +104,7 @@ workload:
           enabled: true
           imageSelector: exportarrImage
           args:
-            - --rtorrent.scrape-uri={{ printf "http://%s-xmlrpc.%s:%v/RPC2/" .Release.Name .Release.Namespace .Values.service.xmlrpc.ports.xmlrpc.port }}
+            - --rtorrent.scrape-uri={{ printf "http://%s-xmlrpc.%s.svc.cluster.local:%v/RPC2/" .Release.Name .Release.Namespace .Values.service.xmlrpc.ports.xmlrpc.port }}
           probes:
             liveness:
               enabled: false
@@ -115,7 +115,7 @@ workload:
           env:
             INTERFACE: 0.0.0.0
             PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
-            URL: '{{ printf "http://%s-xmlrpc.%s:%v/RPC2/" .Release.Name .Release.Namespace .Values.service.xmlrpc.ports.xmlrpc.port }}'
+            URL: '{{ printf "http://%s-xmlrpc.%s.svc.cluster.local:%v/RPC2/" .Release.Name .Release.Namespace .Values.service.xmlrpc.ports.xmlrpc.port }}'
             ENABLE_ADDITIONAL_METRICS: false
             ENABLE_UNKNOWN_QUEUE_ITEMS: false
 
@@ -129,18 +129,19 @@ persistence:
   passwd:
     enabled: true
     mountPath: "/passwd"
-
+          
 metrics:
-  main:
-    enabled: true
-    type: "servicemonitor"
-    endpoints:
-      - port: metrics
-        path: /metrics
-    targetSelector: metrics
-    prometheusRule:
-      enabled: false
+    main:
+      enabled: true
+      type: "servicemonitor"
+      endpoints:
+        - port: metrics
+          path: /metrics
+      targetSelector: metrics
+      prometheusRule:
+        enabled: false
 
 portal:
   open:
     enabled: true
+            
