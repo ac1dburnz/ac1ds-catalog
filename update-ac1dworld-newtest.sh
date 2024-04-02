@@ -82,9 +82,9 @@ for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter 
   cd "$(ls -1d */ | sort -V | tail -n 1)"
   
   # Check if mainfiles file exists for test
-  if [ -f "$base_dir/ac1ds-catalog/mainfiles/${app}-Test-ix_values.yaml" ]; then
+  if [ -f "$base_dir/ac1ds-catalog/mainfiles/${app}_Test_ix_values.yaml" ]; then
     rm ix_values.yaml
-    cp "$base_dir/ac1ds-catalog/mainfiles/${app}-Test-ix_values.yaml" ix_values.yaml
+    cp "$base_dir/ac1ds-catalog/mainfiles/${app}_Test_ix_values.yaml" ix_values.yaml
   fi
 done
 
