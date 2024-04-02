@@ -26,7 +26,7 @@ mkdir temp
 # Clone catalog into temp directory
 git clone https://github.com/truecharts/catalog.git temp
 
-# Copy apps from stable to ac1dsworld
+# Copy apps from ac1dsworld to stable
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
   for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
     cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/stable"
@@ -40,13 +40,29 @@ if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V 
   done
 fi
 
-# Remove unwanted files  
+# Copy apps from ac1dsworld to test
+
+if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
+  for app in rtorrent-rutorrent ; do
+    cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/Test"
+  done
+fi
+
+# Remove unwanted files ac1dsworld
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
   cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
   rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
 done
 
-# Update ix_values.yaml
+# Remove unwanted files Test 
+
+for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
+  cd "$base_dir/ac1ds-catalog/Test/$app"
+  rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
+done
+
+
+# Update ix_values.yaml for ac1dsworld
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
   cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
   cd "$(ls -1d */ | sort -V | tail -n 1)"
@@ -57,6 +73,22 @@ for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter 
     cp "$base_dir/ac1ds-catalog/mainfiles/${app}-ix_values.yaml" ix_values.yaml
   fi
 done
+
+
+# Update ix_values.yaml for Test
+
+for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
+  cd "$base_dir/ac1ds-catalog/Test/$app"
+  cd "$(ls -1d */ | sort -V | tail -n 1)"
+  
+  # Check if mainfiles file exists for test
+  if [ -f "$base_dir/ac1ds-catalog/mainfiles/${app}-Test-ix_values.yaml" ]; then
+    rm ix_values.yaml
+    cp "$base_dir/ac1ds-catalog/mainfiles/${app}-Test-ix_values.yaml" ix_values.yaml
+  fi
+done
+
+
 # Copy catalog.json
 cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.json"
 
@@ -68,6 +100,9 @@ sudo rm -r "$base_dir/ac1ds-catalog/temp"
 
 # Run catalog fix script
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
+
+python3 "$base_dir/ac1ds-catalog/pythongluetunfix-test.py"
+
 
 # Commit changes  
 git add --all :/
