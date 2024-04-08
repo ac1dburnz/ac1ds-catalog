@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.7.5",
-        "last_update": "2024-04-07 01:25:03",
+        "last_update": "2024-04-08 01:16:13",
         "required_features": [
-            "definitions/interface",
-            "definitions/certificate",
+            "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate",
+            "definitions/interface"
         ],
         "human_version": "4.2.9_4.7.5",
         "version": "4.7.5",
@@ -6438,12 +6438,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.7.4",
-        "last_update": "2024-04-07 01:25:03",
+        "last_update": "2024-04-08 01:16:13",
         "required_features": [
-            "definitions/interface",
-            "definitions/certificate",
+            "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate",
+            "definitions/interface"
         ],
         "human_version": "4.2.9_4.7.4",
         "version": "4.7.4",
@@ -12872,13 +12872,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.3.0",
-        "last_update": "2024-04-07 01:25:03",
+        "last_update": "2024-04-08 01:16:13",
         "required_features": [
-            "definitions/interface",
-            "definitions/timezone",
             "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
-            "definitions/certificate"
+            "definitions/certificate",
+            "definitions/timezone",
+            "definitions/interface"
         ],
         "human_version": "4.2.9_3.3.0",
         "version": "3.3.0",
@@ -19349,13 +19349,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.2.0",
-        "last_update": "2024-04-07 01:25:03",
+        "last_update": "2024-04-08 01:16:13",
         "required_features": [
-            "definitions/interface",
-            "definitions/timezone",
             "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
-            "definitions/certificate"
+            "definitions/certificate",
+            "definitions/timezone",
+            "definitions/interface"
         ],
         "human_version": "4.2.9_3.2.0",
         "version": "3.2.0",

@@ -2,12 +2,12 @@ annotations:
   max_scale_version: 24.04.0
   min_scale_version: 23.10.0
   truecharts.org/SCALE-support: "true"
-  truecharts.org/category: media
+  truecharts.org/category: utilities
   truecharts.org/max_helm_version: "3.14"
   truecharts.org/min_helm_version: "3.11"
   truecharts.org/train: stable
 apiVersion: v2
-appVersion: 4.0.3.1413
+appVersion: 4.4.3
 dependencies:
   - name: common
     version: 20.2.10
@@ -17,23 +17,24 @@ dependencies:
     tags: []
     import-values: []
 deprecated: false
-description: Smart PVR for newsgroup and bittorrent users
-home: https://truecharts.org/charts/stable/sonarr
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/sonarr.png
+description: The Lounge, modern web IRC client designed for self-hosting
+home: https://truecharts.org/charts/stable/thelounge
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/thelounge.png
 keywords:
-  - sonarr
-  - torrent
-  - usenet
-kubeVersion: ">=1.24.0-0"
+  - thelounge
+  - IRC
+  - The Lounge
+  - docker
+  - thelounge-docker
+kubeVersion: '>=1.24.0-0'
 maintainers:
   - name: TrueCharts
     email: info@truecharts.org
     url: https://truecharts.org
-name: sonarr
+name: thelounge
 sources:
-  - https://github.com/Sonarr/Sonarr
-  - https://github.com/truecharts/charts/tree/master/charts/stable/sonarr
-  - https://ghcr.io/onedr0p/sonarr
-  - https://ghcr.io/onedr0p/exportarr
+  - https://github.com/thelounge/thelounge
+  - https://github.com/truecharts/charts/tree/master/charts/stable/thelounge
+  - https://hub.docker.com/r/thelounge/thelounge
 type: application
-version: 21.5.8
+version: 13.7.6
