@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/16.7.2",
-        "last_update": "2024-04-10 01:11:39",
+        "last_update": "2024-04-10 09:56:18",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
+            "definitions/interface",
             "definitions/timezone",
-            "definitions/interface"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "1.15.0.4361_16.7.2",
         "version": "16.7.2",
@@ -5044,12 +5044,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/16.7.1",
-        "last_update": "2024-04-10 01:11:39",
+        "last_update": "2024-04-10 09:56:18",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
+            "definitions/interface",
             "definitions/timezone",
-            "definitions/interface"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "1.15.0.4361_16.7.1",
         "version": "16.7.1",
@@ -10084,12 +10084,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/15.4.1",
-        "last_update": "2024-04-10 01:11:39",
+        "last_update": "2024-04-10 09:56:18",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
+            "definitions/interface",
             "definitions/timezone",
-            "definitions/interface"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "1.14.0.4286_15.4.1",
         "version": "15.4.1",
@@ -15124,12 +15124,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/15.4.0",
-        "last_update": "2024-04-10 01:11:39",
+        "last_update": "2024-04-10 09:56:18",
         "required_features": [
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
+            "definitions/interface",
             "definitions/timezone",
-            "definitions/interface"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "1.14.0.4286_15.4.0",
         "version": "15.4.0",
@@ -20164,13 +20164,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/14.5.0",
-        "last_update": "2024-04-10 01:11:39",
+        "last_update": "2024-04-10 09:56:18",
         "required_features": [
-            "definitions/timezone",
+            "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
+            "definitions/timezone",
             "definitions/certificate",
-            "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "definitions/interface"
         ],
         "human_version": "1.13.3.4273_14.5.0",
         "version": "14.5.0",
@@ -25247,13 +25247,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/14.4.0",
-        "last_update": "2024-04-10 01:11:39",
+        "last_update": "2024-04-10 09:56:18",
         "required_features": [
-            "definitions/timezone",
+            "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
+            "definitions/timezone",
             "definitions/certificate",
-            "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "definitions/interface"
         ],
         "human_version": "1.13.3.4273_14.4.0",
         "version": "14.4.0",
