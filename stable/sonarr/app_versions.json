@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/21.6.5",
-        "last_update": "2024-04-11 13:04:11",
+        "last_update": "2024-04-12 00:58:37",
         "required_features": [
-            "definitions/interface",
             "definitions/certificate",
-            "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/interface",
+            "definitions/timezone"
         ],
         "human_version": "4.0.3.1413_21.6.5",
         "version": "21.6.5",
@@ -5047,12 +5047,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/21.6.4",
-        "last_update": "2024-04-11 13:04:11",
+        "last_update": "2024-04-12 00:58:37",
         "required_features": [
-            "definitions/interface",
             "definitions/certificate",
-            "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/interface",
+            "definitions/timezone"
         ],
         "human_version": "4.0.3.1413_21.6.4",
         "version": "21.6.4",
@@ -10090,12 +10090,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/20.2.1",
-        "last_update": "2024-04-11 13:04:11",
+        "last_update": "2024-04-12 00:58:37",
         "required_features": [
-            "definitions/interface",
             "definitions/certificate",
-            "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/interface",
+            "definitions/timezone"
         ],
         "human_version": "4.0.2.1183_20.2.1",
         "version": "20.2.1",
@@ -15129,12 +15129,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/20.2.0",
-        "last_update": "2024-04-11 13:04:11",
+        "last_update": "2024-04-12 00:58:37",
         "required_features": [
-            "definitions/interface",
             "definitions/certificate",
-            "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/interface",
+            "definitions/timezone"
         ],
         "human_version": "4.0.1.929_20.2.0",
         "version": "20.2.0",
@@ -20168,11 +20168,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/19.2.0",
-        "last_update": "2024-04-11 13:04:11",
+        "last_update": "2024-04-12 00:58:37",
         "required_features": [
             "definitions/certificate",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
+            "definitions/timezone",
             "definitions/interface",
             "normalize/interfaceConfiguration"
         ],
@@ -25250,11 +25250,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/19.1.1",
-        "last_update": "2024-04-11 13:04:11",
+        "last_update": "2024-04-12 00:58:37",
         "required_features": [
             "definitions/certificate",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
+            "definitions/timezone",
             "definitions/interface",
             "normalize/interfaceConfiguration"
         ],

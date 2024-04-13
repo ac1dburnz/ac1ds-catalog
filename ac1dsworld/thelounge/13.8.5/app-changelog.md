@@ -1,10 +1,12 @@
 
 
-## [thelounge-13.8.4](https://github.com/truecharts/charts/compare/thelounge-13.6.0...thelounge-13.8.4) (2024-04-11)
+## [thelounge-13.8.5](https://github.com/truecharts/charts/compare/thelounge-13.6.0...thelounge-13.8.5) (2024-04-13)
 
 ### Chore
 
 
+
+- update container image thelounge/thelounge to 4.4.3[@f6232c1](https://github.com/f6232c1) by renovate ([#20657](https://github.com/truecharts/charts/issues/20657))
 
 - update container image common to v20.3.6[@27edfed](https://github.com/27edfed) by renovate ([#20599](https://github.com/truecharts/charts/issues/20599))
 
