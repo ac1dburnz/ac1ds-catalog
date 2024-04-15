@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.4",
-        "last_update": "2024-04-14 01:14:48",
+        "last_update": "2024-04-15 01:32:31",
         "required_features": [
             "definitions/certificate",
-            "definitions/timezone",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/timezone"
         ],
         "human_version": "4.2.9_4.8.4",
         "version": "4.8.4",
@@ -6442,12 +6442,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.3",
-        "last_update": "2024-04-14 01:14:48",
+        "last_update": "2024-04-15 01:32:31",
         "required_features": [
             "definitions/certificate",
-            "definitions/timezone",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/timezone"
         ],
         "human_version": "4.2.9_4.8.3",
         "version": "4.8.3",
@@ -12880,13 +12880,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.3.0",
-        "last_update": "2024-04-14 01:14:48",
+        "last_update": "2024-04-15 01:32:31",
         "required_features": [
             "definitions/certificate",
-            "definitions/timezone",
-            "definitions/gpuConfiguration",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/gpuConfiguration",
+            "definitions/timezone"
         ],
         "human_version": "4.2.9_3.3.0",
         "version": "3.3.0",
@@ -19357,13 +19357,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.2.0",
-        "last_update": "2024-04-14 01:14:48",
+        "last_update": "2024-04-15 01:32:31",
         "required_features": [
             "definitions/certificate",
-            "definitions/timezone",
-            "definitions/gpuConfiguration",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/gpuConfiguration",
+            "definitions/timezone"
         ],
         "human_version": "4.2.9_3.2.0",
         "version": "3.2.0",
