@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.8.5",
-        "last_update": "2024-04-14 01:14:48",
+        "last_update": "2024-04-15 01:32:31",
         "required_features": [
             "definitions/certificate",
-            "definitions/timezone",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/timezone"
         ],
         "human_version": "4.4.3_13.8.5",
         "version": "13.8.5",
@@ -4976,12 +4976,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.8.4",
-        "last_update": "2024-04-14 01:14:48",
+        "last_update": "2024-04-15 01:32:31",
         "required_features": [
             "definitions/certificate",
-            "definitions/timezone",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/timezone"
         ],
         "human_version": "4.4.3_13.8.4",
         "version": "13.8.4",
@@ -9948,13 +9948,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.3.0",
-        "last_update": "2024-04-14 01:14:48",
+        "last_update": "2024-04-15 01:32:31",
         "required_features": [
             "definitions/certificate",
-            "definitions/timezone",
-            "definitions/gpuConfiguration",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/gpuConfiguration",
+            "definitions/timezone"
         ],
         "human_version": "4.4.1_12.3.0",
         "version": "12.3.0",
@@ -14959,13 +14959,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.2.0",
-        "last_update": "2024-04-14 01:14:48",
+        "last_update": "2024-04-15 01:32:31",
         "required_features": [
             "definitions/certificate",
-            "definitions/timezone",
-            "definitions/gpuConfiguration",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/gpuConfiguration",
+            "definitions/timezone"
         ],
         "human_version": "4.4.1_12.2.0",
         "version": "12.2.0",
