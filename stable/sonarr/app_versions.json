@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/21.6.9",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "4.0.4.1491_21.6.9",
         "version": "21.6.9",
@@ -39,7 +39,7 @@
             "deprecated": false,
             "description": "Smart PVR for newsgroup and bittorrent users",
             "home": "https://truecharts.org/charts/stable/sonarr",
-            "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/sonarr.png",
+            "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/sonarr.webp",
             "keywords": [
                 "sonarr",
                 "torrent",
@@ -5047,12 +5047,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/21.6.8",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "4.0.4.1491_21.6.8",
         "version": "21.6.8",
@@ -10090,12 +10090,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/20.2.1",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "4.0.2.1183_20.2.1",
         "version": "20.2.1",
@@ -15129,12 +15129,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/20.2.0",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "4.0.1.929_20.2.0",
         "version": "20.2.0",
@@ -20168,13 +20168,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/19.2.0",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
+            "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "4.0.1.929_19.2.0",
         "version": "19.2.0",
@@ -25250,13 +25250,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/19.1.1",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
+            "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "4.0.1.929_19.1.1",
         "version": "19.1.1",
