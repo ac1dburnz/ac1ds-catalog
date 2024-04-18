@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.8.7",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "4.4.3_13.8.7",
         "version": "13.8.7",
@@ -39,7 +39,7 @@
             "deprecated": false,
             "description": "The Lounge, modern web IRC client designed for self-hosting",
             "home": "https://truecharts.org/charts/stable/thelounge",
-            "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/thelounge.png",
+            "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/thelounge.webp",
             "keywords": [
                 "thelounge",
                 "IRC",
@@ -4976,12 +4976,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.8.6",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "4.4.3_13.8.6",
         "version": "13.8.6",
@@ -9948,13 +9948,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.3.0",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
+            "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "4.4.1_12.3.0",
         "version": "12.3.0",
@@ -14959,13 +14959,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.2.0",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
+            "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "4.4.1_12.2.0",
         "version": "12.2.0",
