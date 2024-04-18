@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/16.8.3",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "1.16.1.4420_16.8.3",
         "version": "16.8.3",
@@ -39,7 +39,7 @@
             "deprecated": false,
             "description": "Indexer manager/proxy built on the popular arr net base stack to integrate with your various PVR apps.",
             "home": "https://truecharts.org/charts/stable/prowlarr",
-            "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/prowlarr.png",
+            "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/prowlarr.webp",
             "keywords": [
                 "prowlarr",
                 "torrent",
@@ -58,8 +58,8 @@
                 "https://github.com/Prowlarr/Prowlarr",
                 "https://github.com/k8s-at-home/container-images",
                 "https://github.com/truecharts/charts/tree/master/charts/stable/prowlarr",
-                "https://ghcr.io/onedr0p/prowlarr-develop",
-                "https://ghcr.io/onedr0p/exportarr"
+                "https://ghcr.io/onedr0p/exportarr",
+                "https://ghcr.io/onedr0p/prowlarr-develop"
             ],
             "type": "application",
             "version": "16.8.3"
@@ -5048,12 +5048,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/16.8.2",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "1.16.1.4420_16.8.2",
         "version": "16.8.2",
@@ -10092,12 +10092,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/15.4.1",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "1.14.0.4286_15.4.1",
         "version": "15.4.1",
@@ -15132,12 +15132,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/15.4.0",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "1.14.0.4286_15.4.0",
         "version": "15.4.0",
@@ -20172,13 +20172,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/14.5.0",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
+            "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "1.13.3.4273_14.5.0",
         "version": "14.5.0",
@@ -25255,13 +25255,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/14.4.0",
-        "last_update": "2024-04-16 20:21:27",
+        "last_update": "2024-04-18 01:00:31",
         "required_features": [
+            "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "1.13.3.4273_14.4.0",
         "version": "14.4.0",
