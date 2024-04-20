@@ -1,6 +1,6 @@
 
 
-## [thelounge-13.8.7](https://github.com/truecharts/charts/compare/thelounge-13.6.0...thelounge-13.8.7) (2024-04-17)
+## [thelounge-13.8.8](https://github.com/truecharts/charts/compare/thelounge-13.6.0...thelounge-13.8.8) (2024-04-20)
 
 ### Chore
 
@@ -8,7 +8,9 @@
 
 - bump charts to ensure new icons are released
 
-- update container image common to v20.3.7[@8cf9fc9](https://github.com/8cf9fc9) by renovate ([#20819](https://github.com/truecharts/charts/issues/20819))
+- update container image common to v20.3.2[@0722ebb](https://github.com/0722ebb) by renovate ([#20334](https://github.com/truecharts/charts/issues/20334))
+
+- update container image thelounge/thelounge to v4.4.3[@8e74f5a](https://github.com/8e74f5a) by renovate ([#20345](https://github.com/truecharts/charts/issues/20345))
 
 - update container image thelounge/thelounge to 4.4.3[@f6232c1](https://github.com/f6232c1) by renovate ([#20657](https://github.com/truecharts/charts/issues/20657))
 
@@ -18,11 +20,11 @@
 
 - update container image common to v20.3.4[@d7e1b23](https://github.com/d7e1b23) by renovate ([#20527](https://github.com/truecharts/charts/issues/20527))
 
+- update container image common to v20.3.7[@8cf9fc9](https://github.com/8cf9fc9) by renovate ([#20819](https://github.com/truecharts/charts/issues/20819))
+
+- update container image thelounge/thelounge to 4.4.3[@7a46dc0](https://github.com/7a46dc0) by renovate ([#21001](https://github.com/truecharts/charts/issues/21001))
+
 - update container image common to v20.3.3[@3876ba5](https://github.com/3876ba5) by renovate ([#20478](https://github.com/truecharts/charts/issues/20478))
-
-- update container image common to v20.3.2[@0722ebb](https://github.com/0722ebb) by renovate ([#20334](https://github.com/truecharts/charts/issues/20334))
-
-- update container image thelounge/thelounge to v4.4.3[@8e74f5a](https://github.com/8e74f5a) by renovate ([#20345](https://github.com/truecharts/charts/issues/20345))
 
 - update container image common to v20.2.10[@6f99c97](https://github.com/6f99c97) by renovate ([#19876](https://github.com/truecharts/charts/issues/19876))
 
