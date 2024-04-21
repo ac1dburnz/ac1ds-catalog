@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.7",
-        "last_update": "2024-04-20 18:48:21",
+        "last_update": "2024-04-21 01:02:29",
         "required_features": [
             "definitions/certificate",
+            "definitions/interface",
             "normalize/interfaceConfiguration",
-            "definitions/timezone",
-            "definitions/interface"
+            "definitions/timezone"
         ],
         "human_version": "4.2.9_4.8.7",
         "version": "4.8.7",
@@ -6442,12 +6442,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.6",
-        "last_update": "2024-04-20 18:48:21",
+        "last_update": "2024-04-21 01:02:29",
         "required_features": [
             "definitions/certificate",
+            "definitions/interface",
             "normalize/interfaceConfiguration",
-            "definitions/timezone",
-            "definitions/interface"
+            "definitions/timezone"
         ],
         "human_version": "4.2.9_4.8.6",
         "version": "4.8.6",
@@ -12880,11 +12880,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.3.0",
-        "last_update": "2024-04-20 18:48:21",
+        "last_update": "2024-04-21 01:02:29",
         "required_features": [
-            "definitions/interface",
             "definitions/gpuConfiguration",
             "definitions/certificate",
+            "definitions/interface",
             "definitions/timezone",
             "normalize/interfaceConfiguration"
         ],
@@ -19357,11 +19357,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.2.0",
-        "last_update": "2024-04-20 18:48:21",
+        "last_update": "2024-04-21 01:02:29",
         "required_features": [
-            "definitions/interface",
             "definitions/gpuConfiguration",
             "definitions/certificate",
+            "definitions/interface",
             "definitions/timezone",
             "normalize/interfaceConfiguration"
         ],
