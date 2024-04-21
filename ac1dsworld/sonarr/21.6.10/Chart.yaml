@@ -7,21 +7,21 @@ annotations:
   truecharts.org/min_helm_version: "3.11"
   truecharts.org/train: stable
 apiVersion: v2
-appVersion: 1.16.1.4420
+appVersion: 4.0.4.1491
 dependencies:
   - name: common
-    version: 20.3.7
+    version: 20.3.11
     repository: oci://tccr.io/truecharts
     condition: ""
     alias: ""
     tags: []
     import-values: []
 deprecated: false
-description: Indexer manager/proxy built on the popular arr net base stack to integrate with your various PVR apps.
-home: https://truecharts.org/charts/stable/prowlarr
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/prowlarr.webp
+description: Smart PVR for newsgroup and bittorrent users
+home: https://truecharts.org/charts/stable/sonarr
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/sonarr.webp
 keywords:
-  - prowlarr
+  - sonarr
   - torrent
   - usenet
 kubeVersion: ">=1.24.0-0"
@@ -29,12 +29,11 @@ maintainers:
   - name: TrueCharts
     email: info@truecharts.org
     url: https://truecharts.org
-name: prowlarr
+name: sonarr
 sources:
-  - https://github.com/Prowlarr/Prowlarr
-  - https://github.com/k8s-at-home/container-images
-  - https://github.com/truecharts/charts/tree/master/charts/stable/prowlarr
-  - https://ghcr.io/onedr0p/prowlarr-develop
+  - https://github.com/Sonarr/Sonarr
+  - https://github.com/truecharts/charts/tree/master/charts/stable/sonarr
+  - https://ghcr.io/onedr0p/sonarr
   - https://ghcr.io/onedr0p/exportarr
 type: application
-version: 16.8.3
+version: 21.6.10
