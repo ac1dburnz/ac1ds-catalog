@@ -1,18 +1,16 @@
 {
-    "4.8.7": {
+    "4.8.12": {
         "healthy": true,
         "supported": true,
         "healthy_error": null,
-        "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.7",
-        "last_update": "2024-04-21 01:02:29",
+        "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.12",
+        "last_update": "2024-04-22 01:03:08",
         "required_features": [
             "definitions/certificate",
-            "definitions/interface",
-            "normalize/interfaceConfiguration",
             "definitions/timezone"
         ],
-        "human_version": "4.2.9_4.8.7",
-        "version": "4.8.7",
+        "human_version": "4.2.9_4.8.12",
+        "version": "4.8.12",
         "chart_metadata": {
             "annotations": {
                 "max_scale_version": "24.04.0",
@@ -61,78 +59,86 @@
                 "https://ghcr.io/thde/rtorrent_exporter"
             ],
             "type": "application",
-            "version": "4.8.7"
+            "version": "4.8.12"
         },
         "app_metadata": null,
         "schema": {
             "groups": [
                 {
-                    "name": "Container Image",
-                    "description": "Image to be used for container"
+                    "name": "Image",
+                    "description": "Configured the images to be used for the Chart.<br>\nIt's wise to use \"digest pinned\" tags and to avoid using \"latest\"<br>.\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/#images\">TrueCharts Docs - truecharts.org/common/#images</a><br>\n"
                 },
                 {
-                    "name": "General Settings",
-                    "description": "General Deployment Settings"
+                    "name": "General",
+                    "description": "For TrueNAS SCALE We've grouped a number of settings here, that all effact how apps run in general.<br>\n<br>\nCheckout the following documentation for more information:<br>\n  - <a target=\"_blank\" href=\"https://truecharts.org/common/global/\">TrueCharts Docs - Global Settings</a><br>\n  - <a target=\"_blank\" href=\"https://truecharts.org/common/#tz\">TrueCharts Docs - TimeZone</a><br>\n  - <a target=\"_blank\" href=\"https://truecharts.org/common/podoptions/\">TrueCharts Docs - Pod Options</a><br>\n  - Image Pull Secrets <br>\n"
                 },
                 {
-                    "name": "Workload Settings",
-                    "description": "Workload Settings"
+                    "name": "Workload",
+                    "description": "These settings configure how the actual Pods and containers are running.<br>\nGenerally, on SCALE, we only expose a limited subset of these settings for the primary workload and container.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/workload/\">TrueCharts Docs - Workload</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/container/\">TrueCharts Docs - Container</a><br>\n"
                 },
                 {
                     "name": "App Configuration",
-                    "description": "App Specific Config Options"
+                    "description": "Every application has different values that may be required to run or have multiple options that the user may choose to enable or disable to change the behavior of the application.<br>\nMost options should have a Tooltip (Circled Question Mark) to further describe said option.<br>\n<br>\nTo find more information, lookup your chart-specific documentation in the <a target=\"_blank\" href=\"https://truecharts.org/charts/description-list/\">TrueCharts Docs - Charts List</a><br>\n"
                 },
                 {
-                    "name": "Networking and Services",
-                    "description": "Configure Network and Services for Container"
+                    "name": "Services",
+                    "description": "Service and Networking options for any applications are contained here. <br>\nSome applications may have complicated networking setups with multiple options or some may have no options here at all. <br>\n<br>\nOptions here include the service and port configurations for the application, and more may be enabled or changed under the Advanced Settings and Show Expert Config boxes.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/service/\">TrueCharts Docs - Services</a><br>\n"
                 },
                 {
-                    "name": "Storage and Persistence",
-                    "description": "Persist and Share Data that is Separate from the Container"
+                    "name": "Networking",
+                    "description": "Contains advanced networking options that are not actively supported by the TrueCharts team.<br>\nCurrently only contains scaleExternalInterfaces.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/scaleexternalinterface/\">TrueCharts Docs - External Interfaces</a><br>\n"
+                },
+                {
+                    "name": "Persistence",
+                    "description": "Many applications will have certain options for storage to be configurable by the user, the main two being PVC and hostpath but may include other types. <br>\nThis storage is called Persistence since it is not deleted upon restart or upgrade of an application.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/persistence/\">TrueCharts Docs - Persistence</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/nfs-share/\">TrueCharts Docs - Apps NFS Share Guide</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/general/faq/#why-pvc-is-recommended-over-hostpath\">TrueCharts Docs - FAQ</a><br>\n"
                 },
                 {
                     "name": "Ingress",
-                    "description": "Ingress Configuration"
+                    "description": "Ingress (more commonly known as Reverse Proxy) settings can be configured here. This is how Kubernetes connects your Applications in containers to FQDNs (fully qualified domain names). <br>\nIf you choose to enable this you must have a \"Ingress Provider\" aka \"Reverse Proxy\" installed (We highly advice Traefik: <a target=\"_blank\" href=\"https://truecharts.org/charts/premium/traefik/)\">TrueCharts Docs - Traefik</a> <br>\nIt also requiresa DNS service to actually resolve the DNS name of the FQDN specified.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/ingress/\">TrueCharts Docs - Ingress</a><br>\n"
                 },
                 {
-                    "name": "Security and Permissions",
-                    "description": "Configure Security Context and Permissions"
+                    "name": "SecurityContext",
+                    "description": "The security settings for each application and/or permissions that each application may have for the files/directories created. <br>\nEach application will come with predefined permissions but users may want to change certain setting depending on their usage or capabilities. <br>\n<br>\nUnless necessary users are advised to keep this section mostly to defaults.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/securitycontext/\">TrueCharts Docs - SecurityContext</a><br>\n"
                 },
                 {
-                    "name": "Resources and Devices",
-                    "description": "Specify Resources/Devices to be Allocated to Workload"
+                    "name": "Resources",
+                    "description": "Resources limits that have been defined by each application are in this section.\nMost will have a specific default that some users may want to change based on their specific hardware or needs.<br>\n<br>\nThis also contains the options to mount GPUs or, more precisely, \"request\" GPU's to be mounted.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/resources/\">TrueCharts Docs - Resources</a><br>\n"
+                },
+                {
+                    "name": "Devices",
+                    "description": "These are special \"mountpoints\" that can be used to mount miscelanious USB and PCI devices using special hostPath mounts.<br>\nFor clearity we've decided to seperate this from persistence on SCALE.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/persistence/device/\">TrueCharts Docs - Devices</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/pci-passthrough/\">TrueCharts Docs - PCI Passthrough Guide</a><br>\n"
                 },
                 {
                     "name": "Middlewares",
                     "description": "Traefik Middlewares"
                 },
                 {
+                    "name": "StorageClass",
+                    "description": "StorageClasses define where to storage Storage.<br>\n<br>\nCheckout the following documentation for more information:<br>\n"
+                },
+                {
                     "name": "Metrics",
-                    "description": "Metrics"
+                    "description": "Contains options to configure Prometheus metrics for the application.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/metrics/\">TrueCharts Docs - Metrics</a><br>\n"
                 },
                 {
                     "name": "Addons",
-                    "description": "Addon Configuration"
+                    "description": "Addons that are supplied by the TrueCharts team to add additional capabilities for users to use on top of the application\u2019s defaults. <br>\nThings included here are VPN addons, Codeserver for editing files inside the application\u2019s container, Netshoot for network troubelshooting, etc. <br>\n<br>\nGenerally not required for use but may be necessary or usefull at times for specific applications.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/addons/\">TrueCharts Docs - Addons</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/vpn-setup/\">TrueCharts Docs - VPN Setup Guide</a><br>\n"
                 },
                 {
-                    "name": "Backup Configuration",
-                    "description": "Configure Velero Backup Schedule"
-                },
-                {
-                    "name": "Advanced",
-                    "description": "Advanced Configuration"
+                    "name": "Experimental",
+                    "description": "Experimental Configuration Options<br>\nOften these are not fully flushed-out, could randomly break or might not work at-all.<br>\n"
                 },
                 {
                     "name": "Postgresql",
-                    "description": "Postgresql"
+                    "description": "For Postgresql we use \"CloudNative-PG\" as a backend, which has to be installed first.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/cnpg/\">TrueCharts Docs - CNPG</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/sql-export/\">TrueCharts Docs - Postgresql Database Export Guide</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/recover-cnpg/\">TrueCharts Docs - Recovering CNPG after reboot</a><br>\n"
                 },
                 {
                     "name": "Dependencies",
-                    "description": "Dependencies"
+                    "description": "contains dependency setting for which we, currently, do not have seperate catagories (yet)<br>\n"
                 },
                 {
                     "name": "Documentation",
-                    "description": "Documentation"
+                    "description": "We added this section to make everyone aware that OpenSource isn't always easy.<br>\nIt doesn't keep existing without signficant ongoing support, so please consider supporting TrueCharts and other OpenSource projects.<br>\n<br>\nBefore installing, be sure you've followed the <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/getting-started/\">Getting-Started Guide</a><br>\nWe would also advice going over our <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/scale-intro/\">Introduction to TrueNAS SCALE</a><br>\nand many of the other documentation pages...\n"
                 }
             ],
             "portals": {
@@ -151,7 +157,7 @@
             "questions": [
                 {
                     "variable": "global",
-                    "group": "General Settings",
+                    "group": "General",
                     "label": "Global Settings",
                     "schema": {
                         "additional_attrs": true,
@@ -171,7 +177,7 @@
                 },
                 {
                     "variable": "workload",
-                    "group": "Workload Settings",
+                    "group": "Workload",
                     "label": "",
                     "schema": {
                         "additional_attrs": true,
@@ -338,7 +344,7 @@
                 {
                     "variable": "TZ",
                     "label": "Timezone",
-                    "group": "General Settings",
+                    "group": "General",
                     "schema": {
                         "type": "string",
                         "default": "America/Los_Angeles",
@@ -359,7 +365,7 @@
                 },
                 {
                     "variable": "podOptions",
-                    "group": "General Settings",
+                    "group": "General",
                     "label": "Global Pod Options (Advanced)",
                     "schema": {
                         "additional_attrs": true,
@@ -475,7 +481,7 @@
                 },
                 {
                     "variable": "imagePullSecretList",
-                    "group": "General Settings",
+                    "group": "General",
                     "label": "Image Pull Secrets",
                     "schema": {
                         "type": "list",
@@ -551,7 +557,7 @@
                 },
                 {
                     "variable": "service",
-                    "group": "Networking and Services",
+                    "group": "Services",
                     "label": "Configure Service(s)",
                     "schema": {
                         "additional_attrs": true,
@@ -1071,140 +1077,138 @@
                     }
                 },
                 {
-                    "variable": "serviceexpert",
-                    "group": "Networking and Services",
-                    "label": "Show Expert Config",
+                    "variable": "serviceList",
+                    "label": "Add Manual Custom Services",
+                    "group": "Services",
                     "schema": {
-                        "type": "boolean",
-                        "default": false,
-                        "show_subquestions_if": true,
-                        "subquestions": [
+                        "type": "list",
+                        "default": [],
+                        "items": [
                             {
-                                "variable": "scaleExternalInterface",
-                                "description": "Add External Interfaces",
-                                "label": "Add external Interfaces",
-                                "group": "Networking",
+                                "variable": "serviceListEntry",
+                                "label": "Custom Service",
                                 "schema": {
-                                    "type": "list",
-                                    "items": [
+                                    "additional_attrs": true,
+                                    "type": "dict",
+                                    "attrs": [
                                         {
-                                            "variable": "interfaceConfiguration",
-                                            "description": "Interface Configuration",
-                                            "label": "Interface Configuration",
+                                            "variable": "enabled",
+                                            "label": "Enable the service",
                                             "schema": {
-                                                "additional_attrs": true,
-                                                "type": "dict",
-                                                "$ref": [
-                                                    "normalize/interfaceConfiguration"
-                                                ],
-                                                "attrs": [
+                                                "type": "boolean",
+                                                "default": true,
+                                                "hidden": true
+                                            }
+                                        },
+                                        {
+                                            "variable": "name",
+                                            "label": "Name",
+                                            "schema": {
+                                                "type": "string",
+                                                "default": ""
+                                            }
+                                        },
+                                        {
+                                            "variable": "type",
+                                            "label": "Service Type",
+                                            "description": "ClusterIP's are only internally available and Loadbalancer exposes the service using the system loadbalancer",
+                                            "schema": {
+                                                "type": "string",
+                                                "default": "LoadBalancer",
+                                                "enum": [
                                                     {
-                                                        "variable": "hostInterface",
-                                                        "description": "Please Specify Host Interface",
-                                                        "label": "Host Interface",
+                                                        "value": "LoadBalancer",
+                                                        "description": "LoadBalancer (Expose Ports)"
+                                                    },
+                                                    {
+                                                        "value": "ClusterIP",
+                                                        "description": "ClusterIP (Do Not Expose Ports)"
+                                                    },
+                                                    {
+                                                        "value": "Simple",
+                                                        "description": "Deprecated CHANGE THIS"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "variable": "loadBalancerIP",
+                                            "label": "LoadBalancer IP",
+                                            "description": "MetalLB Only: Selects the Loadbalancer IP to expose on. Required when using PortalButton with MetalLB",
+                                            "schema": {
+                                                "show_if": [
+                                                    [
+                                                        "type",
+                                                        "=",
+                                                        "LoadBalancer"
+                                                    ]
+                                                ],
+                                                "type": "string",
+                                                "default": ""
+                                            }
+                                        },
+                                        {
+                                            "variable": "advancedsvcset",
+                                            "label": "Show Advanced Service Settings",
+                                            "schema": {
+                                                "type": "boolean",
+                                                "default": false,
+                                                "show_subquestions_if": true,
+                                                "subquestions": [
+                                                    {
+                                                        "variable": "externalIPs",
+                                                        "label": "External IP's",
+                                                        "description": "External IP's",
                                                         "schema": {
-                                                            "type": "string",
-                                                            "required": true,
-                                                            "$ref": [
-                                                                "definitions/interface"
-                                                            ],
-                                                            "enum": []
+                                                            "type": "list",
+                                                            "default": [],
+                                                            "items": [
+                                                                {
+                                                                    "variable": "externalIP",
+                                                                    "label": "External IP",
+                                                                    "schema": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            ]
                                                         }
                                                     },
                                                     {
-                                                        "variable": "ipam",
-                                                        "description": "Define how IP Address will be managed",
-                                                        "label": "IP Address Management",
+                                                        "variable": "ipFamilyPolicy",
+                                                        "label": "IP Family Policy",
+                                                        "description": "Specify the IP Policy",
                                                         "schema": {
-                                                            "additional_attrs": true,
-                                                            "type": "dict",
-                                                            "required": true,
-                                                            "attrs": [
+                                                            "type": "string",
+                                                            "default": "SingleStack",
+                                                            "enum": [
                                                                 {
-                                                                    "variable": "type",
-                                                                    "description": "Specify type for IPAM",
-                                                                    "label": "IPAM Type",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "required": true,
-                                                                        "enum": [
-                                                                            {
-                                                                                "value": "dhcp",
-                                                                                "description": "Use DHCP"
-                                                                            },
-                                                                            {
-                                                                                "value": "static",
-                                                                                "description": "Use Static IP"
-                                                                            }
-                                                                        ]
-                                                                    }
+                                                                    "value": "SingleStack",
+                                                                    "description": "SingleStack"
                                                                 },
                                                                 {
-                                                                    "variable": "staticIPConfigurations",
-                                                                    "label": "Static IP Addresses",
-                                                                    "schema": {
-                                                                        "type": "list",
-                                                                        "show_if": [
-                                                                            [
-                                                                                "type",
-                                                                                "=",
-                                                                                "static"
-                                                                            ]
-                                                                        ],
-                                                                        "items": [
-                                                                            {
-                                                                                "variable": "staticIP",
-                                                                                "label": "Static IP",
-                                                                                "schema": {
-                                                                                    "type": "ipaddr",
-                                                                                    "cidr": true
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
+                                                                    "value": "PreferDualStack",
+                                                                    "description": "PreferDualStack"
                                                                 },
                                                                 {
-                                                                    "variable": "staticRoutes",
-                                                                    "label": "Static Routes",
+                                                                    "value": "RequireDualStack",
+                                                                    "description": "RequireDualStack"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "ipFamilies",
+                                                        "label": "IP Families",
+                                                        "description": "(Advanced) The IP Families that should be used",
+                                                        "schema": {
+                                                            "type": "list",
+                                                            "default": [],
+                                                            "items": [
+                                                                {
+                                                                    "variable": "ipFamily",
+                                                                    "label": "IP Family",
                                                                     "schema": {
-                                                                        "type": "list",
-                                                                        "show_if": [
-                                                                            [
-                                                                                "type",
-                                                                                "=",
-                                                                                "static"
-                                                                            ]
-                                                                        ],
-                                                                        "items": [
-                                                                            {
-                                                                                "variable": "staticRouteConfiguration",
-                                                                                "label": "Static Route Configuration",
-                                                                                "schema": {
-                                                                                    "additional_attrs": true,
-                                                                                    "type": "dict",
-                                                                                    "attrs": [
-                                                                                        {
-                                                                                            "variable": "destination",
-                                                                                            "label": "Destination",
-                                                                                            "schema": {
-                                                                                                "type": "ipaddr",
-                                                                                                "cidr": true,
-                                                                                                "required": true
-                                                                                            }
-                                                                                        },
-                                                                                        {
-                                                                                            "variable": "gateway",
-                                                                                            "label": "Gateway",
-                                                                                            "schema": {
-                                                                                                "type": "ipaddr",
-                                                                                                "cidr": false,
-                                                                                                "required": true
-                                                                                            }
-                                                                                        }
-                                                                                    ]
-                                                                                }
-                                                                            }
-                                                                        ]
+                                                                        "type": "string"
                                                                     }
                                                                 }
                                                             ]
@@ -1212,226 +1216,79 @@
                                                     }
                                                 ]
                                             }
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "variable": "serviceList",
-                                "label": "Add Manual Custom Services",
-                                "group": "Networking and Services",
-                                "schema": {
-                                    "type": "list",
-                                    "default": [],
-                                    "items": [
+                                        },
                                         {
-                                            "variable": "serviceListEntry",
-                                            "label": "Custom Service",
+                                            "variable": "portsList",
+                                            "label": "Additional Service Ports",
                                             "schema": {
-                                                "additional_attrs": true,
-                                                "type": "dict",
-                                                "attrs": [
+                                                "type": "list",
+                                                "default": [],
+                                                "items": [
                                                     {
-                                                        "variable": "enabled",
-                                                        "label": "Enable the service",
+                                                        "variable": "portsListEntry",
+                                                        "label": "Custom ports",
                                                         "schema": {
-                                                            "type": "boolean",
-                                                            "default": true,
-                                                            "hidden": true
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "name",
-                                                        "label": "Name",
-                                                        "schema": {
-                                                            "type": "string",
-                                                            "default": ""
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "type",
-                                                        "label": "Service Type",
-                                                        "description": "ClusterIP's are only internally available and Loadbalancer exposes the service using the system loadbalancer",
-                                                        "schema": {
-                                                            "type": "string",
-                                                            "default": "LoadBalancer",
-                                                            "enum": [
+                                                            "additional_attrs": true,
+                                                            "type": "dict",
+                                                            "attrs": [
                                                                 {
-                                                                    "value": "LoadBalancer",
-                                                                    "description": "LoadBalancer (Expose Ports)"
-                                                                },
-                                                                {
-                                                                    "value": "ClusterIP",
-                                                                    "description": "ClusterIP (Do Not Expose Ports)"
-                                                                },
-                                                                {
-                                                                    "value": "Simple",
-                                                                    "description": "Deprecated CHANGE THIS"
-                                                                }
-                                                            ]
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "loadBalancerIP",
-                                                        "label": "LoadBalancer IP",
-                                                        "description": "MetalLB Only: Selects the Loadbalancer IP to expose on. Required when using PortalButton with MetalLB",
-                                                        "schema": {
-                                                            "show_if": [
-                                                                [
-                                                                    "type",
-                                                                    "=",
-                                                                    "LoadBalancer"
-                                                                ]
-                                                            ],
-                                                            "type": "string",
-                                                            "default": ""
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "advancedsvcset",
-                                                        "label": "Show Advanced Service Settings",
-                                                        "schema": {
-                                                            "type": "boolean",
-                                                            "default": false,
-                                                            "show_subquestions_if": true,
-                                                            "subquestions": [
-                                                                {
-                                                                    "variable": "externalIPs",
-                                                                    "label": "External IP's",
-                                                                    "description": "External IP's",
+                                                                    "variable": "enabled",
+                                                                    "label": "Enable the Port",
                                                                     "schema": {
-                                                                        "type": "list",
-                                                                        "default": [],
-                                                                        "items": [
-                                                                            {
-                                                                                "variable": "externalIP",
-                                                                                "label": "External IP",
-                                                                                "schema": {
-                                                                                    "type": "string"
-                                                                                }
-                                                                            }
-                                                                        ]
+                                                                        "type": "boolean",
+                                                                        "default": true,
+                                                                        "hidden": true
                                                                     }
                                                                 },
                                                                 {
-                                                                    "variable": "ipFamilyPolicy",
-                                                                    "label": "IP Family Policy",
-                                                                    "description": "Specify the IP Policy",
+                                                                    "variable": "name",
+                                                                    "label": "Port Name",
                                                                     "schema": {
                                                                         "type": "string",
-                                                                        "default": "SingleStack",
+                                                                        "default": ""
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "protocol",
+                                                                    "label": "Port Type",
+                                                                    "schema": {
+                                                                        "type": "string",
+                                                                        "default": "tcp",
                                                                         "enum": [
                                                                             {
-                                                                                "value": "SingleStack",
-                                                                                "description": "SingleStack"
+                                                                                "value": "http",
+                                                                                "description": "HTTP"
                                                                             },
                                                                             {
-                                                                                "value": "PreferDualStack",
-                                                                                "description": "PreferDualStack"
+                                                                                "value": "https",
+                                                                                "description": "HTTPS"
                                                                             },
                                                                             {
-                                                                                "value": "RequireDualStack",
-                                                                                "description": "RequireDualStack"
+                                                                                "value": "tcp",
+                                                                                "description": "TCP"
+                                                                            },
+                                                                            {
+                                                                                "value": "udp",
+                                                                                "description": "UDP"
                                                                             }
                                                                         ]
                                                                     }
                                                                 },
                                                                 {
-                                                                    "variable": "ipFamilies",
-                                                                    "label": "IP Families",
-                                                                    "description": "(Advanced) The IP Families that should be used",
+                                                                    "variable": "targetPort",
+                                                                    "label": "Target Port",
+                                                                    "description": "This port exposes the container port on the service",
                                                                     "schema": {
-                                                                        "type": "list",
-                                                                        "default": [],
-                                                                        "items": [
-                                                                            {
-                                                                                "variable": "ipFamily",
-                                                                                "label": "IP Family",
-                                                                                "schema": {
-                                                                                    "type": "string"
-                                                                                }
-                                                                            }
-                                                                        ]
+                                                                        "type": "int",
+                                                                        "required": true
                                                                     }
-                                                                }
-                                                            ]
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "portsList",
-                                                        "label": "Additional Service Ports",
-                                                        "schema": {
-                                                            "type": "list",
-                                                            "default": [],
-                                                            "items": [
+                                                                },
                                                                 {
-                                                                    "variable": "portsListEntry",
-                                                                    "label": "Custom ports",
+                                                                    "variable": "port",
+                                                                    "label": "Container Port",
                                                                     "schema": {
-                                                                        "additional_attrs": true,
-                                                                        "type": "dict",
-                                                                        "attrs": [
-                                                                            {
-                                                                                "variable": "enabled",
-                                                                                "label": "Enable the Port",
-                                                                                "schema": {
-                                                                                    "type": "boolean",
-                                                                                    "default": true,
-                                                                                    "hidden": true
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "name",
-                                                                                "label": "Port Name",
-                                                                                "schema": {
-                                                                                    "type": "string",
-                                                                                    "default": ""
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "protocol",
-                                                                                "label": "Port Type",
-                                                                                "schema": {
-                                                                                    "type": "string",
-                                                                                    "default": "tcp",
-                                                                                    "enum": [
-                                                                                        {
-                                                                                            "value": "http",
-                                                                                            "description": "HTTP"
-                                                                                        },
-                                                                                        {
-                                                                                            "value": "https",
-                                                                                            "description": "HTTPS"
-                                                                                        },
-                                                                                        {
-                                                                                            "value": "tcp",
-                                                                                            "description": "TCP"
-                                                                                        },
-                                                                                        {
-                                                                                            "value": "udp",
-                                                                                            "description": "UDP"
-                                                                                        }
-                                                                                    ]
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "targetPort",
-                                                                                "label": "Target Port",
-                                                                                "description": "This port exposes the container port on the service",
-                                                                                "schema": {
-                                                                                    "type": "int",
-                                                                                    "required": true
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "port",
-                                                                                "label": "Container Port",
-                                                                                "schema": {
-                                                                                    "type": "int",
-                                                                                    "required": true
-                                                                                }
-                                                                            }
-                                                                        ]
+                                                                        "type": "int",
+                                                                        "required": true
                                                                     }
                                                                 }
                                                             ]
@@ -1450,7 +1307,7 @@
                     "variable": "persistence",
                     "label": "Integrated Persistent Storage",
                     "description": "Integrated Persistent Storage",
-                    "group": "Storage and Persistence",
+                    "group": "Persistence",
                     "schema": {
                         "additional_attrs": true,
                         "type": "dict",
@@ -2973,7 +2830,7 @@
                 {
                     "variable": "persistenceList",
                     "label": "Additional App Storage",
-                    "group": "Storage and Persistence",
+                    "group": "Persistence",
                     "schema": {
                         "type": "list",
                         "default": [],
@@ -4471,7 +4328,7 @@
                 },
                 {
                     "variable": "securityContext",
-                    "group": "Security and Permissions",
+                    "group": "SecurityContext",
                     "label": "Security Context",
                     "schema": {
                         "additional_attrs": true,
@@ -4617,7 +4474,7 @@
                 },
                 {
                     "variable": "resources",
-                    "group": "Resources and Devices",
+                    "group": "Resources",
                     "label": "Resource Limits",
                     "schema": {
                         "additional_attrs": true,
@@ -4716,7 +4573,7 @@
                 {
                     "variable": "deviceList",
                     "label": "Mount USB Devices",
-                    "group": "Resources and Devices",
+                    "group": "Devices",
                     "schema": {
                         "type": "list",
                         "default": [],
@@ -4832,7 +4689,7 @@
                 },
                 {
                     "variable": "networkPolicy",
-                    "group": "Advanced",
+                    "group": "Experimental",
                     "label": "(Advanced) Network Policy",
                     "schema": {
                         "type": "list",
@@ -6434,23 +6291,21 @@
             ]
         },
         "app_readme": "<p>rTorrent and ruTorrent chart.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/rtorrent-rutorrent\">https://truecharts.org/charts/stable/rtorrent-rutorrent</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-        "detailed_readme": "<hr />\n<h2>title: README</h2>\n<h2>General Info</h2>\n<p>TrueCharts can be installed as both <em>normal</em> Helm Charts or as Apps on TrueNAS SCALE.\nHowever only installations using the TrueNAS SCALE Apps system are supported.</p>\n<p>For more information about this App, please check the docs on the TrueCharts <a href=\"https://truecharts.org/charts/stable/rtorrent-rutorrent\">website</a></p>\n<p><strong>This chart is not maintained by the upstream project and any issues with the chart should be raised <a href=\"https://github.com/truecharts/charts/issues/new/choose\">here</a></strong></p>\n<h2>Support</h2>\n<ul>\n<li>Please check our <a href=\"https://truecharts.org/manual/SCALE/guides/scale-intro\">quick-start guides for TrueNAS SCALE</a>.</li>\n<li>See the <a href=\"https://truecharts.org\">Website</a></li>\n<li>Check our <a href=\"https://discord.gg/tVsPTHWTtr\">Discord</a></li>\n<li>Open a <a href=\"https://github.com/truecharts/charts/issues/new/choose\">issue</a></li>\n</ul>\n<hr />\n<h2>Sponsor TrueCharts</h2>\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>\n<p><em>All Rights Reserved - The TrueCharts Project</em></p>",
+        "detailed_readme": "<hr />\n<h2>title: README</h2>\n<h2>General Info</h2>\n<p>TrueCharts can be installed as both <em>normal</em> Helm Charts or as TrueNAS SCALE Apps.\nBoth solutions are fully supported, but we heavily advice the use of normal Helm Charts where possible</p>\n<p>For more information about this Chart, please check the docs on the TrueCharts <a href=\"https://truecharts.org/charts/stable/rtorrent-rutorrent\">website</a></p>\n<p><strong>This chart is not maintained by the upstream project and any issues with the chart should be raised <a href=\"https://github.com/truecharts/charts/issues/new/choose\">here</a></strong></p>\n<h2>Installation</h2>\n<h3>Helm-Chart installation</h3>\n<p>To install TrueCharts Helm charts using Helm, you can use our OCI Repository.</p>\n<p><code>helm install mychart oci://tccr.io/truecharts/CHARTNAME</code></p>\n<p>For more information on how to install TrueCharts Helm charts, checkout the instructions on the website: https://truecharts.org/helm/</p>\n<h3>TrueNAS SCALE Apps</h3>\n<p>For more information on how to use TrueCharts as TrueNAS SCALE Apps, please checkout the <a href=\"https://truecharts.org/scale/guides/scale-intro\">quick-start guides for TrueNAS SCALE</a>.</p>\n<h2>Configuration Options</h2>\n<p>To view the chart specific options, please view Values.yaml included in the chart.</p>\n<p>All our Charts use a shared \"common\" library chart that contains most of the templating and options.\nFor the complete overview of all available options, please checkout the documentation for them on the website: https://truecharts.org/common/</p>\n<h2>Chart Specific Guides and information</h2>\n<p>All our charts have dedicated documentation pages.\nThe documentation for this chart can be found here:\nhttps://truecharts.org/charts/stable/rtorrent-rutorrent</p>\n<h2>Support</h2>\n<ul>\n<li>See the <a href=\"https://truecharts.org\">Website</a></li>\n<li>Check our <a href=\"https://discord.gg/tVsPTHWTtr\">Discord</a></li>\n<li>Open a <a href=\"https://github.com/truecharts/charts/issues/new/choose\">issue</a></li>\n</ul>\n<hr />\n<h2>Sponsor TrueCharts</h2>\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/general/sponsor\">donation</a> or contributing back to the project any way you can!</p>\n<p><em>All Rights Reserved - The TrueCharts Project</em></p>",
         "changelog": "<p><em>for the complete changelog, please refer to the website</em></p>\n<p><strong>Important:</strong></p>"
     },
-    "4.8.6": {
+    "4.8.11": {
         "healthy": true,
         "supported": true,
         "healthy_error": null,
-        "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.6",
-        "last_update": "2024-04-21 01:02:29",
+        "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.11",
+        "last_update": "2024-04-22 01:03:08",
         "required_features": [
             "definitions/certificate",
-            "definitions/interface",
-            "normalize/interfaceConfiguration",
             "definitions/timezone"
         ],
-        "human_version": "4.2.9_4.8.6",
-        "version": "4.8.6",
+        "human_version": "4.2.9_4.8.11",
+        "version": "4.8.11",
         "chart_metadata": {
             "annotations": {
                 "max_scale_version": "24.04.0",
@@ -6466,7 +6321,7 @@
             "dependencies": [
                 {
                     "name": "common",
-                    "version": "20.3.7",
+                    "version": "20.3.11",
                     "repository": "oci://tccr.io/truecharts",
                     "condition": "",
                     "alias": "",
@@ -6499,78 +6354,86 @@
                 "https://ghcr.io/thde/rtorrent_exporter"
             ],
             "type": "application",
-            "version": "4.8.6"
+            "version": "4.8.11"
         },
         "app_metadata": null,
         "schema": {
             "groups": [
                 {
-                    "name": "Container Image",
-                    "description": "Image to be used for container"
+                    "name": "Image",
+                    "description": "Configured the images to be used for the Chart.<br>\nIt's wise to use \"digest pinned\" tags and to avoid using \"latest\"<br>.\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/#images\">TrueCharts Docs - truecharts.org/common/#images</a><br>\n"
                 },
                 {
-                    "name": "General Settings",
-                    "description": "General Deployment Settings"
+                    "name": "General",
+                    "description": "For TrueNAS SCALE We've grouped a number of settings here, that all effact how apps run in general.<br>\n<br>\nCheckout the following documentation for more information:<br>\n  - <a target=\"_blank\" href=\"https://truecharts.org/common/global/\">TrueCharts Docs - Global Settings</a><br>\n  - <a target=\"_blank\" href=\"https://truecharts.org/common/#tz\">TrueCharts Docs - TimeZone</a><br>\n  - <a target=\"_blank\" href=\"https://truecharts.org/common/podoptions/\">TrueCharts Docs - Pod Options</a><br>\n  - Image Pull Secrets <br>\n"
                 },
                 {
-                    "name": "Workload Settings",
-                    "description": "Workload Settings"
+                    "name": "Workload",
+                    "description": "These settings configure how the actual Pods and containers are running.<br>\nGenerally, on SCALE, we only expose a limited subset of these settings for the primary workload and container.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/workload/\">TrueCharts Docs - Workload</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/container/\">TrueCharts Docs - Container</a><br>\n"
                 },
                 {
                     "name": "App Configuration",
-                    "description": "App Specific Config Options"
+                    "description": "Every application has different values that may be required to run or have multiple options that the user may choose to enable or disable to change the behavior of the application.<br>\nMost options should have a Tooltip (Circled Question Mark) to further describe said option.<br>\n<br>\nTo find more information, lookup your chart-specific documentation in the <a target=\"_blank\" href=\"https://truecharts.org/charts/description-list/\">TrueCharts Docs - Charts List</a><br>\n"
                 },
                 {
-                    "name": "Networking and Services",
-                    "description": "Configure Network and Services for Container"
+                    "name": "Services",
+                    "description": "Service and Networking options for any applications are contained here. <br>\nSome applications may have complicated networking setups with multiple options or some may have no options here at all. <br>\n<br>\nOptions here include the service and port configurations for the application, and more may be enabled or changed under the Advanced Settings and Show Expert Config boxes.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/service/\">TrueCharts Docs - Services</a><br>\n"
                 },
                 {
-                    "name": "Storage and Persistence",
-                    "description": "Persist and Share Data that is Separate from the Container"
+                    "name": "Networking",
+                    "description": "Contains advanced networking options that are not actively supported by the TrueCharts team.<br>\nCurrently only contains scaleExternalInterfaces.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/scaleexternalinterface/\">TrueCharts Docs - External Interfaces</a><br>\n"
+                },
+                {
+                    "name": "Persistence",
+                    "description": "Many applications will have certain options for storage to be configurable by the user, the main two being PVC and hostpath but may include other types. <br>\nThis storage is called Persistence since it is not deleted upon restart or upgrade of an application.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/persistence/\">TrueCharts Docs - Persistence</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/nfs-share/\">TrueCharts Docs - Apps NFS Share Guide</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/general/faq/#why-pvc-is-recommended-over-hostpath\">TrueCharts Docs - FAQ</a><br>\n"
                 },
                 {
                     "name": "Ingress",
-                    "description": "Ingress Configuration"
+                    "description": "Ingress (more commonly known as Reverse Proxy) settings can be configured here. This is how Kubernetes connects your Applications in containers to FQDNs (fully qualified domain names). <br>\nIf you choose to enable this you must have a \"Ingress Provider\" aka \"Reverse Proxy\" installed (We highly advice Traefik: <a target=\"_blank\" href=\"https://truecharts.org/charts/premium/traefik/)\">TrueCharts Docs - Traefik</a> <br>\nIt also requiresa DNS service to actually resolve the DNS name of the FQDN specified.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/ingress/\">TrueCharts Docs - Ingress</a><br>\n"
                 },
                 {
-                    "name": "Security and Permissions",
-                    "description": "Configure Security Context and Permissions"
+                    "name": "SecurityContext",
+                    "description": "The security settings for each application and/or permissions that each application may have for the files/directories created. <br>\nEach application will come with predefined permissions but users may want to change certain setting depending on their usage or capabilities. <br>\n<br>\nUnless necessary users are advised to keep this section mostly to defaults.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/securitycontext/\">TrueCharts Docs - SecurityContext</a><br>\n"
                 },
                 {
-                    "name": "Resources and Devices",
-                    "description": "Specify Resources/Devices to be Allocated to Workload"
+                    "name": "Resources",
+                    "description": "Resources limits that have been defined by each application are in this section. \nMost will have a specific default that some users may want to change based on their specific hardware or needs.<br>\n<br>\nThis also contains the options to mount GPUs or, more precisely, \"request\" GPU's to be mounted.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/resources/\">TrueCharts Docs - Resources</a><br>\n"
+                },
+                {
+                    "name": "Devices",
+                    "description": "These are special \"mountpoints\" that can be used to mount miscelanious USB and PCI devices using special hostPath mounts.<br>\nFor clearity we've decided to seperate this from persistence on SCALE.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/persistence/device/\">TrueCharts Docs - Devices</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/pci-passthrough/\">TrueCharts Docs - PCI Passthrough Guide</a><br>\n"
                 },
                 {
                     "name": "Middlewares",
                     "description": "Traefik Middlewares"
                 },
                 {
+                    "name": "StorageClass",
+                    "description": "StorageClasses define where to storage Storage.<br>\n<br>\nCheckout the following documentation for more information:<br>\n"
+                },
+                {
                     "name": "Metrics",
-                    "description": "Metrics"
+                    "description": "Contains options to configure Prometheus metrics for the application.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/metrics/\">TrueCharts Docs - Metrics</a><br>\n"
                 },
                 {
                     "name": "Addons",
-                    "description": "Addon Configuration"
+                    "description": "Addons that are supplied by the TrueCharts team to add additional capabilities for users to use on top of the application\u2019s defaults. <br>\nThings included here are VPN addons, Codeserver for editing files inside the application\u2019s container, Netshoot for network troubelshooting, etc. <br>\n<br>\nGenerally not required for use but may be necessary or usefull at times for specific applications.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/addons/\">TrueCharts Docs - Addons</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/vpn-setup/\">TrueCharts Docs - VPN Setup Guide</a><br>\n"
                 },
                 {
-                    "name": "Backup Configuration",
-                    "description": "Configure Velero Backup Schedule"
-                },
-                {
-                    "name": "Advanced",
-                    "description": "Advanced Configuration"
+                    "name": "Experimental",
+                    "description": "Experimental Configuration Options<br>\nOften these are not fully flushed-out, could randomly break or might not work at-all.<br>\n"
                 },
                 {
                     "name": "Postgresql",
-                    "description": "Postgresql"
+                    "description": "For Postgresql we use \"CloudNative-PG\" as a backend, which has to be installed first.<br>\n<br>\nCheckout the following documentation for more information:<br>\n- <a target=\"_blank\" href=\"https://truecharts.org/common/cnpg/\">TrueCharts Docs - CNPG</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/sql-export/\">TrueCharts Docs - Postgresql Database Export Guide</a><br>\n- <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/recover-cnpg/\">TrueCharts Docs - Recovering CNPG after reboot</a><br>\n"
                 },
                 {
                     "name": "Dependencies",
-                    "description": "Dependencies"
+                    "description": "contains dependency setting for which we, currently, do not have seperate catagories (yet)<br>\n"
                 },
                 {
                     "name": "Documentation",
-                    "description": "Documentation"
+                    "description": "We added this section to make everyone aware that OpenSource isn't always easy.<br>\nIt doesn't keep existing without signficant ongoing support, so please consider supporting TrueCharts and other OpenSource projects.<br>\n<br>\nBefore installing, be sure you've followed the <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/getting-started/\">Getting-Started Guide</a><br>\nWe would also advice going over our <a target=\"_blank\" href=\"https://truecharts.org/scale/guides/scale-intro/\">Introduction to TrueNAS SCALE</a><br>\nand many of the other documentation pages... \n"
                 }
             ],
             "portals": {
@@ -6589,7 +6452,7 @@
             "questions": [
                 {
                     "variable": "global",
-                    "group": "General Settings",
+                    "group": "General",
                     "label": "Global Settings",
                     "schema": {
                         "additional_attrs": true,
@@ -6609,7 +6472,7 @@
                 },
                 {
                     "variable": "workload",
-                    "group": "Workload Settings",
+                    "group": "Workload",
                     "label": "",
                     "schema": {
                         "additional_attrs": true,
@@ -6776,7 +6639,7 @@
                 {
                     "variable": "TZ",
                     "label": "Timezone",
-                    "group": "General Settings",
+                    "group": "General",
                     "schema": {
                         "type": "string",
                         "default": "America/Los_Angeles",
@@ -6797,7 +6660,7 @@
                 },
                 {
                     "variable": "podOptions",
-                    "group": "General Settings",
+                    "group": "General",
                     "label": "Global Pod Options (Advanced)",
                     "schema": {
                         "additional_attrs": true,
@@ -6913,7 +6776,7 @@
                 },
                 {
                     "variable": "imagePullSecretList",
-                    "group": "General Settings",
+                    "group": "General",
                     "label": "Image Pull Secrets",
                     "schema": {
                         "type": "list",
@@ -6989,7 +6852,7 @@
                 },
                 {
                     "variable": "service",
-                    "group": "Networking and Services",
+                    "group": "Services",
                     "label": "Configure Service(s)",
                     "schema": {
                         "additional_attrs": true,
@@ -7509,140 +7372,138 @@
                     }
                 },
                 {
-                    "variable": "serviceexpert",
-                    "group": "Networking and Services",
-                    "label": "Show Expert Config",
+                    "variable": "serviceList",
+                    "label": "Add Manual Custom Services",
+                    "group": "Services",
                     "schema": {
-                        "type": "boolean",
-                        "default": false,
-                        "show_subquestions_if": true,
-                        "subquestions": [
+                        "type": "list",
+                        "default": [],
+                        "items": [
                             {
-                                "variable": "scaleExternalInterface",
-                                "description": "Add External Interfaces",
-                                "label": "Add external Interfaces",
-                                "group": "Networking",
+                                "variable": "serviceListEntry",
+                                "label": "Custom Service",
                                 "schema": {
-                                    "type": "list",
-                                    "items": [
+                                    "additional_attrs": true,
+                                    "type": "dict",
+                                    "attrs": [
                                         {
-                                            "variable": "interfaceConfiguration",
-                                            "description": "Interface Configuration",
-                                            "label": "Interface Configuration",
+                                            "variable": "enabled",
+                                            "label": "Enable the service",
                                             "schema": {
-                                                "additional_attrs": true,
-                                                "type": "dict",
-                                                "$ref": [
-                                                    "normalize/interfaceConfiguration"
-                                                ],
-                                                "attrs": [
+                                                "type": "boolean",
+                                                "default": true,
+                                                "hidden": true
+                                            }
+                                        },
+                                        {
+                                            "variable": "name",
+                                            "label": "Name",
+                                            "schema": {
+                                                "type": "string",
+                                                "default": ""
+                                            }
+                                        },
+                                        {
+                                            "variable": "type",
+                                            "label": "Service Type",
+                                            "description": "ClusterIP's are only internally available and Loadbalancer exposes the service using the system loadbalancer",
+                                            "schema": {
+                                                "type": "string",
+                                                "default": "LoadBalancer",
+                                                "enum": [
                                                     {
-                                                        "variable": "hostInterface",
-                                                        "description": "Please Specify Host Interface",
-                                                        "label": "Host Interface",
+                                                        "value": "LoadBalancer",
+                                                        "description": "LoadBalancer (Expose Ports)"
+                                                    },
+                                                    {
+                                                        "value": "ClusterIP",
+                                                        "description": "ClusterIP (Do Not Expose Ports)"
+                                                    },
+                                                    {
+                                                        "value": "Simple",
+                                                        "description": "Deprecated CHANGE THIS"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "variable": "loadBalancerIP",
+                                            "label": "LoadBalancer IP",
+                                            "description": "MetalLB Only: Selects the Loadbalancer IP to expose on. Required when using PortalButton with MetalLB",
+                                            "schema": {
+                                                "show_if": [
+                                                    [
+                                                        "type",
+                                                        "=",
+                                                        "LoadBalancer"
+                                                    ]
+                                                ],
+                                                "type": "string",
+                                                "default": ""
+                                            }
+                                        },
+                                        {
+                                            "variable": "advancedsvcset",
+                                            "label": "Show Advanced Service Settings",
+                                            "schema": {
+                                                "type": "boolean",
+                                                "default": false,
+                                                "show_subquestions_if": true,
+                                                "subquestions": [
+                                                    {
+                                                        "variable": "externalIPs",
+                                                        "label": "External IP's",
+                                                        "description": "External IP's",
                                                         "schema": {
-                                                            "type": "string",
-                                                            "required": true,
-                                                            "$ref": [
-                                                                "definitions/interface"
-                                                            ],
-                                                            "enum": []
+                                                            "type": "list",
+                                                            "default": [],
+                                                            "items": [
+                                                                {
+                                                                    "variable": "externalIP",
+                                                                    "label": "External IP",
+                                                                    "schema": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            ]
                                                         }
                                                     },
                                                     {
-                                                        "variable": "ipam",
-                                                        "description": "Define how IP Address will be managed",
-                                                        "label": "IP Address Management",
+                                                        "variable": "ipFamilyPolicy",
+                                                        "label": "IP Family Policy",
+                                                        "description": "Specify the IP Policy",
                                                         "schema": {
-                                                            "additional_attrs": true,
-                                                            "type": "dict",
-                                                            "required": true,
-                                                            "attrs": [
+                                                            "type": "string",
+                                                            "default": "SingleStack",
+                                                            "enum": [
                                                                 {
-                                                                    "variable": "type",
-                                                                    "description": "Specify type for IPAM",
-                                                                    "label": "IPAM Type",
-                                                                    "schema": {
-                                                                        "type": "string",
-                                                                        "required": true,
-                                                                        "enum": [
-                                                                            {
-                                                                                "value": "dhcp",
-                                                                                "description": "Use DHCP"
-                                                                            },
-                                                                            {
-                                                                                "value": "static",
-                                                                                "description": "Use Static IP"
-                                                                            }
-                                                                        ]
-                                                                    }
+                                                                    "value": "SingleStack",
+                                                                    "description": "SingleStack"
                                                                 },
                                                                 {
-                                                                    "variable": "staticIPConfigurations",
-                                                                    "label": "Static IP Addresses",
-                                                                    "schema": {
-                                                                        "type": "list",
-                                                                        "show_if": [
-                                                                            [
-                                                                                "type",
-                                                                                "=",
-                                                                                "static"
-                                                                            ]
-                                                                        ],
-                                                                        "items": [
-                                                                            {
-                                                                                "variable": "staticIP",
-                                                                                "label": "Static IP",
-                                                                                "schema": {
-                                                                                    "type": "ipaddr",
-                                                                                    "cidr": true
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
+                                                                    "value": "PreferDualStack",
+                                                                    "description": "PreferDualStack"
                                                                 },
                                                                 {
-                                                                    "variable": "staticRoutes",
-                                                                    "label": "Static Routes",
+                                                                    "value": "RequireDualStack",
+                                                                    "description": "RequireDualStack"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "ipFamilies",
+                                                        "label": "IP Families",
+                                                        "description": "(Advanced) The IP Families that should be used",
+                                                        "schema": {
+                                                            "type": "list",
+                                                            "default": [],
+                                                            "items": [
+                                                                {
+                                                                    "variable": "ipFamily",
+                                                                    "label": "IP Family",
                                                                     "schema": {
-                                                                        "type": "list",
-                                                                        "show_if": [
-                                                                            [
-                                                                                "type",
-                                                                                "=",
-                                                                                "static"
-                                                                            ]
-                                                                        ],
-                                                                        "items": [
-                                                                            {
-                                                                                "variable": "staticRouteConfiguration",
-                                                                                "label": "Static Route Configuration",
-                                                                                "schema": {
-                                                                                    "additional_attrs": true,
-                                                                                    "type": "dict",
-                                                                                    "attrs": [
-                                                                                        {
-                                                                                            "variable": "destination",
-                                                                                            "label": "Destination",
-                                                                                            "schema": {
-                                                                                                "type": "ipaddr",
-                                                                                                "cidr": true,
-                                                                                                "required": true
-                                                                                            }
-                                                                                        },
-                                                                                        {
-                                                                                            "variable": "gateway",
-                                                                                            "label": "Gateway",
-                                                                                            "schema": {
-                                                                                                "type": "ipaddr",
-                                                                                                "cidr": false,
-                                                                                                "required": true
-                                                                                            }
-                                                                                        }
-                                                                                    ]
-                                                                                }
-                                                                            }
-                                                                        ]
+                                                                        "type": "string"
                                                                     }
                                                                 }
                                                             ]
@@ -7650,226 +7511,79 @@
                                                     }
                                                 ]
                                             }
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "variable": "serviceList",
-                                "label": "Add Manual Custom Services",
-                                "group": "Networking and Services",
-                                "schema": {
-                                    "type": "list",
-                                    "default": [],
-                                    "items": [
+                                        },
                                         {
-                                            "variable": "serviceListEntry",
-                                            "label": "Custom Service",
+                                            "variable": "portsList",
+                                            "label": "Additional Service Ports",
                                             "schema": {
-                                                "additional_attrs": true,
-                                                "type": "dict",
-                                                "attrs": [
+                                                "type": "list",
+                                                "default": [],
+                                                "items": [
                                                     {
-                                                        "variable": "enabled",
-                                                        "label": "Enable the service",
+                                                        "variable": "portsListEntry",
+                                                        "label": "Custom ports",
                                                         "schema": {
-                                                            "type": "boolean",
-                                                            "default": true,
-                                                            "hidden": true
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "name",
-                                                        "label": "Name",
-                                                        "schema": {
-                                                            "type": "string",
-                                                            "default": ""
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "type",
-                                                        "label": "Service Type",
-                                                        "description": "ClusterIP's are only internally available and Loadbalancer exposes the service using the system loadbalancer",
-                                                        "schema": {
-                                                            "type": "string",
-                                                            "default": "LoadBalancer",
-                                                            "enum": [
+                                                            "additional_attrs": true,
+                                                            "type": "dict",
+                                                            "attrs": [
                                                                 {
-                                                                    "value": "LoadBalancer",
-                                                                    "description": "LoadBalancer (Expose Ports)"
-                                                                },
-                                                                {
-                                                                    "value": "ClusterIP",
-                                                                    "description": "ClusterIP (Do Not Expose Ports)"
-                                                                },
-                                                                {
-                                                                    "value": "Simple",
-                                                                    "description": "Deprecated CHANGE THIS"
-                                                                }
-                                                            ]
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "loadBalancerIP",
-                                                        "label": "LoadBalancer IP",
-                                                        "description": "MetalLB Only: Selects the Loadbalancer IP to expose on. Required when using PortalButton with MetalLB",
-                                                        "schema": {
-                                                            "show_if": [
-                                                                [
-                                                                    "type",
-                                                                    "=",
-                                                                    "LoadBalancer"
-                                                                ]
-                                                            ],
-                                                            "type": "string",
-                                                            "default": ""
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "advancedsvcset",
-                                                        "label": "Show Advanced Service Settings",
-                                                        "schema": {
-                                                            "type": "boolean",
-                                                            "default": false,
-                                                            "show_subquestions_if": true,
-                                                            "subquestions": [
-                                                                {
-                                                                    "variable": "externalIPs",
-                                                                    "label": "External IP's",
-                                                                    "description": "External IP's",
+                                                                    "variable": "enabled",
+                                                                    "label": "Enable the Port",
                                                                     "schema": {
-                                                                        "type": "list",
-                                                                        "default": [],
-                                                                        "items": [
-                                                                            {
-                                                                                "variable": "externalIP",
-                                                                                "label": "External IP",
-                                                                                "schema": {
-                                                                                    "type": "string"
-                                                                                }
-                                                                            }
-                                                                        ]
+                                                                        "type": "boolean",
+                                                                        "default": true,
+                                                                        "hidden": true
                                                                     }
                                                                 },
                                                                 {
-                                                                    "variable": "ipFamilyPolicy",
-                                                                    "label": "IP Family Policy",
-                                                                    "description": "Specify the IP Policy",
+                                                                    "variable": "name",
+                                                                    "label": "Port Name",
                                                                     "schema": {
                                                                         "type": "string",
-                                                                        "default": "SingleStack",
+                                                                        "default": ""
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "protocol",
+                                                                    "label": "Port Type",
+                                                                    "schema": {
+                                                                        "type": "string",
+                                                                        "default": "tcp",
                                                                         "enum": [
                                                                             {
-                                                                                "value": "SingleStack",
-                                                                                "description": "SingleStack"
+                                                                                "value": "http",
+                                                                                "description": "HTTP"
                                                                             },
                                                                             {
-                                                                                "value": "PreferDualStack",
-                                                                                "description": "PreferDualStack"
+                                                                                "value": "https",
+                                                                                "description": "HTTPS"
                                                                             },
                                                                             {
-                                                                                "value": "RequireDualStack",
-                                                                                "description": "RequireDualStack"
+                                                                                "value": "tcp",
+                                                                                "description": "TCP"
+                                                                            },
+                                                                            {
+                                                                                "value": "udp",
+                                                                                "description": "UDP"
                                                                             }
                                                                         ]
                                                                     }
                                                                 },
                                                                 {
-                                                                    "variable": "ipFamilies",
-                                                                    "label": "IP Families",
-                                                                    "description": "(Advanced) The IP Families that should be used",
+                                                                    "variable": "targetPort",
+                                                                    "label": "Target Port",
+                                                                    "description": "This port exposes the container port on the service",
                                                                     "schema": {
-                                                                        "type": "list",
-                                                                        "default": [],
-                                                                        "items": [
-                                                                            {
-                                                                                "variable": "ipFamily",
-                                                                                "label": "IP Family",
-                                                                                "schema": {
-                                                                                    "type": "string"
-                                                                                }
-                                                                            }
-                                                                        ]
+                                                                        "type": "int",
+                                                                        "required": true
                                                                     }
-                                                                }
-                                                            ]
-                                                        }
-                                                    },
-                                                    {
-                                                        "variable": "portsList",
-                                                        "label": "Additional Service Ports",
-                                                        "schema": {
-                                                            "type": "list",
-                                                            "default": [],
-                                                            "items": [
+                                                                },
                                                                 {
-                                                                    "variable": "portsListEntry",
-                                                                    "label": "Custom ports",
+                                                                    "variable": "port",
+                                                                    "label": "Container Port",
                                                                     "schema": {
-                                                                        "additional_attrs": true,
-                                                                        "type": "dict",
-                                                                        "attrs": [
-                                                                            {
-                                                                                "variable": "enabled",
-                                                                                "label": "Enable the Port",
-                                                                                "schema": {
-                                                                                    "type": "boolean",
-                                                                                    "default": true,
-                                                                                    "hidden": true
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "name",
-                                                                                "label": "Port Name",
-                                                                                "schema": {
-                                                                                    "type": "string",
-                                                                                    "default": ""
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "protocol",
-                                                                                "label": "Port Type",
-                                                                                "schema": {
-                                                                                    "type": "string",
-                                                                                    "default": "tcp",
-                                                                                    "enum": [
-                                                                                        {
-                                                                                            "value": "http",
-                                                                                            "description": "HTTP"
-                                                                                        },
-                                                                                        {
-                                                                                            "value": "https",
-                                                                                            "description": "HTTPS"
-                                                                                        },
-                                                                                        {
-                                                                                            "value": "tcp",
-                                                                                            "description": "TCP"
-                                                                                        },
-                                                                                        {
-                                                                                            "value": "udp",
-                                                                                            "description": "UDP"
-                                                                                        }
-                                                                                    ]
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "targetPort",
-                                                                                "label": "Target Port",
-                                                                                "description": "This port exposes the container port on the service",
-                                                                                "schema": {
-                                                                                    "type": "int",
-                                                                                    "required": true
-                                                                                }
-                                                                            },
-                                                                            {
-                                                                                "variable": "port",
-                                                                                "label": "Container Port",
-                                                                                "schema": {
-                                                                                    "type": "int",
-                                                                                    "required": true
-                                                                                }
-                                                                            }
-                                                                        ]
+                                                                        "type": "int",
+                                                                        "required": true
                                                                     }
                                                                 }
                                                             ]
@@ -7888,7 +7602,7 @@
                     "variable": "persistence",
                     "label": "Integrated Persistent Storage",
                     "description": "Integrated Persistent Storage",
-                    "group": "Storage and Persistence",
+                    "group": "Persistence",
                     "schema": {
                         "additional_attrs": true,
                         "type": "dict",
@@ -9411,7 +9125,7 @@
                 {
                     "variable": "persistenceList",
                     "label": "Additional App Storage",
-                    "group": "Storage and Persistence",
+                    "group": "Persistence",
                     "schema": {
                         "type": "list",
                         "default": [],
@@ -10909,7 +10623,7 @@
                 },
                 {
                     "variable": "securityContext",
-                    "group": "Security and Permissions",
+                    "group": "SecurityContext",
                     "label": "Security Context",
                     "schema": {
                         "additional_attrs": true,
@@ -11055,7 +10769,7 @@
                 },
                 {
                     "variable": "resources",
-                    "group": "Resources and Devices",
+                    "group": "Resources",
                     "label": "Resource Limits",
                     "schema": {
                         "additional_attrs": true,
@@ -11154,7 +10868,7 @@
                 {
                     "variable": "deviceList",
                     "label": "Mount USB Devices",
-                    "group": "Resources and Devices",
+                    "group": "Devices",
                     "schema": {
                         "type": "list",
                         "default": [],
@@ -11270,7 +10984,7 @@
                 },
                 {
                     "variable": "networkPolicy",
-                    "group": "Advanced",
+                    "group": "Experimental",
                     "label": "(Advanced) Network Policy",
                     "schema": {
                         "type": "list",
@@ -12872,7 +12586,7 @@
             ]
         },
         "app_readme": "<p>rTorrent and ruTorrent chart.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/rtorrent-rutorrent\">https://truecharts.org/charts/stable/rtorrent-rutorrent</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-        "detailed_readme": "<hr />\n<h2>title: README</h2>\n<h2>General Info</h2>\n<p>TrueCharts can be installed as both <em>normal</em> Helm Charts or as Apps on TrueNAS SCALE.\nHowever only installations using the TrueNAS SCALE Apps system are supported.</p>\n<p>For more information about this App, please check the docs on the TrueCharts <a href=\"https://truecharts.org/charts/stable/rtorrent-rutorrent\">website</a></p>\n<p><strong>This chart is not maintained by the upstream project and any issues with the chart should be raised <a href=\"https://github.com/truecharts/charts/issues/new/choose\">here</a></strong></p>\n<h2>Support</h2>\n<ul>\n<li>Please check our <a href=\"https://truecharts.org/manual/SCALE/guides/scale-intro\">quick-start guides for TrueNAS SCALE</a>.</li>\n<li>See the <a href=\"https://truecharts.org\">Website</a></li>\n<li>Check our <a href=\"https://discord.gg/tVsPTHWTtr\">Discord</a></li>\n<li>Open a <a href=\"https://github.com/truecharts/charts/issues/new/choose\">issue</a></li>\n</ul>\n<hr />\n<h2>Sponsor TrueCharts</h2>\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>\n<p><em>All Rights Reserved - The TrueCharts Project</em></p>",
+        "detailed_readme": "<hr />\n<h2>title: README</h2>\n<h2>General Info</h2>\n<p>TrueCharts can be installed as both <em>normal</em> Helm Charts or as TrueNAS SCALE Apps.\nBoth solutions are fully supported, but we heavily advice the use of normal Helm Charts where possible</p>\n<p>For more information about this Chart, please check the docs on the TrueCharts <a href=\"https://truecharts.org/charts/stable/rtorrent-rutorrent\">website</a></p>\n<p><strong>This chart is not maintained by the upstream project and any issues with the chart should be raised <a href=\"https://github.com/truecharts/charts/issues/new/choose\">here</a></strong></p>\n<h2>Installation</h2>\n<h3>Helm-Chart installation</h3>\n<p>To install TrueCharts Helm charts using Helm, you can use our OCI Repository.</p>\n<p><code>helm install mychart oci://tccr.io/truecharts/CHARTNAME</code></p>\n<p>For more information on how to install TrueCharts Helm charts, checkout the instructions on the website: https://truecharts.org/helm/</p>\n<h3>TrueNAS SCALE Apps</h3>\n<p>For more information on how to use TrueCharts as TrueNAS SCALE Apps, please checkout the <a href=\"https://truecharts.org/scale/guides/scale-intro\">quick-start guides for TrueNAS SCALE</a>.</p>\n<h2>Configuration Options</h2>\n<p>To view the chart specific options, please view Values.yaml included in the chart.</p>\n<p>All our Charts use a shared \"common\" library chart that contains most of the templating and options.\nFor the complete overview of all available options, please checkout the documentation for them on the website: https://truecharts.org/common/</p>\n<h2>Chart Specific Guides and information</h2>\n<p>All our charts have dedicated documentation pages.\nThe documentation for this chart can be found here:\nhttps://truecharts.org/charts/stable/rtorrent-rutorrent</p>\n<h2>Support</h2>\n<ul>\n<li>See the <a href=\"https://truecharts.org\">Website</a></li>\n<li>Check our <a href=\"https://discord.gg/tVsPTHWTtr\">Discord</a></li>\n<li>Open a <a href=\"https://github.com/truecharts/charts/issues/new/choose\">issue</a></li>\n</ul>\n<hr />\n<h2>Sponsor TrueCharts</h2>\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/general/sponsor\">donation</a> or contributing back to the project any way you can!</p>\n<p><em>All Rights Reserved - The TrueCharts Project</em></p>",
         "changelog": "<p><em>for the complete changelog, please refer to the website</em></p>\n<p><strong>Important:</strong></p>"
     },
     "3.3.0": {
@@ -12880,12 +12594,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.3.0",
-        "last_update": "2024-04-21 01:02:29",
+        "last_update": "2024-04-22 01:03:08",
         "required_features": [
-            "definitions/gpuConfiguration",
-            "definitions/certificate",
             "definitions/interface",
             "definitions/timezone",
+            "definitions/gpuConfiguration",
+            "definitions/certificate",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "4.2.9_3.3.0",
@@ -19357,12 +19071,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.2.0",
-        "last_update": "2024-04-21 01:02:29",
+        "last_update": "2024-04-22 01:03:08",
         "required_features": [
-            "definitions/gpuConfiguration",
-            "definitions/certificate",
             "definitions/interface",
             "definitions/timezone",
+            "definitions/gpuConfiguration",
+            "definitions/certificate",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "4.2.9_3.2.0",
