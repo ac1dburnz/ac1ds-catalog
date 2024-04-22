@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.8.9",
-        "last_update": "2024-04-20 18:48:21",
+        "last_update": "2024-04-21 01:02:29",
         "required_features": [
             "definitions/certificate",
+            "definitions/interface",
             "normalize/interfaceConfiguration",
-            "definitions/timezone",
-            "definitions/interface"
+            "definitions/timezone"
         ],
         "human_version": "4.4.3_13.8.9",
         "version": "13.8.9",
@@ -4976,12 +4976,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/13.8.8",
-        "last_update": "2024-04-20 18:48:21",
+        "last_update": "2024-04-21 01:02:29",
         "required_features": [
             "definitions/certificate",
+            "definitions/interface",
             "normalize/interfaceConfiguration",
-            "definitions/timezone",
-            "definitions/interface"
+            "definitions/timezone"
         ],
         "human_version": "4.4.3_13.8.8",
         "version": "13.8.8",
@@ -9948,11 +9948,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.3.0",
-        "last_update": "2024-04-20 18:48:21",
+        "last_update": "2024-04-21 01:02:29",
         "required_features": [
-            "definitions/interface",
             "definitions/gpuConfiguration",
             "definitions/certificate",
+            "definitions/interface",
             "definitions/timezone",
             "normalize/interfaceConfiguration"
         ],
@@ -14959,11 +14959,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/thelounge/12.2.0",
-        "last_update": "2024-04-20 18:48:21",
+        "last_update": "2024-04-21 01:02:29",
         "required_features": [
-            "definitions/interface",
             "definitions/gpuConfiguration",
             "definitions/certificate",
+            "definitions/interface",
             "definitions/timezone",
             "normalize/interfaceConfiguration"
         ],
