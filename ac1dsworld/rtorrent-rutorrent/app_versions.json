@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.13",
-        "last_update": "2024-04-23 00:31:36",
+        "last_update": "2024-04-23 00:46:56",
         "required_features": [
             "definitions/timezone",
+            "definitions/certificate",
             "definitions/interface",
-            "normalize/interfaceConfiguration",
-            "definitions/certificate"
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.2.9_4.8.13",
         "version": "4.8.13",
@@ -6438,7 +6438,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.12",
-        "last_update": "2024-04-23 00:31:36",
+        "last_update": "2024-04-23 00:46:56",
         "required_features": [
             "definitions/timezone",
             "definitions/certificate"
@@ -12733,12 +12733,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.3.0",
-        "last_update": "2024-04-23 00:31:36",
+        "last_update": "2024-04-23 00:46:56",
         "required_features": [
-            "definitions/interface",
             "definitions/certificate",
             "definitions/gpuConfiguration",
             "definitions/timezone",
+            "definitions/interface",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "4.2.9_3.3.0",
@@ -19210,12 +19210,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.2.0",
-        "last_update": "2024-04-23 00:31:36",
+        "last_update": "2024-04-23 00:46:56",
         "required_features": [
-            "definitions/interface",
             "definitions/certificate",
             "definitions/gpuConfiguration",
             "definitions/timezone",
+            "definitions/interface",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "4.2.9_3.2.0",
