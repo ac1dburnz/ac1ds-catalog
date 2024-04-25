@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/21.6.16",
-        "last_update": "2024-04-23 00:46:56",
+        "last_update": "2024-04-24 01:01:30",
         "required_features": [
+            "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/certificate",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "4.0.4.1491_21.6.16",
         "version": "21.6.16",
@@ -57,8 +57,8 @@
             "sources": [
                 "https://github.com/Sonarr/Sonarr",
                 "https://github.com/truecharts/charts/tree/master/charts/stable/sonarr",
-                "https://ghcr.io/onedr0p/exportarr",
-                "https://ghcr.io/onedr0p/sonarr"
+                "https://ghcr.io/onedr0p/sonarr",
+                "https://ghcr.io/onedr0p/exportarr"
             ],
             "type": "application",
             "version": "21.6.16"
@@ -5043,7 +5043,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/21.6.15",
-        "last_update": "2024-04-23 00:46:56",
+        "last_update": "2024-04-24 01:01:30",
         "required_features": [
             "definitions/timezone",
             "definitions/certificate"
@@ -9943,12 +9943,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/20.2.1",
-        "last_update": "2024-04-23 00:46:56",
+        "last_update": "2024-04-24 01:01:30",
         "required_features": [
+            "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/certificate",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "4.0.2.1183_20.2.1",
         "version": "20.2.1",
@@ -14982,12 +14982,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/20.2.0",
-        "last_update": "2024-04-23 00:46:56",
+        "last_update": "2024-04-24 01:01:30",
         "required_features": [
+            "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/certificate",
             "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "4.0.1.929_20.2.0",
         "version": "20.2.0",
@@ -20021,13 +20021,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/19.2.0",
-        "last_update": "2024-04-23 00:46:56",
+        "last_update": "2024-04-24 01:01:30",
         "required_features": [
-            "definitions/certificate",
-            "definitions/gpuConfiguration",
             "definitions/timezone",
-            "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "definitions/gpuConfiguration",
+            "normalize/interfaceConfiguration",
+            "definitions/certificate",
+            "definitions/interface"
         ],
         "human_version": "4.0.1.929_19.2.0",
         "version": "19.2.0",
@@ -25103,13 +25103,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/19.1.1",
-        "last_update": "2024-04-23 00:46:56",
+        "last_update": "2024-04-24 01:01:30",
         "required_features": [
-            "definitions/certificate",
-            "definitions/gpuConfiguration",
             "definitions/timezone",
-            "definitions/interface",
-            "normalize/interfaceConfiguration"
+            "definitions/gpuConfiguration",
+            "normalize/interfaceConfiguration",
+            "definitions/certificate",
+            "definitions/interface"
         ],
         "human_version": "4.0.1.929_19.1.1",
         "version": "19.1.1",
