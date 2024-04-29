@@ -4,11 +4,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/21.7.11",
-        "last_update": "2024-04-26 11:45:05",
+        "last_update": "2024-04-28 02:58:01",
         "required_features": [
+            "definitions/timezone",
             "definitions/interface",
             "definitions/certificate",
-            "definitions/timezone",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "5.4.6.8723_21.7.11",
@@ -57,8 +57,8 @@
             "sources": [
                 "https://github.com/Radarr/Radarr",
                 "https://github.com/truecharts/charts/tree/master/charts/stable/radarr",
-                "https://ghcr.io/onedr0p/exportarr",
-                "https://ghcr.io/onedr0p/radarr"
+                "https://ghcr.io/onedr0p/radarr",
+                "https://ghcr.io/onedr0p/exportarr"
             ],
             "type": "application",
             "version": "21.7.11"
@@ -5043,11 +5043,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/21.7.10",
-        "last_update": "2024-04-26 11:45:05",
+        "last_update": "2024-04-28 02:58:01",
         "required_features": [
+            "definitions/timezone",
             "definitions/interface",
             "definitions/certificate",
-            "definitions/timezone",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "5.4.6.8723_21.7.10",
@@ -10082,11 +10082,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/20.2.1",
-        "last_update": "2024-04-26 11:45:05",
+        "last_update": "2024-04-28 02:58:01",
         "required_features": [
+            "definitions/timezone",
             "definitions/interface",
             "definitions/certificate",
-            "definitions/timezone",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "5.3.6.8612_20.2.1",
@@ -15121,11 +15121,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/20.2.0",
-        "last_update": "2024-04-26 11:45:05",
+        "last_update": "2024-04-28 02:58:01",
         "required_features": [
+            "definitions/timezone",
             "definitions/interface",
             "definitions/certificate",
-            "definitions/timezone",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "5.3.6.8612_20.2.0",
@@ -20160,13 +20160,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/19.4.0",
-        "last_update": "2024-04-26 11:45:05",
+        "last_update": "2024-04-28 02:58:01",
         "required_features": [
+            "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/gpuConfiguration",
             "definitions/interface",
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/timezone"
+            "definitions/certificate"
         ],
         "human_version": "5.3.6.8612_19.4.0",
         "version": "19.4.0",
@@ -25242,13 +25242,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/19.3.0",
-        "last_update": "2024-04-26 11:45:05",
+        "last_update": "2024-04-28 02:58:01",
         "required_features": [
+            "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/gpuConfiguration",
             "definitions/interface",
-            "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/timezone"
+            "definitions/certificate"
         ],
         "human_version": "5.3.6.8612_19.3.0",
         "version": "19.3.0",
