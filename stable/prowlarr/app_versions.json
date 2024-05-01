@@ -4,11 +4,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/17.0.4",
-        "last_update": "2024-04-30 00:31:46",
+        "last_update": "2024-04-30 11:28:59",
         "required_features": [
+            "definitions/certificate",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "1.16.2.4435_17.0.4",
@@ -5391,11 +5391,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/17.0.2",
-        "last_update": "2024-04-30 00:31:46",
+        "last_update": "2024-04-30 11:28:59",
         "required_features": [
+            "definitions/certificate",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "1.16.2.4435_17.0.2",
@@ -10778,11 +10778,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/16.8.11",
-        "last_update": "2024-04-30 00:31:46",
+        "last_update": "2024-04-30 11:28:59",
         "required_features": [
+            "definitions/certificate",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "1.16.2.4435_16.8.11",
@@ -15818,11 +15818,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/16.8.10",
-        "last_update": "2024-04-30 00:31:46",
+        "last_update": "2024-04-30 11:28:59",
         "required_features": [
+            "definitions/certificate",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "1.16.2.4435_16.8.10",
@@ -20858,11 +20858,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/15.4.1",
-        "last_update": "2024-04-30 00:31:46",
+        "last_update": "2024-04-30 11:28:59",
         "required_features": [
+            "definitions/certificate",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "1.14.0.4286_15.4.1",
@@ -25898,11 +25898,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/15.4.0",
-        "last_update": "2024-04-30 00:31:46",
+        "last_update": "2024-04-30 11:28:59",
         "required_features": [
+            "definitions/certificate",
             "definitions/interface",
             "definitions/timezone",
-            "definitions/certificate",
             "normalize/interfaceConfiguration"
         ],
         "human_version": "1.14.0.4286_15.4.0",
@@ -30938,13 +30938,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/14.5.0",
-        "last_update": "2024-04-30 00:31:46",
+        "last_update": "2024-04-30 11:28:59",
         "required_features": [
-            "definitions/certificate",
-            "definitions/interface",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/timezone",
+            "definitions/interface",
+            "definitions/certificate"
         ],
         "human_version": "1.13.3.4273_14.5.0",
         "version": "14.5.0",
@@ -36021,13 +36021,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/14.4.0",
-        "last_update": "2024-04-30 00:31:46",
+        "last_update": "2024-04-30 11:28:59",
         "required_features": [
-            "definitions/certificate",
-            "definitions/interface",
-            "definitions/timezone",
             "definitions/gpuConfiguration",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/timezone",
+            "definitions/interface",
+            "definitions/certificate"
         ],
         "human_version": "1.13.3.4273_14.4.0",
         "version": "14.4.0",
