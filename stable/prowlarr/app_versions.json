@@ -4,7 +4,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/17.0.4",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -58,8 +58,8 @@
                 "https://github.com/Prowlarr/Prowlarr",
                 "https://github.com/k8s-at-home/container-images",
                 "https://github.com/truecharts/charts/tree/master/charts/stable/prowlarr",
-                "https://ghcr.io/onedr0p/exportarr",
-                "https://ghcr.io/onedr0p/prowlarr-develop"
+                "https://ghcr.io/onedr0p/prowlarr-develop",
+                "https://ghcr.io/onedr0p/exportarr"
             ],
             "type": "application",
             "version": "17.0.4"
@@ -5391,7 +5391,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/17.0.2",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -10778,7 +10778,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/16.8.11",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -15818,7 +15818,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/16.8.10",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -20858,7 +20858,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/15.4.1",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -25898,7 +25898,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/15.4.0",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -30938,13 +30938,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/14.5.0",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
-            "definitions/gpuConfiguration",
-            "normalize/interfaceConfiguration",
             "definitions/timezone",
+            "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate"
+            "definitions/certificate",
+            "definitions/gpuConfiguration"
         ],
         "human_version": "1.13.3.4273_14.5.0",
         "version": "14.5.0",
@@ -36021,13 +36021,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/prowlarr/14.4.0",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
-            "definitions/gpuConfiguration",
-            "normalize/interfaceConfiguration",
             "definitions/timezone",
+            "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate"
+            "definitions/certificate",
+            "definitions/gpuConfiguration"
         ],
         "human_version": "1.13.3.4273_14.4.0",
         "version": "14.4.0",

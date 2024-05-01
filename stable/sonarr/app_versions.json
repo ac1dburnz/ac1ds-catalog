@@ -4,7 +4,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/22.0.3",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -57,8 +57,8 @@
             "sources": [
                 "https://github.com/Sonarr/Sonarr",
                 "https://github.com/truecharts/charts/tree/master/charts/stable/sonarr",
-                "https://ghcr.io/onedr0p/exportarr",
-                "https://ghcr.io/onedr0p/sonarr"
+                "https://ghcr.io/onedr0p/sonarr",
+                "https://ghcr.io/onedr0p/exportarr"
             ],
             "type": "application",
             "version": "22.0.3"
@@ -5390,7 +5390,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/22.0.2",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -10776,7 +10776,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/21.6.17",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -15815,7 +15815,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/21.6.16",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -20854,7 +20854,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/20.2.1",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -25893,7 +25893,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/20.2.0",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -30932,13 +30932,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/19.2.0",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
-            "definitions/gpuConfiguration",
-            "normalize/interfaceConfiguration",
             "definitions/timezone",
+            "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate"
+            "definitions/certificate",
+            "definitions/gpuConfiguration"
         ],
         "human_version": "4.0.1.929_19.2.0",
         "version": "19.2.0",
@@ -36014,13 +36014,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sonarr/19.1.1",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
-            "definitions/gpuConfiguration",
-            "normalize/interfaceConfiguration",
             "definitions/timezone",
+            "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate"
+            "definitions/certificate",
+            "definitions/gpuConfiguration"
         ],
         "human_version": "4.0.1.929_19.1.1",
         "version": "19.1.1",
