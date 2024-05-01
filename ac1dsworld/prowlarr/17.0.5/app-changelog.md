@@ -1,6 +1,6 @@
 
 
-## [prowlarr-17.0.4](https://github.com/truecharts/charts/compare/prowlarr-16.4.0...prowlarr-17.0.4) (2024-05-01)
+## [prowlarr-17.0.5](https://github.com/truecharts/charts/compare/prowlarr-16.4.0...prowlarr-17.0.5) (2024-05-01)
 
 ### Chore
 
@@ -10,6 +10,8 @@
 
 - bump common
 
+- bump common to release improved checks on volsync and cnpg ([#21454](https://github.com/truecharts/charts/issues/21454))
+
 - bump everything to release new doc pages
 
 - update groups html ([#21121](https://github.com/truecharts/charts/issues/21121))
@@ -18,7 +20,7 @@
 
 - bump everything to regenerate readme's and site index
 
-- update container image common to v20.3.4[@d7e1b23](https://github.com/d7e1b23) by renovate ([#20527](https://github.com/truecharts/charts/issues/20527))
+- update container image common to v20.3.3[@3876ba5](https://github.com/3876ba5) by renovate ([#20478](https://github.com/truecharts/charts/issues/20478))
 
 - update container image ghcr.io/onedr0p/prowlarr-develop to 1.15.0.4361[@833d7ca](https://github.com/833d7ca) by renovate ([#20066](https://github.com/truecharts/charts/issues/20066))
 
@@ -34,9 +36,9 @@
 
 - update container image common to v20.3.5[@aedd88a](https://github.com/aedd88a) by renovate ([#20535](https://github.com/truecharts/charts/issues/20535))
 
-- update container image common to v20.3.12[@3303278](https://github.com/3303278) by renovate ([#21384](https://github.com/truecharts/charts/issues/21384))
+- update container image common to v20.3.4[@d7e1b23](https://github.com/d7e1b23) by renovate ([#20527](https://github.com/truecharts/charts/issues/20527))
 
-- update container image common to v20.3.3[@3876ba5](https://github.com/3876ba5) by renovate ([#20478](https://github.com/truecharts/charts/issues/20478))
+- update container image common to v20.3.12[@3303278](https://github.com/3303278) by renovate ([#21384](https://github.com/truecharts/charts/issues/21384))
 
 - update container image ghcr.io/onedr0p/prowlarr-develop to 1.15.0.4361[@bd8092d](https://github.com/bd8092d) by renovate ([#20425](https://github.com/truecharts/charts/issues/20425))
 

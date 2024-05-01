@@ -4,7 +4,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/22.0.3",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -5390,7 +5390,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/22.0.2",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -10776,7 +10776,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/21.7.11",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -15815,7 +15815,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/21.7.10",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -20854,7 +20854,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/20.2.1",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -25893,7 +25893,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/20.2.0",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -30932,13 +30932,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/19.4.0",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
-            "definitions/gpuConfiguration",
-            "normalize/interfaceConfiguration",
             "definitions/timezone",
+            "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate"
+            "definitions/certificate",
+            "definitions/gpuConfiguration"
         ],
         "human_version": "5.3.6.8612_19.4.0",
         "version": "19.4.0",
@@ -36014,13 +36014,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/19.3.0",
-        "last_update": "2024-04-30 11:28:59",
+        "last_update": "2024-05-01 00:32:15",
         "required_features": [
-            "definitions/gpuConfiguration",
-            "normalize/interfaceConfiguration",
             "definitions/timezone",
+            "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate"
+            "definitions/certificate",
+            "definitions/gpuConfiguration"
         ],
         "human_version": "5.3.6.8612_19.3.0",
         "version": "19.3.0",

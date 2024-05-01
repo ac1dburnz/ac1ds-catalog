@@ -1,6 +1,6 @@
 
 
-## [sonarr-22.0.3](https://github.com/truecharts/charts/compare/sonarr-21.4.0...sonarr-22.0.3) (2024-05-01)
+## [sabnzbd-20.0.4](https://github.com/truecharts/charts/compare/sabnzbd-19.4.0...sabnzbd-20.0.4) (2024-05-01)
 
 ### Chore
 
@@ -9,6 +9,8 @@
 - bump charts to ensure new icons are released
 
 - bump common
+
+- bump common to release improved checks on volsync and cnpg ([#21454](https://github.com/truecharts/charts/issues/21454))
 
 - bump everything to release new doc pages
 
@@ -20,13 +22,11 @@
 
 - update container image common to v20.3.5[@aedd88a](https://github.com/aedd88a) by renovate ([#20535](https://github.com/truecharts/charts/issues/20535))
 
-- update container image ghcr.io/onedr0p/exportarr to v2.0.1[@727e7bc](https://github.com/727e7bc) by renovate ([#20284](https://github.com/truecharts/charts/issues/20284))
+- update container image common to v20.3.2[@0722ebb](https://github.com/0722ebb) by renovate ([#20334](https://github.com/truecharts/charts/issues/20334))
 
 - update container image common to v20.3.7[@8cf9fc9](https://github.com/8cf9fc9) by renovate ([#20819](https://github.com/truecharts/charts/issues/20819))
 
-- update container image ghcr.io/onedr0p/sonarr to 4.0.4.1491[@3689961](https://github.com/3689961) by renovate ([#20770](https://github.com/truecharts/charts/issues/20770))
-
-- update container image ghcr.io/onedr0p/sonarr to v4.0.4.1491[@b487a98](https://github.com/b487a98) by renovate ([#20717](https://github.com/truecharts/charts/issues/20717))
+- update container image ghcr.io/onedr0p/sabnzbd to 4.2.3[@da0b03d](https://github.com/da0b03d) by renovate ([#20769](https://github.com/truecharts/charts/issues/20769))
 
 - update container image common to v20.3.6[@27edfed](https://github.com/27edfed) by renovate ([#20599](https://github.com/truecharts/charts/issues/20599))
 
@@ -36,15 +36,11 @@
 
 - update container image common to v20.3.3[@3876ba5](https://github.com/3876ba5) by renovate ([#20478](https://github.com/truecharts/charts/issues/20478))
 
-- update container image ghcr.io/onedr0p/sonarr to 4.0.3.1413[@4284def](https://github.com/4284def) by renovate ([#20430](https://github.com/truecharts/charts/issues/20430))
-
-- update container image common to v20.3.2[@0722ebb](https://github.com/0722ebb) by renovate ([#20334](https://github.com/truecharts/charts/issues/20334))
+- update container image ghcr.io/onedr0p/sabnzbd to 4.2.3[@bb20d39](https://github.com/bb20d39) by renovate ([#20429](https://github.com/truecharts/charts/issues/20429))
 
 - update container image common to v20.3.11[@dae6129](https://github.com/dae6129) by renovate ([#20875](https://github.com/truecharts/charts/issues/20875))
 
-- update container image ghcr.io/onedr0p/sonarr to v4.0.3.1413[@04d8e19](https://github.com/04d8e19) by renovate ([#20083](https://github.com/truecharts/charts/issues/20083))
-
-- update container image ghcr.io/onedr0p/sonarr to 4.0.2.1183[@42ba5af](https://github.com/42ba5af) by renovate ([#20068](https://github.com/truecharts/charts/issues/20068))
+- update container image ghcr.io/onedr0p/exportarr to v2.0.1[@727e7bc](https://github.com/727e7bc) by renovate ([#20284](https://github.com/truecharts/charts/issues/20284))
 
 - update container image common to v20.2.10[@6f99c97](https://github.com/6f99c97) by renovate ([#19876](https://github.com/truecharts/charts/issues/19876))
 
@@ -58,19 +54,13 @@
 
 - update container image common to v20.2.0[@91ade87](https://github.com/91ade87) by renovate ([#19361](https://github.com/truecharts/charts/issues/19361))
 
-- update container image ghcr.io/onedr0p/sonarr to 4.0.2.1183[@bbfcda0](https://github.com/bbfcda0) by renovate ([#19260](https://github.com/truecharts/charts/issues/19260))
+- update container image ghcr.io/onedr0p/sabnzbd to 4.2.3[@fa8ddea](https://github.com/fa8ddea) by renovate ([#19259](https://github.com/truecharts/charts/issues/19259))
 
 ### Chore
 
 
 
 - rework SCALE catagories/groups to match helm and remove deprecated charts ([#21111](https://github.com/truecharts/charts/issues/21111))
-
-### Docs
-
-
-
-- fix asides ([#21073](https://github.com/truecharts/charts/issues/21073))
 
 ### Feat
 
