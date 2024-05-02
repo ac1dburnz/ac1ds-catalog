@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/22.0.4",
-        "last_update": "2024-05-01 15:55:30",
+        "last_update": "2024-05-02 00:31:05",
         "required_features": [
-            "definitions/timezone",
+            "definitions/interface",
             "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/interface"
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "5.4.6.8723_22.0.4",
         "version": "22.0.4",
@@ -57,8 +57,8 @@
             "sources": [
                 "https://github.com/Radarr/Radarr",
                 "https://github.com/truecharts/charts/tree/master/charts/stable/radarr",
-                "https://ghcr.io/onedr0p/radarr",
-                "https://ghcr.io/onedr0p/exportarr"
+                "https://ghcr.io/onedr0p/exportarr",
+                "https://ghcr.io/onedr0p/radarr"
             ],
             "type": "application",
             "version": "22.0.4"
@@ -5374,12 +5374,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/22.0.3",
-        "last_update": "2024-05-01 15:55:30",
+        "last_update": "2024-05-02 00:31:05",
         "required_features": [
-            "definitions/timezone",
+            "definitions/interface",
             "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/interface"
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "5.4.6.8723_22.0.3",
         "version": "22.0.3",
@@ -10760,12 +10760,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/21.7.11",
-        "last_update": "2024-05-01 15:55:30",
+        "last_update": "2024-05-02 00:31:05",
         "required_features": [
-            "definitions/timezone",
+            "definitions/interface",
             "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/interface"
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "5.4.6.8723_21.7.11",
         "version": "21.7.11",
@@ -15799,12 +15799,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/21.7.10",
-        "last_update": "2024-05-01 15:55:30",
+        "last_update": "2024-05-02 00:31:05",
         "required_features": [
-            "definitions/timezone",
+            "definitions/interface",
             "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/interface"
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "5.4.6.8723_21.7.10",
         "version": "21.7.10",
@@ -20838,12 +20838,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/20.2.1",
-        "last_update": "2024-05-01 15:55:30",
+        "last_update": "2024-05-02 00:31:05",
         "required_features": [
-            "definitions/timezone",
+            "definitions/interface",
             "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/interface"
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "5.3.6.8612_20.2.1",
         "version": "20.2.1",
@@ -25877,12 +25877,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/20.2.0",
-        "last_update": "2024-05-01 15:55:30",
+        "last_update": "2024-05-02 00:31:05",
         "required_features": [
-            "definitions/timezone",
+            "definitions/interface",
             "definitions/certificate",
-            "normalize/interfaceConfiguration",
-            "definitions/interface"
+            "definitions/timezone",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "5.3.6.8612_20.2.0",
         "version": "20.2.0",
@@ -30916,13 +30916,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/19.4.0",
-        "last_update": "2024-05-01 15:55:30",
+        "last_update": "2024-05-02 00:31:05",
         "required_features": [
-            "definitions/interface",
             "definitions/timezone",
             "definitions/certificate",
             "normalize/interfaceConfiguration",
-            "definitions/gpuConfiguration"
+            "definitions/gpuConfiguration",
+            "definitions/interface"
         ],
         "human_version": "5.3.6.8612_19.4.0",
         "version": "19.4.0",
@@ -35998,13 +35998,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/19.3.0",
-        "last_update": "2024-05-01 15:55:30",
+        "last_update": "2024-05-02 00:31:05",
         "required_features": [
-            "definitions/interface",
             "definitions/timezone",
             "definitions/certificate",
             "normalize/interfaceConfiguration",
-            "definitions/gpuConfiguration"
+            "definitions/gpuConfiguration",
+            "definitions/interface"
         ],
         "human_version": "5.3.6.8612_19.3.0",
         "version": "19.3.0",
