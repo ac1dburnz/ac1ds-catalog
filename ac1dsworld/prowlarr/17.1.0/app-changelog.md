@@ -1,16 +1,18 @@
 
 
-## [sonarr-22.0.4](https://github.com/truecharts/charts/compare/sonarr-21.4.0...sonarr-22.0.4) (2024-05-02)
+## [prowlarr-17.1.0](https://github.com/truecharts/charts/compare/prowlarr-16.4.0...prowlarr-17.1.0) (2024-05-05)
 
 ### Chore
 
 
 
-- bump charts to ensure new icons are released
+- bump everything to regenerate readme's and site index
+
+- bump common to release improved checks on volsync and cnpg ([#21454](https://github.com/truecharts/charts/issues/21454))
 
 - bump common
 
-- bump common to release improved checks on volsync and cnpg ([#21454](https://github.com/truecharts/charts/issues/21454))
+- bump charts to ensure new icons are released
 
 - bump everything to release new doc pages
 
@@ -18,39 +20,43 @@
 
 - bump charts to release new docs to fix broken links
 
-- bump everything to regenerate readme's and site index
-
 - update container image common to v20.3.4[@d7e1b23](https://github.com/d7e1b23) by renovate ([#20527](https://github.com/truecharts/charts/issues/20527))
 
 - update container image ghcr.io/onedr0p/exportarr to v2.0.1[@727e7bc](https://github.com/727e7bc) by renovate ([#20284](https://github.com/truecharts/charts/issues/20284))
 
+- update container image common to v20.3.11[@dae6129](https://github.com/dae6129) by renovate ([#20875](https://github.com/truecharts/charts/issues/20875))
+
+- update container image common to v20.3.12[@3303278](https://github.com/3303278) by renovate ([#21384](https://github.com/truecharts/charts/issues/21384))
+
 - update container image common to v20.3.7[@8cf9fc9](https://github.com/8cf9fc9) by renovate ([#20819](https://github.com/truecharts/charts/issues/20819))
 
-- update container image ghcr.io/onedr0p/sonarr to 4.0.4.1491[@3689961](https://github.com/3689961) by renovate ([#20770](https://github.com/truecharts/charts/issues/20770))
+- update container image ghcr.io/onedr0p/prowlarr-develop to 1.16.1.4420[@b92e309](https://github.com/b92e309) by renovate ([#20765](https://github.com/truecharts/charts/issues/20765))
 
-- update container image ghcr.io/onedr0p/sonarr to v4.0.4.1491[@b487a98](https://github.com/b487a98) by renovate ([#20717](https://github.com/truecharts/charts/issues/20717))
+- update container image ghcr.io/onedr0p/prowlarr-develop to v1.16.1.4420[@a60ce8c](https://github.com/a60ce8c) by renovate ([#20747](https://github.com/truecharts/charts/issues/20747))
 
 - update container image common to v20.3.6[@27edfed](https://github.com/27edfed) by renovate ([#20599](https://github.com/truecharts/charts/issues/20599))
 
 - update container image common to v20.3.5[@aedd88a](https://github.com/aedd88a) by renovate ([#20535](https://github.com/truecharts/charts/issues/20535))
 
-- update container image common to v20.3.12[@3303278](https://github.com/3303278) by renovate ([#21384](https://github.com/truecharts/charts/issues/21384))
+- update container image ghcr.io/onedr0p/prowlarr-develop to v1.17.0.4448[@66e786d](https://github.com/66e786d) by renovate ([#21616](https://github.com/truecharts/charts/issues/21616))
 
 - update container image common to v20.3.3[@3876ba5](https://github.com/3876ba5) by renovate ([#20478](https://github.com/truecharts/charts/issues/20478))
 
-- update container image ghcr.io/onedr0p/sonarr to 4.0.3.1413[@4284def](https://github.com/4284def) by renovate ([#20430](https://github.com/truecharts/charts/issues/20430))
+- update container image ghcr.io/onedr0p/prowlarr-develop to 1.15.0.4361[@bd8092d](https://github.com/bd8092d) by renovate ([#20425](https://github.com/truecharts/charts/issues/20425))
 
 - update container image common to v20.3.2[@0722ebb](https://github.com/0722ebb) by renovate ([#20334](https://github.com/truecharts/charts/issues/20334))
 
-- update container image common to v20.3.11[@dae6129](https://github.com/dae6129) by renovate ([#20875](https://github.com/truecharts/charts/issues/20875))
+- update container image ghcr.io/onedr0p/prowlarr-develop to v1.16.2.4435[@e82f806](https://github.com/e82f806) by renovate ([#21057](https://github.com/truecharts/charts/issues/21057))
 
-- update container image ghcr.io/onedr0p/sonarr to v4.0.3.1413[@04d8e19](https://github.com/04d8e19) by renovate ([#20083](https://github.com/truecharts/charts/issues/20083))
-
-- update container image ghcr.io/onedr0p/sonarr to 4.0.2.1183[@42ba5af](https://github.com/42ba5af) by renovate ([#20068](https://github.com/truecharts/charts/issues/20068))
+- update container image ghcr.io/onedr0p/prowlarr-develop to 1.15.0.4361[@833d7ca](https://github.com/833d7ca) by renovate ([#20066](https://github.com/truecharts/charts/issues/20066))
 
 - update container image common to v20.2.10[@6f99c97](https://github.com/6f99c97) by renovate ([#19876](https://github.com/truecharts/charts/issues/19876))
 
+- update container image ghcr.io/onedr0p/prowlarr-develop to v1.15.0.4361[@0b6b55c](https://github.com/0b6b55c) by renovate ([#19902](https://github.com/truecharts/charts/issues/19902))
+
 - update container image common to v20.2.9[@10fd6c5](https://github.com/10fd6c5) by renovate ([#19817](https://github.com/truecharts/charts/issues/19817))
+
+- update container image ghcr.io/onedr0p/prowlarr-develop to 1.14.3.4333[@60f146b](https://github.com/60f146b) by renovate ([#19780](https://github.com/truecharts/charts/issues/19780))
 
 - update container image common to v20.2.4[@f245f5c](https://github.com/f245f5c) by renovate ([#19731](https://github.com/truecharts/charts/issues/19731))
 
@@ -58,21 +64,19 @@
 
 - update container image common to v20.2.2[@f7d0b92](https://github.com/f7d0b92) by renovate ([#19432](https://github.com/truecharts/charts/issues/19432))
 
+- update container image ghcr.io/onedr0p/prowlarr-develop to v1.14.3.4333[@af90aa4](https://github.com/af90aa4) by renovate ([#19425](https://github.com/truecharts/charts/issues/19425))
+
+- update container image ghcr.io/onedr0p/prowlarr-develop to v1.14.2.4318[@78e4f3a](https://github.com/78e4f3a) by renovate ([#19405](https://github.com/truecharts/charts/issues/19405))
+
 - update container image common to v20.2.0[@91ade87](https://github.com/91ade87) by renovate ([#19361](https://github.com/truecharts/charts/issues/19361))
 
-- update container image ghcr.io/onedr0p/sonarr to 4.0.2.1183[@bbfcda0](https://github.com/bbfcda0) by renovate ([#19260](https://github.com/truecharts/charts/issues/19260))
+- update container image ghcr.io/onedr0p/prowlarr-develop to 1.14.1.4316[@882daa1](https://github.com/882daa1) by renovate ([#19255](https://github.com/truecharts/charts/issues/19255))
 
 ### Chore
 
 
 
 - rework SCALE catagories/groups to match helm and remove deprecated charts ([#21111](https://github.com/truecharts/charts/issues/21111))
-
-### Docs
-
-
-
-- fix asides ([#21073](https://github.com/truecharts/charts/issues/21073))
 
 ### Feat
 
