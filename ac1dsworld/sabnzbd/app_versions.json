@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sabnzbd/20.1.0",
-        "last_update": "2024-05-06 00:31:54",
+        "last_update": "2024-05-07 00:31:25",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate",
-            "definitions/timezone"
+            "definitions/timezone",
+            "definitions/certificate"
         ],
         "human_version": "4.3.1_20.1.0",
         "version": "20.1.0",
@@ -5345,12 +5345,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sabnzbd/20.0.5",
-        "last_update": "2024-05-06 00:31:54",
+        "last_update": "2024-05-07 00:31:25",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate",
-            "definitions/timezone"
+            "definitions/timezone",
+            "definitions/certificate"
         ],
         "human_version": "4.2.3_20.0.5",
         "version": "20.0.5",
@@ -10686,12 +10686,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sabnzbd/19.6.16",
-        "last_update": "2024-05-06 00:31:54",
+        "last_update": "2024-05-07 00:31:25",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate",
-            "definitions/timezone"
+            "definitions/timezone",
+            "definitions/certificate"
         ],
         "human_version": "4.2.3_19.6.16",
         "version": "19.6.16",
@@ -15696,12 +15696,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sabnzbd/19.6.15",
-        "last_update": "2024-05-06 00:31:54",
+        "last_update": "2024-05-07 00:31:25",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate",
-            "definitions/timezone"
+            "definitions/timezone",
+            "definitions/certificate"
         ],
         "human_version": "4.2.3_19.6.15",
         "version": "19.6.15",
@@ -20706,12 +20706,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sabnzbd/18.2.0",
-        "last_update": "2024-05-06 00:31:54",
+        "last_update": "2024-05-07 00:31:25",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate",
-            "definitions/timezone"
+            "definitions/timezone",
+            "definitions/certificate"
         ],
         "human_version": "4.2.2_18.2.0",
         "version": "18.2.0",
@@ -25716,12 +25716,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sabnzbd/18.1.3",
-        "last_update": "2024-05-06 00:31:54",
+        "last_update": "2024-05-07 00:31:25",
         "required_features": [
             "normalize/interfaceConfiguration",
             "definitions/interface",
-            "definitions/certificate",
-            "definitions/timezone"
+            "definitions/timezone",
+            "definitions/certificate"
         ],
         "human_version": "4.2.2_18.1.3",
         "version": "18.1.3",
@@ -30726,13 +30726,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sabnzbd/17.4.0",
-        "last_update": "2024-05-06 00:31:54",
+        "last_update": "2024-05-07 00:31:25",
         "required_features": [
-            "definitions/timezone",
+            "definitions/certificate",
             "normalize/interfaceConfiguration",
-            "definitions/gpuConfiguration",
             "definitions/interface",
-            "definitions/certificate"
+            "definitions/gpuConfiguration",
+            "definitions/timezone"
         ],
         "human_version": "4.2.2_17.4.0",
         "version": "17.4.0",
@@ -35779,13 +35779,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/sabnzbd/17.3.2",
-        "last_update": "2024-05-06 00:31:54",
+        "last_update": "2024-05-07 00:31:25",
         "required_features": [
-            "definitions/timezone",
+            "definitions/certificate",
             "normalize/interfaceConfiguration",
-            "definitions/gpuConfiguration",
             "definitions/interface",
-            "definitions/certificate"
+            "definitions/gpuConfiguration",
+            "definitions/timezone"
         ],
         "human_version": "4.2.2_17.3.2",
         "version": "17.3.2",

@@ -4,11 +4,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/22.0.5",
-        "last_update": "2024-05-05 19:45:38",
+        "last_update": "2024-05-06 00:31:54",
         "required_features": [
             "normalize/interfaceConfiguration",
-            "definitions/certificate",
             "definitions/interface",
+            "definitions/certificate",
             "definitions/timezone"
         ],
         "human_version": "5.4.6.8723_22.0.5",
@@ -5374,11 +5374,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/22.0.4",
-        "last_update": "2024-05-05 19:45:38",
+        "last_update": "2024-05-06 00:31:54",
         "required_features": [
             "normalize/interfaceConfiguration",
-            "definitions/certificate",
             "definitions/interface",
+            "definitions/certificate",
             "definitions/timezone"
         ],
         "human_version": "5.4.6.8723_22.0.4",
@@ -10744,11 +10744,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/21.7.11",
-        "last_update": "2024-05-05 19:45:38",
+        "last_update": "2024-05-06 00:31:54",
         "required_features": [
             "normalize/interfaceConfiguration",
-            "definitions/certificate",
             "definitions/interface",
+            "definitions/certificate",
             "definitions/timezone"
         ],
         "human_version": "5.4.6.8723_21.7.11",
@@ -15783,11 +15783,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/21.7.10",
-        "last_update": "2024-05-05 19:45:38",
+        "last_update": "2024-05-06 00:31:54",
         "required_features": [
             "normalize/interfaceConfiguration",
-            "definitions/certificate",
             "definitions/interface",
+            "definitions/certificate",
             "definitions/timezone"
         ],
         "human_version": "5.4.6.8723_21.7.10",
@@ -20822,11 +20822,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/20.2.1",
-        "last_update": "2024-05-05 19:45:38",
+        "last_update": "2024-05-06 00:31:54",
         "required_features": [
             "normalize/interfaceConfiguration",
-            "definitions/certificate",
             "definitions/interface",
+            "definitions/certificate",
             "definitions/timezone"
         ],
         "human_version": "5.3.6.8612_20.2.1",
@@ -25861,11 +25861,11 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/20.2.0",
-        "last_update": "2024-05-05 19:45:38",
+        "last_update": "2024-05-06 00:31:54",
         "required_features": [
             "normalize/interfaceConfiguration",
-            "definitions/certificate",
             "definitions/interface",
+            "definitions/certificate",
             "definitions/timezone"
         ],
         "human_version": "5.3.6.8612_20.2.0",
@@ -30900,13 +30900,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/19.4.0",
-        "last_update": "2024-05-05 19:45:38",
+        "last_update": "2024-05-06 00:31:54",
         "required_features": [
-            "definitions/certificate",
+            "definitions/timezone",
+            "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
             "definitions/interface",
-            "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "5.3.6.8612_19.4.0",
         "version": "19.4.0",
@@ -35982,13 +35982,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/radarr/19.3.0",
-        "last_update": "2024-05-05 19:45:38",
+        "last_update": "2024-05-06 00:31:54",
         "required_features": [
-            "definitions/certificate",
+            "definitions/timezone",
+            "normalize/interfaceConfiguration",
             "definitions/gpuConfiguration",
             "definitions/interface",
-            "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "definitions/certificate"
         ],
         "human_version": "5.3.6.8612_19.3.0",
         "version": "19.3.0",
