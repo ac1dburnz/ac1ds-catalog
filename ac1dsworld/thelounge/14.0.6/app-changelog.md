@@ -1,40 +1,42 @@
 
 
-## [thelounge-14.0.5](https://github.com/truecharts/charts/compare/thelounge-13.6.0...thelounge-14.0.5) (2024-05-06)
+## [thelounge-14.0.6](https://github.com/truecharts/charts/compare/thelounge-13.6.0...thelounge-14.0.6) (2024-05-11)
 
 ### Chore
 
 
 
+- bump everything to release new doc pages
+
 - bump charts to ensure new icons are released
 
-- update groups html ([#21121](https://github.com/truecharts/charts/issues/21121))
+- bump everything to regenerate readme's and site index
 
 - bump common to release improved checks on volsync and cnpg ([#21454](https://github.com/truecharts/charts/issues/21454))
 
 - bump common
 
-- bump everything to regenerate readme's and site index
-
 - bump charts to release new docs to fix broken links
 
-- bump everything to release new doc pages
+- update groups html ([#21121](https://github.com/truecharts/charts/issues/21121))
 
-- update container image common to v20.2.0[@91ade87](https://github.com/91ade87) by renovate ([#19361](https://github.com/truecharts/charts/issues/19361))
+- update container image common to v20.3.7[@8cf9fc9](https://github.com/8cf9fc9) by renovate ([#20819](https://github.com/truecharts/charts/issues/20819))
 
-- update container image thelounge/thelounge to v4.4.3[@8e74f5a](https://github.com/8e74f5a) by renovate ([#20345](https://github.com/truecharts/charts/issues/20345))
+- update container image common to v20.2.9[@10fd6c5](https://github.com/10fd6c5) by renovate ([#19817](https://github.com/truecharts/charts/issues/19817))
 
 - update container image common to v20.3.12[@3303278](https://github.com/3303278) by renovate ([#21384](https://github.com/truecharts/charts/issues/21384))
+
+- update container image thelounge/thelounge to 4.4.3[@7017b49](https://github.com/7017b49) by renovate ([#21556](https://github.com/truecharts/charts/issues/21556))
 
 - update container image common to v20.3.11[@dae6129](https://github.com/dae6129) by renovate ([#20875](https://github.com/truecharts/charts/issues/20875))
 
 - update container image thelounge/thelounge to 4.4.3[@7a46dc0](https://github.com/7a46dc0) by renovate ([#21001](https://github.com/truecharts/charts/issues/21001))
 
-- update container image common to v20.3.7[@8cf9fc9](https://github.com/8cf9fc9) by renovate ([#20819](https://github.com/truecharts/charts/issues/20819))
+- update container image common to v20.2.0[@91ade87](https://github.com/91ade87) by renovate ([#19361](https://github.com/truecharts/charts/issues/19361))
 
-- update container image thelounge/thelounge to 4.4.3[@7017b49](https://github.com/7017b49) by renovate ([#21556](https://github.com/truecharts/charts/issues/21556))
+- update container image thelounge/thelounge to 4.4.3[@6e701d1](https://github.com/6e701d1) by renovate ([#21862](https://github.com/truecharts/charts/issues/21862))
 
-- update container image common to v20.2.10[@6f99c97](https://github.com/6f99c97) by renovate ([#19876](https://github.com/truecharts/charts/issues/19876))
+- update container image thelounge/thelounge to 4.4.3[@f6232c1](https://github.com/f6232c1) by renovate ([#20657](https://github.com/truecharts/charts/issues/20657))
 
 - update container image common to v20.3.6[@27edfed](https://github.com/27edfed) by renovate ([#20599](https://github.com/truecharts/charts/issues/20599))
 
@@ -46,11 +48,11 @@
 
 - update container image common to v20.3.2[@0722ebb](https://github.com/0722ebb) by renovate ([#20334](https://github.com/truecharts/charts/issues/20334))
 
+- update container image thelounge/thelounge to v4.4.3[@8e74f5a](https://github.com/8e74f5a) by renovate ([#20345](https://github.com/truecharts/charts/issues/20345))
+
+- update container image common to v20.2.10[@6f99c97](https://github.com/6f99c97) by renovate ([#19876](https://github.com/truecharts/charts/issues/19876))
+
 - update container image thelounge/thelounge to 4.4.3[@bd5f975](https://github.com/bd5f975) by renovate ([#21383](https://github.com/truecharts/charts/issues/21383))
-
-- update container image thelounge/thelounge to 4.4.3[@f6232c1](https://github.com/f6232c1) by renovate ([#20657](https://github.com/truecharts/charts/issues/20657))
-
-- update container image common to v20.2.9[@10fd6c5](https://github.com/10fd6c5) by renovate ([#19817](https://github.com/truecharts/charts/issues/19817))
 
 - update container image common to v20.2.4[@f245f5c](https://github.com/f245f5c) by renovate ([#19731](https://github.com/truecharts/charts/issues/19731))
 
