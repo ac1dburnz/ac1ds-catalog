@@ -11,10 +11,10 @@
       "healthy_error": null,
       "home": "https://truecharts.org/charts/stable/rtorrent-rutorrent",
       "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent",
-      "latest_version": "4.7.1",
+      "latest_version": "5.0.4",
       "latest_app_version": "4.2.9",
-      "latest_human_version": "4.2.9_4.7.1",
-      "last_update": "2024-03-17 21:01:59",
+      "latest_human_version": "4.2.9_5.0.4",
+      "last_update": "2024-05-16 00:32:09",
       "name": "rtorrent-rutorrent",
       "recommended": false,
       "title": "Rtorrent-rutorrent",
@@ -34,7 +34,7 @@
         "https://ghcr.io/crazy-max/rtorrent-rutorrent",
         "https://ghcr.io/thde/rtorrent_exporter"
       ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/rtorrent-rutorrent.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/rtorrent-rutorrent.webp"
     },
     "sabnzbd": {
       "app_readme": "<p>Free and easy binary newsreader</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/sabnzbd\">https://truecharts.org/charts/stable/sabnzbd</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
