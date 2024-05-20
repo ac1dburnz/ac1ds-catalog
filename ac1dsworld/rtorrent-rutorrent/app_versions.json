@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/5.0.5",
-        "last_update": "2024-05-19 13:45:29",
+        "last_update": "2024-05-20 00:32:47",
         "required_features": [
-            "definitions/interface",
-            "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/certificate",
-            "definitions/timezone"
+            "definitions/interface",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.2.9_5.0.5",
         "version": "5.0.5",
@@ -6971,12 +6971,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/5.0.4",
-        "last_update": "2024-05-19 13:45:29",
+        "last_update": "2024-05-20 00:32:47",
         "required_features": [
-            "definitions/interface",
-            "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/certificate",
-            "definitions/timezone"
+            "definitions/interface",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.2.9_5.0.4",
         "version": "5.0.4",
@@ -13938,12 +13938,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.14",
-        "last_update": "2024-05-19 13:45:29",
+        "last_update": "2024-05-20 00:32:47",
         "required_features": [
-            "definitions/interface",
-            "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/certificate",
-            "definitions/timezone"
+            "definitions/interface",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.2.9_4.8.14",
         "version": "4.8.14",
@@ -20372,12 +20372,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.13",
-        "last_update": "2024-05-19 13:45:29",
+        "last_update": "2024-05-20 00:32:47",
         "required_features": [
-            "definitions/interface",
-            "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/certificate",
-            "definitions/timezone"
+            "definitions/interface",
+            "normalize/interfaceConfiguration"
         ],
         "human_version": "4.2.9_4.8.13",
         "version": "4.8.13",
@@ -26806,13 +26806,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.3.0",
-        "last_update": "2024-05-19 13:45:29",
+        "last_update": "2024-05-20 00:32:47",
         "required_features": [
-            "definitions/certificate",
-            "definitions/interface",
-            "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/gpuConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate",
+            "definitions/gpuConfiguration",
+            "definitions/interface"
         ],
         "human_version": "4.2.9_3.3.0",
         "version": "3.3.0",
@@ -33283,13 +33283,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.2.0",
-        "last_update": "2024-05-19 13:45:29",
+        "last_update": "2024-05-20 00:32:47",
         "required_features": [
-            "definitions/certificate",
-            "definitions/interface",
-            "normalize/interfaceConfiguration",
             "definitions/timezone",
-            "definitions/gpuConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate",
+            "definitions/gpuConfiguration",
+            "definitions/interface"
         ],
         "human_version": "4.2.9_3.2.0",
         "version": "3.2.0",
