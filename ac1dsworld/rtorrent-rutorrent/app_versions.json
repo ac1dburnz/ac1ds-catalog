@@ -4,12 +4,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/5.0.6",
-        "last_update": "2024-05-21 00:33:30",
+        "last_update": "2024-05-21 01:08:03",
         "required_features": [
-            "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/certificate",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "4.2.9_5.0.6",
         "version": "5.0.6",
@@ -6971,12 +6971,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/5.0.5",
-        "last_update": "2024-05-21 00:33:30",
+        "last_update": "2024-05-21 01:08:03",
         "required_features": [
-            "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/certificate",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "4.2.9_5.0.5",
         "version": "5.0.5",
@@ -13938,12 +13938,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.14",
-        "last_update": "2024-05-21 00:33:30",
+        "last_update": "2024-05-21 01:08:03",
         "required_features": [
-            "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/certificate",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "4.2.9_4.8.14",
         "version": "4.8.14",
@@ -20372,12 +20372,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/4.8.13",
-        "last_update": "2024-05-21 00:33:30",
+        "last_update": "2024-05-21 01:08:03",
         "required_features": [
-            "normalize/interfaceConfiguration",
+            "definitions/timezone",
             "definitions/interface",
-            "definitions/certificate",
-            "definitions/timezone"
+            "normalize/interfaceConfiguration",
+            "definitions/certificate"
         ],
         "human_version": "4.2.9_4.8.13",
         "version": "4.8.13",
@@ -26806,12 +26806,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.3.0",
-        "last_update": "2024-05-21 00:33:30",
+        "last_update": "2024-05-21 01:08:03",
         "required_features": [
-            "definitions/interface",
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
             "definitions/gpuConfiguration",
+            "definitions/interface",
+            "definitions/certificate",
+            "normalize/interfaceConfiguration",
             "definitions/timezone"
         ],
         "human_version": "4.2.9_3.3.0",
@@ -33283,12 +33283,12 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/work/catalog/catalog/stable/rtorrent-rutorrent/3.2.0",
-        "last_update": "2024-05-21 00:33:30",
+        "last_update": "2024-05-21 01:08:03",
         "required_features": [
-            "definitions/interface",
-            "normalize/interfaceConfiguration",
-            "definitions/certificate",
             "definitions/gpuConfiguration",
+            "definitions/interface",
+            "definitions/certificate",
+            "normalize/interfaceConfiguration",
             "definitions/timezone"
         ],
         "human_version": "4.2.9_3.2.0",
