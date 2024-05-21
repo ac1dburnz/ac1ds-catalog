@@ -1,6 +1,6 @@
 
 
-## [radarr-22.2.1](https://github.com/truecharts/charts/compare/radarr-21.4.0...radarr-22.2.1) (2024-05-20)
+## [sonarr-22.0.8](https://github.com/truecharts/charts/compare/sonarr-21.4.0...sonarr-22.0.8) (2024-05-20)
 
 ### Chore
 
@@ -20,25 +20,25 @@
 
 - bump common
 
-- update container image ghcr.io/onedr0p/radarr to v5.4.6.8723[@b480add](https://github.com/b480add) by renovate ([#20705](https://github.com/truecharts/charts/issues/20705))
+- update container image ghcr.io/onedr0p/sonarr to v4.0.4.1491[@b487a98](https://github.com/b487a98) by renovate ([#20717](https://github.com/truecharts/charts/issues/20717))
 
 - update container image common to v20.3.3[@3876ba5](https://github.com/3876ba5) by renovate ([#20478](https://github.com/truecharts/charts/issues/20478))
 
-- update container image ghcr.io/onedr0p/radarr to 5.4.6.8723[@3198f09](https://github.com/3198f09) by renovate ([#21523](https://github.com/truecharts/charts/issues/21523))
+- update container image ghcr.io/onedr0p/sonarr to 4.0.4.1491[@9c78b3a](https://github.com/9c78b3a) by renovate ([#21525](https://github.com/truecharts/charts/issues/21525))
 
-- update container image ghcr.io/onedr0p/radarr to 5.3.6.8612[@431f4d8](https://github.com/431f4d8) by renovate ([#19257](https://github.com/truecharts/charts/issues/19257))
+- update container image ghcr.io/onedr0p/sonarr to 4.0.2.1183[@bbfcda0](https://github.com/bbfcda0) by renovate ([#19260](https://github.com/truecharts/charts/issues/19260))
 
-- update container image ghcr.io/onedr0p/radarr to v5.5.3.8819[@2d89b18](https://github.com/2d89b18) by renovate ([#21970](https://github.com/truecharts/charts/issues/21970))
+- update container image ghcr.io/onedr0p/sonarr to 4.0.4.1491[@b513d38](https://github.com/b513d38) by renovate ([#22053](https://github.com/truecharts/charts/issues/22053))
 
 - update container image common to v20.3.11[@dae6129](https://github.com/dae6129) by renovate ([#20875](https://github.com/truecharts/charts/issues/20875))
 
-- update container image ghcr.io/onedr0p/radarr to v5.6.0.8846[@3c75c2a](https://github.com/3c75c2a) by renovate ([#22065](https://github.com/truecharts/charts/issues/22065))
+- update container image common to v23.0.7[@316d624](https://github.com/316d624) by renovate ([#22240](https://github.com/truecharts/charts/issues/22240))
 
 - update container image common to v20.3.7[@8cf9fc9](https://github.com/8cf9fc9) by renovate ([#20819](https://github.com/truecharts/charts/issues/20819))
 
-- update container image ghcr.io/onedr0p/radarr to 5.4.6.8723[@cee5d4a](https://github.com/cee5d4a) by renovate ([#20767](https://github.com/truecharts/charts/issues/20767))
+- update container image ghcr.io/onedr0p/sonarr to 4.0.4.1491[@3689961](https://github.com/3689961) by renovate ([#20770](https://github.com/truecharts/charts/issues/20770))
 
-- update container image common to v23.0.7[@316d624](https://github.com/316d624) by renovate ([#22240](https://github.com/truecharts/charts/issues/22240))
+- update container image common to v23.0.8[@9e7419b](https://github.com/9e7419b) by renovate ([#22277](https://github.com/truecharts/charts/issues/22277))
 
 - update container image common to v20.3.6[@27edfed](https://github.com/27edfed) by renovate ([#20599](https://github.com/truecharts/charts/issues/20599))
 
@@ -48,13 +48,15 @@
 
 - update container image common to v20.3.12[@3303278](https://github.com/3303278) by renovate ([#21384](https://github.com/truecharts/charts/issues/21384))
 
-- update container image ghcr.io/onedr0p/radarr to 5.3.6.8612[@4dcf3bb](https://github.com/4dcf3bb) by renovate ([#20427](https://github.com/truecharts/charts/issues/20427))
+- update container image ghcr.io/onedr0p/sonarr to 4.0.3.1413[@4284def](https://github.com/4284def) by renovate ([#20430](https://github.com/truecharts/charts/issues/20430))
 
 - update container image common to v20.3.2[@0722ebb](https://github.com/0722ebb) by renovate ([#20334](https://github.com/truecharts/charts/issues/20334))
 
 - update container image ghcr.io/onedr0p/exportarr to v2.0.1[@727e7bc](https://github.com/727e7bc) by renovate ([#20284](https://github.com/truecharts/charts/issues/20284))
 
-- update container image ghcr.io/onedr0p/radarr to 5.3.6.8612[@e9586ce](https://github.com/e9586ce) by renovate ([#20067](https://github.com/truecharts/charts/issues/20067))
+- update container image ghcr.io/onedr0p/sonarr to v4.0.3.1413[@04d8e19](https://github.com/04d8e19) by renovate ([#20083](https://github.com/truecharts/charts/issues/20083))
+
+- update container image ghcr.io/onedr0p/sonarr to 4.0.2.1183[@42ba5af](https://github.com/42ba5af) by renovate ([#20068](https://github.com/truecharts/charts/issues/20068))
 
 - update container image common to v20.2.10[@6f99c97](https://github.com/6f99c97) by renovate ([#19876](https://github.com/truecharts/charts/issues/19876))
 
@@ -75,6 +77,12 @@
 
 
 - rework SCALE catagories/groups to match helm and remove deprecated charts ([#21111](https://github.com/truecharts/charts/issues/21111))
+
+### Docs
+
+
+
+- fix asides ([#21073](https://github.com/truecharts/charts/issues/21073))
 
 ### Feat
 
