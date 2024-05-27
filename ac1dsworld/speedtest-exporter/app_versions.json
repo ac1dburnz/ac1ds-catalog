@@ -4,7 +4,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/_work/catalog/catalog/stable/speedtest-exporter/11.0.6",
-        "last_update": "2024-05-26 00:48:41",
+        "last_update": "2024-05-27 00:54:05",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -55,9 +55,9 @@
             ],
             "name": "speedtest-exporter",
             "sources": [
+                "https://ghcr.io/miguelndecarvalho/speedtest-exporter",
                 "https://github.com/MiguelNdeCarvalho/speedtest-exporter/",
-                "https://github.com/truecharts/charts/tree/master/charts/stable/speedtest-exporter",
-                "https://ghcr.io/miguelndecarvalho/speedtest-exporter"
+                "https://github.com/truecharts/charts/tree/master/charts/stable/speedtest-exporter"
             ],
             "type": "application",
             "version": "11.0.6"
@@ -4754,7 +4754,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/_work/catalog/catalog/stable/speedtest-exporter/11.0.5",
-        "last_update": "2024-05-26 00:48:41",
+        "last_update": "2024-05-27 00:54:05",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -9504,7 +9504,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/_work/catalog/catalog/stable/speedtest-exporter/10.9.14",
-        "last_update": "2024-05-26 00:48:41",
+        "last_update": "2024-05-27 00:54:05",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -14024,7 +14024,7 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/_work/catalog/catalog/stable/speedtest-exporter/10.9.13",
-        "last_update": "2024-05-26 00:48:41",
+        "last_update": "2024-05-27 00:54:05",
         "required_features": [
             "definitions/certificate",
             "definitions/interface",
@@ -18544,13 +18544,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/_work/catalog/catalog/stable/speedtest-exporter/9.3.0",
-        "last_update": "2024-05-26 00:48:41",
+        "last_update": "2024-05-27 00:54:05",
         "required_features": [
+            "definitions/timezone",
             "definitions/gpuConfiguration",
             "definitions/certificate",
-            "definitions/interface",
-            "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/interface"
         ],
         "human_version": "3.5.4_9.3.0",
         "version": "9.3.0",
@@ -23107,13 +23107,13 @@
         "supported": true,
         "healthy_error": null,
         "location": "/home/runner/_work/catalog/catalog/stable/speedtest-exporter/9.2.0",
-        "last_update": "2024-05-26 00:48:41",
+        "last_update": "2024-05-27 00:54:05",
         "required_features": [
+            "definitions/timezone",
             "definitions/gpuConfiguration",
             "definitions/certificate",
-            "definitions/interface",
-            "definitions/timezone",
-            "normalize/interfaceConfiguration"
+            "normalize/interfaceConfiguration",
+            "definitions/interface"
         ],
         "human_version": "3.5.4_9.2.0",
         "version": "9.2.0",
