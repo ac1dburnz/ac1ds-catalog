@@ -3,12 +3,12 @@
 base_dir="/Users/ac1dburn/Documents/GitHub"
 
 # Generate a branch name with current date and time
-branch_name="branch_$(date +'%Y%m%d%H%M%S')" 
+branch_name="branch_$(date +'%Y%m%d%H%M%S')"
 
 # Go to directory
 cd "$base_dir/ac1ds-catalog"
 
-# Ensure on main branch before creating new one  
+# Ensure on main branch before creating new one
 git checkout main
 git pull origin main
 
@@ -27,93 +27,98 @@ mkdir temp
 git clone https://github.com/truecharts/catalog.git temp
 
 # Copy apps from ac1dsworld to stable
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
-  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-    cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/stable"
-  done
-fi
+for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
+  latest_version=$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)
+  if [ "$latest_version" != "$(ls -1 "$base_dir/ac1ds-catalog/stable/$app" | sort -V | tail -n 1)" ]; then
+    cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app/$latest_version" "$base_dir/ac1ds-catalog/stable/$app"
+  fi
+done
 
-# Copy apps from temp stable to ac1dsworld 
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V | tail -n 1)" ]; then
-  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-    cp -R "$base_dir/ac1ds-catalog/temp/stable/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
-  done
-fi
+# Copy apps from temp stable to ac1dsworld
+for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
+  latest_version=$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V | tail -n 1)
+  if [ "$latest_version" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
+    cp -R "$base_dir/ac1ds-catalog/temp/stable/$app/$latest_version" "$base_dir/ac1ds-catalog/ac1dsworld/$app"
+  fi
+done
+
+# Copy apps from temp/premium to ac1dsworld/premium
+for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
+  latest_version=$(ls -1 "$base_dir/ac1ds-catalog/temp/premium/$app" | sort -V | tail -n 1)
+  if [ -n "$latest_version" ]; then
+    mkdir -p "$base_dir/ac1ds-catalog/premium/$app"
+    cp -R "$base_dir/ac1ds-catalog/temp/premium/$app/$latest_version" "$base_dir/ac1ds-catalog/premium/$app"
+  else
+    echo "Application $app not found in temp/premium directory"
+  fi
+done
+
+# Copy apps from temp/system to ac1dsworld/system
+for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
+  latest_version=$(ls -1 "$base_dir/ac1ds-catalog/temp/system/$app" | sort -V | tail -n 1)
+  if [ -n "$latest_version" ]; then
+    mkdir -p "$base_dir/ac1ds-catalog/system/$app"
+    cp -R "$base_dir/ac1ds-catalog/temp/system/$app/$latest_version" "$base_dir/ac1ds-catalog/system/$app"
+  else
+    echo "Application $app not found in temp/system directory"
+  fi
+done
+
+# Copy apps from ac1dsworld to Test
+for app in rtorrent-rutorrent; do
+  latest_version=$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)
 
 
-# Copy apps from temp - premium to ac1dsworld 
-
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/premium/$app" | sort -V | tail -n 1)" ]; then
-  for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
-    if [ -d "$base_dir/ac1ds-catalog/temp/premium/$app" ]; then
-      echo "Copying $app from temp/premium to premium"
-      cp -R "$base_dir/ac1ds-catalog/temp/premium/$app" "$base_dir/ac1ds-catalog/premium" || echo "Error copying $app from temp/premium to premium"
-    else
-      echo "Application $app not found in temp/premium directory"
-    fi
-  done
-fi
-
-# Copy apps from temp - premium to ac1dsworld 
-
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/system/$app" | sort -V | tail -n 1)" ]; then
-  for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
-    if [ -d "$base_dir/ac1ds-catalog/temp/system/$app" ]; then
-      echo "Copying $app from temp/system to system"
-      cp -R "$base_dir/ac1ds-catalog/temp/system/$app" "$base_dir/ac1ds-catalog/system" || echo "Error copying $app from temp/premium to premium"
-    else
-      echo "Application $app not found in temp/premium directory"
-    fi
-  done
-fi
-
-# Copy apps from ac1dsworld to test
-
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
-  for app in rtorrent-rutorrent ; do
-    cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/Test"
-  done
-fi
+# Copy apps from ac1dsworld to Test
+for app in rtorrent-rutorrent; do
+  latest_version=$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)
+  if [ "$latest_version" != "$(ls -1 "$base_dir/ac1ds-catalog/Test/$app" | sort -V | tail -n 1)" ]; then
+    cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app/$latest_version" "$base_dir/ac1ds-catalog/Test/$app"
+  fi
+done
 
 # Remove unwanted files ac1dsworld
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-  cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
-  rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
+  cd "$base_dir/ac1ds-catalog/ac1dsworld/$app" || continue
+  latest_version=$(ls -1 | sort -V | tail -n 1)
+  rm -rf $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d')
+  cd "$latest_version"
 done
 
-# Remove unwanted files Test 
-
-for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-  cd "$base_dir/ac1ds-catalog/Test/$app"
-  rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
+# Remove unwanted files Test
+for app in rtorrent-rutorrent; do
+  cd "$base_dir/ac1ds-catalog/Test/$app" || continue
+  latest_version=$(ls -1 | sort -V | tail -n 1)
+  rm -rf $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d')
+  cd "$latest_version"
 done
-
 
 # Update ix_values.yaml for ac1dsworld
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-  cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
-  cd "$(ls -1d */ | sort -V | tail -n 1)"
-  
+  cd "$base_dir/ac1ds-catalog/ac1dsworld/$app" || continue
+  latest_version=$(ls -1 | sort -V | tail -n 1)
+  cd "$latest_version"
+
   # Check if mainfiles file exists
   if [ -f "$base_dir/ac1ds-catalog/mainfiles/${app}-ix_values.yaml" ]; then
-    rm ix_values.yaml
+    rm -f ix_values.yaml
     cp "$base_dir/ac1ds-catalog/mainfiles/${app}-ix_values.yaml" ix_values.yaml
   fi
 done
 
-
 # Update ix_values.yaml for Test
+for app in rtorrent-rutorrent; do
+  cd "$base_dir/ac1ds-catalog/Test/$app" || continue
+  latest_version=$(ls -1 | sort -V | tail -n 1)
+  cd "$latest_version"
 
-for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-  cd "$base_dir/ac1ds-catalog/Test/$app"
-  cd "$(ls -1d */ | sort -V | tail -n 1)"
-  
-  # Check if mainfiles file exists for test
-  if [ -f "$base_dir/ac1ds-catalog/mainfiles/${app}_Test_ix_values.yaml" ]; then
-    rm ix_values.yaml
-    cp "$base_dir/ac1ds-catalog/mainfiles/${app}_Test_ix_values.yaml" ix_values.yaml
+  # Check if mainfiles file exists
+  if [ -f "$base_dir/ac1ds-catalog/mainfiles/${app}-ix_values.yaml" ]; then
+    rm -f ix_values.yaml
+    cp "$base_dir/ac1ds-catalog/mainfiles/${app}-ix_values.yaml" ix_values.yaml
   fi
 done
+
 
 
 # Copy catalog.json
