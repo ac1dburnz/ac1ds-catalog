@@ -66,7 +66,7 @@ if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V |
 fi
 
 # Remove unwanted files ac1dsworld
-for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pihole metallb lldap plex plextraktsync ispy-agent-dvr traefik prometheus-operator prometheus grafana ptp-uploader wg-easy tautulli authelia cert-manager cloudnative-pg clusterissuer custom-app; do
+for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pihole metallb lldap plex plextraktsync ispy-agent-dvr traefik prometheus-operator prometheus grafana wg-easy tautulli authelia cert-manager cloudnative-pg clusterissuer custom-app; do
   cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
   rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
 done
