@@ -35,7 +35,7 @@ fi
 
 # Copy apps from temp - stable to ac1dsworld 
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V | tail -n 1)" ]; then
-  for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pihole metallb lldap plex plextraktsync ispy-agent-dvr traefik prometheus-operator prometheus grafana ptp-uploader wg-easy tautulli authelia cert-manager cloudnative-pg clusterissuer custom-app; do
+  for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr pihole metallb lldap plex plextraktsync ispy-agent-dvr wg-easy tautulli custom-app; do
     cp -R "$base_dir/ac1ds-catalog/temp/stable/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
   done
 fi
@@ -43,7 +43,7 @@ fi
 # Copy apps from temp - premium to ac1dsworld 
 
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/premium/$app" | sort -V | tail -n 1)" ]; then
-  for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pihole metallb lldap plex plextraktsync ispy-agent-dvr traefik prometheus-operator prometheus grafana ptp-uploader wg-easy tautulli authelia cert-manager cloudnative-pg clusterissuer custom-app; do
+  for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
     cp -R "$base_dir/ac1ds-catalog/temp/premium/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
   done
 fi
@@ -51,7 +51,7 @@ fi
 # Copy apps from temp - system to ac1dsworld 
 
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/system/$app" | sort -V | tail -n 1)" ]; then
-  for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pihole metallb lldap plex plextraktsync ispy-agent-dvr traefik prometheus-operator prometheus grafana ptp-uploader wg-easy tautulli authelia cert-manager cloudnative-pg clusterissuer custom-app; do
+  for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
     cp -R "$base_dir/ac1ds-catalog/temp/system/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
   done
 fi
