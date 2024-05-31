@@ -113,7 +113,7 @@ cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.
 python3 "$base_dir/ac1ds-catalog/catalogupdate.py"
 
 # Remove temp directory
-sudo rm -r "$base_dir/ac1ds-catalog/temp" 
+#sudo rm -r "$base_dir/ac1ds-catalog/temp" 
 
 # Run catalog fix script
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
