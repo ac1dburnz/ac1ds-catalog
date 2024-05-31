@@ -26,12 +26,18 @@ mkdir temp
 # Clone catalog into temp directory
 git clone https://github.com/truecharts/catalog.git temp
 
+# Define latest modification time for ac1dsworld
+latest=$(stat -c %Y "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -n | tail -n 1)
+
 # Copy apps from ac1dsworld to stable
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
   for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
     cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/stable"
   done
 fi
+
+# Define latest modification time for temp/stable
+latest=$(stat -c %Y "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -n | tail -n 1)
 
 # Copy apps from temp - stable to ac1dsworld 
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V | tail -n 1)" ]; then
@@ -40,120 +46,20 @@ if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V 
   done
 fi
 
-# Copy apps from temp - dependency to ac1dsworld 
+# Define latest modification time for temp/dependency
+latest=$(stat -c %Y "$base_dir/ac1ds-catalog/temp/dependency/$app" | sort -n | tail -n 1)
 
+# Copy apps from temp - dependency to ac1dsworld 
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/dependency/$app" | sort -V | tail -n 1)" ]; then
   for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pihole metallb lldap plex plextraktsync ispy-agent-dvr traefik prometheus-operator prometheus grafana ptp-uploader wg-easy tautulli authelia cert-manager cloudnative-pg clusterissuer custom-app; do
     cp -R "$base_dir/ac1ds-catalog/temp/dependency/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
   done
 fi
 
+# Define latest modification time for temp/enterprise
+latest=$(stat -c %Y "$base_dir/ac1ds-catalog/temp/enterprise/$app" | sort -n | tail -n 1)
+
 # Copy apps from temp - enterprise to ac1dsworld 
-
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/enterprise/$app" | sort -V | tail -n 1)" ]; then
-  for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pihole metallb lldap plex plextraktsync ispy-agent-dvr traefik prometheus-operator prometheus grafana ptp-uploader wg-easy tautulli authelia cert-manager cloudnative-pg clusterissuer custom-app; do
-    cp -R "$base_dir/ac1ds-catalog/temp/enterprise/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
-  done
-fi
-
-# Copy apps from temp - operators to ac1dsworld 
-
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/operators/$app" | sort -V | tail -n 1)" ]; then
-  for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pihole metallb lldap plex plextraktsync ispy-agent-dvr traefik prometheus-operator prometheus grafana ptp-uploader wg-easy tautulli authelia cert-manager cloudnative-pg clusterissuer custom-app; do
-    cp -R "$base_dir/ac1ds-catalog/temp/operators/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
-  done
-fi
-
-# Copy apps from ac1dsworld to test
-
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
-  for app in rtorrent-rutorrent ; do
-    cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/Test"
-  done
-fi
-
-# Remove unwanted files ac1dsworld
-for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pihole metallb lldap plex plextraktsync ispy-agent-dvr traefik prometheus-operator prometheus grafana ptp-uploader wg-easy tautulli authelia cert-manager cloudnative-pg clusterissuer custom-app; do
-  cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
-  rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
-done
-
-# Remove unwanted files Test 
-
-for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-  cd "$base_dir/ac1ds-catalog/Test/$app"
-  rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
-done
-
-
-# Update ix_values.yaml for ac1dsworld
-for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-  cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
-  cd "$(ls -1d */ | sort -V | tail -n 1)"
-  
-  # Check if mainfiles file exists
-  if [ -f "$base_dir/ac1ds-catalog/mainfiles/${app}-ix_values.yaml" ]; then
-    rm ix_values.yaml
-    cp "$base_dir/ac1ds-catalog/mainfiles/${app}-ix_values.yaml" ix_values.yaml
-  fi
-done
-
-
-# Update ix_values.yaml for Test
-
-for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
-  cd "$base_dir/ac1ds-catalog/Test/$app"
-  cd "$(ls -1d */ | sort -V | tail -n 1)"
-  
-  # Check if mainfiles file exists for test
-  if [ -f "$base_dir/ac1ds-catalog/mainfiles/${app}_Test_ix_values.yaml" ]; then
-    rm ix_values.yaml
-    cp "$base_dir/ac1ds-catalog/mainfiles/${app}_Test_ix_values.yaml" ix_values.yaml
-  fi
-done
-
-
-# Copy catalog.json
-cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.json"
-
-# Run catalog update script  
-python3 "$base_dir/ac1ds-catalog/catalogupdate.py"
-
-# Remove temp directory
-sudo rm -r "$base_dir/ac1ds-catalog/temp" 
-
-# Run catalog fix script
-python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
-
-python3 "$base_dir/ac1ds-catalog/pythongluetunfix-test.py"
-
-
-# Commit changes  
-git add --all :/
-git commit -m "Automatically generated changes on $branch_name"
-
-# Push changes 
-git push origin "$branch_name"
-
-# Create PR
-repo="ac1dburnz/ac1ds-catalog"
-title="Automatically generated changes on $branch_name"
-body="This pull request is automatically generated." 
-
-pr_response=$(curl -X POST -H "Authorization: token $github_token" \
-  -d '{"title":"'"$title"'","body":"'"$body"'","head":"'"$branch_name"'","base":"main"}' \
-  "https://api.github.com/repos/$repo/pulls")
-
-pr_number=$(echo $pr_response | jq '.number')
-
-# Set PR to squash merge 
-curl -X PATCH -H "Authorization: token $github_token" \
-  -d '{"merge_method":"squash"}' \
-  "https://api.github.com/repos/$repo/pulls/$pr_number"
-
-# Merge PR
-curl -X PUT -H "Authorization: token $github_token" \
-  "https://api.github.com/repos/$repo/pulls/$pr_number/merge"
-
-echo "PR merged successfully"
+  for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pih
 
