@@ -120,7 +120,7 @@ cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.
 python3 "$base_dir/ac1ds-catalog/catalogupdate.py"
 
 # Remove temp directory
-sudo rm -r "$base_dir/ac1ds-catalog/temp" 
+#sudo rm -r "$base_dir/ac1ds-catalog/temp" 
 
 # Run catalog fix script
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
@@ -136,24 +136,24 @@ git commit -m "Automatically generated changes on $branch_name"
 git push origin "$branch_name"
 
 # Create PR
-repo="ac1dburnz/ac1ds-catalog"
-title="Automatically generated changes on $branch_name"
-body="This pull request is automatically generated." 
+#repo="ac1dburnz/ac1ds-catalog"
+#title="Automatically generated changes on $branch_name"
+#body="This pull request is automatically generated." 
 
-pr_response=$(curl -X POST -H "Authorization: token $github_token" \
-  -d '{"title":"'"$title"'","body":"'"$body"'","head":"'"$branch_name"'","base":"main"}' \
-  "https://api.github.com/repos/$repo/pulls")
+#pr_response=$(curl -X POST -H "Authorization: token $github_token" \
+#  -d '{"title":"'"$title"'","body":"'"$body"'","head":"'"$branch_name"'","base":"main"}' \
+#  "https://api.github.com/repos/$repo/pulls")
 
-pr_number=$(echo $pr_response | jq '.number')
+#pr_number=$(echo $pr_response | jq '.number')
 
 # Set PR to squash merge 
-curl -X PATCH -H "Authorization: token $github_token" \
-  -d '{"merge_method":"squash"}' \
-  "https://api.github.com/repos/$repo/pulls/$pr_number"
+#curl -X PATCH -H "Authorization: token $github_token" \
+#  -d '{"merge_method":"squash"}' \
+#  "https://api.github.com/repos/$repo/pulls/$pr_number"
 
 # Merge PR
-curl -X PUT -H "Authorization: token $github_token" \
-  "https://api.github.com/repos/$repo/pulls/$pr_number/merge"
+#curl -X PUT -H "Authorization: token $github_token" \
+ # "https://api.github.com/repos/$repo/pulls/$pr_number/merge"
 
-echo "PR merged successfully"
+#echo "PR merged successfully"
 
