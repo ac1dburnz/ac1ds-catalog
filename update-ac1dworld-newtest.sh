@@ -45,7 +45,7 @@ fi
 
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/premium/$app" | sort -V | tail -n 1)" ]; then
   for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
-    cp -R "$base_dir/ac1ds-catalog/temp/premium/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
+    cp -R "$base_dir/ac1ds-catalog/temp/premium/$app" "$base_dir/ac1ds-catalog/premium"
   done
 fi
 
@@ -53,7 +53,7 @@ fi
 
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/system/$app" | sort -V | tail -n 1)" ]; then
   for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
-    cp -R "$base_dir/ac1ds-catalog/temp/system/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
+    cp -R "$base_dir/ac1ds-catalog/temp/system/$app" "$base_dir/ac1ds-catalog/system"
   done
 fi
 
