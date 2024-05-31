@@ -112,10 +112,10 @@ done
 cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.json"
 
 # Run catalog update script  
-python3 "$base_dir/ac1ds-catalog/catalogupdate.py"
+#python3 "$base_dir/ac1ds-catalog/catalogupdate.py"
 
 # Remove temp directory
-sudo rm -r "$base_dir/ac1ds-catalog/temp" 
+# sudo rm -r "$base_dir/ac1ds-catalog/temp" 
 
 # Run catalog fix script
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
@@ -142,13 +142,13 @@ pr_response=$(curl -X POST -H "Authorization: token $github_token" \
 pr_number=$(echo $pr_response | jq '.number')
 
 # Set PR to squash merge 
-curl -X PATCH -H "Authorization: token $github_token" \
-  -d '{"merge_method":"squash"}' \
-  "https://api.github.com/repos/$repo/pulls/$pr_number"
+#curl -X PATCH -H "Authorization: token $github_token" \
+#  -d '{"merge_method":"squash"}' \
+#  "https://api.github.com/repos/$repo/pulls/$pr_number"
 
 # Merge PR
-curl -X PUT -H "Authorization: token $github_token" \
-  "https://api.github.com/repos/$repo/pulls/$pr_number/merge"
+#curl -X PUT -H "Authorization: token $github_token" \
+#  "https://api.github.com/repos/$repo/pulls/$pr_number/merge"
 
-echo "PR merged successfully"
+#echo "PR merged successfully"
 
