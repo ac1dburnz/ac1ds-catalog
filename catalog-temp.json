@@ -105,6 +105,38 @@
     }
   },
   "stable": {
+    "external-dns": {
+      "app_readme": "<p>ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with DNS providers.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/external-dns\">https://truecharts.org/charts/stable/external-dns</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+      "categories": [
+        "networking"
+      ],
+      "description": "ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with DNS providers.",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://truecharts.org/charts/stable/external-dns",
+      "location": "/home/runner/_work/catalog/catalog/stable/external-dns",
+      "latest_version": "5.0.10",
+      "latest_app_version": "0.14.2",
+      "latest_human_version": "0.14.2_5.0.10",
+      "last_update": "2024-05-29 12:35:14",
+      "name": "external-dns",
+      "recommended": false,
+      "title": "External-dns",
+      "maintainers": [
+        {
+          "name": "TrueCharts",
+          "email": "info@truecharts.org",
+          "url": "https://truecharts.org"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/kubernetes-sigs/external-dns",
+        "https://github.com/truecharts/charts/tree/master/charts/stable/external-dns"
+      ],
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/external-dns.webp"
+    },
     "lldap": {
       "app_readme": "<p>Lightweight ldap server for authentication and user management</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/lldap\">https://truecharts.org/charts/stable/lldap</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
       "categories": [
