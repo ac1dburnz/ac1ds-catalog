@@ -165,3 +165,4 @@ pr_number=$(echo $pr_response | jq '.number')
 
 #echo "PR merged successfully"
 
+done
