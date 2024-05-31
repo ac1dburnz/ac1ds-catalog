@@ -50,7 +50,7 @@ for app_name in test_app_names_to_read:
         test_apps_data[app_name_actual] = app_data
 
 # Read "ac1dsworld" section from original catalog JSON file
-ac1dsworld_app_names_to_read = ["prowlarr", "sonarr", "radarr", "sabnzbd", "rtorrent-rutorrent", "thelounge", "speedtest-exporter"]
+ac1dsworld_app_names_to_read = ["sonarr", "speedtest-exporter", "radarr", "sabnzbd", "prowlarr", "thelounge", "rtorrent-rutorrent", "overseerr", "metallb-config", "openebs", "pihole", "metallb", "lldap", "plex", "plextraktsync", "ispy-agent-dvr", "traefik", "prometheus-operator", "prometheus", "grafana", "ptp-uploader", "wg-easy", "tautulli", "authelia", "cert-manager", "cloudnative-pg", "clusterissuer", "custom-app"]
 ac1dsworld_apps_data = {}
 for app_name in ac1dsworld_app_names_to_read:
     result = find_app(catalog_data["ac1dsworld"], app_name)
@@ -62,7 +62,7 @@ for app_name in ac1dsworld_app_names_to_read:
 with open(updated_catalog_json_path, 'r') as updated_catalog_file:
     updated_catalog_data = json.load(updated_catalog_file)
 
-new_ac1dsworld_app_names_to_read = ["prowlarr", "sonarr", "radarr", "sabnzbd", "rtorrent-rutorrent", "thelounge", "speedtest-exporter"]
+new_ac1dsworld_app_names_to_read = ["sonarr", "speedtest-exporter", "radarr", "sabnzbd", "prowlarr", "thelounge", "rtorrent-rutorrent", "overseerr", "metallb-config", "openebs", "pihole", "metallb", "lldap", "plex", "plextraktsync", "ispy-agent-dvr", "traefik", "prometheus-operator", "prometheus", "grafana", "ptp-uploader", "wg-easy", "tautulli", "authelia", "cert-manager", "cloudnative-pg", "clusterissuer", "custom-app"]
 new_ac1dsworld_apps_data = {}
 for app_name in new_ac1dsworld_app_names_to_read:
     result = find_app(updated_catalog_data["stable"], app_name)
