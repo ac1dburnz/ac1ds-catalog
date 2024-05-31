@@ -1,13 +1,12 @@
 image:
   repository: ghcr.io/ac1dburnz/rtorrent-rutorrent-cross-seed
   pullPolicy: IfNotPresent
-  tag: 4.3.2-3.0@sha256:febb2c4617a63ba0f2a61d17bb3b4e0c453f4ffe3221d566e1bca248fc3589a4
+  tag: latest
   
 exportarrImage:
   repository: ghcr.io/thde/rtorrent_exporter
   pullPolicy: IfNotPresent
-  tag: v1.3.1@sha256:0a7716d8b434f8ecf9370053c46e099cfde3c98a60555d3128e07e6da7438fcd
-
+  tag: latest
 securityContext:
   container:
     PUID: 33

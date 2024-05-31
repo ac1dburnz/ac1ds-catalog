@@ -1,5 +1,5 @@
 {
-    "5.0.8": {
+    "5.0.9": {
         "healthy": true,
         "supported": true,
         "healthy_error": null,
@@ -11,8 +11,8 @@
             "definitions/certificate",
             "definitions/interface"
         ],
-        "human_version": "4.2.9_5.0.8",
-        "version": "5.0.8",
+        "human_version": "4.2.9_5.0.9",
+        "version": "5.0.9",
         "chart_metadata": {
             "annotations": {
                 "truecharts.org/category": "torrent",
@@ -58,7 +58,7 @@
                 "https://truecharts.org/charts/stable/rtorrent-rutorrent"
             ],
             "type": "application",
-            "version": "5.0.8"
+            "version": "5.0.9"
         },
         "app_metadata": null,
         "schema": {
