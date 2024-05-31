@@ -137,12 +137,12 @@ pr_response=$(curl -X POST -H "Authorization: token $github_token" \
 pr_number=$(echo $pr_response | jq '.number')
 
 # Set PR to squash merge 
-#curl -X PATCH -H "Authorization: token $github_token" \
-#  -d '{"merge_method":"squash"}' \
-#  "https://api.github.com/repos/$repo/pulls/$pr_number"
+curl -X PATCH -H "Authorization: token $github_token" \
+  -d '{"merge_method":"squash"}' \
+  "https://api.github.com/repos/$repo/pulls/$pr_number"
 
 # Merge PR
-#curl -X PUT -H "Authorization: token $github_token" \
-#  "https://api.github.com/repos/$repo/pulls/$pr_number/merge"
+curl -X PUT -H "Authorization: token $github_token" \
+  "https://api.github.com/repos/$repo/pulls/$pr_number/merge"
 
-#echo "PR merged successfully"
+echo "PR merged successfully"
