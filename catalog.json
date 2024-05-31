@@ -320,7 +320,7 @@
       "location": "/home/runner/_work/catalog/catalog/stable/rtorrent-rutorrent",
       "latest_version": "5.0.9",
       "latest_app_version": "4.2.9",
-      "latest_human_version": "4.2.9_5.0.9",
+      "latest_human_version": "4.2.9_5.0.8",
       "last_update": "2024-05-29 12:35:14",
       "name": "rtorrent-rutorrent",
       "recommended": false,
@@ -352,11 +352,11 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://truecharts.org/charts/stable/overseerr",
-      "location": "/home/runner/work/catalog/catalog/stable/overseerr",
-      "latest_version": "13.3.0",
+      "location": "/home/runner/_work/catalog/catalog/stable/overseerr",
+      "latest_version": "14.0.9",
       "latest_app_version": "1.33.2",
-      "latest_human_version": "1.33.2_13.3.0",
-      "last_update": "2024-03-07 13:53:11",
+      "latest_human_version": "1.33.2_14.0.9",
+      "last_update": "2024-05-29 12:35:14",
       "name": "overseerr",
       "recommended": false,
       "title": "Overseerr",
@@ -370,79 +370,11 @@
       "tags": [],
       "screenshots": [],
       "sources": [
+        "https://ghcr.io/sct/overseerr",
         "https://github.com/sct/overseerr",
-        "https://github.com/truecharts/charts/tree/master/charts/stable/overseerr",
-        "https://ghcr.io/sct/overseerr"
+        "https://github.com/truecharts/charts/tree/master/charts/stable/overseerr"
       ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/overseerr.png"
-    },
-    "metallb-config": {
-      "app_readme": "<p>A network load-balancer implementation for Kubernetes using standard routing protocols</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/enterprise/metallb-config\">https://truecharts.org/charts/enterprise/metallb-config</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-      "categories": [
-        "core"
-      ],
-      "description": "A network load-balancer implementation for Kubernetes using standard routing protocols",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://truecharts.org/charts/enterprise/metallb-config",
-      "location": "/home/runner/work/catalog/catalog/enterprise/metallb-config",
-      "latest_version": "6.3.0",
-      "latest_app_version": "latest",
-      "latest_human_version": "latest_6.3.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "metallb-config",
-      "recommended": false,
-      "title": "Metallb-config",
-      "maintainers": [
-        {
-          "name": "TrueCharts",
-          "email": "info@truecharts.org",
-          "url": "https://truecharts.org"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://metallb.universe.tf",
-        "https://github.com/metallb/metallb",
-        "https://github.com/truecharts/charts/tree/master/charts/enterprise/metallb-config",
-        "https://hub.docker.com/_/hello-world"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/metallb-config.png"
-    },
-    "openebs": {
-      "app_readme": "<p>OpenEBS is a umbrella container storage provisioner</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/operators/openebs\">https://truecharts.org/charts/operators/openebs</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-      "categories": [
-        "CSI"
-      ],
-      "description": "OpenEBS is a umbrella container storage provisioner",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://truecharts.org/charts/operators/openebs",
-      "location": "/home/runner/work/catalog/catalog/operators/openebs",
-      "latest_version": "3.3.0",
-      "latest_app_version": "latest",
-      "latest_human_version": "latest_3.3.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "openebs",
-      "recommended": false,
-      "title": "Openebs",
-      "maintainers": [
-        {
-          "name": "TrueCharts",
-          "email": "info@truecharts.org",
-          "url": "https://truecharts.org"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/cert-manager",
-        "https://cert-manager.io/",
-        "https://github.com/truecharts/charts/tree/master/charts/operators/openebs",
-        "https://github.com/truecharts/containers/tree/master/apps/alpine"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/openebs.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/overseerr.webp"
     },
     "pihole": {
       "app_readme": "<p>DNS and Ad-filtering for your network</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/pihole\">https://truecharts.org/charts/stable/pihole</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
@@ -453,11 +385,11 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://truecharts.org/charts/stable/pihole",
-      "location": "/home/runner/work/catalog/catalog/stable/pihole",
-      "latest_version": "16.0.0",
-      "latest_app_version": "2024.02.2",
-      "latest_human_version": "2024.02.2_16.0.0",
-      "last_update": "2024-03-07 13:53:11",
+      "location": "/home/runner/_work/catalog/catalog/stable/pihole",
+      "latest_version": "17.1.4",
+      "latest_app_version": "2024.05.0",
+      "latest_human_version": "2024.05.0_17.1.4",
+      "last_update": "2024-05-29 12:35:14",
       "name": "pihole",
       "recommended": false,
       "title": "Pihole",
@@ -473,45 +405,11 @@
       "sources": [
         "https://github.com/pi-hole",
         "https://github.com/pi-hole/docker-pi-hole",
-        "https://pi-hole.net/",
         "https://github.com/truecharts/charts/tree/master/charts/stable/pihole",
-        "https://hub.docker.com/r/pihole/pihole"
+        "https://hub.docker.com/r/pihole/pihole",
+        "https://pi-hole.net/"
       ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/pihole.png"
-    },
-    "metallb": {
-      "app_readme": "<p>A network load-balancer implementation for Kubernetes using standard routing protocols</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/operators/metallb\">https://truecharts.org/charts/operators/metallb</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-      "categories": [
-        "operators"
-      ],
-      "description": "A network load-balancer implementation for Kubernetes using standard routing protocols",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://truecharts.org/charts/operators/metallb",
-      "location": "/home/runner/work/catalog/catalog/operators/metallb",
-      "latest_version": "14.3.0",
-      "latest_app_version": "latest",
-      "latest_human_version": "latest_14.3.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "metallb",
-      "recommended": false,
-      "title": "Metallb",
-      "maintainers": [
-        {
-          "name": "TrueCharts",
-          "email": "info@truecharts.org",
-          "url": "https://truecharts.org"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/metallb/metallb",
-        "https://metallb.universe.tf",
-        "https://github.com/truecharts/charts/tree/master/charts/operators/metallb",
-        "https://github.com/truecharts/containers/tree/master/apps/alpine"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/metallb.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/pihole.webp"
     },
     "lldap": {
       "app_readme": "<p>Lightweight ldap server for authentication and user management</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/lldap\">https://truecharts.org/charts/stable/lldap</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
@@ -522,11 +420,11 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://truecharts.org/charts/stable/lldap",
-      "location": "/home/runner/work/catalog/catalog/stable/lldap",
-      "latest_version": "5.3.0",
+      "location": "/home/runner/_work/catalog/catalog/stable/lldap",
+      "latest_version": "6.0.9",
       "latest_app_version": "0.5.0",
-      "latest_human_version": "0.5.0_5.3.0",
-      "last_update": "2024-03-07 13:53:11",
+      "latest_human_version": "0.5.0_6.0.9",
+      "last_update": "2024-05-29 12:35:14",
       "name": "lldap",
       "recommended": false,
       "title": "Lldap",
@@ -544,7 +442,7 @@
         "https://github.com/truecharts/charts/tree/master/charts/stable/lldap",
         "https://hub.docker.com/r/nitnelave/lldap"
       ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/lldap.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/lldap.webp"
     },
     "plex": {
       "app_readme": "<p>Plex Media Server</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/plex\">https://truecharts.org/charts/stable/plex</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
@@ -555,11 +453,11 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://truecharts.org/charts/stable/plex",
-      "location": "/home/runner/work/catalog/catalog/stable/plex",
-      "latest_version": "17.3.0",
-      "latest_app_version": "1.40.0.7998",
-      "latest_human_version": "1.40.0.7998_17.3.0",
-      "last_update": "2024-03-07 13:53:11",
+      "location": "/home/runner/_work/catalog/catalog/stable/plex",
+      "latest_version": "18.0.12",
+      "latest_app_version": "1.40.2.8395",
+      "latest_human_version": "1.40.2.8395_18.0.12",
+      "last_update": "2024-05-29 12:35:14",
       "name": "plex",
       "recommended": false,
       "title": "Plex",
@@ -573,11 +471,11 @@
       "tags": [],
       "screenshots": [],
       "sources": [
+        "https://ghcr.io/onedr0p/plex",
         "https://github.com/k8s-at-home/container-images/pkgs/container/plex",
-        "https://github.com/truecharts/charts/tree/master/charts/stable/plex",
-        "https://ghcr.io/onedr0p/plex"
+        "https://github.com/truecharts/charts/tree/master/charts/stable/plex"
       ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/plex.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/plex.webp"
     },
     "plextraktsync": {
       "app_readme": "<p>Two-way-sync between trakt.tv and Plex Media Server.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/plextraktsync\">https://truecharts.org/charts/stable/plextraktsync</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
@@ -588,11 +486,11 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://truecharts.org/charts/stable/plextraktsync",
-      "location": "/home/runner/work/catalog/catalog/stable/plextraktsync",
-      "latest_version": "7.4.0",
-      "latest_app_version": "0.29.4",
-      "latest_human_version": "0.29.4_7.4.0",
-      "last_update": "2024-03-07 13:53:11",
+      "location": "/home/runner/_work/catalog/catalog/stable/plextraktsync",
+      "latest_version": "8.1.11",
+      "latest_app_version": "0.30.10",
+      "latest_human_version": "0.30.10_8.1.11",
+      "last_update": "2024-05-29 12:35:14",
       "name": "plextraktsync",
       "recommended": false,
       "title": "Plextraktsync",
@@ -606,29 +504,29 @@
       "tags": [],
       "screenshots": [],
       "sources": [
+        "https://ghcr.io/taxel/plextraktsync",
         "https://github.com/Taxel/PlexTraktSync",
-        "https://github.com/truecharts/charts/tree/master/charts/stable/plextraktsync",
-        "https://ghcr.io/taxel/plextraktsync"
+        "https://github.com/truecharts/charts/tree/master/charts/stable/plextraktsync"
       ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/plextraktsync.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/plextraktsync.webp"
     },
-    "traefik": {
-      "app_readme": "<p>Traefik is a flexible reverse proxy and Ingress Provider.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/enterprise/traefik\">https://truecharts.org/charts/enterprise/traefik</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+    "ispy-agent-dvr": {
+      "app_readme": "<p>iSpy's Agent DVR, a standalone DVR service to manage IP cameras.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/ispy-agent-dvr\">https://truecharts.org/charts/stable/ispy-agent-dvr</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
       "categories": [
-        "network"
+        "security"
       ],
-      "description": "Traefik is a flexible reverse proxy and Ingress Provider.",
+      "description": "iSpy's Agent DVR, a standalone DVR service to manage IP cameras.",
       "healthy": true,
       "healthy_error": null,
-      "home": "https://truecharts.org/charts/enterprise/traefik",
-      "location": "/home/runner/work/catalog/catalog/enterprise/traefik",
-      "latest_version": "26.5.0",
-      "latest_app_version": "2.11.0",
-      "latest_human_version": "2.11.0_26.5.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "traefik",
+      "home": "https://truecharts.org/charts/stable/ispy-agent-dvr",
+      "location": "/home/runner/_work/catalog/catalog/stable/ispy-agent-dvr",
+      "latest_version": "10.1.7",
+      "latest_app_version": "5.5.3.0",
+      "latest_human_version": "5.5.3.0_10.1.7",
+      "last_update": "2024-05-29 12:35:14",
+      "name": "ispy-agent-dvr",
       "recommended": false,
-      "title": "Traefik",
+      "title": "Ispy-agent-dvr",
       "maintainers": [
         {
           "name": "TrueCharts",
@@ -639,31 +537,29 @@
       "tags": [],
       "screenshots": [],
       "sources": [
-        "https://github.com/traefik/traefik",
-        "https://github.com/traefik/traefik-helm-chart",
-        "https://traefik.io/",
-        "https://github.com/truecharts/charts/tree/master/charts/enterprise/traefik",
-        "https://github.com/truecharts/containers/tree/master/apps/traefik"
+        "https://github.com/doitandbedone/ispyagentdvr-docker",
+        "https://github.com/truecharts/charts/tree/master/charts/stable/ispy-agent-dvr",
+        "https://hub.docker.com/r/doitandbedone/ispyagentdvr"
       ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/traefik.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/ispy-agent-dvr.webp"
     },
-    "prometheus-operator": {
-      "app_readme": "<p>Prometheus Operator is an operator for prometheus</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/operators/prometheus-operator\">https://truecharts.org/charts/operators/prometheus-operator</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
+    "wg-easy": {
+      "app_readme": "<p>The easiest way to run WireGuard VPN + Web-based Admin UI.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/wg-easy\">https://truecharts.org/charts/stable/wg-easy</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
       "categories": [
-        "operators"
+        "networking"
       ],
-      "description": "Prometheus Operator is an operator for prometheus",
+      "description": "The easiest way to run WireGuard VPN + Web-based Admin UI.",
       "healthy": true,
       "healthy_error": null,
-      "home": "https://truecharts.org/charts/operators/prometheus-operator",
-      "location": "/home/runner/work/catalog/catalog/operators/prometheus-operator",
-      "latest_version": "6.5.0",
-      "latest_app_version": "latest",
-      "latest_human_version": "latest_6.5.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "prometheus-operator",
+      "home": "https://truecharts.org/charts/stable/wg-easy",
+      "location": "/home/runner/_work/catalog/catalog/stable/wg-easy",
+      "latest_version": "14.0.8",
+      "latest_app_version": "13.0.0",
+      "latest_human_version": "13.0.0_14.0.8",
+      "last_update": "2024-05-29 12:35:14",
+      "name": "wg-easy",
       "recommended": false,
-      "title": "Prometheus-operator",
+      "title": "Wg-easy",
       "maintainers": [
         {
           "name": "TrueCharts",
@@ -674,82 +570,10 @@
       "tags": [],
       "screenshots": [],
       "sources": [
-        "https://github.com/prometheus-operator",
-        "https://github.com/truecharts/charts/tree/master/charts/operators/prometheus-operator",
-        "https://github.com/truecharts/containers/tree/master/apps/alpine"
+        "https://ghcr.io/wg-easy/wg-easy",
+        "https://github.com/truecharts/charts/tree/master/charts/stable/wg-easy"
       ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/prometheus-operator.png"
-    },
-    "prometheus": {
-      "app_readme": "<p>kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/enterprise/prometheus\">https://truecharts.org/charts/enterprise/prometheus</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-      "categories": [
-        "metrics"
-      ],
-      "description": "kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://truecharts.org/charts/enterprise/prometheus",
-      "location": "/home/runner/work/catalog/catalog/enterprise/prometheus",
-      "latest_version": "17.7.0",
-      "latest_app_version": "2.50.1",
-      "latest_human_version": "2.50.1_17.7.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "prometheus",
-      "recommended": false,
-      "title": "Prometheus",
-      "maintainers": [
-        {
-          "name": "TrueCharts",
-          "email": "info@truecharts.org",
-          "url": "https://truecharts.org"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/prometheus-community/helm-charts",
-        "https://github.com/prometheus-operator/kube-prometheus",
-        "https://github.com/truecharts/charts/tree/master/charts/enterprise/prometheus",
-        "https://quay.io/thanos/thanos",
-        "https://hub.docker.com/r/bitnami/prometheus",
-        "https://hub.docker.com/r/bitnami/alertmanager"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/prometheus.png"
-    },
-    "grafana": {
-      "app_readme": "<p>Grafana is an open source, feature rich metrics dashboard and graph editor for Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/enterprise/grafana\">https://truecharts.org/charts/enterprise/grafana</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-      "categories": [
-        "metrics"
-      ],
-      "description": "Grafana is an open source, feature rich metrics dashboard and graph editor for Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://truecharts.org/charts/enterprise/grafana",
-      "location": "/home/runner/work/catalog/catalog/enterprise/grafana",
-      "latest_version": "14.3.0",
-      "latest_app_version": "10.3.3",
-      "latest_human_version": "10.3.3_14.3.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "grafana",
-      "recommended": false,
-      "title": "Grafana",
-      "maintainers": [
-        {
-          "name": "TrueCharts",
-          "email": "info@truecharts.org",
-          "url": "https://truecharts.org"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://grafana.com/",
-        "https://github.com/bitnami/bitnami-docker-grafana",
-        "https://github.com/truecharts/charts/tree/master/charts/enterprise/grafana",
-        "https://hub.docker.com/r/grafana/grafana",
-        "https://quay.io/kiwigrid/k8s-sidecar"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/grafana.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/wg-easy.webp"
     },
     "tautulli": {
       "app_readme": "<p>A Python based monitoring and tracking tool for Plex Media Server</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/tautulli\">https://truecharts.org/charts/stable/tautulli</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
@@ -760,11 +584,11 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://truecharts.org/charts/stable/tautulli",
-      "location": "/home/runner/work/catalog/catalog/stable/tautulli",
-      "latest_version": "18.3.0",
+      "location": "/home/runner/_work/catalog/catalog/stable/tautulli",
+      "latest_version": "19.0.8",
       "latest_app_version": "2.13.4",
-      "latest_human_version": "2.13.4_18.3.0",
-      "last_update": "2024-03-07 13:53:11",
+      "latest_human_version": "2.13.4_19.0.8",
+      "last_update": "2024-05-29 12:35:14",
       "name": "tautulli",
       "recommended": false,
       "title": "Tautulli",
@@ -778,178 +602,11 @@
       "tags": [],
       "screenshots": [],
       "sources": [
+        "https://ghcr.io/onedr0p/tautulli",
         "https://github.com/Tautulli/Tautulli",
-        "https://github.com/truecharts/charts/tree/master/charts/stable/tautulli",
-        "https://ghcr.io/onedr0p/tautulli"
+        "https://github.com/truecharts/charts/tree/master/charts/stable/tautulli"
       ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/tautulli.png"
-    },
-    "authelia": {
-      "app_readme": "<p>Authelia is a Single Sign-On Multi-Factor portal for web apps</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/enterprise/authelia\">https://truecharts.org/charts/enterprise/authelia</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-      "categories": [
-        "security"
-      ],
-      "description": "Authelia is a Single Sign-On Multi-Factor portal for web apps",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://truecharts.org/charts/enterprise/authelia",
-      "location": "/home/runner/work/catalog/catalog/enterprise/authelia",
-      "latest_version": "23.3.0",
-      "latest_app_version": "4.37.5",
-      "latest_human_version": "4.37.5_23.3.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "authelia",
-      "recommended": false,
-      "title": "Authelia",
-      "maintainers": [
-        {
-          "name": "TrueCharts",
-          "email": "info@truecharts.org",
-          "url": "https://truecharts.org"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/authelia/chartrepo",
-        "https://github.com/authelia/authelia",
-        "https://github.com/truecharts/charts/tree/master/charts/enterprise/authelia",
-        "https://ghcr.io/authelia/authelia"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/authelia.png"
-    },
-    "cert-manager": {
-      "app_readme": "<p>Cert-Manager is a kubernetes-aware certificate manager</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/operators/cert-manager\">https://truecharts.org/charts/operators/cert-manager</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-      "categories": [
-        "operators"
-      ],
-      "description": "Cert-Manager is a kubernetes-aware certificate manager",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://truecharts.org/charts/operators/cert-manager",
-      "location": "/home/runner/work/catalog/catalog/operators/cert-manager",
-      "latest_version": "4.3.0",
-      "latest_app_version": "latest",
-      "latest_human_version": "latest_4.3.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "cert-manager",
-      "recommended": false,
-      "title": "Cert-manager",
-      "maintainers": [
-        {
-          "name": "TrueCharts",
-          "email": "info@truecharts.org",
-          "url": "https://truecharts.org"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/cert-manager",
-        "https://cert-manager.io/",
-        "https://github.com/truecharts/charts/tree/master/charts/operators/cert-manager",
-        "https://github.com/truecharts/containers/tree/master/apps/scratch"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/cert-manager.png"
-    },
-    "cloudnative-pg": {
-      "app_readme": "<p>CloudNativePG is a clustered postgresql database operator</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/operators/cloudnative-pg\">https://truecharts.org/charts/operators/cloudnative-pg</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-      "categories": [
-        "operators"
-      ],
-      "description": "CloudNativePG is a clustered postgresql database operator",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://truecharts.org/charts/operators/cloudnative-pg",
-      "location": "/home/runner/work/catalog/catalog/operators/cloudnative-pg",
-      "latest_version": "6.4.0",
-      "latest_app_version": "latest",
-      "latest_human_version": "latest_6.4.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "cloudnative-pg",
-      "recommended": false,
-      "title": "Cloudnative-pg",
-      "maintainers": [
-        {
-          "name": "TrueCharts",
-          "email": "info@truecharts.org",
-          "url": "https://truecharts.org"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://cloudnative-pg.io/",
-        "https://github.com/cloudnative-pg",
-        "https://github.com/truecharts/charts/tree/master/charts/operators/cloudnative-pg",
-        "https://github.com/truecharts/containers/tree/master/apps/alpine"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/cloudnative-pg.png"
-    },
-    "clusterissuer": {
-      "app_readme": "<p>Certificate management for Kubernetes</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/enterprise/clusterissuer\">https://truecharts.org/charts/enterprise/clusterissuer</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-      "categories": [
-        "core"
-      ],
-      "description": "Certificate management for Kubernetes",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://truecharts.org/charts/enterprise/clusterissuer",
-      "location": "/home/runner/work/catalog/catalog/enterprise/clusterissuer",
-      "latest_version": "7.3.0",
-      "latest_app_version": "latest",
-      "latest_human_version": "latest_7.3.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "clusterissuer",
-      "recommended": false,
-      "title": "Clusterissuer",
-      "maintainers": [
-        {
-          "name": "TrueCharts",
-          "email": "info@truecharts.org",
-          "url": "https://truecharts.org"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://cert-manager.io/",
-        "https://github.com/truecharts/charts/tree/master/charts/enterprise/clusterissuer",
-        "https://hub.docker.com/_/hello-world"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/clusterissuer.png"
-    },
-    "custom-app": {
-      "app_readme": "<p>Advanced tool to create your own TrueCharts-based App</p>\n<p>This App is supplied by TrueCharts, for more information visit the manual: <a href=\"https://truecharts.org/charts/stable/custom-app\">https://truecharts.org/charts/stable/custom-app</a></p>\n<hr />\n<p>TrueCharts can only exist due to the incredible effort of our staff.\nPlease consider making a <a href=\"https://truecharts.org/sponsor\">donation</a> or contributing back to the project any way you can!</p>",
-      "categories": [
-        "custom"
-      ],
-      "description": "Advanced tool to create your own TrueCharts-based App",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://truecharts.org/charts/stable/custom-app",
-      "location": "/home/runner/work/catalog/catalog/stable/custom-app",
-      "latest_version": "12.3.0",
-      "latest_app_version": "0.21.1155",
-      "latest_human_version": "0.21.1155_12.3.0",
-      "last_update": "2024-03-07 13:53:11",
-      "name": "custom-app",
-      "recommended": false,
-      "title": "Custom-app",
-      "maintainers": [
-        {
-          "name": "TrueCharts",
-          "email": "info@truecharts.org",
-          "url": "https://truecharts.org"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/truecharts/charts/tree/master/charts/stable/custom-app",
-        "https://ghcr.io/linuxserver/jackett"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/custom-app.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/tautulli.webp"
     }
   },
   "ac1dsworld": {
@@ -1166,7 +823,7 @@
       "healthy_error": null,
       "home": "https://truecharts.org/charts/stable/rtorrent-rutorrent",
       "location": "/home/runner/_work/catalog/catalog/stable/rtorrent-rutorrent",
-      "latest_version": "5.0.9",
+      "latest_version": "5.0.8",
       "latest_app_version": "4.2.9",
       "latest_human_version": "4.2.9_5.0.8",
       "last_update": "2024-05-29 12:35:14",
