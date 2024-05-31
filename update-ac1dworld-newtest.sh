@@ -33,29 +33,12 @@ if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V |
   done
 fi
 
-# Copy apps from temp - stable to ac1dsworld 
+# Copy apps from temp to ac1dsworld 
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V | tail -n 1)" ]; then
-  for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr pihole metallb lldap plex plextraktsync ispy-agent-dvr wg-easy tautulli custom-app; do
+  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
     cp -R "$base_dir/ac1ds-catalog/temp/stable/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
   done
 fi
-
-# Copy apps from temp - premium to ac1dsworld 
-
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/premium/$app" | sort -V | tail -n 1)" ]; then
-  for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
-    cp -R "$base_dir/ac1ds-catalog/temp/premium/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
-  done
-fi
-
-# Copy apps from temp - system to ac1dsworld 
-
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/system/$app" | sort -V | tail -n 1)" ]; then
-  for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
-    cp -R "$base_dir/ac1ds-catalog/temp/system/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
-  done
-fi
-
 
 # Copy apps from ac1dsworld to test
 
@@ -66,7 +49,7 @@ if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V |
 fi
 
 # Remove unwanted files ac1dsworld
-for app in sonarr speedtest-exporter radarr sabnzbd prowlarr thelounge rtorrent-rutorrent overseerr metallb-config openebs pihole metallb lldap plex plextraktsync ispy-agent-dvr traefik prometheus-operator prometheus grafana wg-easy tautulli authelia cert-manager cloudnative-pg clusterissuer custom-app; do
+for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
   cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
   rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
 done
@@ -113,7 +96,7 @@ cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.
 python3 "$base_dir/ac1ds-catalog/catalogupdate.py"
 
 # Remove temp directory
-#sudo rm -r "$base_dir/ac1ds-catalog/temp" 
+sudo rm -r "$base_dir/ac1ds-catalog/temp" 
 
 # Run catalog fix script
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
