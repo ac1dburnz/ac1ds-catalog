@@ -71,8 +71,10 @@ for app_name in new_ac1dsworld_app_names_to_read:
     if result:
         app_name_actual, app_data = result
         new_ac1dsworld_apps_data[app_name_actual] = app_data
-
 # Read "premium" section from updated catalog JSON file
+with open(updated_catalog_json_path, 'r') as updated_catalog_file:
+    updated_catalog_data = json.load(updated_catalog_file)
+
 premium_app_names_to_read = ["authelia", "blocky", "clusterissuer", "custom-app", "grafana", "metallb-config", "nextcloud", "prometheus", "traefik", "vaultwarden"]
 premium_apps_data = {}
 for app_name in premium_app_names_to_read:
@@ -82,6 +84,9 @@ for app_name in premium_app_names_to_read:
         premium_apps_data[app_name_actual] = app_data
 
 # Read "system" section from updated catalog JSON file
+with open(updated_catalog_json_path, 'r') as updated_catalog_file:
+    updated_catalog_data = json.load(updated_catalog_file)
+
 system_app_names_to_read = ["cert-manager", "cloudnative-pg", "grafana-agent-operator", "kubeapps", "kubernetes-reflector", "metallb", "openebs", "prometheus-operator", "snapshot-controller", "traefik-crds", "velero", "volsync", "volumesnapshots"]
 system_apps_data = {}
 for app_name in system_app_names_to_read:
@@ -95,3 +100,5 @@ output_file_path = f"{base_dir}/ac1ds-catalog/catalog.json"
 
 # Generate the output structure and write to file
 generate_output_structure(test_apps_data, ac1dsworld_apps_data, new_ac1dsworld_apps_data, premium_apps_data, system_apps_data, output_file_path)
+
+
