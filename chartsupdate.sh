@@ -13,13 +13,11 @@ else
   git pull
 fi
 
-# Function to update ix_values.yaml and increment version
+# Function to update ix_values.yaml
 update_app() {
   local app_dir="$1"
   local app_name="$(basename "$app_dir")"
-  cd "$app_dir"
-  local latest_version="$(ls -1d */ | sort -V | tail -n 1)"
-  local new_version="$(echo "$latest_version" | awk -F'/' '{print $NF+1}')"
+  local latest_version="$(ls -1d "$app_dir"/* | sort -V | tail -n 1)"
 
   if [[ ! " ${ignored_apps[*]} " =~ " ${app_name} " ]]; then
     for category in "premium" "system" "stable"; do
@@ -27,28 +25,23 @@ update_app() {
       if [ -f "$charts_values" ]; then
         echo "Checking for updates in $app_name ($category)..."
         echo "Latest version: $latest_version"
-        echo "New version: $new_version"
         echo "Checking file: $charts_values"
         if cmp --silent "$charts_values" "$latest_version/values.yaml"; then
           echo "No updates found for $app_name in $charts_values"
         else
           echo "Updates found for $app_name in $charts_values"
-          mkdir -p "$new_version"
-          cp -r "$latest_version"/* "$new_version"
-          cp "$charts_values" "$new_version/ix_values.yaml"
+          cp "$charts_values" "$latest_version/ix_values.yaml"
         fi
       fi
     done
   else
     echo "Skipping $app_name (ignored)."
   fi
-  cd "$base_dir/ac1ds-catalog"
 }
 
 echo "Updating apps in ac1dsworld..."
 for app in "$base_dir/ac1ds-catalog/ac1dsworld"/*; do
-  cd "$app"
-  update_app "$(pwd)"
+  update_app "$app"
 done
 
 echo "Updating apps in stable..."
@@ -70,4 +63,3 @@ echo "Updating apps in Test..."
 for app in "$base_dir/ac1ds-catalog/Test"/*; do
   update_app "$app"
 done
-
