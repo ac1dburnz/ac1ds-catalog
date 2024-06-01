@@ -17,7 +17,8 @@ fi
 update_app() {
   local app_dir="$1"
   local app_name="$(basename "$app_dir")"
-  local latest_version="$(ls -1d "$app_dir"/* | sort -V | tail -n 1)"
+  cd "$app_dir"
+  local latest_version="$(ls -1d */ | sort -V | tail -n 1)"
   local new_version="$(echo "$latest_version" | awk -F'/' '{print $NF+1}')"
 
   if [[ ! " ${ignored_apps[*]} " =~ " ${app_name} " ]]; then
@@ -32,26 +33,22 @@ update_app() {
           echo "No updates found for $app_name in $charts_values"
         else
           echo "Updates found for $app_name in $charts_values"
-          mkdir -p "$app_dir/$new_version"
-          cp -r "$latest_version"/* "$app_dir/$new_version"
-          cp "$charts_values" "$app_dir/$new_version/ix_values.yaml"
+          mkdir -p "$new_version"
+          cp -r "$latest_version"/* "$new_version"
+          cp "$charts_values" "$new_version/ix_values.yaml"
         fi
       fi
     done
   else
     echo "Skipping $app_name (ignored)."
   fi
+  cd "$base_dir/ac1ds-catalog"
 }
 
 echo "Updating apps in ac1dsworld..."
 for app in "$base_dir/ac1ds-catalog/ac1dsworld"/*; do
-  app_name="$(basename "$app")"
-  for category in "premium" "system" "stable"; do
-    app_dir="$base_dir/ac1ds-catalog/$category/$app_name"
-    if [ -d "$app_dir" ]; then
-      update_app "$app_dir"
-    fi
-  done
+  cd "$app"
+  update_app "$(pwd)"
 done
 
 echo "Updating apps in stable..."
@@ -73,5 +70,4 @@ echo "Updating apps in Test..."
 for app in "$base_dir/ac1ds-catalog/Test"/*; do
   update_app "$app"
 done
-
 
