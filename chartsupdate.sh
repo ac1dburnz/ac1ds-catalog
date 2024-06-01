@@ -22,15 +22,24 @@ update_app() {
 
   # Find the highest version directory
   for dir in "$app_dir"/*; do
-    if [[ -d "$dir" && "$dir" =~ ^.*\/([0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
-      local version="${BASH_REMATCH[1]}"
-      if [[ -z "$highest_version" || "$version" > "$highest_version" ]]; then
+    if [ -d "$dir" ]; then
+      version=$(echo "$dir" | sed 's/.*\/\([0-9]\+\.[0-9]\+\.[0-9]\+\)$/\1/')
+      if [ -z "$highest_version" ] || [ "$version" \> "$highest_version" ]; then
         highest_version="$version"
       fi
     fi
   done
 
-  if [[ ! " $ignored_apps " =~ " $app_name " ]]; then
+  # Check if the app is ignored
+  ignored=false
+  for ignored_app in $ignored_apps; do
+    if [ "$ignored_app" = "$app_name" ]; then
+      ignored=true
+      break
+    fi
+  done
+
+  if [ "$ignored" = false ]; then
     for category in "premium" "system" "stable"; do
       charts_values="$base_dir/charts/charts/$category/$app_name/values.yaml"
       if [ -f "$charts_values" ]; then
