@@ -1,35 +1,24 @@
 image:
   repository: ghcr.io/onedr0p/qbittorrent
   pullPolicy: IfNotPresent
-  tag: 4.6.3@sha256:a4ad890e8c4a287c17d12ca22eb1d84a046aba2efbd882bf7d6eb12459f6a70c
+  tag: 4.6.5@sha256:c019af23966ebafcaf1713d4553bc043246858b711a7d57d8bee358a89990a3e
 qbitportforwardImage:
   repository: mjmeli/qbittorrent-port-forward-gluetun-server
   pullPolicy: IfNotPresent
   tag: latest@sha256:67d0d21ed792cf80716d4211e7162b6d375af5c12f3cf096c9032ad705dddaa8
-  
-exportarrImage:
-  repository: ghcr.io/esanchezm/prometheus-qbittorrent-exporter
-  pullPolicy: IfNotPresent
-  tag: v1.5.1@sha256:3aef59197a9f14fc36a9963848d495f9a85e4f096b448a0ed4cb3aca122e793b 
-  
+
+securityContext:
+  container:
+    readOnlyRootFilesystem: false
 qbitportforward:
   enabled: false
   QBT_USERNAME: "admin"
   QBT_PASSWORD: "adminadmin"
-
-exportarr:
-  enabled: true
-  QBT_USERNAME: "admin"
-  QBT_PASSWORD: "adminadmin"
-  QBITTORRENT_PORT: "10095"
-
-
 service:
   main:
     ports:
       main:
         port: 10095
-        targetPort: 8080
   torrent:
     enabled: true
     ports:
@@ -50,23 +39,27 @@ service:
         port: 8000
         targetPort: 8000
         protocol: http
-  metrics:
-    enabled: true
-    type: ClusterIP
-    targetSelector: exportarr
-    ports:
-      metrics:
-        enabled: true
-        port: 8001
-        targetSelector: exportarr
-        
 workload:
+  main:
+    podSpec:
+      containers:
+        main:
+          env:
+            # set the default port
+            QBITTORRENT__PORT: "{{ .Values.service.main.ports.main.port }}"
+            # stops users from bricking their chart from setting the ip to a random ip when its a container.
+            QBT_Preferences__WebUI__Address: "*"
+            # set port from gui.
+            QBT_BitTorrent__Session__Port: "{{ .Values.service.torrent.ports.torrent.port }}"
+            # legacy ini key
+            # key deprecated https://github.com/qbittorrent/qBittorrent/issues/8324
+            QBT_Preferences__Connection__PortRangeMin: "{{ .Values.service.torrent.ports.torrent.port }}"
   qbitportforward:
     enabled: true
-    type: Deployment
-    strategy: RollingUpdate
-    replicas: 1
+    type: CronJob
+    schedule: "*/5 * * * *"
     podSpec:
+      restartPolicy: OnFailure
       containers:
         qbitportforward:
           primary: true
@@ -83,56 +76,12 @@ workload:
             QBT_USERNAME: "{{ .Values.qbitportforward.QBT_USERNAME }}"
             QBT_PASSWORD: "{{ .Values.qbitportforward.QBT_PASSWORD }}"
             QBT_ADDR: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
-            GTN_ADDR: '{{ printf "http://%v-gluetun:8000" (include "tc.v1.common.lib.chart.names.fullname" $) }}' 
-            
-  exportarr:
-    enabled: true
-    type: Deployment
-    strategy: RollingUpdate
-    replicas: 1
-    podSpec:
-      containers:
-        exportarr:
-          primary: true
-          enabled: true
-          imageSelector: exportarrImage
-          args:
-            - qbittorrent-exporter
-          probes:
-            liveness:
-              enabled: false
-            readiness:
-              enabled: false
-            startup:
-              enabled: false
-          env:
-            EXPORTER_PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
-            #QBT_USERNAME: "{{ .Values.exportarr.QBT_USERNAME }}"
-            #QBT_PASSWORD: "{{ .Values.exportarr.QBT_PASSWORD }}"
-            QBITTORRENT_HOST: '{{ printf "%v" (include "tc.v1.common.lib.chart.names.fullname" $) }}' 
-            #QBITTORRENT_PORT: "{{ .Values.service.main.ports.main.port }}"
-            QBITTORRENT_PORT: "{{ .Values.exportarr.QBITTORRENT_PORT }}"
-            #QBITTORRENT_URL_BASE: '{{ printf "http://%v:10095" (include "tc.v1.common.lib.chart.names.fullname" $) }}'
-
+            GTN_ADDR: '{{ printf "http://%v-gluetun:8000" (include "tc.v1.common.lib.chart.names.fullname" $) }}'
+          command: /usr/src/app/main.sh
 persistence:
   config:
     enabled: true
     mountPath: "/config"
-    
-metrics:
-  main:
-    enabled: true
-    type: "servicemonitor"
-    endpoints:
-      - port: metrics
-        path: /metrics
-    targetSelector: metrics
-    prometheusRule:
-      enabled: true
-      
 portal:
   open:
     enabled: true
-securityContext:
-  container:
-    readOnlyRootFilesystem: false
