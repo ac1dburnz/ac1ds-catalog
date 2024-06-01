@@ -34,7 +34,7 @@ update_app() {
           echo "Updates found for $app_name in $charts_values"
           mkdir -p "$app_dir/$new_version"
           cp -r "$latest_version"/* "$app_dir/$new_version"
-          cp "$charts_values" "$app_dir/$new_version/values.yaml"
+          cp "$charts_values" "$app_dir/$new_version/ix_values.yaml"
         fi
       fi
     done
@@ -45,7 +45,13 @@ update_app() {
 
 echo "Updating apps in ac1dsworld..."
 for app in "$base_dir/ac1ds-catalog/ac1dsworld"/*; do
-  update_app "$app"
+  app_name="$(basename "$app")"
+  for category in "premium" "system" "stable"; do
+    app_dir="$base_dir/ac1ds-catalog/$category/$app_name"
+    if [ -d "$app_dir" ]; then
+      update_app "$app_dir"
+    fi
+  done
 done
 
 echo "Updating apps in stable..."
@@ -67,4 +73,5 @@ echo "Updating apps in Test..."
 for app in "$base_dir/ac1ds-catalog/Test"/*; do
   update_app "$app"
 done
+
 
