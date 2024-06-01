@@ -21,9 +21,10 @@ update_app() {
 
   # Find the highest version directory
   for dir in "$app_dir"/*; do
-    if [[ -d "$dir" && "$dir" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-      if [[ -z "$highest_version" || "$dir" > "$app_dir/$highest_version" ]]; then
-        highest_version="$(basename "$dir")"
+    if [[ -d "$dir" && "$dir" =~ ^.*\/([0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
+      local version="${BASH_REMATCH[1]}"
+      if [[ -z "$highest_version" || "$version" > "$highest_version" ]]; then
+        highest_version="$version"
       fi
     fi
   done
@@ -34,6 +35,7 @@ update_app() {
       if [ -f "$charts_values" ]; then
         echo "Checking for updates in $app_name ($category)..."
         echo "Highest version: $highest_version"
+        echo "Highest version directory: $app_dir/$highest_version"
         echo "Checking file: $charts_values"
         if [ -z "$highest_version" ]; then
           echo "No versions found for $app_name"
@@ -74,4 +76,3 @@ echo "Updating apps in Test..."
 for app in "$base_dir/ac1ds-catalog/Test"/*; do
   update_app "$app"
 done
-
