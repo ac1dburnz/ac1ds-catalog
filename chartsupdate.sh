@@ -17,20 +17,20 @@ fi
 update_app() {
   local app_dir="$1"
   local app_name="$(basename "$app_dir")"
-  local latest_version="$(ls -1d "$app_dir"/* | sort -V | tail -n 1)"
+  local highest_version="$(ls -1d "$app_dir"/* | sort -V | tail -n 1)"
 
   if [[ ! " ${ignored_apps[*]} " =~ " ${app_name} " ]]; then
     for category in "premium" "system" "stable"; do
       charts_values="$base_dir/charts/charts/$category/$app_name/values.yaml"
       if [ -f "$charts_values" ]; then
         echo "Checking for updates in $app_name ($category)..."
-        echo "Latest version: $latest_version"
+        echo "Highest version: $highest_version"
         echo "Checking file: $charts_values"
-        if cmp --silent "$charts_values" "$latest_version/values.yaml"; then
+        if cmp --silent "$charts_values" "$highest_version/values.yaml"; then
           echo "No updates found for $app_name in $charts_values"
         else
           echo "Updates found for $app_name in $charts_values"
-          cp "$charts_values" "$latest_version/ix_values.yaml"
+          cp "$charts_values" "$highest_version/ix_values.yaml"
         fi
       fi
     done
