@@ -71,8 +71,6 @@ update_app() {
       mkdir "$new_version_dir"
       cp -r "$app_dir/$highest_version/"* "$new_version_dir/"
       echo "Incremented version for $app_name: $new_version"
-    else
-      echo "No ix_values.yaml file found for $app_name, skipping version increment."
     fi
   fi
 }
@@ -90,8 +88,7 @@ increment_version() {
 }
 
 echo "Updating apps in ac1dsworld..."
-for app in "$base_dir/ac1ds-catalog/ac1dsworld"/*;
-do
+for app in "$base_dir/ac1ds-catalog/ac1dsworld"/*; do
   update_app "$app"
 done
 
@@ -114,3 +111,4 @@ echo "Updating apps in Test..."
 for app in "$base_dir/ac1ds-catalog/Test"/*; do
   update_app "$app"
 done
+
