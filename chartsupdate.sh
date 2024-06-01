@@ -23,12 +23,20 @@ update_app() {
   if [[ ! " ${ignored_apps[*]} " =~ " ${app_name} " ]]; then
     charts_values="$base_dir/charts/$app_name/values.yaml"
     if [ -f "$charts_values" ]; then
-      echo "Updating $app_name from $latest_version to $new_version..."
-      mkdir -p "$app_dir/$new_version"
-      cp -r "$latest_version"/* "$app_dir/$new_version"
-      cp "$charts_values" "$app_dir/$new_version/ix_values.yaml"
+      echo "Checking for updates in $app_name..."
+      echo "Latest version: $latest_version"
+      echo "New version: $new_version"
+      echo "Checking file: $charts_values"
+      if cmp --silent "$charts_values" "$latest_version/ix_values.yaml"; then
+        echo "No updates found for $app_name in $charts_values"
+      else
+        echo "Updates found for $app_name in $charts_values"
+        mkdir -p "$app_dir/$new_version"
+        cp -r "$latest_version"/* "$app_dir/$new_version"
+        cp "$charts_values" "$app_dir/$new_version/ix_values.yaml"
+      fi
     else
-      echo "No updates found for $app_name."
+      echo "No values.yaml file found for $app_name in $base_dir/charts/$app_name"
     fi
   else
     echo "Skipping $app_name (ignored)."
