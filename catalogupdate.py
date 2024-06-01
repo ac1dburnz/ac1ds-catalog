@@ -41,7 +41,7 @@ with open(catalog_json_path, 'r') as catalog_file:
     catalog_data = json.load(catalog_file)
 
 # App names to read from the "Test" section
-test_app_names_to_read = ["prowlarr", "sonarr", "radarr", "rtorrent-rutorrent", "sabnzbd", "thelounge", "speedtest-exporter", "qbittorrent"]
+test_app_names_to_read = ["prowlarr", "radarr", "rtorrent-rutorrent", "sabnzbd", "sonarr", "speedtest-exporter", "thelounge", "overseerr", "speedtest-exporter", "pihole", "lldap", "plextraktsync", "ispy-agent-dvr", "wg-easy", "tautulli"]
 
 # Find the specific app data for each app name in the "Test" section
 test_apps_data = {}
@@ -52,7 +52,7 @@ for app_name in test_app_names_to_read:
         test_apps_data[app_name_actual] = app_data
 
 # Read "ac1dsworld" section from original catalog JSON file
-ac1dsworld_app_names_to_read = ["prowlarr", "sonarr", "radarr", "sabnzbd", "rtorrent-rutorrent", "thelounge", "speedtest-exporter"]
+ac1dsworld_app_names_to_read = ["prowlarr", "radarr", "rtorrent-rutorrent", "sabnzbd", "sonarr", "speedtest-exporter", "thelounge", "overseerr", "speedtest-exporter", "pihole", "lldap", "plextraktsync", "ispy-agent-dvr", "wg-easy", "tautulli"]
 ac1dsworld_apps_data = {}
 for app_name in ac1dsworld_app_names_to_read:
     result = find_app(catalog_data["ac1dsworld"], app_name)
@@ -64,7 +64,7 @@ for app_name in ac1dsworld_app_names_to_read:
 with open(updated_catalog_json_path, 'r') as updated_catalog_file:
     updated_catalog_data = json.load(updated_catalog_file)
 
-new_ac1dsworld_app_names_to_read = ["prowlarr", "sonarr", "radarr", "sabnzbd", "rtorrent-rutorrent", "thelounge", "speedtest-exporter"]
+new_ac1dsworld_app_names_to_read = ["prowlarr", "radarr", "rtorrent-rutorrent", "sabnzbd", "sonarr", "speedtest-exporter", "thelounge", "overseerr", "speedtest-exporter", "pihole", "lldap", "plextraktsync", "ispy-agent-dvr", "wg-easy", "tautulli"]
 new_ac1dsworld_apps_data = {}
 for app_name in new_ac1dsworld_app_names_to_read:
     result = find_app(updated_catalog_data["stable"], app_name)

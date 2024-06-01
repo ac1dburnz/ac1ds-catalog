@@ -28,14 +28,14 @@ git clone https://github.com/truecharts/catalog.git temp
 
 # Copy apps from ac1dsworld to stable
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
-  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
+  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
     cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/stable"
   done
 fi
 
 # Copy apps from temp stable to ac1dsworld 
 if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V | tail -n 1)" ]; then
-  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
+  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
     cp -R "$base_dir/ac1ds-catalog/temp/stable/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
   done
 fi
@@ -63,14 +63,14 @@ if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V |
 fi
 
 # Remove unwanted files ac1dsworld
-for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
+for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
   cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
   rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
 done
 
 # Remove unwanted files Test 
 
-for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
+for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
   cd "$base_dir/ac1ds-catalog/Test/$app"
   rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
 done
