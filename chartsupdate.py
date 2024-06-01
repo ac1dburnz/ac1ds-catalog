@@ -37,12 +37,6 @@ def increment_version(version_str):
     new_version = version.Version(f"{major}.{minor}.{micro + 1}")
     return str(new_version)
 
-def remove_old_versions(app_dir, highest_version):
-    for dir_name in os.listdir(app_dir):
-        dir_path = os.path.join(app_dir, dir_name)
-        if os.path.isdir(dir_path) and dir_name != highest_version:
-            shutil.rmtree(dir_path)
-
 def update_app(app_dir, app_name, highest_version):
     new_version_dir = None
     if app_name in ignored_apps:
@@ -85,7 +79,6 @@ def update_app(app_dir, app_name, highest_version):
                         else:
                             shutil.copy2(src, dst)
                     print(f"Incremented version for {app_name}: {new_version}")
-                    remove_old_versions(app_dir, new_version)
 
 def main():
     print("Cloning or updating the truecharts/charts repository...")
@@ -103,4 +96,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
