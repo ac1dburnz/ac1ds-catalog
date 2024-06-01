@@ -17,7 +17,16 @@ fi
 update_app() {
   local app_dir="$1"
   local app_name="$(basename "$app_dir")"
-  local highest_version="$(ls -1d "$app_dir"/* | sort -V | tail -n 1)"
+  local highest_version=""
+
+  # Find the highest version directory
+  for dir in "$app_dir"/*; do
+    if [[ -d "$dir" && "$dir" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+      if [[ -z "$highest_version" || "$dir" > "$app_dir/$highest_version" ]]; then
+        highest_version="$(basename "$dir")"
+      fi
+    fi
+  done
 
   if [[ ! " ${ignored_apps[*]} " =~ " ${app_name} " ]]; then
     for category in "premium" "system" "stable"; do
@@ -26,11 +35,13 @@ update_app() {
         echo "Checking for updates in $app_name ($category)..."
         echo "Highest version: $highest_version"
         echo "Checking file: $charts_values"
-        if cmp --silent "$charts_values" "$highest_version/values.yaml"; then
+        if [ -z "$highest_version" ]; then
+          echo "No versions found for $app_name"
+        elif cmp --silent "$charts_values" "$app_dir/$highest_version/values.yaml"; then
           echo "No updates found for $app_name in $charts_values"
         else
           echo "Updates found for $app_name in $charts_values"
-          cp "$charts_values" "$highest_version/ix_values.yaml"
+          cp "$charts_values" "$app_dir/$highest_version/ix_values.yaml"
         fi
       fi
     done
@@ -63,3 +74,4 @@ echo "Updating apps in Test..."
 for app in "$base_dir/ac1ds-catalog/Test"/*; do
   update_app "$app"
 done
+
