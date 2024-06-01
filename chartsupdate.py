@@ -43,19 +43,6 @@ def remove_old_versions(app_dir, highest_version):
         if os.path.isdir(dir_path) and dir_name != highest_version:
             shutil.rmtree(dir_path)
 
-def update_chart_yaml(new_version_dir, new_version):
-    chart_yaml_path = os.path.join(new_version_dir, "Chart.yaml")
-    with open(chart_yaml_path, "r") as file:
-        lines = file.readlines()
-
-    for i, line in enumerate(lines):
-        if line.startswith("version:"):
-            lines[i] = f"version: {new_version}\n"
-            break
-
-    with open(chart_yaml_path, "w") as file:
-        file.writelines(lines)
-
 def update_app(app_dir, app_name, highest_version):
     new_version_dir = None
     if app_name in ignored_apps:
@@ -99,7 +86,6 @@ def update_app(app_dir, app_name, highest_version):
                             shutil.copy2(src, dst)
                     print(f"Incremented version for {app_name}: {new_version}")
                     remove_old_versions(app_dir, new_version)
-                    update_chart_yaml(new_version_dir, new_version)
 
 def main():
     print("Cloning or updating the truecharts/charts repository...")
