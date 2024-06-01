@@ -33,7 +33,8 @@ update_app() {
         echo "Updates found for $app_name in $charts_values"
         mkdir -p "$app_dir/$new_version"
         cp -r "$latest_version"/* "$app_dir/$new_version"
-        cp "$charts_values" "$app_dir/$new_version/ix_values.yaml"
+        cp "$charts_values" "$app_dir/$new_version/values.yaml"
+        mv "$app_dir/$new_version/values.yaml" "$app_dir/$new_version/ix_values.yaml"
       fi
     else
       echo "No values.yaml file found for $app_name in $base_dir/charts/$app_name"
