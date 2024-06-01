@@ -14,12 +14,14 @@ else
   git pull
 fi
 
-# Function to update ix_values.yaml and increment version folder
+# Array to store apps with updated ix_values.yaml
+updated_apps=()
+
+# Function to update ix_values.yaml
 update_app() {
   local app_dir="$1"
   local app_name="$(basename "$app_dir")"
   local highest_version=""
-  local updated=false
 
   # Find the highest version directory
   for dir in "$app_dir"/*; do
@@ -55,23 +57,12 @@ update_app() {
         else
           echo "Updates found for $app_name in $charts_values"
           cp "$charts_values" "$app_dir/$highest_version/ix_values.yaml"
-          updated=true
+          updated_apps+=("$app_name")
         fi
       fi
     done
   else
     echo "Skipping $app_name (ignored)."
-  fi
-
-  # Increment version folder if the ix_values.yaml file was updated
-  if [ "$updated" = true ]; then
-    if [ -f "$app_dir/$highest_version/ix_values.yaml" ]; then
-      new_version=$(increment_version "$highest_version")
-      new_version_dir="$app_dir/$new_version"
-      mkdir "$new_version_dir"
-      cp -r "$app_dir/$highest_version/"* "$new_version_dir/"
-      echo "Incremented version for $app_name: $new_version"
-    fi
   fi
 }
 
@@ -110,5 +101,30 @@ done
 echo "Updating apps in Test..."
 for app in "$base_dir/ac1ds-catalog/Test"/*; do
   update_app "$app"
+done
+
+# Increment version for apps with updated ix_values.yaml
+for app_name in "${updated_apps[@]}"; do
+  for category in "ac1dsworld" "stable" "premium" "system" "Test"; do
+    app_dir="$base_dir/ac1ds-catalog/$category/$app_name"
+    if [ -d "$app_dir" ]; then
+      highest_version=""
+      for dir in "$app_dir"/*; do
+        if [ -d "$dir" ]; then
+          version=$(echo "$dir" | sed 's/.*\/\([0-9]\+\.[0-9]\+\.[0-9]\+\)$/\1/')
+          if [ -z "$highest_version" ] || [ "$version" \> "$highest_version" ]; then
+            highest_version="$version"
+          fi
+        fi
+      done
+      if [ -n "$highest_version" ] && [ -f "$app_dir/$highest_version/ix_values.yaml" ]; then
+        new_version=$(increment_version "$highest_version")
+        new_version_dir="$app_dir/$new_version"
+        mkdir "$new_version_dir"
+        cp -r "$app_dir/$highest_version/"* "$new_version_dir/"
+        echo "Incremented version for $app_name: $new_version"
+      fi
+    fi
+  done
 done
 
