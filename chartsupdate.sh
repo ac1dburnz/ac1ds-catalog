@@ -2,9 +2,10 @@
 
 base_dir="/Users/ac1dburn/Documents/GitHub"
 charts_repo="https://github.com/truecharts/charts.git"
-ignored_apps=("prowlarr" "radarr" "rtorrent-rutorrent" "sabnzbd" "sonarr" "speedtest-exporter" "thelounge")
+ignored_apps="prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge"
 
 echo "Cloning or updating the truecharts/charts repository..."
+
 # Clone the charts repository
 if [ ! -d "$base_dir/charts" ]; then
   git clone "$charts_repo" "$base_dir/charts"
@@ -29,7 +30,7 @@ update_app() {
     fi
   done
 
-  if [[ ! " ${ignored_apps[*]} " =~ " ${app_name} " ]]; then
+  if [[ ! " $ignored_apps " =~ " $app_name " ]]; then
     for category in "premium" "system" "stable"; do
       charts_values="$base_dir/charts/charts/$category/$app_name/values.yaml"
       if [ -f "$charts_values" ]; then
