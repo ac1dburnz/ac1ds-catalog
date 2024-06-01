@@ -148,4 +148,4 @@ pr_number=$(echo $pr_response | jq '.number')
 #curl -X PUT -H "Authorization: token $github_token" \
 #  "https://api.github.com/repos/$repo/pulls/$pr_number/merge"
 
-#echo "PR merged successfully"
+echo "PR merged successfully"
