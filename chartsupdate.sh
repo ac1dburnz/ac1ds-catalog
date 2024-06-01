@@ -14,11 +14,12 @@ else
   git pull
 fi
 
-# Function to update ix_values.yaml
+# Function to update ix_values.yaml and increment version folder
 update_app() {
   local app_dir="$1"
   local app_name="$(basename "$app_dir")"
   local highest_version=""
+  local updated=false
 
   # Find the highest version directory
   for dir in "$app_dir"/*; do
@@ -54,16 +55,43 @@ update_app() {
         else
           echo "Updates found for $app_name in $charts_values"
           cp "$charts_values" "$app_dir/$highest_version/ix_values.yaml"
+          updated=true
         fi
       fi
     done
   else
     echo "Skipping $app_name (ignored)."
   fi
+
+  # Increment version folder if the ix_values.yaml file was updated
+  if [ "$updated" = true ]; then
+    if [ -f "$app_dir/$highest_version/ix_values.yaml" ]; then
+      new_version=$(increment_version "$highest_version")
+      new_version_dir="$app_dir/$new_version"
+      mkdir "$new_version_dir"
+      cp -r "$app_dir/$highest_version/"* "$new_version_dir/"
+      echo "Incremented version for $app_name: $new_version"
+    else
+      echo "No ix_values.yaml file found for $app_name, skipping version increment."
+    fi
+  fi
+}
+
+# Function to increment the version string
+increment_version() {
+  local version="$1"
+  local major_version=$(echo "$version" | cut -d'.' -f1)
+  local minor_version=$(echo "$version" | cut -d'.' -f2)
+  local patch_version=$(echo "$version" | cut -d'.' -f3)
+
+  patch_version=$((patch_version + 1))
+  new_version="$major_version.$minor_version.$patch_version"
+  echo "$new_version"
 }
 
 echo "Updating apps in ac1dsworld..."
-for app in "$base_dir/ac1ds-catalog/ac1dsworld"/*; do
+for app in "$base_dir/ac1ds-catalog/ac1dsworld"/*;
+do
   update_app "$app"
 done
 
@@ -86,4 +114,3 @@ echo "Updating apps in Test..."
 for app in "$base_dir/ac1ds-catalog/Test"/*; do
   update_app "$app"
 done
-
