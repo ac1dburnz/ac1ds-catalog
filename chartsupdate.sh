@@ -3,6 +3,7 @@
 base_dir="/Users/ac1dburn/Documents/GitHub"
 charts_repo="https://github.com/truecharts/charts.git"
 ignored_apps="prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge"
+updated_apps_file="$(mktemp)"
 
 echo "Cloning or updating the truecharts/charts repository..."
 
@@ -13,9 +14,6 @@ else
   cd "$base_dir/charts"
   git pull
 fi
-
-# Array to store apps with updated ix_values.yaml
-updated_apps=()
 
 # Function to update ix_values.yaml
 update_app() {
@@ -57,7 +55,7 @@ update_app() {
         else
           echo "Updates found for $app_name in $charts_values"
           cp "$charts_values" "$app_dir/$highest_version/ix_values.yaml"
-          updated_apps+=("$app_name")
+          echo "$app_name" >> "$updated_apps_file"
         fi
       fi
     done
@@ -104,7 +102,7 @@ for app in "$base_dir/ac1ds-catalog/Test"/*; do
 done
 
 # Increment version for apps with updated ix_values.yaml
-for app_name in "${updated_apps[@]}"; do
+while read -r app_name; do
   for category in "ac1dsworld" "stable" "premium" "system" "Test"; do
     app_dir="$base_dir/ac1ds-catalog/$category/$app_name"
     if [ -d "$app_dir" ]; then
@@ -126,5 +124,8 @@ for app_name in "${updated_apps[@]}"; do
       fi
     fi
   done
-done
+done < "$updated_apps_file"
+
+# Clean up the temporary file
+rm "$updated_apps_file"
 
