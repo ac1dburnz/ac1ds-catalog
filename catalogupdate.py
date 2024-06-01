@@ -11,7 +11,6 @@ ignored_apps = ["prowlarr", "radarr", "rtorrent-rutorrent", "sabnzbd", "sonarr",
 catalog_path = os.path.join(base_dir, "ac1ds-catalog", "catalog.json")
 
 def clone_or_update_charts_repo():
-    """Clone the charts repository if it doesn't exist, or update it if it does."""
     charts_dir = os.path.join(base_dir, "charts")
     if not os.path.exists(charts_dir):
         subprocess.run(["git", "clone", charts_repo, charts_dir])
@@ -19,7 +18,6 @@ def clone_or_update_charts_repo():
         subprocess.run(["git", "pull"], cwd=charts_dir)
 
 def find_highest_version(app_dir):
-    """Find the highest version directory within an app directory."""
     highest_version = ""
     for dir_name in os.listdir(app_dir):
         dir_path = os.path.join(app_dir, dir_name)
@@ -34,20 +32,17 @@ def find_highest_version(app_dir):
     return highest_version
 
 def increment_version(version_str):
-    """Increment the micro part of the version string."""
     version_obj = version.parse(version_str)
     new_version = version.Version(f"{version_obj.major}.{version_obj.minor}.{version_obj.micro + 1}")
     return str(new_version)
 
 def remove_old_versions(app_dir, highest_version):
-    """Remove all version directories except the highest version."""
     for dir_name in os.listdir(app_dir):
         dir_path = os.path.join(app_dir, dir_name)
         if os.path.isdir(dir_path) and dir_name != highest_version:
             shutil.rmtree(dir_path)
 
 def update_chart_yaml(new_version_dir, new_version):
-    """Update the version in the Chart.yaml file."""
     chart_yaml_path = os.path.join(new_version_dir, "Chart.yaml")
     with open(chart_yaml_path, "r") as file:
         lines = file.readlines()
@@ -61,26 +56,24 @@ def update_chart_yaml(new_version_dir, new_version):
         file.writelines(lines)
 
 def load_catalog():
-    """Load the catalog.json file."""
     with open(catalog_path, "r") as file:
         return json.load(file)
 
 def save_catalog(catalog):
-    """Save the catalog.json file."""
     with open(catalog_path, "w") as file:
         json.dump(catalog, file, indent=2)
 
 def update_catalog(catalog, app_name, new_version):
-    """Update the catalog.json with the new version."""
-    for category in catalog.values():
+    for category_name, category in catalog.items():
         if app_name in category:
+            print(f"Updating {app_name} in {category_name}")
             category[app_name]["latest_version"] = new_version
             latest_app_version = category[app_name].get("latest_app_version", "")
             category[app_name]["latest_human_version"] = f"{latest_app_version}_{new_version}"
+            print(f"Updated latest_version to {new_version} and latest_human_version to {category[app_name]['latest_human_version']}")
             break
 
 def update_app(app_dir, app_name, highest_version, catalog):
-    """Update the app if there are changes in the values.yaml file."""
     if app_name in ignored_apps:
         print(f"Skipping {app_name} (ignored).")
         return
@@ -99,7 +92,6 @@ def update_app(app_dir, app_name, highest_version, catalog):
                 print(f"Updates found for {app_name} in {charts_values}")
                 shutil.copy2(charts_values, os.path.join(app_dir, highest_version, "ix_values.yaml"))
 
-                # Check if the ix_values.yaml file has been modified
                 ix_values_path = os.path.join(app_dir, highest_version, "ix_values.yaml")
                 git_diff_cmd = ["git", "diff", "--quiet", ix_values_path]
                 git_diff_result = subprocess.run(git_diff_cmd, cwd=os.path.join(base_dir, "ac1ds-catalog"), capture_output=True)
@@ -124,7 +116,6 @@ def update_app(app_dir, app_name, highest_version, catalog):
                     update_catalog(catalog, app_name, new_version)
 
 def main():
-    """Main function to clone/update the repository and process each app."""
     print("Cloning or updating the truecharts/charts repository...")
     clone_or_update_charts_repo()
 
