@@ -9,8 +9,8 @@
             "definitions/interface",
             "normalize/interfaceConfiguration"
         ],
-        "human_version": "2.52.0_18.2.9",
-        "version": "18.2.9",
+        "human_version": "2.52.0_18.2.10",
+        "version": "18.2.10",
         "chart_metadata": {
             "annotations": {
                 "truecharts.org/category": "metrics",
@@ -65,7 +65,7 @@
                 "https://quay.io/thanos/thanos"
             ],
             "type": "application",
-            "version": "18.2.9"
+            "version": "18.2.10"
         },
         "app_metadata": null,
         "schema": {
