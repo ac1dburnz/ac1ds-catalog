@@ -2,7 +2,7 @@
 
 base_dir="/Users/ac1dburn/Documents/GitHub"
 charts_repo="https://github.com/truecharts/charts.git"
-ignored_apps="prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge"
+ignored_apps="prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge traefik"
 
 echo "Cloning or updating the truecharts/charts repository..."
 
