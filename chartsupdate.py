@@ -7,7 +7,7 @@ from packaging import version
 
 base_dir = "/Users/ac1dburn/Documents/GitHub"
 charts_repo = "https://github.com/truecharts/charts.git"
-ignored_apps = ["prowlarr", "radarr", "rtorrent-rutorrent", "sabnzbd", "sonarr", "speedtest-exporter", "thelounge"]
+ignored_apps = ["prowlarr", "radarr", "rtorrent-rutorrent", "sabnzbd", "sonarr", "speedtest-exporter", "thelounge", "traefik"]
 catalog_path = os.path.join(base_dir, "ac1ds-catalog", "catalog.json")
 
 def clone_or_update_charts_repo():
