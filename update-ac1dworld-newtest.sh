@@ -116,7 +116,7 @@ python3 "$base_dir/ac1ds-catalog/catalogupdate.py"
 python3 "$base_dir/ac1ds-catalog/chartsupdate.py"
 
 # Run app version fix
-python3 "$base_dir/ac1ds-catalogapp_versions_fix-script.py"
+python3 "$base_dir/ac1ds-catalog/app_versions_fix-script.py"
 
 # Run catalog fix script
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
