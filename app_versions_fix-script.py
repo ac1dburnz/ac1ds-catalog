@@ -26,23 +26,29 @@ def find_highest_version_from_dict(app_versions):
     for version_str in app_versions.keys():
         try:
             version_obj = version.parse(version_str)
-            print(f"Parsed version: {version_obj}")
             if not highest_version:
                 highest_version = version_str
-                print(f"Setting highest_version to: {highest_version}")
             elif version_obj > version.parse(highest_version):
                 highest_version = version_str
-                print(f"Updating highest_version to: {highest_version}")
         except version.InvalidVersion:
-            print(f"Invalid version string: {version_str}")
             pass
-    print(f"Returning highest_version: {highest_version}")
     return highest_version
 
 def increment_version(version_str):
     version_obj = version.parse(version_str)
     new_version = version.Version(f"{version_obj.major}.{version_obj.minor}.{version_obj.micro + 1}")
     return str(new_version)
+
+def update_versions_recursively(data, old_version, new_version):
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if key == "version" and value == old_version:
+                data[key] = new_version
+            if isinstance(value, (dict, list)):
+                update_versions_recursively(value, old_version, new_version)
+    elif isinstance(data, list):
+        for item in data:
+            update_versions_recursively(item, old_version, new_version)
 
 def update_app_versions_json(app_dir, app_name):
     app_versions_path = os.path.join(app_dir, "app_versions.json")
@@ -54,7 +60,6 @@ def update_app_versions_json(app_dir, app_name):
 
     highest_version = find_highest_version_from_dict(app_versions)
     if highest_version:
-        print(f"Current highest version for {app_name}: {highest_version}")
         new_version = increment_version(highest_version)
         latest_version_data = app_versions.pop(highest_version)
         
@@ -75,11 +80,14 @@ def update_app_versions_json(app_dir, app_name):
         latest_version_data["version"] = new_version
         app_versions[new_version] = latest_version_data
 
+        # Update all version fields in the app_versions dictionary
+        update_versions_recursively(app_versions, highest_version, new_version)
+
         # Sort the dictionary keys in descending order
         sorted_app_versions = dict(sorted(app_versions.items(), key=lambda x: version.parse(x[0]), reverse=True))
 
         with open(app_versions_path, "w") as file:
-            json.dump(app_versions, file, indent=2)
+            json.dump(sorted_app_versions, file, indent=2)
 
         print(f"Updated app_versions.json for {app_name} with new version {new_version}")
     else:
@@ -123,4 +131,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
