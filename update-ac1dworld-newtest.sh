@@ -95,7 +95,7 @@ done
 
 
 # Update ix_values.yaml for ac1dsworld
-for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
+for app in prowlarr radarr sabnzbd sonarr speedtest-exporter thelounge; do
   cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
   cd "$(ls -1d */ | sort -V | tail -n 1)"
   
