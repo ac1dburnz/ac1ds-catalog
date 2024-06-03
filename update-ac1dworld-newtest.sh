@@ -136,6 +136,9 @@ python3 "$base_dir/ac1ds-catalog/chartsupdate.py"
 # Run app version fix
 python3 "$base_dir/ac1ds-catalog/app_versions_fix-script.py"
 
+ # Run rutorrent autoupdater 
+python3 "$base_dir/ac1ds-catalog/rutorrent-update.py"
+
 # Run catalog fix script
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
 
