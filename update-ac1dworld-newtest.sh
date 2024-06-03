@@ -26,40 +26,45 @@ mkdir temp
 # Clone catalog into temp directory
 git clone https://github.com/truecharts/catalog.git temp
 
+
+# Copy apps  via script for commented out section bellow
+
+python3 "$base_dir/ac1ds-catalog/applogic.py"
+
 # Copy apps from ac1dsworld to stable
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
-  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
-    cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/stable"
-  done
-fi
+#if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
+#  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
+ #   cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/stable"
+#  done
+#fi
 
 # Copy apps from temp stable to ac1dsworld 
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V | tail -n 1)" ]; then
-  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
-    cp -R "$base_dir/ac1ds-catalog/temp/stable/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
-  done
-fi
+#if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V | tail -n 1)" ]; then
+ # for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
+  #  cp -R "$base_dir/ac1ds-catalog/temp/stable/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
+ # done
+#fi
 
 # Copy apps from temp/premium to ac1dsworld/premium
-for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
-  mkdir -p "$base_dir/ac1ds-catalog/premium/$app"
-  cp -R "$base_dir/ac1ds-catalog/temp/premium/$app"/* "$base_dir/ac1ds-catalog/premium/$app"
-done
+#for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
+ # mkdir -p "$base_dir/ac1ds-catalog/premium/$app"
+ # cp -R "$base_dir/ac1ds-catalog/temp/premium/$app"/* "$base_dir/ac1ds-catalog/premium/$app"
+#done
 
 # Copy apps from temp/system to ac1dsworld/system
-for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
-  mkdir -p "$base_dir/ac1ds-catalog/system/$app"
-  cp -R "$base_dir/ac1ds-catalog/temp/system/$app"/* "$base_dir/ac1ds-catalog/system/$app"
-done
+#for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
+ # mkdir -p "$base_dir/ac1ds-catalog/system/$app"
+  #cp -R "$base_dir/ac1ds-catalog/temp/system/$app"/* "$base_dir/ac1ds-catalog/system/$app"
+#done
 
 
 # Copy apps from ac1dsworld to test
 
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
-  for app in rtorrent-rutorrent ; do
-    cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/Test"
-  done
-fi
+#if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
+ # for app in rtorrent-rutorrent ; do
+  #  cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/Test"
+ # done
+#fi
 
 # Remove unwanted files ac1dsworld
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
