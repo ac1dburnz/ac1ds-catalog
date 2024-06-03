@@ -79,6 +79,20 @@ for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter 
   rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
 done
 
+# Remove unwanted files premium 
+
+for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
+  cd "$base_dir/ac1ds-catalog/premium/$app"
+  rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
+done
+
+# Remove unwanted files systems 
+
+for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
+  cd "$base_dir/ac1ds-catalog/systems/$app"
+  rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
+done
+
 
 # Update ix_values.yaml for ac1dsworld
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
