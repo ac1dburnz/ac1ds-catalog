@@ -26,69 +26,90 @@ mkdir temp
 # Clone catalog into temp directory
 git clone https://github.com/truecharts/catalog.git temp
 
+# Function to get the highest version in a directory
+get_highest_version() {
+  dir_path=$1
+  if [ -d "$dir_path" ]; then
+    echo $(ls -1 "$dir_path" | sort -V | tail -n 1)
+  else
+    echo ""
+  fi
+}
+
 # Copy apps from ac1dsworld to stable
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
-  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
+for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
+  latest=$(get_highest_version "$base_dir/ac1ds-catalog/ac1dsworld/$app")
+  if [ -n "$latest" ]; then
     cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/stable"
-  done
-fi
+  fi
+done
 
 # Copy apps from temp stable to ac1dsworld 
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V | tail -n 1)" ]; then
-  for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
+for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
+  temp_latest=$(get_highest_version "$base_dir/ac1ds-catalog/temp/stable/$app")
+  ac1dsworld_latest=$(get_highest_version "$base_dir/ac1ds-catalog/ac1dsworld/$app")
+  if [ -n "$temp_latest" ] && ([ -z "$ac1dsworld_latest" ] || [ "$(printf '%s\n' "$temp_latest" "$ac1dsworld_latest" | sort -V | head -n 1)" != "$temp_latest" ]); then
     cp -R "$base_dir/ac1ds-catalog/temp/stable/$app" "$base_dir/ac1ds-catalog/ac1dsworld"
-  done
-fi
+  fi
+done
 
 # Copy apps from temp stable to premium 
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/premium/$app" | sort -V | tail -n 1)" ]; then
- for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
+for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
+  temp_latest=$(get_highest_version "$base_dir/ac1ds-catalog/temp/premium/$app")
+  premium_latest=$(get_highest_version "$base_dir/ac1ds-catalog/premium/$app")
+  if [ -n "$temp_latest" ] && ([ -z "$premium_latest" ] || [ "$(printf '%s\n' "$temp_latest" "$premium_latest" | sort -V | head -n 1)" != "$temp_latest" ]); then
     cp -R "$base_dir/ac1ds-catalog/temp/premium/$app" "$base_dir/ac1ds-catalog/premium"
-  done
-fi
+  fi
+done
 
-
-# Copy apps from temp stable to ac1dsworld 
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/system/$app" | sort -V | tail -n 1)" ]; then
-  for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
+# Copy apps from temp stable to system
+for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
+  temp_latest=$(get_highest_version "$base_dir/ac1ds-catalog/temp/system/$app")
+  system_latest=$(get_highest_version "$base_dir/ac1ds-catalog/system/$app")
+  if [ -n "$temp_latest" ] && ([ -z "$system_latest" ] || [ "$(printf '%s\n' "$temp_latest" "$system_latest" | sort -V | head -n 1)" != "$temp_latest" ]); then
     cp -R "$base_dir/ac1ds-catalog/temp/system/$app" "$base_dir/ac1ds-catalog/system"
-  done
-fi
+  fi
+done
 
 # Copy apps from temp/premium to ac1dsworld/premium
-#for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
- # mkdir -p "$base_dir/ac1ds-catalog/premium/$app"
- # cp -R "$base_dir/ac1ds-catalog/temp/premium/$app"/* "$base_dir/ac1ds-catalog/premium/$app"
-#done
+for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
+  mkdir -p "$base_dir/ac1ds-catalog/premium/$app"
+  temp_latest=$(get_highest_version "$base_dir/ac1ds-catalog/temp/premium/$app")
+  premium_latest=$(get_highest_version "$base_dir/ac1ds-catalog/premium/$app")
+  if [ -n "$temp_latest" ] && ([ -z "$premium_latest" ] || [ "$(printf '%s\n' "$temp_latest" "$premium_latest" | sort -V | head -n 1)" != "$temp_latest" ]); then
+    cp -R "$base_dir/ac1ds-catalog/temp/premium/$app"/* "$base_dir/ac1ds-catalog/premium/$app"
+  fi
+done
 
 # Copy apps from temp/system to ac1dsworld/system
-#for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
-#  mkdir -p "$base_dir/ac1ds-catalog/system/$app"
-#  cp -R "$base_dir/ac1ds-catalog/temp/system/$app"/* "$base_dir/ac1ds-catalog/system/$app"
-#done
+for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
+  mkdir -p "$base_dir/ac1ds-catalog/system/$app"
+  temp_latest=$(get_highest_version "$base_dir/ac1ds-catalog/temp/system/$app")
+  system_latest=$(get_highest_version "$base_dir/ac1ds-catalog/system/$app")
+  if [ -n "$temp_latest" ] && ([ -z "$system_latest" ] || [ "$(printf '%s\n' "$temp_latest" "$system_latest" | sort -V | head -n 1)" != "$temp_latest" ]); then
+    cp -R "$base_dir/ac1ds-catalog/temp/system/$app"/* "$base_dir/ac1ds-catalog/system/$app"
+  fi
+done
 
-
-# Copy apps from ac1dsworld to test
-
-if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/ac1dsworld/$app" | sort -V | tail -n 1)" ]; then
-  for app in rtorrent-rutorrent ; do
+# Copy apps from ac1dsworld to Test
+for app in rtorrent-rutorrent ; do
+  latest=$(get_highest_version "$base_dir/ac1ds-catalog/ac1dsworld/$app")
+  if [ -n "$latest" ]; then
     cp -R "$base_dir/ac1ds-catalog/ac1dsworld/$app" "$base_dir/ac1ds-catalog/Test"
-  done
-fi
+  fi
+done
 
-# Remove unwanted files ac1dsworld
+# Remove unwanted files from ac1dsworld
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
   cd "$base_dir/ac1ds-catalog/ac1dsworld/$app"
   rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
 done
 
-# Remove unwanted files Test 
-
+# Remove unwanted files from Test
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge overseerr speedtest-exporter pihole lldap plextraktsync ispy-agent-dvr wg-easy tautulli; do
   cd "$base_dir/ac1ds-catalog/Test/$app"
   rm -R $(ls -1 | grep -vE 'app_versions.json|item.yaml' | sort -V | sed '$d') 
 done
-
 
 # Update ix_values.yaml for ac1dsworld
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
@@ -102,9 +123,7 @@ for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter 
   fi
 done
 
-
 # Update ix_values.yaml for Test
-
 for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter thelounge; do
   cd "$base_dir/ac1ds-catalog/Test/$app"
   cd "$(ls -1d */ | sort -V | tail -n 1)"
@@ -116,7 +135,6 @@ for app in prowlarr radarr rtorrent-rutorrent sabnzbd sonarr speedtest-exporter 
   fi
 done
 
-
 # Copy catalog.json
 cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.json"
 
@@ -124,7 +142,7 @@ cp "$base_dir/ac1ds-catalog/catalog.json" "$base_dir/ac1ds-catalog/catalog-temp.
 python3 "$base_dir/ac1ds-catalog/catalogupdate.py"
 
 # Remove temp directory
- sudo rm -r "$base_dir/ac1ds-catalog/temp" 
+sudo rm -r "$base_dir/ac1ds-catalog/temp" 
 
 # Run charts update  
 python3 "$base_dir/ac1ds-catalog/chartsupdate.py"
@@ -136,7 +154,6 @@ python3 "$base_dir/ac1ds-catalog/app_versions_fix-script.py"
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
 
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix-test.py"
-
 
 # Commit changes  
 git add --all :/
@@ -166,3 +183,4 @@ pr_number=$(echo $pr_response | jq '.number')
 #  "https://api.github.com/repos/$repo/pulls/$pr_number/merge"
 
 echo "PR merged successfully"
+
