@@ -1,5 +1,5 @@
 {
-  "18.2.10": {
+  "18.2.11": {
     "healthy": true,
     "supported": true,
     "healthy_error": null,
@@ -9,8 +9,8 @@
       "definitions/interface",
       "normalize/interfaceConfiguration"
     ],
-    "human_version": "2.52.0_18.2.10",
-    "version": "18.2.10",
+    "human_version": "2.52.0_18.2.11",
+    "version": "18.2.11",
     "chart_metadata": {
       "annotations": {
         "truecharts.org/category": "metrics",
@@ -65,7 +65,7 @@
         "https://quay.io/thanos/thanos"
       ],
       "type": "application",
-      "version": "18.2.10"
+      "version": "18.2.11"
     },
     "app_metadata": null,
     "schema": {
