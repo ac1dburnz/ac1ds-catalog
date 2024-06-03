@@ -40,18 +40,32 @@ if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/stable/$app" | sort -V 
   done
 fi
 
+# Copy apps from temp stable to premium 
+if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/premium/$app" | sort -V | tail -n 1)" ]; then
+ for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
+    cp -R "$base_dir/ac1ds-catalog/temp/premium/$app" "$base_dir/ac1ds-catalog/premium"
+  done
+fi
+
+
+# Copy apps from temp stable to ac1dsworld 
+if [ "$latest" != "$(ls -1 "$base_dir/ac1ds-catalog/temp/system/$app" | sort -V | tail -n 1)" ]; then
+  for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
+    cp -R "$base_dir/ac1ds-catalog/temp/system/$app" "$base_dir/ac1ds-catalog/system"
+  done
+fi
 
 # Copy apps from temp/premium to ac1dsworld/premium
-for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
-  mkdir -p "$base_dir/ac1ds-catalog/premium/$app"
-  cp -R "$base_dir/ac1ds-catalog/temp/premium/$app"/* "$base_dir/ac1ds-catalog/premium/$app"
-done
+#for app in authelia blocky clusterissuer custom-app grafana metallb-config nextcloud prometheus traefik vaultwarden; do
+ # mkdir -p "$base_dir/ac1ds-catalog/premium/$app"
+ # cp -R "$base_dir/ac1ds-catalog/temp/premium/$app"/* "$base_dir/ac1ds-catalog/premium/$app"
+#done
 
 # Copy apps from temp/system to ac1dsworld/system
-for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
-  mkdir -p "$base_dir/ac1ds-catalog/system/$app"
-  cp -R "$base_dir/ac1ds-catalog/temp/system/$app"/* "$base_dir/ac1ds-catalog/system/$app"
-done
+#for app in cert-manager cloudnative-pg grafana-agent-operator kubeapps kubernetes-reflector metallb openebs prometheus-operator snapshot-controller traefik-crds velero volsync volumesnapshots; do
+#  mkdir -p "$base_dir/ac1ds-catalog/system/$app"
+#  cp -R "$base_dir/ac1ds-catalog/temp/system/$app"/* "$base_dir/ac1ds-catalog/system/$app"
+#done
 
 
 # Copy apps from ac1dsworld to test
