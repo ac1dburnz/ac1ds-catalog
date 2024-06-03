@@ -89,24 +89,37 @@ def find_app(data, app_name, specific_key=None):
 def update_catalog_json(base_dir, app_name, new_version):
     catalog_json_path = os.path.join(base_dir, "catalog.json")
     print(f"Catalog JSON Path: {catalog_json_path}")
+
     with open(catalog_json_path, 'r') as catalog_file:
         catalog_data = json.load(catalog_file)
 
     result = find_app(catalog_data, app_name, "ac1dsworld")
     print(f"Catalog Result: {result}")
+
     if result:
         app_name_actual, app_data = result
         print(f"Current app data: {app_data}")
-        app_data['latest_version'] = new_version
-        app_data['latest_human_version'] = f"{app_data['latest_app_version']}_{new_version}"
-        app_data['last_update'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        print(f"Updated app data: {app_data}")
 
-        with open(catalog_json_path, 'w') as catalog_file:
-            json.dump(catalog_data, catalog_file, indent=2)
-        print(f"Updated {app_name_actual} to version {new_version} in {catalog_json_path}")
+        existing_version = app_data.get('latest_version', '')
+        print(f"Existing version: {existing_version}")
+        print(f"New version: {new_version}")
+
+        if existing_version != new_version:
+            print(f"New version {new_version} found. Updating catalog...")
+            app_data['latest_version'] = new_version
+            app_data['latest_human_version'] = f"{app_data['latest_app_version']}_{new_version}"
+            app_data['last_update'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            print(f"Updated app data: {app_data}")
+
+            with open(catalog_json_path, 'w') as catalog_file:
+                json.dump(catalog_data, catalog_file, indent=2)
+                print(f"Updated {app_name_actual} to version {new_version} in {catalog_json_path}")
+        else:
+            print("No update required. Existing version is the same as the new version.")
     else:
         print(f"{app_name} not found in {catalog_json_path}")
+
+
 
 def update_chart_yaml(base_dir, app_name, new_version_dir):
     chart_yaml_path = os.path.join(new_version_dir, "Chart.yaml")
