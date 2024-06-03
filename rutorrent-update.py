@@ -1,6 +1,7 @@
 import os
 import shutil
 import yaml
+import json
 from packaging import version
 
 def get_image_tag(file_path):
@@ -46,19 +47,132 @@ def update_app_version(app_dir, current_version):
         current_version_dir = os.path.join(app_dir, current_version)
         shutil.copytree(current_version_dir, new_version_dir)
         print(f"Incremented version for {app_dir}: {new_version}")
-        return new_version_dir
+
+        # Update app_versions.json
+        update_app_versions_json(app_dir, new_version)
     except Exception as e:
         print(f"Error updating version for {app_dir}: {e}")
-        return None
+
 
 def replace_ix_values_yaml(base_dir, app_name, version_dir):
     mainfile_path = os.path.join(base_dir, "mainfiles", f"{app_name}-ix_values.yaml")
     target_ix_values_path = os.path.join(version_dir, "ix_values.yaml")
     if os.path.exists(mainfile_path):
+        if os.path.exists(target_ix_values_path):
+            os.remove(target_ix_values_path)
+            print(f"Removed existing {target_ix_values_path}")
         shutil.copy(mainfile_path, target_ix_values_path)
         print(f"Copied {mainfile_path} to {target_ix_values_path}")
     else:
         print(f"Mainfile {mainfile_path} does not exist")
+
+def find_app(data, app_name):
+    if isinstance(data, dict):
+        if app_name in data:
+            return app_name, data[app_name]
+        else:
+            for key, value in data.items():
+                result = find_app(value, app_name)
+                if result:
+                    return result
+    elif isinstance(data, list):
+        for item in data:
+            result = find_app(item, app_name)
+            if result:
+                return result
+    return None
+
+def find_highest_version_from_dict(app_versions):
+    highest_version = ""
+    for version_str in app_versions.keys():
+        try:
+            version_obj = version.parse(version_str)
+            if not highest_version:
+                highest_version = version_str
+            elif version_obj > version.parse(highest_version):
+                highest_version = version_str
+        except version.InvalidVersion:
+            pass
+    return highest_version
+
+def increment_version(version_str):
+    version_obj = version.parse(version_str)
+    new_version = version.Version(f"{version_obj.major}.{version_obj.minor}.{version_obj.micro + 1}")
+    return str(new_version)
+
+def update_versions_recursively(data, old_version, new_version):
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if key == "version" and value == old_version:
+                data[key] = new_version
+            if isinstance(value, (dict, list)):
+                update_versions_recursively(value, old_version, new_version)
+    elif isinstance(data, list):
+        for item in data:
+            update_versions_recursively(item, old_version, new_version)
+
+def update_app_versions_json(app_dir, app_name, new_version):
+    app_versions_path = os.path.join(app_dir, "app_versions.json")
+    if os.path.exists(app_versions_path):
+        with open(app_versions_path, "r") as file:
+            app_versions = json.load(file)
+    else:
+        app_versions = {}
+
+    highest_version = find_highest_version_from_dict(app_versions)
+    if highest_version:
+        new_version = increment_version(highest_version)
+        latest_version_data = app_versions.pop(highest_version)
+        
+        # Get the current human_version
+        current_human_version = latest_version_data.get("human_version", "")
+        
+        # Increment the human_version based on the new_version
+        if current_human_version:
+            version_parts = current_human_version.split("_")
+            if len(version_parts) == 2:
+                prefix, old_version = version_parts
+                latest_version_data["human_version"] = f"{prefix}_{new_version}"
+            else:
+                print(f"Warning: Invalid human_version format for {app_name}: {current_human_version}")
+        else:
+            print(f"Warning: No human_version found for {app_name} in app_versions.json")
+        
+        latest_version_data["version"] = new_version
+        app_versions[new_version] = latest_version_data
+
+        # Update all version fields in the app_versions dictionary
+        update_versions_recursively(app_versions, highest_version, new_version)
+
+        # Sort the dictionary keys in descending order
+        sorted_app_versions = dict(sorted(app_versions.items(), key=lambda x: version.parse(x[0]), reverse=True))
+
+        with open(app_versions_path, "w") as file:
+            json.dump(sorted_app_versions, file, indent=2)
+
+        print(f"Updated app_versions.json for {app_name} with new version {new_version}")
+        return new_version
+    else:
+        print(f"No versions found in app_versions.json for {app_name}")
+        return None
+
+def update_catalog_json(base_dir, app_name, new_version):
+    catalog_json_path = os.path.join(base_dir, "ac1ds-catalog", "catalog.json")
+    with open(catalog_json_path, 'r') as catalog_file:
+        catalog_data = json.load(catalog_file)
+
+    # Find and update the app data in the catalog
+    result = find_app(catalog_data, app_name)
+    if result:
+        app_name_actual, app_data = result
+        app_data['version'] = new_version
+
+        # Write the updated catalog back to the file
+        with open(catalog_json_path, 'w') as catalog_file:
+            json.dump(catalog_data, catalog_file, indent=2)
+        print(f"Updated {app_name_actual} to version {new_version} in {catalog_json_path}")
+    else:
+        print(f"{app_name} not found in {catalog_json_path}")
 
 def main():
     base_dir = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog"
@@ -88,6 +202,9 @@ def main():
                         new_version_dir = update_app_version(app_dir, highest_version_dir)
                         if new_version_dir:
                             replace_ix_values_yaml(base_dir, "rtorrent-rutorrent", new_version_dir)
+                            new_version = update_app_versions_json(new_version_dir, "rtorrent-rutorrent")
+                            if new_version:
+                                update_catalog_json(base_dir, "rtorrent-rutorrent", new_version)
                     else:
                         print("No update required.")
             else:
@@ -98,5 +215,4 @@ def main():
         print("Either mainfile or app directory does not exist.")
 
 if __name__ == "__main__":
-    main()
     main()
