@@ -7,7 +7,6 @@ from packaging import version
 # Define base_dir as a global variable
 base_dir = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog"
 
-
 def get_image_tag(file_path):
     with open(file_path, 'r') as file:
         data = yaml.safe_load(file)
@@ -52,11 +51,15 @@ def update_app_version(app_dir, current_version):
         shutil.copytree(current_version_dir, new_version_dir)
         print(f"Incremented version for {app_dir}: {new_version}")
 
-         # Update app_versions.json
+        # Update app_versions.json
         update_app_versions_json(app_dir, "rtorrent-rutorrent", new_version)
 
         # Replace ix_values.yaml
         replace_ix_values_yaml(base_dir, "rtorrent-rutorrent", new_version_dir)
+
+        # Update Chart.yaml
+        update_chart_yaml(base_dir, "rtorrent-rutorrent", new_version_dir)
+
     except Exception as e:
         print(f"Error updating version for {app_dir}: {e}")
 
@@ -180,8 +183,25 @@ def update_catalog_json(base_dir, app_name, new_version):
     else:
         print(f"{app_name} not found in {catalog_json_path}")
 
+def update_chart_yaml(base_dir, app_name, new_version_dir):
+    chart_yaml_path = os.path.join(new_version_dir, "Chart.yaml")
+    if os.path.exists(chart_yaml_path):
+        with open(chart_yaml_path, "r") as chart_yaml_file:
+            chart_yaml_data = yaml.safe_load(chart_yaml_file)
+        
+        # Update the version in Chart.yaml
+        chart_yaml_data["version"] = new_version_dir.split("/")[-1]
+        
+        # Write the updated Chart.yaml back to the file
+        with open(chart_yaml_path, "w") as chart_yaml_file:
+            yaml.dump(chart_yaml_data, chart_yaml_file, default_flow_style=False)
+        
+        print(f"Updated version in Chart.yaml for {app_name} to {chart_yaml_data['version']}")
+    else:
+        print(f"Chart.yaml not found in {new_version_dir}")
+
 def main():
-    base_dir= "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog"
+    base_dir = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog"
     mainfile_dir = os.path.join(base_dir, "mainfiles")
     rtorrent_rutorrent_dir = os.path.join(base_dir, "ac1dsworld", "rtorrent-rutorrent")
     mainfile_path = os.path.join(mainfile_dir, "rtorrent-rutorrent-ix_values.yaml")
