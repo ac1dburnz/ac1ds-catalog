@@ -4,6 +4,10 @@ import yaml
 import json
 from packaging import version
 
+# Define base_dir as a global variable
+base_dir = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog"
+
+
 def get_image_tag(file_path):
     with open(file_path, 'r') as file:
         data = yaml.safe_load(file)
@@ -48,11 +52,13 @@ def update_app_version(app_dir, current_version):
         shutil.copytree(current_version_dir, new_version_dir)
         print(f"Incremented version for {app_dir}: {new_version}")
 
-        # Update app_versions.json
-        update_app_versions_json(app_dir, new_version)
+         # Update app_versions.json
+        update_app_versions_json(app_dir, "rtorrent-rutorrent", new_version)
+
+        # Replace ix_values.yaml
+        replace_ix_values_yaml(base_dir, "rtorrent-rutorrent", new_version_dir)
     except Exception as e:
         print(f"Error updating version for {app_dir}: {e}")
-
 
 def replace_ix_values_yaml(base_dir, app_name, version_dir):
     mainfile_path = os.path.join(base_dir, "mainfiles", f"{app_name}-ix_values.yaml")
@@ -175,7 +181,7 @@ def update_catalog_json(base_dir, app_name, new_version):
         print(f"{app_name} not found in {catalog_json_path}")
 
 def main():
-    base_dir = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog"
+    base_dir= "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog"
     mainfile_dir = os.path.join(base_dir, "mainfiles")
     rtorrent_rutorrent_dir = os.path.join(base_dir, "ac1dsworld", "rtorrent-rutorrent")
     mainfile_path = os.path.join(mainfile_dir, "rtorrent-rutorrent-ix_values.yaml")
@@ -201,8 +207,7 @@ def main():
                     if mainfile_version != app_version or mainfile_revision != app_revision:
                         new_version_dir = update_app_version(app_dir, highest_version_dir)
                         if new_version_dir:
-                            replace_ix_values_yaml(base_dir, "rtorrent-rutorrent", new_version_dir)
-                            new_version = update_app_versions_json(new_version_dir, "rtorrent-rutorrent")
+                            new_version = update_app_versions_json(new_version_dir, "rtorrent-rutorrent", highest_version_dir)
                             if new_version:
                                 update_catalog_json(base_dir, "rtorrent-rutorrent", new_version)
                     else:
