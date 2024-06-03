@@ -75,6 +75,9 @@ def update_app_versions_json(app_dir, app_name):
         latest_version_data["version"] = new_version
         app_versions[new_version] = latest_version_data
 
+        # Sort the dictionary keys in descending order
+        sorted_app_versions = dict(sorted(app_versions.items(), key=lambda x: version.parse(x[0]), reverse=True))
+
         with open(app_versions_path, "w") as file:
             json.dump(app_versions, file, indent=2)
 
