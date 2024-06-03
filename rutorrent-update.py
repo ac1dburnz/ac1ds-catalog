@@ -9,9 +9,13 @@ def get_image_tag(file_path):
         image_tag = data.get('image', {}).get('tag', '')
         return image_tag
 
-def extract_version_from_tag(tag):
+def extract_version_and_revision_from_tag(tag):
     version_str = tag.split('@')[0]
-    return version_str.split('-')[0]
+    version_parts = version_str.split('-')
+    if len(version_parts) == 2:
+        return version_parts[0], version_parts[1]
+    else:
+        raise ValueError(f"Invalid tag format: {tag}")
 
 def increment_directory_version(version_str):
     version_parts = version_str.split('.')
@@ -42,8 +46,22 @@ def update_app_version(app_dir, current_version):
         current_version_dir = os.path.join(app_dir, current_version)
         shutil.copytree(current_version_dir, new_version_dir)
         print(f"Incremented version for {app_dir}: {new_version}")
+        return new_version_dir
     except Exception as e:
         print(f"Error updating version for {app_dir}: {e}")
+        return None
+
+def replace_ix_values_yaml(base_dir, app_name, version_dir):
+    mainfile_path = os.path.join(base_dir, "mainfiles", f"{app_name}-ix_values.yaml")
+    target_ix_values_path = os.path.join(version_dir, "ix_values.yaml")
+    if os.path.exists(mainfile_path):
+        if os.path.exists(target_ix_values_path):
+            os.remove(target_ix_values_path)
+            print(f"Removed existing {target_ix_values_path}")
+        shutil.copy(mainfile_path, target_ix_values_path)
+        print(f"Copied {mainfile_path} to {target_ix_values_path}")
+    else:
+        print(f"Mainfile {mainfile_path} does not exist")
 
 def main():
     base_dir = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog"
@@ -65,12 +83,14 @@ def main():
                 print(f"App tag file: {current_app_tag_file}")
                 print(f"App tag: {current_app_tag}")
                 if mainfile_tag and current_app_tag:
-                    mainfile_version = extract_version_from_tag(mainfile_tag)
-                    app_version = extract_version_from_tag(current_app_tag)
-                    print(f"Tag in mainfile rtorrent-rutorrent: {mainfile_version}")
-                    print(f"Tag in app directory rtorrent-rutorrent: {app_version}")
-                    if mainfile_version != app_version:
-                        update_app_version(app_dir, highest_version_dir)
+                    mainfile_version, mainfile_revision = extract_version_and_revision_from_tag(mainfile_tag)
+                    app_version, app_revision = extract_version_and_revision_from_tag(current_app_tag)
+                    print(f"Version in mainfile rtorrent-rutorrent: {mainfile_version}-{mainfile_revision}")
+                    print(f"Version in app directory rtorrent-rutorrent: {app_version}-{app_revision}")
+                    if mainfile_version != app_version or mainfile_revision != app_revision:
+                        new_version_dir = update_app_version(app_dir, highest_version_dir)
+                        if new_version_dir:
+                            replace_ix_values_yaml(base_dir, "rtorrent-rutorrent", new_version_dir)
                     else:
                         print("No update required.")
             else:
