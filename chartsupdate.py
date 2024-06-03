@@ -73,47 +73,26 @@ def update_catalog(catalog, app_name, new_version):
             print(f"Updated latest_version to {new_version} and latest_human_version to {category[app_name]['latest_human_version']}")
             break
 
-def update_app(app_dir, app_name, highest_version, catalog):
+def update_app(app_dir, app_name, catalog):
     if app_name in ignored_apps:
         print(f"Skipping {app_name} (ignored).")
-        return
+        return False
 
-    for category in ["premium", "system", "stable"]:
-        charts_values = os.path.join(base_dir, "charts", "charts", category, app_name, "values.yaml")
-        if os.path.exists(charts_values):
-            print(f"Checking for updates in {app_name} ({category})...")
-            if not highest_version:
-                print(f"No versions found for {app_name}")
-                continue
+    highest_version = find_highest_version(app_dir)
+    if not highest_version:
+        print(f"No versions found for {app_name}")
+        return False
 
-            if filecmp.cmp(charts_values, os.path.join(app_dir, highest_version, "values.yaml")):
-                print(f"No updates found for {app_name} in {charts_values}")
-            else:
-                print(f"Updates found for {app_name} in {charts_values}")
-                shutil.copy2(charts_values, os.path.join(app_dir, highest_version, "ix_values.yaml"))
+    # Get existing highest version from the catalog
+    existing_highest_version = catalog.get(app_name, {}).get("latest_version", "")
 
-                ix_values_path = os.path.join(app_dir, highest_version, "ix_values.yaml")
-                git_diff_cmd = ["git", "diff", "--quiet", ix_values_path]
-                git_diff_result = subprocess.run(git_diff_cmd, cwd=os.path.join(base_dir, "ac1ds-catalog"), capture_output=True)
+    if highest_version == existing_highest_version:
+        print(f"No updates found for {app_name}.")
+        return False
 
-                if git_diff_result.returncode == 0:
-                    print(f"No updates found for {app_name} in {ix_values_path}")
-                else:
-                    new_version = increment_version(highest_version)
-                    new_version_dir = os.path.join(app_dir, new_version)
-                    os.makedirs(new_version_dir, exist_ok=True)
-                    highest_version_dir = os.path.join(app_dir, highest_version)
-                    for item in os.listdir(highest_version_dir):
-                        src = os.path.join(highest_version_dir, item)
-                        dst = os.path.join(new_version_dir, item)
-                        if os.path.isdir(src):
-                            shutil.copytree(src, dst)
-                        else:
-                            shutil.copy2(src, dst)
-                    print(f"Incremented version for {app_name}: {new_version}")
-                    remove_old_versions(app_dir, new_version)
-                    update_chart_yaml(new_version_dir, new_version)
-                    update_catalog(catalog, app_name, new_version)
+    print(f"Updating {app_name} to version {highest_version}")
+    update_catalog(catalog, app_name, highest_version)
+    return True
 
 def main():
     print("Cloning or updating the truecharts/charts repository...")
@@ -128,11 +107,9 @@ def main():
             for app_name in os.listdir(category_dir):
                 app_dir = os.path.join(category_dir, app_name)
                 if os.path.isdir(app_dir):
-                    highest_version = find_highest_version(app_dir)
-                    update_app(app_dir, app_name, highest_version, catalog)
+                    update_app(app_dir, app_name, catalog)
 
     save_catalog(catalog)
 
 if __name__ == "__main__":
     main()
-
