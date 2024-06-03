@@ -55,9 +55,6 @@ def replace_ix_values_yaml(base_dir, app_name, version_dir):
     mainfile_path = os.path.join(base_dir, "mainfiles", f"{app_name}-ix_values.yaml")
     target_ix_values_path = os.path.join(version_dir, "ix_values.yaml")
     if os.path.exists(mainfile_path):
-        if os.path.exists(target_ix_values_path):
-            os.remove(target_ix_values_path)
-            print(f"Removed existing {target_ix_values_path}")
         shutil.copy(mainfile_path, target_ix_values_path)
         print(f"Copied {mainfile_path} to {target_ix_values_path}")
     else:
