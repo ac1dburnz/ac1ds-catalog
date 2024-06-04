@@ -119,24 +119,20 @@ def update_catalog_json(base_dir, app_name, new_version):
     else:
         print(f"{app_name} not found in {catalog_json_path}")
 
-def update_chart_yaml(base_dir, app_name, highest_version_dir):
-    app_dir = os.path.join(base_dir, "ac1dsworld", app_name)
-    new_version_dir = os.path.join(app_dir, highest_version_dir)
+def update_chart_yaml(base_dir, app_name, new_version_dir):
     chart_yaml_path = os.path.join(new_version_dir, "Chart.yaml")
-
     if os.path.exists(chart_yaml_path):
         with open(chart_yaml_path, "r") as chart_yaml_file:
             chart_yaml_data = yaml.safe_load(chart_yaml_file)
-
-        chart_yaml_data["version"] = highest_version_dir
-
+        
+        chart_yaml_data["version"] = new_version_dir.split("/")[-1]
+        
         with open(chart_yaml_path, "w") as chart_yaml_file:
             yaml.dump(chart_yaml_data, chart_yaml_file, default_flow_style=False)
-
-        print(f"Updated version in Chart.yaml for {app_name} to {highest_version_dir}")
+        
+        print(f"Updated version in Chart.yaml for {app_name} to {chart_yaml_data['version']}")
     else:
         print(f"Chart.yaml not found in {new_version_dir}")
-
 
 def update_app_versions_json(base_dir, sub_dir, app_name, new_version):
     app_versions_json_path = os.path.join(base_dir, sub_dir, app_name, "app_versions.json")
@@ -201,19 +197,18 @@ def main():
                     if mainfile_version != app_version or mainfile_revision != app_revision:
                         new_version_dir = update_app_version(app_dir, highest_version_dir)
                         print(f"New version directory: {new_version_dir}")
-                        if new_version_dir:
-                            update_catalog_json(base_dir, app_name, new_version_dir)
-                            update_app_versions_json(base_dir, sub_dir, app_name, new_version_dir)
                     else:
                         print("No update required.")
-                else:
-                    print("One of the tags is empty")
+                
+                # Always update the catalog version if the highest version directory is found
+                update_catalog_json(base_dir, app_name, highest_version_dir)
             else:
                 print(f"App tag file does not exist: {current_app_tag_file}")
         else:
             print("No version directories found in app directory.")
     else:
         print("Either mainfile or app directory does not exist.")
+
 
 if __name__ == "__main__":
     main()
