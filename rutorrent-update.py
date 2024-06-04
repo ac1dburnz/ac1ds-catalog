@@ -119,8 +119,6 @@ def update_catalog_json(base_dir, app_name, new_version):
     else:
         print(f"{app_name} not found in {catalog_json_path}")
 
-
-
 def update_chart_yaml(base_dir, app_name, new_version_dir):
     chart_yaml_path = os.path.join(new_version_dir, "Chart.yaml")
     if os.path.exists(chart_yaml_path):
@@ -136,11 +134,45 @@ def update_chart_yaml(base_dir, app_name, new_version_dir):
     else:
         print(f"Chart.yaml not found in {new_version_dir}")
 
+def update_app_versions_json(base_dir, sub_dir, app_name, new_version):
+    app_versions_json_path = os.path.join(base_dir, sub_dir, app_name, "app_versions.json")
+    print(f"App Versions JSON Path: {app_versions_json_path}")
+
+    if os.path.exists(app_versions_json_path):
+        with open(app_versions_json_path, 'r') as app_versions_file:
+            app_versions_data = json.load(app_versions_file)
+
+        if 'latest_app_version' in app_versions_data:
+            old_version = app_versions_data['latest_human_version'].split('_')[-1]
+            
+            # Update the version in all relevant fields
+            for key in app_versions_data:
+                if isinstance(app_versions_data[key], dict) and 'version' in app_versions_data[key]:
+                    if app_versions_data[key]['version'] == old_version:
+                        app_versions_data[key]['version'] = new_version
+                        app_versions_data[key]['human_version'] = app_versions_data['latest_app_version'] + "_" + new_version
+                        app_versions_data[key]['last_update'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        app_versions_data[key]['location'] = app_versions_data[key]['location'].replace(old_version, new_version)
+            
+            app_versions_data[new_version] = app_versions_data.pop(old_version)
+            app_versions_data['latest_human_version'] = f"{app_versions_data['latest_app_version']}_{new_version}"
+            app_versions_data['last_update'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+            with open(app_versions_json_path, 'w') as app_versions_file:
+                json.dump(app_versions_data, app_versions_file, indent=2)
+                print(f"Updated app_versions.json for {app_name} to version {new_version}")
+        else:
+            print("Error: 'latest_app_version' key not found in app_versions.json")
+    else:
+        print(f"Error: {app_versions_json_path} does not exist")
+
 def main():
     base_dir = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog"
+    sub_dir = "ac1dsworld"
+    app_name = "rtorrent-rutorrent"
     mainfile_dir = os.path.join(base_dir, "mainfiles")
-    rtorrent_rutorrent_dir = os.path.join(base_dir, "ac1dsworld", "rtorrent-rutorrent")
-    mainfile_path = os.path.join(mainfile_dir, "rtorrent-rutorrent-ix_values.yaml")
+    rtorrent_rutorrent_dir = os.path.join(base_dir, sub_dir, app_name)
+    mainfile_path = os.path.join(mainfile_dir, f"{app_name}-ix_values.yaml")
     app_dir = rtorrent_rutorrent_dir
 
     print(f"Mainfile path: {mainfile_path}")
@@ -160,13 +192,14 @@ def main():
                 if mainfile_tag and current_app_tag:
                     mainfile_version, mainfile_revision = extract_version_and_revision_from_tag(mainfile_tag)
                     app_version, app_revision = extract_version_and_revision_from_tag(current_app_tag)
-                    print(f"Version in mainfile rtorrent-rutorrent: {mainfile_version}-{mainfile_revision}")
-                    print(f"Version in app directory rtorrent-rutorrent: {app_version}-{app_revision}")
+                    print(f"Version in mainfile {app_name}: {mainfile_version}-{mainfile_revision}")
+                    print(f"Version in app directory {app_name}: {app_version}-{app_revision}")
                     if mainfile_version != app_version or mainfile_revision != app_revision:
                         new_version_dir = update_app_version(app_dir, highest_version_dir)
                         print(f"New version directory: {new_version_dir}")
                         if new_version_dir:
-                            update_catalog_json(base_dir, "rtorrent-rutorrent", new_version_dir)
+                            update_catalog_json(base_dir, app_name, new_version_dir)
+                            update_app_versions_json(base_dir, sub_dir, app_name, new_version_dir)
                     else:
                         print("No update required.")
                 else:
