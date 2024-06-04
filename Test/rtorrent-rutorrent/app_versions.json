@@ -1,9 +1,9 @@
 {
-  "5.0.9": {
+  "5.0.10": {
     "healthy": true,
     "supported": true,
     "healthy_error": null,
-    "location": "/home/runner/_work/catalog/catalog/stable/rtorrent-rutorrent/5.0.9",
+    "location": "/home/runner/_work/catalog/catalog/stable/rtorrent-rutorrent/5.0.8",
     "last_update": "2024-05-29 12:35:14",
     "required_features": [
       "definitions/timezone",
@@ -11,8 +11,8 @@
       "definitions/certificate",
       "definitions/interface"
     ],
-    "human_version": "4.2.9_5.0.9",
-    "version": "5.0.9",
+    "human_version": "4.2.9_5.0.10",
+    "version": "5.0.10",
     "chart_metadata": {
       "annotations": {
         "truecharts.org/category": "torrent",
@@ -58,7 +58,7 @@
         "https://truecharts.org/charts/stable/rtorrent-rutorrent"
       ],
       "type": "application",
-      "version": "5.0.9"
+      "version": "5.0.10"
     },
     "app_metadata": null,
     "schema": {
