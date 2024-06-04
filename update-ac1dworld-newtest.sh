@@ -144,6 +144,8 @@ python3 "$base_dir/ac1ds-catalog/pythongluetunfix.py"
 
 python3 "$base_dir/ac1ds-catalog/pythongluetunfix-test.py"
 
+#rutorrent app_version fix
+python3  "$base_dir/ac1ds-catalog/app_version-rutorrent-fix.py"
 
 # Commit changes  
 git add --all :/
