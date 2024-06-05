@@ -83,6 +83,10 @@ workload:
               enabled: false
             startup:
               enabled: false
+          resources:
+            requests:
+              cpu: "10m"
+              memory: "5Gi"
           env:
             RUTORRENT_PORT: "{{ .Values.service.main.ports.main.port }}"
             PORT_RTORRENT: "{{ .Values.service.rtorrent.ports.rtorrent.port }}"
