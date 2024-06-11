@@ -14,6 +14,8 @@ def get_image_tag(file_path):
         return image_tag
 
 def extract_version_and_revision_from_tag(tag):
+    if tag == "develop":
+        return "develop", ""
     version_str = tag.split('@')[0]
     version_parts = version_str.split('-')
     if len(version_parts) == 2:
@@ -185,7 +187,7 @@ def process_app(app_name):
                 current_app_tag = get_image_tag(current_app_tag_file)
                 print(f"App tag file: {current_app_tag_file}")
                 print(f"App tag: {current_app_tag}")
-                if mainfile_tag and current_app_tag:
+                try:
                     mainfile_version, mainfile_revision = extract_version_and_revision_from_tag(mainfile_tag)
                     app_version, app_revision = extract_version_and_revision_from_tag(current_app_tag)
                     print(f"Version in mainfile {app_name}: {mainfile_version}-{mainfile_revision}")
@@ -195,6 +197,17 @@ def process_app(app_name):
                         print(f"New version directory: {new_version_dir}")
                     else:
                         print("No update required.")
+                except ValueError as e:
+                    print(e)
+                
+                # Always update the catalog version if the highest version directory is found
+                update_catalog_json(base_dir, app_name, highest_version_dir)
+            else:
+                print(f"App tag file does not exist: {current_app_tag_file}")
+        else:
+            print("No version directories found in app directory.")
+    else:
+        print("Either mainfile or app directory does not exist.")
                 
                 # Always update the catalog version if the highest version directory is found
                 update_catalog_json(base_dir, app_name, highest_version_dir)
