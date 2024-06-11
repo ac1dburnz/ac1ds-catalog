@@ -1,0 +1,106 @@
+image:
+  repository: linuxserver/sabnzbd
+  pullPolicy: IfNotPresent
+  tag: latest
+exportarrImage:
+  repository: ghcr.io/onedr0p/exportarr
+  pullPolicy: IfNotPresent
+  tag: vmaster@sha256:3f7b5c6fbfb16b6d760575d45ec8f96d5957e4c7dc02b2ada8fb778d1f540712
+
+securityContext:
+  container:
+    readOnlyRootFilesystem: false
+    runAsGroup: 0
+    runAsUser: 0
+
+service:
+  main:
+    ports:
+      main:
+        port: 10097
+        targetPort: 8080
+  metrics:
+    enabled: true
+    type: LoadBalancer
+    targetSelector: exportarr
+    ports:
+      metrics:
+        enabled: true
+        port: 8990
+        targetSelector: exportarr
+workload:
+  main:
+    podSpec:
+      containers:
+        main:
+          probes:
+            liveness:
+              enabled: false
+            readiness:
+              enabled: false
+            startup:
+              enabled: false
+          env:
+            SABNZBD__HOST_WHITELIST_ENTRIES: ""
+            SABNZBD__PORT: "{{ .Values.service.main.ports.main.port }}"
+  exportarr:
+    enabled: "{{ .Values.metrics.main.enabled }}"
+    type: Deployment
+    strategy: RollingUpdate
+    replicas: 1
+    podSpec:
+      containers:
+        exportarr:
+          primary: true
+          enabled: true
+          imageSelector: exportarrImage
+          args:
+            - sabnzbd
+          probes:
+            liveness:
+              enabled: true
+              type: http
+              path: /healthz
+              port: "{{ .Values.service.metrics.ports.metrics.port }}"
+            readiness:
+              enabled: true
+              type: http
+              path: /healthz
+              port: "{{ .Values.service.metrics.ports.metrics.port }}"
+            startup:
+              enabled: true
+              type: http
+              path: /healthz
+              port: "{{ .Values.service.metrics.ports.metrics.port }}"
+          env:
+            INTERFACE: 0.0.0.0
+            PORT: "{{ .Values.service.metrics.ports.metrics.port }}"
+            URL: '{{ printf "http://%s-port.%s.svc.cluster.local:80" .Release.Name .Release.Namespace }}'
+            APIKEY: "{{ .Values.metrics.main.apiKey }}"
+persistence:
+  config:
+    enabled: true
+    targetSelector:
+      main:
+        main:
+          mountPath: /config
+      exportarr:
+        exportarr:
+          mountPath: /config
+          readOnly: true
+metrics:
+  main:
+    enabled: false
+    type: "servicemonitor"
+    endpoints:
+      - port: metrics
+        path: /metrics
+    targetSelector: metrics
+    # Required for exportarr
+    apiKey: ""
+      
+portal:
+  open:
+    enabled: true
+            
+            
