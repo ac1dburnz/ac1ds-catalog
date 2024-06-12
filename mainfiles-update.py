@@ -2,26 +2,18 @@ import os
 import shutil
 import yaml
 import json
+import hashlib
 from packaging import version
 from datetime import datetime
 
 base_dir = "/Users/ac1dburn/Documents/GitHub/ac1ds-catalog"
 
-def get_image_tag(file_path):
-    with open(file_path, 'r') as file:
-        data = yaml.safe_load(file)
-        image_tag = data.get('image', {}).get('tag', '')
-        return image_tag
-
-def extract_version_and_revision_from_tag(tag):
-    if tag == "develop":
-        return "develop", ""
-    version_str = tag.split('@')[0]
-    version_parts = version_str.split('-')
-    if len(version_parts) == 2:
-        return version_parts[0], version_parts[1]
-    else:
-        raise ValueError(f"Invalid tag format: {tag}")
+def get_file_hash(file_path):
+    hasher = hashlib.md5()
+    with open(file_path, 'rb') as file:
+        buf = file.read()
+        hasher.update(buf)
+    return hasher.hexdigest()
 
 def increment_directory_version(version_str):
     version_parts = version_str.split('.')
@@ -45,7 +37,7 @@ def find_highest_version_directory(app_dir):
                 continue
     return str(highest_version) if highest_version else None
 
-def update_app_version(app_dir, current_version):
+def update_app_version(app_dir, current_version, app_name):
     try:
         new_version = increment_directory_version(current_version)
         new_version_dir = os.path.join(app_dir, new_version)
@@ -178,51 +170,31 @@ def process_app(app_name):
 
     if os.path.exists(mainfile_path) and os.path.exists(app_dir):
         print("Both mainfile and app directory exist.")
-        mainfile_tag = get_image_tag(mainfile_path)
-        print(f"Mainfile tag: {mainfile_tag}")
+        mainfile_hash = get_file_hash(mainfile_path)
         highest_version_dir = find_highest_version_directory(app_dir)
         if highest_version_dir:
             current_app_tag_file = os.path.join(app_dir, highest_version_dir, "ix_values.yaml")
             if os.path.exists(current_app_tag_file):
-                current_app_tag = get_image_tag(current_app_tag_file)
+                current_app_hash = get_file_hash(current_app_tag_file)
+                print(f"Mainfile hash: {mainfile_hash}")
                 print(f"App tag file: {current_app_tag_file}")
-                print(f"App tag: {current_app_tag}")
-                try:
-                    mainfile_version, mainfile_revision = extract_version_and_revision_from_tag(mainfile_tag)
-                    app_version, app_revision = extract_version_and_revision_from_tag(current_app_tag)
-                    print(f"Version in mainfile {app_name}: {mainfile_version}-{mainfile_revision}")
-                    print(f"Version in app directory {app_name}: {app_version}-{app_revision}")
-                    if mainfile_version != app_version or mainfile_revision != app_revision:
-                        new_version_dir = update_app_version(app_dir, highest_version_dir)
-                        print(f"New version directory: {new_version_dir}")
-                    else:
-                        print("No update required.")
-                except ValueError as e:
-                    print(e)
+                print(f"App file hash: {current_app_hash}")
+
+                if mainfile_hash != current_app_hash:
+                    new_version_dir = update_app_version(app_dir, highest_version_dir, app_name)
+                    print(f"New version directory: {new_version_dir}")
+                else:
+                    print("No update required.")
                 
-                # Always update the catalog version if the highest version directory is found
+                # Always update the catalog version if the highest version changes
                 update_catalog_json(base_dir, app_name, highest_version_dir)
-            else:
-                print(f"App tag file does not exist: {current_app_tag_file}")
         else:
-            print("No version directories found in app directory.")
-    else:
-        print("Either mainfile or app directory does not exist.")
-                
-                # Always update the catalog version if the highest version directory is found
-                update_catalog_json(base_dir, app_name, highest_version_dir)
-            else:
-                print(f"App tag file does not exist: {current_app_tag_file}")
-        else:
-            print("No version directories found in app directory.")
-    else:
-        print("Either mainfile or app directory does not exist.")
+            print(f"No version directories found in {app_dir}")
 
 def main():
-    apps = ["rtorrent-rutorrent", "sonarr", "prowlarr"]
+    apps = ["sonarr", "radarr", "lidarr"]
     for app_name in apps:
         process_app(app_name)
 
 if __name__ == "__main__":
     main()
-
