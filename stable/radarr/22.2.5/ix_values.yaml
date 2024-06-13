@@ -16,7 +16,7 @@ service:
         port: 7878
   metrics:
     enabled: true
-    type: ClusterIP
+    type: LoadBalancer
     targetSelector: exportarr
     ports:
       metrics:
