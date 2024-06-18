@@ -13,7 +13,7 @@ service:
         port: 8989
   metrics:
     enabled: true
-    type: ClusterIP
+    type: LoadBalancer
     targetSelector: exportarr
     ports:
       metrics:
