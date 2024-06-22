@@ -18,6 +18,7 @@ workload:
 metrics:
   main:
     enabled: true
+    type: ClusterIP
     type: "servicemonitor"
     endpoints:
       - port: main
